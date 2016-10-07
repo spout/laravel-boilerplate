@@ -1,0 +1,34 @@
+<table class="table table-striped">
+    @if (isset($cols))
+        <thead>
+            <tr>
+                @foreach ($cols as $col => $label)
+                    <th>{{ $label }}</th>
+                @endforeach
+            </tr>
+        </thead>
+    @endif
+    <tbody>
+        @foreach ($objectList as $object)
+            <tr>
+                @foreach ($cols as $col => $label)
+                    <td>
+                        @if (View::exists(sprintf('%s.cols.%s', $prefix, $col)))
+                            @include(sprintf('%s.cols.%s', $prefix, $col))
+                        @else
+                            @if ($col == 'actions')
+                                @include('includes.crud.actions')
+                            @else
+                                @if ($col == '__toString')
+                                    <a href="{{ $object->absoluteUrl }}">{{ $object }}</a>
+                                @else
+                                    {{ $object->{$col} }}
+                                @endif
+                            @endif
+                        @endif
+                    </td>
+                @endforeach
+            </tr>
+        @endforeach
+    </tbody>
+</table>
