@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.11 on 2016-10-07.
+ * Generated for Laravel 5.3.18 on 2016-10-08.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -6761,8 +6761,8 @@ namespace {
          * @return void 
          * @static 
          */
-        public static function sendNow($notifiables, $notification){
-            \Illuminate\Notifications\ChannelManager::sendNow($notifiables, $notification);
+        public static function sendNow($notifiables, $notification, $channels = null){
+            \Illuminate\Notifications\ChannelManager::sendNow($notifiables, $notification, $channels);
         }
         
         /**
@@ -12745,6 +12745,99 @@ namespace {
          */
         public static function componentCall($method, $parameters){
             return \Collective\Html\HtmlBuilder::componentCall($method, $parameters);
+        }
+        
+    }
+
+
+    class LaravelGettext extends \Xinax\LaravelGettext\Facades\LaravelGettext{
+        
+        /**
+         * Get the current encoding
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getEncoding(){
+            return \Xinax\LaravelGettext\LaravelGettext::getEncoding();
+        }
+        
+        /**
+         * Set the current encoding
+         *
+         * @param string $encoding
+         * @return $this 
+         * @static 
+         */
+        public static function setEncoding($encoding){
+            return \Xinax\LaravelGettext\LaravelGettext::setEncoding($encoding);
+        }
+        
+        /**
+         * Gets the Current locale.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getLocale(){
+            return \Xinax\LaravelGettext\LaravelGettext::getLocale();
+        }
+        
+        /**
+         * Set current locale
+         *
+         * @param string $locale
+         * @return $this 
+         * @throws Exceptions\LocaleNotSupportedException
+         * @throws \Exception
+         * @static 
+         */
+        public static function setLocale($locale){
+            return \Xinax\LaravelGettext\LaravelGettext::setLocale($locale);
+        }
+        
+        /**
+         * Get the language portion of the locale
+         * (ex. en_GB returns en)
+         *
+         * @param string|null $locale
+         * @return string|null 
+         * @static 
+         */
+        public static function getLocaleLanguage($locale = null){
+            return \Xinax\LaravelGettext\LaravelGettext::getLocaleLanguage($locale);
+        }
+        
+        /**
+         * Get the language selector object
+         *
+         * @param array $labels
+         * @return \Xinax\LaravelGettext\LanguageSelector 
+         * @static 
+         */
+        public static function getSelector($labels = array()){
+            return \Xinax\LaravelGettext\LaravelGettext::getSelector($labels);
+        }
+        
+        /**
+         * Sets the current domain
+         *
+         * @param string $domain
+         * @return $this 
+         * @static 
+         */
+        public static function setDomain($domain){
+            return \Xinax\LaravelGettext\LaravelGettext::setDomain($domain);
+        }
+        
+        /**
+         * Returns the current domain
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getDomain(){
+            return \Xinax\LaravelGettext\LaravelGettext::getDomain();
         }
         
     }

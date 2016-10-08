@@ -1,3 +1,5 @@
+@include('includes.paginator-counter', ['results' => $objectList])
+
 <table class="table table-striped">
     @if (isset($cols))
         <thead>
@@ -32,3 +34,5 @@
         @endforeach
     </tbody>
 </table>
+
+{{ $objectList->links() }}

@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2016-10-07.
+    * Generated on 2016-10-08.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -43,6 +43,12 @@ namespace PHPSTORM_META {
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
             'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
             'flash' instanceof \Laracasts\Flash\FlashNotifier,
+            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
+            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
+            'Adapters/AdapterInterface' instanceof \Xinax\LaravelGettext\Adapters\LaravelAdapter,
+            'laravel-gettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
+            'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
+            'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
@@ -161,6 +167,12 @@ namespace PHPSTORM_META {
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
             'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
             'flash' instanceof \Laracasts\Flash\FlashNotifier,
+            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
+            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
+            'Adapters/AdapterInterface' instanceof \Xinax\LaravelGettext\Adapters\LaravelAdapter,
+            'laravel-gettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
+            'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
+            'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
@@ -279,6 +291,12 @@ namespace PHPSTORM_META {
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
             'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
             'flash' instanceof \Laracasts\Flash\FlashNotifier,
+            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
+            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
+            'Adapters/AdapterInterface' instanceof \Xinax\LaravelGettext\Adapters\LaravelAdapter,
+            'laravel-gettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
+            'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
+            'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
@@ -397,6 +415,12 @@ namespace PHPSTORM_META {
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
             'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
             'flash' instanceof \Laracasts\Flash\FlashNotifier,
+            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
+            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
+            'Adapters/AdapterInterface' instanceof \Xinax\LaravelGettext\Adapters\LaravelAdapter,
+            'laravel-gettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
+            'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
+            'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,

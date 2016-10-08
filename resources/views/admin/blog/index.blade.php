@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', trans("Posts"))
+@section('title', __("Posts"))
 
 @section('content')
     @include('includes.crud.index', [
         'prefix' => 'admin.blog',
         'cols' => [
-            '__toString' => trans("Title"),
-            //'content' => trans("Content"),
-            'actions' => trans("Actions"),
+            '__toString' => __("Title"),
+            //'content' => __("Content"),
+            'actions' => __("Actions"),
         ],
     ])
 @endsection

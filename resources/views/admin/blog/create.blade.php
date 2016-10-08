@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', trans("Create post"))
+@section('title', __("Create post"))
 
 @section('content')
     @include('admin.blog.form')

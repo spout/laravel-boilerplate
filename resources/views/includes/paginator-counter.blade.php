@@ -1,0 +1,1 @@
+{{ __('%d - %d of %d', [$results->firstItem(), $results->lastItem(), $results->count()]) }}

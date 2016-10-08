@@ -28,7 +28,7 @@ trait CreateTrait
         $model = $this->model;
         $input = $request->all();
         $model::create($input);
-        flash(trans("Record was created successfully!"), 'success');
+        flash(__("Record was created successfully!"), 'success');
         return redirect()->back();
     }
 }
