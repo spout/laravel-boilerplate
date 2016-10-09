@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
-    <link href="{{ asset('assets/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/admin.css') }}" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -17,17 +17,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Laravel</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            @menu(['menu' => 'principal'])
+            <a class="navbar-brand" href="/">{{ __("Admin") }}</a>
         </div>
     </div>
 </nav>
@@ -35,7 +25,7 @@
     @include('flash::message')
     @yield('content')
 </div>
-<script src="{{ asset('assets/app.js') }}"></script>
+<script src="{{ asset('assets/admin.js') }}"></script>
 @stack('scripts')
 </body>
 </html>

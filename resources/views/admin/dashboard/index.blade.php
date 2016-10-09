@@ -1,5 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-    {{ __FILE__ }}
+
 @endsection

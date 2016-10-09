@@ -1,21 +1,19 @@
 <?php
 namespace App\Models;
 
-use Illuminate\Support\Pluralizer;
-
 class Model extends \Illuminate\Database\Eloquent\Model
 {
-    protected $rules = array();
+    protected $rules = [];
     protected $errors;
 
-    public static function getVerboseName()
+    /**
+     * Common primaryKey accessor
+     *
+     * @return mixed
+     */
+    public function getPkAttribute()
     {
-        return class_basename(static::class);
-    }
-
-    public static function getVerboseNamePlural()
-    {
-        return Pluralizer::plural(self::getVerboseName());
+        return $this->{$this->primaryKey};
     }
 
     public function getAbsoluteUrlAttribute()

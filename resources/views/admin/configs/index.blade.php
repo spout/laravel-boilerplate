@@ -1,13 +1,12 @@
 @extends('layouts.admin')
 
-@section('title', __("Posts"))
+@section('title', __("Configs"))
 
 @section('content')
     @include('includes.crud.index', [
-        'prefix' => 'admin.blog',
+        'prefix' => 'admin.configs',
         'cols' => [
-            '__toString' => __("Title"),
-            //'content' => __("Content"),
+            'key' => __("Key"),
             'actions' => __("Actions"),
         ],
     ])
