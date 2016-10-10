@@ -10,9 +10,11 @@ trait CommonTrait
         /**
          * https://laracasts.com/discuss/channels/general-discussion/l5how-to-use-form-validation-request-injection-in-a-subclass/replies/184943
          */
-        app()->bind(Request::class, function ($app) {
-            return $app->make(static::$requestClass);
-        });
+        if (isset(static::$requestClass)) {
+            app()->bind(Request::class, function ($app) {
+                return $app->make(static::$requestClass);
+            });
+        }
     }
 
     protected function viewPath()
