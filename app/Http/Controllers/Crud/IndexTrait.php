@@ -3,6 +3,10 @@ namespace App\Http\Controllers\Crud;
 
 trait IndexTrait
 {
+    public $paginate = [
+        'perPage' => 10
+    ];
+
     /**
      * Display a listing of the resource.
      *

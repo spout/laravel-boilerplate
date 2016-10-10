@@ -21,9 +21,31 @@
         </div>
     </div>
 </nav>
-<div class="container">
-    @include('flash::message')
-    @yield('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <?php
+            $navs = [
+                ['title' => __("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
+                ['title' => __("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
+                ['title' => __("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
+                ['title' => __("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
+                ['title' => __("Configs"), 'icon' => 'cogs', 'route' => 'admin.configs.index'],
+            ];
+            ?>
+            <ul class="nav nav-pills nav-stacked">
+                @foreach($navs as $nav)
+                    <li>
+                        <a href="{{ route($nav['route']) }}"><i class="fa fa-{{ $nav['icon'] }} fa-fw"></i> {{ $nav['title'] }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="col-sm-9">
+            @include('flash::message')
+            @yield('content')
+        </div>
+    </div>
 </div>
 <script src="{{ asset('assets/admin.js') }}"></script>
 @stack('scripts')

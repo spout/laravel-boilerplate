@@ -28,7 +28,7 @@ class Menu extends Model
 
     public function menuItems()
     {
-        return $this->hasMany('App\Models\MenuItem');
+        return $this->hasMany('App\Models\MenuItem')->orderBy('sort');
     }
 
     public function getAttributesAttribute($attributes)

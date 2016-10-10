@@ -16,6 +16,8 @@
 //});
 
 Route::get('/', 'PagesController@show');
+Route::get('/home', 'HomeController@index');
+Auth::routes();
 
 Route::group(['prefix' => 'pages'], function () {
     Route::get('{slug}', 'PagesController@show');
@@ -27,15 +29,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     //    Route::get('/', 'BlogController@index');
     //});
 
-    Route::resource('configs', 'ConfigsController', [
+    Route::resource('contents', 'ContentsController', [
         'names' => [
-            'store' => 'admin.configs.store',
-            'index' => 'admin.configs.index',
-            'create' => 'admin.configs.create',
-            'destroy' => 'admin.configs.destroy',
-            'update' => 'admin.configs.update',
-            'show' => 'admin.configs.show',
-            'edit' => 'admin.configs.edit',
+            'store' => 'admin.contents.store',
+            'index' => 'admin.contents.index',
+            'create' => 'admin.contents.create',
+            'destroy' => 'admin.contents.destroy',
+            'update' => 'admin.contents.update',
+            'show' => 'admin.contents.show',
+            'edit' => 'admin.contents.edit',
         ]
     ]);
 
@@ -60,6 +62,30 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
             'update' => 'admin.menus.update',
             'show' => 'admin.menus.show',
             'edit' => 'admin.menus.edit',
+        ]
+    ]);
+
+    Route::resource('users', 'UsersController', [
+        'names' => [
+            'store' => 'admin.users.store',
+            'index' => 'admin.users.index',
+            'create' => 'admin.users.create',
+            'destroy' => 'admin.users.destroy',
+            'update' => 'admin.users.update',
+            'show' => 'admin.users.show',
+            'edit' => 'admin.users.edit',
+        ]
+    ]);
+
+    Route::resource('configs', 'ConfigsController', [
+        'names' => [
+            'store' => 'admin.configs.store',
+            'index' => 'admin.configs.index',
+            'create' => 'admin.configs.create',
+            'destroy' => 'admin.configs.destroy',
+            'update' => 'admin.configs.update',
+            'show' => 'admin.configs.show',
+            'edit' => 'admin.configs.edit',
         ]
     ]);
 });

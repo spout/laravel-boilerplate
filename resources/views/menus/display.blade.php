@@ -1,14 +1,8 @@
 @if (!empty($menu))
-    <?php
-    $attributes = '';
-    if (!empty($menu->attributes)) {
-        $attributes = Html::attributes(['class' => 'nav navbar-nav']);
-    }
-    ?>
-    <ul{!! $attributes !!}>
+    <ul{!! Html::attributes($menu->attributes) !!}>
         @foreach($menu->menuItems as $item)
             <li>
-                <a href="{{ $item->url }}">{{ $item->title }}</a>
+                <a href="{{ $item->url }}"{!! $item->attributes !!}>{{ $item->title }}</a>
             </li>
         @endforeach
     </ul>

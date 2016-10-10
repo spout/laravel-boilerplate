@@ -2,9 +2,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Crud\ControllerTrait;
+use App\Http\Controllers\Crud\CrudTrait;
 
 class AdminController extends Controller
 {
-    use ControllerTrait;
+    use CrudTrait;
 }

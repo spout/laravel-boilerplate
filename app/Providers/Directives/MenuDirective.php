@@ -10,7 +10,7 @@ class MenuDirective
     {
         $menu = Menu::where('slug', $expression['menu'])->first();
 
-        foreach ($menu->menuItems()->orderBy('sort', 'asc') ?:[] as &$item) {
+        foreach ($menu->menuItems ?:[] as &$item) {
             if (!empty($item->model) && !empty($item->foreign_key)) {
                 $modelClass = $item->model;
                 $row = $modelClass::find($item->foreign_key);

@@ -15,6 +15,6 @@
     {!! Form::textarea('value', null, ['class' => 'form-control', 'data-editor' => 'json']) !!}
 </div>
 
-{!! Form::submit(__('Submit'), ['class' => 'btn btn-primary']) !!}
+{!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}
