@@ -5,5 +5,5 @@ use App\Models\Content;
 
 class ContentsController extends AdminController
 {
-    public $model = Content::class;
+    protected static $model = Content::class;
 }

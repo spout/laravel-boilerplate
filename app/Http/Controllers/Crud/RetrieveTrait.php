@@ -11,7 +11,7 @@ trait RetrieveTrait
      */
     public function show($id)
     {
-        $model = $this->model;
+        $model = static::$model;
         $object = $model::find($id);
         return view(sprintf('%s.show', $this->viewPath()), compact('object'));
     }

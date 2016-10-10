@@ -5,7 +5,7 @@ use App\Models\Content;
 
 class ContentsController extends Controller
 {
-    public $model = Content::class;
+    protected static $model = Content::class;
 
     public function show($slug)
     {

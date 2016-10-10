@@ -14,7 +14,7 @@ trait IndexTrait
      */
     public function index()
     {
-        $model = $this->model;
+        $model = static::$model;
         $objectList = $model::paginate($this->paginate['perPage']);
         return view(sprintf('%s.index', $this->viewPath()), compact('objectList'));
     }

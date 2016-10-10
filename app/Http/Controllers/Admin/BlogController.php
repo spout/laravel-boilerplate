@@ -1,9 +1,11 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\PostFormRequest;
 use App\Models\Post;
 
 class BlogController extends AdminController
 {
-    public $model = Post::class;
+    protected static $model = Post::class;
+    protected static $requestClass = PostFormRequest::class;
 }

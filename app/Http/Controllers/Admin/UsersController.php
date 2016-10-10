@@ -5,5 +5,5 @@ use App\Models\User;
 
 class UsersController extends AdminController
 {
-    public $model = User::class;
+    protected static $model = User::class;
 }

@@ -13,7 +13,7 @@ trait UpdateTrait
      */
     public function edit($id)
     {
-        $model = $this->model;
+        $model = static::$model;
         $object = $model::find($id);
         return view(sprintf('%s.edit', $this->viewPath()), compact('object'));
     }
@@ -27,7 +27,7 @@ trait UpdateTrait
      */
     public function update(Request $request, $id)
     {
-        $model = $this->model;
+        $model = static::$model;
         $object = $model::find($id);
         $input = $request->all();
         $object->update($input);

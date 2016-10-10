@@ -5,5 +5,5 @@ use App\Models\Config;
 
 class ConfigsController extends AdminController
 {
-    public $model = Config::class;
+    protected static $model = Config::class;
 }

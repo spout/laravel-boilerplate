@@ -5,5 +5,5 @@ use App\Models\Menu;
 
 class MenusController extends AdminController
 {
-    public $model = Menu::class;
+    protected static $model = Menu::class;
 }
