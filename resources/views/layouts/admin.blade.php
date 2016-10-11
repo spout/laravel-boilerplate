@@ -17,7 +17,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">{{ __("Admin") }}</a>
+            <a class="navbar-brand" href="{{ route('admin.dashboard') }}">{{ __("Admin") }}</a>
         </div>
     </div>
 </nav>

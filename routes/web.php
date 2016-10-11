@@ -24,7 +24,7 @@ Route::group(['prefix' => 'pages'], function () {
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
-    Route::get('/', 'DashboardController@index');
+    Route::get('/', 'DashboardController@index')->name('admin.dashboard');
     //Route::group(['prefix' => 'blog'], function () {
     //    Route::get('/', 'BlogController@index');
     //});
