@@ -7,7 +7,7 @@ module.exports = {
         admin: "./resources/assets/js/admin.js"
     },
     output: {
-        path: './public/assets',
+        path: './public/build',
         filename: "[name].js",
         chunkFilename: "[id].js"
     },

@@ -48,8 +48,9 @@
 	window.$ = window.jQuery = __webpack_require__(1);
 	__webpack_require__(2);
 
-	__webpack_require__(21);
-	__webpack_require__(12);
+	// require('bootswatch/flatly/bootstrap.min.css');
+	// require('font-awesome/css/font-awesome.min.css');
+	__webpack_require__(3);
 
 	__webpack_require__(20);
 
@@ -10295,7 +10296,7 @@
 
 /***/ },
 
-/***/ 12:
+/***/ 3:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -10309,13 +10310,6 @@
 	    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
 	    $('[data-toggle="tooltip"]').tooltip();
 	});
-
-/***/ },
-
-/***/ 21:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ }
 

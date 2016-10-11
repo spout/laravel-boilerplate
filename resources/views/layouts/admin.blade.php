@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
-    <link href="{{ asset('assets/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/admin.css') }}" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -14,7 +14,7 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">{{ __("Admin") }}</a>
@@ -47,7 +47,7 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('assets/admin.js') }}"></script>
+<script src="{{ asset('build/admin.js') }}"></script>
 @stack('scripts')
 </body>
 </html>

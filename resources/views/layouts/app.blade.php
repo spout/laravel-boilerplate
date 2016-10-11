@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
-    <link href="{{ asset('assets/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/app.css') }}" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -35,7 +35,7 @@
     @include('flash::message')
     @yield('content')
 </div>
-<script src="{{ asset('assets/app.js') }}"></script>
+<script src="{{ asset('build/app.js') }}"></script>
 @stack('scripts')
 </body>
 </html>

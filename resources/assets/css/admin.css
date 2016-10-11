@@ -1,0 +1,6 @@
+@import "~bootswatch/flatly/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+body {
+    padding-top: 70px;
+}
