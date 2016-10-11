@@ -11,10 +11,6 @@ class Config extends Model
         'key',
         'value',
     ];
-    protected $rules = [
-        'key' => 'required|max:255',
-        'value' => 'required',
-    ];
 
     public function __toString()
     {

@@ -8,11 +8,6 @@ class Post extends Model
         'content',
     ];
 
-    protected $rules = [
-        'title' => 'required|max:255',
-        'content' => 'required',
-    ];
-
     public function __toString()
     {
         return $this->title;

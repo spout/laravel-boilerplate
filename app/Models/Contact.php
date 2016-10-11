@@ -8,11 +8,6 @@ class Contact extends Model
         'subject',
         'message',
     ];
-    protected $rules = [
-        'email' => 'required',
-        'subject' => 'required',
-        'message' => 'required',
-    ];
 
     public function __toString()
     {

@@ -11,11 +11,6 @@ class Menu extends Model
         'attributes',
     ];
 
-    protected $rules = [
-        'title' => 'required|max:255',
-        'slug' => 'required',
-    ];
-
     public function __toString()
     {
         return $this->title;

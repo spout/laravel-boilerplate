@@ -15,11 +15,6 @@ class MenuItem extends Model
         'sort',
     ];
 
-    //protected $rules = [
-    //    'title' => 'required|max:255',
-    //    'slug' => 'required',
-    //];
-
     public function __toString()
     {
         return $this->title;
