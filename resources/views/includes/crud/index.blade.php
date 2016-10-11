@@ -15,8 +15,8 @@
             <tr>
                 @foreach ($cols as $col => $label)
                     <td>
-                        @if (View::exists(sprintf('%s.cols.%s', $prefix, $col)))
-                            @include(sprintf('%s.cols.%s', $prefix, $col))
+                        @if (View::exists(sprintf('%s.includes.cols.%s', $prefix, $col)))
+                            @include(sprintf('%s.includes.cols.%s', $prefix, $col))
                         @else
                             @if ($col == 'actions')
                                 @include('includes.crud.actions')
