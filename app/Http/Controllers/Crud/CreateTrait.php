@@ -24,7 +24,7 @@ trait CreateTrait
      */
     public function store(Request $request)
     {
-        $model = $this->model;
+        $model = static::$model;
         $input = $request->all();
         $model::create($input);
         flash(__("Record was created successfully!"), 'success');

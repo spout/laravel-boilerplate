@@ -1,11 +1,16 @@
 {!! Form::model($object, [
-    'route' => empty($object->id) ? ['admin.blog.store'] : ['admin.blog.update', $object->id],
+    'route' => empty($object->id) ? ['admin.contents.store'] : ['admin.contents.update', $object->id],
     'method' => empty($object->id) ? 'POST' : 'PUT'
 ]) !!}
 
 <div class="form-group">
     {!! Form::label('title', __('Title'), ['class' => 'control-label']) !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('slug', __('Slug'), ['class' => 'control-label']) !!}
+    {!! Form::text('slug', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">

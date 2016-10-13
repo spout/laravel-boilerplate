@@ -1,8 +1,6 @@
 <?php
 namespace App\Models;
 
-use Symfony\Component\Yaml\Yaml;
-
 class MenuItem extends Model
 {
     protected $fillable = [
@@ -10,7 +8,6 @@ class MenuItem extends Model
         'foreign_key',
         'url',
         'route',
-        'attributes',
         'title',
         'sort',
     ];
@@ -28,10 +25,5 @@ class MenuItem extends Model
     public function menu()
     {
         return $this->belongsTo('App\Models\Menu');
-    }
-
-    public function getAttributesAttribute($attributes)
-    {
-        return Yaml::parse($attributes);
     }
 }
