@@ -3,26 +3,32 @@
     'method' => empty($object->id) ? 'POST' : 'PUT'
 ]) !!}
 
-<div class="form-group">
-    {!! Form::label('title', __('Title'), ['class' => 'control-label']) !!}
-    {!! Form::text('title', null, ['class' => 'form-control']) !!}
-</div>
+{!! Form::openGroup('title', __('Title')) !!}
+{!! Form::text('title') !!}
+{!! Form::closeGroup() !!}
+
+{!! Form::openGroup('slug', __('Slug')) !!}
+{!! Form::text('slug') !!}
+{!! Form::closeGroup() !!}
 
 @foreach($object->menuItems as $item)
-    <fieldset>
-        <legend>{{ __("Menu item %d", $loop->iteration) }}</legend>
-        <?php
-        $fields = [
-            'association' => __("Associated page"),
-            'title' => __("Title"),
-            'url' => __("URL"),
-            'route' => __("Route"),
-            'sort' => __("Sort order"),
-        ];
-        ?>
-        @foreach($fields as $field => $label)
-            <div class="form-group">
-                {!! Form::label(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), $label, ['class' => 'control-label']) !!}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{ __("Menu item %d", $loop->iteration) }}
+            <button type="button" class="btn btn-danger btn-xs pull-right">{{ __("Delete") }}</button>
+        </div>
+        <div class="panel-body">
+            <?php
+            $fields = [
+                'association' => __("Associated page"),
+                'title' => __("Title"),
+                'url' => __("URL"),
+                //'route' => __("Route"),
+                'sort' => __("Sort order"),
+            ];
+            ?>
+            @foreach($fields as $field => $label)
+                {!! Form::openGroup(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), $label) !!}
                 @if ($field == 'association')
                     {!! Form::select(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), $associations, sprintf('%s:%s', $item->model, $item->foreign_key), ['class' => 'form-control']) !!}
                 @elseif ($field == 'route')
@@ -30,12 +36,10 @@
                 @else
                     {!! Form::text(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), null, ['class' => 'form-control']) !!}
                 @endif
-            </div>
-        @endforeach
-        <div class="checkbox">
-            <label>{!! Form::checkbox(sprintf('menuItems[%d][delete]', $loop->index), true) !!} {{ __("Delete") }}</label>
+                {!! Form::closeGroup() !!}
+            @endforeach
         </div>
-    </fieldset>
+    </div>
 @endforeach
 
 {!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}

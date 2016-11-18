@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.18 on 2016-10-08.
+ * Generated for Laravel 5.3.20 on 2016-10-29.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -1690,6 +1690,17 @@ namespace {
         /**
          * Determine if the current user is authenticated.
          *
+         * @return \App\User 
+         * @throws \Illuminate\Auth\AuthenticationException
+         * @static 
+         */
+        public static function authenticate(){
+            return \Illuminate\Auth\SessionGuard::authenticate();
+        }
+        
+        /**
+         * Determine if the current user is authenticated.
+         *
          * @return bool 
          * @static 
          */
@@ -1705,17 +1716,6 @@ namespace {
          */
         public static function guest(){
             return \Illuminate\Auth\SessionGuard::guest();
-        }
-        
-        /**
-         * Determine if the current user is authenticated.
-         *
-         * @return \App\User 
-         * @throws \Illuminate\Auth\AuthenticationException
-         * @static 
-         */
-        public static function authenticate(){
-            return \Illuminate\Auth\SessionGuard::authenticate();
         }
         
     }
@@ -3233,7 +3233,6 @@ namespace {
          *
          * @param \PDO|null $pdo
          * @return $this 
-         * @throws \RuntimeException
          * @static 
          */
         public static function setPdo($pdo){
@@ -3877,7 +3876,7 @@ namespace {
         /**
          * Add a basic where clause to the query.
          *
-         * @param string $column
+         * @param string|\Closure $column
          * @param string $operator
          * @param mixed $value
          * @param string $boolean
@@ -3891,7 +3890,7 @@ namespace {
         /**
          * Add an "or where" clause to the query.
          *
-         * @param string $column
+         * @param string|\Closure $column
          * @param string $operator
          * @param mixed $value
          * @return \Illuminate\Database\Eloquent\Builder|static 
@@ -10245,6 +10244,18 @@ namespace {
         }
         
         /**
+         * Get an item from the session, or store the default value.
+         *
+         * @param string $key
+         * @param \Closure $callback
+         * @return mixed 
+         * @static 
+         */
+        public static function remember($key, $callback){
+            return \Illuminate\Session\Store::remember($key, $callback);
+        }
+        
+        /**
          * Push a value onto a session array.
          *
          * @param string $key
@@ -10293,8 +10304,7 @@ namespace {
         }
         
         /**
-         * Flash a key / value pair to the session
-         * for immediate use.
+         * Flash a key / value pair to the session for immediate use.
          *
          * @param string $key
          * @param mixed $value
@@ -11843,6 +11853,183 @@ namespace {
     class Form extends \Collective\Html\FormFacade{
         
         /**
+         * Open a new form group.
+         *
+         * @param string $name
+         * @param mixed $label
+         * @param array $options
+         * @param array $labelOptions
+         * @return string 
+         * @static 
+         */
+        public static function openGroup($name, $label = null, $options = array(), $labelOptions = array()){
+            return \App\Html\FormBuilder::openGroup($name, $label, $options, $labelOptions);
+        }
+        
+        /**
+         * Close out the last opened form group.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function closeGroup(){
+            return \App\Html\FormBuilder::closeGroup();
+        }
+        
+        /**
+         * Create a form input field.
+         *
+         * @param string $type
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function input($type, $name, $value = null, $options = array()){
+            return \App\Html\FormBuilder::input($type, $name, $value, $options);
+        }
+        
+        /**
+         * Create a select box field.
+         *
+         * @param string $name
+         * @param array $list
+         * @param string $selected
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function select($name, $list = array(), $selected = null, $options = array()){
+            return \App\Html\FormBuilder::select($name, $list, $selected, $options);
+        }
+        
+        /**
+         * Create a plain form input field.
+         *
+         * @param string $type
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function plainInput($type, $name, $value = null, $options = array()){
+            return \App\Html\FormBuilder::plainInput($type, $name, $value, $options);
+        }
+        
+        /**
+         * Create a plain select box field.
+         *
+         * @param string $name
+         * @param array $list
+         * @param string $selected
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function plainSelect($name, $list = array(), $selected = null, $options = array()){
+            return \App\Html\FormBuilder::plainSelect($name, $list, $selected, $options);
+        }
+        
+        /**
+         * Create a checkbox input field.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @param bool $checked
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function checkbox($name, $value = 1, $checked = null, $options = array()){
+            return \App\Html\FormBuilder::checkbox($name, $value, $checked, $options);
+        }
+        
+        /**
+         * Create a radio button input field.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @param mixed $label
+         * @param bool $checked
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function radio($name, $value = null, $label = null, $checked = null, $options = array()){
+            return \App\Html\FormBuilder::radio($name, $value, $label, $checked, $options);
+        }
+        
+        /**
+         * Create an inline checkbox input field.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @param mixed $label
+         * @param bool $checked
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function inlineCheckbox($name, $value = 1, $label = null, $checked = null, $options = array()){
+            return \App\Html\FormBuilder::inlineCheckbox($name, $value, $label, $checked, $options);
+        }
+        
+        /**
+         * Create an inline radio button input field.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @param mixed $label
+         * @param bool $checked
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function inlineRadio($name, $value = null, $label = null, $checked = null, $options = array()){
+            return \App\Html\FormBuilder::inlineRadio($name, $value, $label, $checked, $options);
+        }
+        
+        /**
+         * Create a textarea input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function textarea($name, $value = null, $options = array()){
+            return \App\Html\FormBuilder::textarea($name, $value, $options);
+        }
+        
+        /**
+         * Create a plain textarea input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function plainTextarea($name, $value = null, $options = array()){
+            return \App\Html\FormBuilder::plainTextarea($name, $value, $options);
+        }
+        
+        /**
+         * Create a button element.
+         *
+         * @param string $value
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function button($value = null, $options = array()){
+            return \App\Html\FormBuilder::button($value, $options);
+        }
+        
+        /**
          * Open up a new HTML form.
          *
          * @param array $options
@@ -11850,7 +12037,8 @@ namespace {
          * @static 
          */
         public static function open($options = array()){
-            return \Collective\Html\FormBuilder::open($options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::open($options);
         }
         
         /**
@@ -11862,7 +12050,8 @@ namespace {
          * @static 
          */
         public static function model($model, $options = array()){
-            return \Collective\Html\FormBuilder::model($model, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::model($model, $options);
         }
         
         /**
@@ -11873,7 +12062,8 @@ namespace {
          * @static 
          */
         public static function setModel($model){
-            \Collective\Html\FormBuilder::setModel($model);
+            //Method inherited from \Collective\Html\FormBuilder            
+            \App\Html\FormBuilder::setModel($model);
         }
         
         /**
@@ -11883,7 +12073,8 @@ namespace {
          * @static 
          */
         public static function close(){
-            return \Collective\Html\FormBuilder::close();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::close();
         }
         
         /**
@@ -11893,7 +12084,8 @@ namespace {
          * @static 
          */
         public static function token(){
-            return \Collective\Html\FormBuilder::token();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::token();
         }
         
         /**
@@ -11907,21 +12099,8 @@ namespace {
          * @static 
          */
         public static function label($name, $value = null, $options = array(), $escape_html = true){
-            return \Collective\Html\FormBuilder::label($name, $value, $options, $escape_html);
-        }
-        
-        /**
-         * Create a form input field.
-         *
-         * @param string $type
-         * @param string $name
-         * @param string $value
-         * @param array $options
-         * @return \Illuminate\Support\HtmlString 
-         * @static 
-         */
-        public static function input($type, $name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::input($type, $name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::label($name, $value, $options, $escape_html);
         }
         
         /**
@@ -11934,7 +12113,8 @@ namespace {
          * @static 
          */
         public static function text($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::text($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::text($name, $value, $options);
         }
         
         /**
@@ -11946,7 +12126,8 @@ namespace {
          * @static 
          */
         public static function password($name, $options = array()){
-            return \Collective\Html\FormBuilder::password($name, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::password($name, $options);
         }
         
         /**
@@ -11959,7 +12140,8 @@ namespace {
          * @static 
          */
         public static function hidden($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::hidden($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::hidden($name, $value, $options);
         }
         
         /**
@@ -11972,7 +12154,8 @@ namespace {
          * @static 
          */
         public static function email($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::email($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::email($name, $value, $options);
         }
         
         /**
@@ -11985,7 +12168,8 @@ namespace {
          * @static 
          */
         public static function tel($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::tel($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::tel($name, $value, $options);
         }
         
         /**
@@ -11998,7 +12182,8 @@ namespace {
          * @static 
          */
         public static function number($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::number($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::number($name, $value, $options);
         }
         
         /**
@@ -12011,7 +12196,8 @@ namespace {
          * @static 
          */
         public static function date($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::date($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::date($name, $value, $options);
         }
         
         /**
@@ -12024,7 +12210,8 @@ namespace {
          * @static 
          */
         public static function datetime($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::datetime($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::datetime($name, $value, $options);
         }
         
         /**
@@ -12037,7 +12224,8 @@ namespace {
          * @static 
          */
         public static function datetimeLocal($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::datetimeLocal($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::datetimeLocal($name, $value, $options);
         }
         
         /**
@@ -12050,7 +12238,8 @@ namespace {
          * @static 
          */
         public static function time($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::time($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::time($name, $value, $options);
         }
         
         /**
@@ -12063,7 +12252,8 @@ namespace {
          * @static 
          */
         public static function url($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::url($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::url($name, $value, $options);
         }
         
         /**
@@ -12075,34 +12265,8 @@ namespace {
          * @static 
          */
         public static function file($name, $options = array()){
-            return \Collective\Html\FormBuilder::file($name, $options);
-        }
-        
-        /**
-         * Create a textarea input field.
-         *
-         * @param string $name
-         * @param string $value
-         * @param array $options
-         * @return \Illuminate\Support\HtmlString 
-         * @static 
-         */
-        public static function textarea($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::textarea($name, $value, $options);
-        }
-        
-        /**
-         * Create a select box field.
-         *
-         * @param string $name
-         * @param array $list
-         * @param string $selected
-         * @param array $options
-         * @return \Illuminate\Support\HtmlString 
-         * @static 
-         */
-        public static function select($name, $list = array(), $selected = null, $options = array()){
-            return \Collective\Html\FormBuilder::select($name, $list, $selected, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::file($name, $options);
         }
         
         /**
@@ -12117,7 +12281,8 @@ namespace {
          * @static 
          */
         public static function selectRange($name, $begin, $end, $selected = null, $options = array()){
-            return \Collective\Html\FormBuilder::selectRange($name, $begin, $end, $selected, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::selectRange($name, $begin, $end, $selected, $options);
         }
         
         /**
@@ -12132,7 +12297,8 @@ namespace {
          * @static 
          */
         public static function selectYear(){
-            return \Collective\Html\FormBuilder::selectYear();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::selectYear();
         }
         
         /**
@@ -12146,7 +12312,8 @@ namespace {
          * @static 
          */
         public static function selectMonth($name, $selected = null, $options = array(), $format = '%B'){
-            return \Collective\Html\FormBuilder::selectMonth($name, $selected, $options, $format);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::selectMonth($name, $selected, $options, $format);
         }
         
         /**
@@ -12159,35 +12326,8 @@ namespace {
          * @static 
          */
         public static function getSelectOption($display, $value, $selected){
-            return \Collective\Html\FormBuilder::getSelectOption($display, $value, $selected);
-        }
-        
-        /**
-         * Create a checkbox input field.
-         *
-         * @param string $name
-         * @param mixed $value
-         * @param bool $checked
-         * @param array $options
-         * @return \Illuminate\Support\HtmlString 
-         * @static 
-         */
-        public static function checkbox($name, $value = 1, $checked = null, $options = array()){
-            return \Collective\Html\FormBuilder::checkbox($name, $value, $checked, $options);
-        }
-        
-        /**
-         * Create a radio button input field.
-         *
-         * @param string $name
-         * @param mixed $value
-         * @param bool $checked
-         * @param array $options
-         * @return \Illuminate\Support\HtmlString 
-         * @static 
-         */
-        public static function radio($name, $value = null, $checked = null, $options = array()){
-            return \Collective\Html\FormBuilder::radio($name, $value, $checked, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::getSelectOption($display, $value, $selected);
         }
         
         /**
@@ -12199,7 +12339,8 @@ namespace {
          * @static 
          */
         public static function reset($value, $attributes = array()){
-            return \Collective\Html\FormBuilder::reset($value, $attributes);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::reset($value, $attributes);
         }
         
         /**
@@ -12212,7 +12353,8 @@ namespace {
          * @static 
          */
         public static function image($url, $name = null, $attributes = array()){
-            return \Collective\Html\FormBuilder::image($url, $name, $attributes);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::image($url, $name, $attributes);
         }
         
         /**
@@ -12225,7 +12367,8 @@ namespace {
          * @static 
          */
         public static function color($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::color($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::color($name, $value, $options);
         }
         
         /**
@@ -12237,19 +12380,8 @@ namespace {
          * @static 
          */
         public static function submit($value = null, $options = array()){
-            return \Collective\Html\FormBuilder::submit($value, $options);
-        }
-        
-        /**
-         * Create a button element.
-         *
-         * @param string $value
-         * @param array $options
-         * @return \Illuminate\Support\HtmlString 
-         * @static 
-         */
-        public static function button($value = null, $options = array()){
-            return \Collective\Html\FormBuilder::button($value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::submit($value, $options);
         }
         
         /**
@@ -12261,7 +12393,8 @@ namespace {
          * @static 
          */
         public static function getIdAttribute($name, $attributes){
-            return \Collective\Html\FormBuilder::getIdAttribute($name, $attributes);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::getIdAttribute($name, $attributes);
         }
         
         /**
@@ -12273,7 +12406,8 @@ namespace {
          * @static 
          */
         public static function getValueAttribute($name, $value = null){
-            return \Collective\Html\FormBuilder::getValueAttribute($name, $value);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::getValueAttribute($name, $value);
         }
         
         /**
@@ -12284,7 +12418,8 @@ namespace {
          * @static 
          */
         public static function old($name){
-            return \Collective\Html\FormBuilder::old($name);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::old($name);
         }
         
         /**
@@ -12294,7 +12429,8 @@ namespace {
          * @static 
          */
         public static function oldInputIsEmpty(){
-            return \Collective\Html\FormBuilder::oldInputIsEmpty();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::oldInputIsEmpty();
         }
         
         /**
@@ -12304,7 +12440,8 @@ namespace {
          * @static 
          */
         public static function getSessionStore(){
-            return \Collective\Html\FormBuilder::getSessionStore();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::getSessionStore();
         }
         
         /**
@@ -12315,7 +12452,8 @@ namespace {
          * @static 
          */
         public static function setSessionStore($session){
-            return \Collective\Html\FormBuilder::setSessionStore($session);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::setSessionStore($session);
         }
         
         /**
@@ -12327,7 +12465,8 @@ namespace {
          * @static 
          */
         public static function macro($name, $macro){
-            \Collective\Html\FormBuilder::macro($name, $macro);
+            //Method inherited from \Collective\Html\FormBuilder            
+            \App\Html\FormBuilder::macro($name, $macro);
         }
         
         /**
@@ -12338,7 +12477,8 @@ namespace {
          * @static 
          */
         public static function hasMacro($name){
-            return \Collective\Html\FormBuilder::hasMacro($name);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::hasMacro($name);
         }
         
         /**
@@ -12351,7 +12491,8 @@ namespace {
          * @static 
          */
         public static function macroCall($method, $parameters){
-            return \Collective\Html\FormBuilder::macroCall($method, $parameters);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::macroCall($method, $parameters);
         }
         
         /**
@@ -12364,7 +12505,8 @@ namespace {
          * @static 
          */
         public static function component($name, $view, $signature){
-            \Collective\Html\FormBuilder::component($name, $view, $signature);
+            //Method inherited from \Collective\Html\FormBuilder            
+            \App\Html\FormBuilder::component($name, $view, $signature);
         }
         
         /**
@@ -12375,7 +12517,8 @@ namespace {
          * @static 
          */
         public static function hasComponent($name){
-            return \Collective\Html\FormBuilder::hasComponent($name);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::hasComponent($name);
         }
         
         /**
@@ -12388,7 +12531,8 @@ namespace {
          * @static 
          */
         public static function componentCall($method, $parameters){
-            return \Collective\Html\FormBuilder::componentCall($method, $parameters);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::componentCall($method, $parameters);
         }
         
     }
@@ -12838,6 +12982,71 @@ namespace {
          */
         public static function getDomain(){
             return \Xinax\LaravelGettext\LaravelGettext::getDomain();
+        }
+        
+        /**
+         * Translates a message with the current handler
+         *
+         * @param $message
+         * @return string 
+         * @static 
+         */
+        public static function translate($message){
+            return \Xinax\LaravelGettext\LaravelGettext::translate($message);
+        }
+        
+        /**
+         * Translates a plural string with the current handler
+         *
+         * @param $singular
+         * @param $plural
+         * @param $count
+         * @return string 
+         * @static 
+         */
+        public static function translatePlural($singular, $plural, $count){
+            return \Xinax\LaravelGettext\LaravelGettext::translatePlural($singular, $plural, $count);
+        }
+        
+        /**
+         * Returns the translator.
+         *
+         * @return \Xinax\LaravelGettext\TranslatorInterface 
+         * @static 
+         */
+        public static function getTranslator(){
+            return \Xinax\LaravelGettext\LaravelGettext::getTranslator();
+        }
+        
+        /**
+         * Sets the translator
+         *
+         * @param \Xinax\LaravelGettext\TranslatorInterface $translator
+         * @return $this 
+         * @static 
+         */
+        public static function setTranslator($translator){
+            return \Xinax\LaravelGettext\LaravelGettext::setTranslator($translator);
+        }
+        
+        /**
+         * Returns supported locales
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getSupportedLocales(){
+            return \Xinax\LaravelGettext\LaravelGettext::getSupportedLocales();
+        }
+        
+        /**
+         * Indicates if given locale is supported
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isLocaleSupported($locale){
+            return \Xinax\LaravelGettext\LaravelGettext::isLocaleSupported($locale);
         }
         
     }

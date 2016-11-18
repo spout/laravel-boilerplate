@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2016-10-08.
+    * Generated on 2016-10-29.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -46,7 +46,6 @@ namespace PHPSTORM_META {
             'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
             'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'Adapters/AdapterInterface' instanceof \Xinax\LaravelGettext\Adapters\LaravelAdapter,
-            'laravel-gettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
             'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
@@ -131,7 +130,7 @@ namespace PHPSTORM_META {
             'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'html' instanceof \Collective\Html\HtmlBuilder,
-            'form' instanceof \Collective\Html\FormBuilder,
+            'form' instanceof \App\Html\FormBuilder,
         ],
         \Illuminate\Contracts\Container\Container::make('') => [
             '' == '@',
@@ -170,7 +169,6 @@ namespace PHPSTORM_META {
             'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
             'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'Adapters/AdapterInterface' instanceof \Xinax\LaravelGettext\Adapters\LaravelAdapter,
-            'laravel-gettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
             'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
@@ -255,7 +253,7 @@ namespace PHPSTORM_META {
             'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'html' instanceof \Collective\Html\HtmlBuilder,
-            'form' instanceof \Collective\Html\FormBuilder,
+            'form' instanceof \App\Html\FormBuilder,
         ],
         \App::make('') => [
             '' == '@',
@@ -294,7 +292,6 @@ namespace PHPSTORM_META {
             'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
             'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'Adapters/AdapterInterface' instanceof \Xinax\LaravelGettext\Adapters\LaravelAdapter,
-            'laravel-gettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
             'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
@@ -379,7 +376,7 @@ namespace PHPSTORM_META {
             'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'html' instanceof \Collective\Html\HtmlBuilder,
-            'form' instanceof \Collective\Html\FormBuilder,
+            'form' instanceof \App\Html\FormBuilder,
         ],
         \app('') => [
             '' == '@',
@@ -418,7 +415,6 @@ namespace PHPSTORM_META {
             'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
             'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'Adapters/AdapterInterface' instanceof \Xinax\LaravelGettext\Adapters\LaravelAdapter,
-            'laravel-gettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
             'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
@@ -503,7 +499,7 @@ namespace PHPSTORM_META {
             'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'html' instanceof \Collective\Html\HtmlBuilder,
-            'form' instanceof \Collective\Html\FormBuilder,
+            'form' instanceof \App\Html\FormBuilder,
         ],
     ];
 }

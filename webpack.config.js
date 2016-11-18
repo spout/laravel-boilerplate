@@ -1,13 +1,16 @@
+/* global require */
+/* global __dirname */
+
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        app: "./resources/assets/js/app.js",
-        admin: "./resources/assets/js/admin.js"
+        app: __dirname + "/resources/assets/js/app.js",
+        admin: __dirname + "/resources/assets/js/admin.js"
     },
     output: {
-        path: './public/build',
+        path: __dirname + '/public/build',
         filename: "[name].js",
         chunkFilename: "[id].js"
     },
@@ -16,6 +19,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract("style", "css!sass")
             },
             {
                 test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,

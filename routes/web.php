@@ -19,16 +19,30 @@ Route::get('/', 'PagesController@show');
 Route::get('/home', 'HomeController@index');
 Auth::routes();
 
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('/', 'BlogController@index');
+});
+
+Route::get('datatables', ['uses' => 'DatatablesController@getIndex', 'as' => 'datatables']);
+Route::get('datatables/{data}', ['uses' => 'DatatablesController@anyData', 'as' => 'datatables.data']);
+
+//Route::controller('datatables', 'DatatablesController', [
+//    'anyData'  => 'datatables.data',
+//    'getIndex' => 'datatables',
+//]);
+
 Route::group(['prefix' => 'pages'], function () {
     Route::get('{slug}', 'PagesController@show');
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
-    Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+    Route::get('/', 'DashboardController@index')->name('admin.dashboard.index');
+    Route::get('/file-manager', 'FileManagerController@index')->name('admin.file_manager.index');
     //Route::group(['prefix' => 'blog'], function () {
     //    Route::get('/', 'BlogController@index');
     //});
 
+    Route::get('contents/datatables', ['uses' => 'ContentsController@datatables', 'as' => 'admin.contents.datatables']);
     Route::resource('contents', 'ContentsController', [
         'names' => [
             'store' => 'admin.contents.store',
@@ -53,6 +67,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
+    Route::resource('categories', 'CategoriesController', [
+        'names' => [
+            'store' => 'admin.categories.store',
+            'index' => 'admin.categories.index',
+            'create' => 'admin.categories.create',
+            'destroy' => 'admin.categories.destroy',
+            'update' => 'admin.categories.update',
+            'show' => 'admin.categories.show',
+            'edit' => 'admin.categories.edit',
+        ]
+    ]);
+
     Route::resource('menus', 'MenusController', [
         'names' => [
             'store' => 'admin.menus.store',
@@ -65,6 +91,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
+    Route::get('users/datatables', ['uses' => 'UsersController@datatables', 'as' => 'admin.users.datatables']);
     Route::resource('users', 'UsersController', [
         'names' => [
             'store' => 'admin.users.store',

@@ -4,7 +4,6 @@
 
 @section('content')
     @include('includes.crud.index', [
-        'prefix' => 'admin.blog',
         'cols' => [
             '__toString' => __("Title"),
             //'content' => __("Content"),

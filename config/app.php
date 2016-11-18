@@ -78,7 +78,7 @@ return [
     */
 
     'locale' => 'en',
-    'locales' => ['en' => 'English', 'fr' => 'French'],
+    'locales' => ['fr' => 'Français', 'en' => 'English'],
 
     /*
     |--------------------------------------------------------------------------
@@ -178,12 +178,15 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ObserverServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
 
         //Collective\Html\HtmlServiceProvider::class,
         App\Providers\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Xinax\LaravelGettext\LaravelGettextServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
     ],
 
     /*
@@ -234,6 +237,7 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
     ],
 
 ];

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Crud;
+namespace App\Http\Controllers\Traits\Crud;
 
 trait IndexTrait
 {
@@ -15,7 +15,8 @@ trait IndexTrait
     public function index()
     {
         $model = static::$model;
+        $resourcePrefix = static::$resourcePrefix;
         $objectList = $model::paginate($this->paginate['perPage']);
-        return view(sprintf('%s.index', $this->viewPath()), compact('objectList'));
+        return view(sprintf('%s.index', $this->viewPath()), compact('objectList', 'resourcePrefix'));
     }
 }

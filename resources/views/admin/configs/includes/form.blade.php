@@ -5,15 +5,13 @@
     'method' => empty($object->key) ? 'POST' : 'PUT'
 ]) !!}
 
-<div class="form-group">
-    {!! Form::label('key', __('Key'), ['class' => 'control-label']) !!}
-    {!! Form::text('key', null, ['class' => 'form-control']) !!}
-</div>
+{!! Form::openGroup('key', __('Key')) !!}
+{!! Form::text('key') !!}
+{!! Form::closeGroup() !!}
 
-<div class="form-group">
-    {!! Form::label('value', __('Value'), ['class' => 'control-label']) !!}
-    {!! Form::textarea('value', null, ['class' => 'form-control', 'data-editor' => 'json']) !!}
-</div>
+{!! Form::openGroup('value', __('Value')) !!}
+{!! Form::textarea('value', null, ['data-editor' => 'json']) !!}
+{!! Form::closeGroup() !!}
 
 {!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
 

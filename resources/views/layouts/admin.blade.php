@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
+    @stack('styles')
     <link href="{{ asset('build/admin.css') }}" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -17,7 +18,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ route('admin.dashboard') }}">{{ __("Admin") }}</a>
+            <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">{{ __("Admin") }}</a>
         </div>
     </div>
 </nav>
@@ -27,9 +28,11 @@
             <?php
             $navs = [
                 ['title' => __("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
+                ['title' => __("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
+                ['title' => __("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
                 ['title' => __("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
                 ['title' => __("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
-                ['title' => __("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
+                ['title' => __("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file_manager.index'],
                 ['title' => __("Configs"), 'icon' => 'cogs', 'route' => 'admin.configs.index'],
             ];
             ?>

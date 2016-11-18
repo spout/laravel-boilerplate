@@ -1,20 +1,9 @@
 <?php
 namespace App\Models;
 
+use App\Models\Traits\CommonTrait;
+
 class Model extends \Illuminate\Database\Eloquent\Model
 {
-    /**
-     * Common primaryKey accessor
-     *
-     * @return mixed
-     */
-    public function getPkAttribute()
-    {
-        return $this->{$this->primaryKey};
-    }
-
-    public function getAbsoluteUrlAttribute()
-    {
-        return '#';
-    }
+    use CommonTrait;
 }

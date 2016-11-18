@@ -1,3 +1,4 @@
+@include('includes.ace-editor')
 @include('includes.validation-errors')
 
 {!! Form::model($object, [
@@ -5,15 +6,17 @@
     'method' => empty($object->id) ? 'POST' : 'PUT'
 ]) !!}
 
-<div class="form-group">
-    {!! Form::label('title', __('Title'), ['class' => 'control-label']) !!}
-    {!! Form::text('title', null, ['class' => 'form-control']) !!}
-</div>
+{!! Form::openGroup('title', __('Title')) !!}
+{!! Form::text('title') !!}
+{!! Form::closeGroup() !!}
 
-<div class="form-group">
-    {!! Form::label('content', __('Content'), ['class' => 'control-label']) !!}
-    {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
-</div>
+{!! Form::openGroup('category_id', __('Category')) !!}
+{!! Form::select('category_id', $categories, null, ['placeholder' => '-']) !!}
+{!! Form::closeGroup() !!}
+
+{!! Form::openGroup('content', __('Content')) !!}
+{!! Form::textarea('content', null, ['data-editor' => 'html']) !!}
+{!! Form::closeGroup() !!}
 
 {!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
 

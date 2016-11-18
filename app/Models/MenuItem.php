@@ -24,6 +24,6 @@ class MenuItem extends Model
 
     public function menu()
     {
-        return $this->belongsTo('App\Models\Menu');
+        return $this->belongsTo(Menu::class);
     }
 }

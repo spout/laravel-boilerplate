@@ -8,6 +8,7 @@ use App\Models\Post;
 class MenusController extends AdminController
 {
     protected static $model = Menu::class;
+    protected static $resourcePrefix = 'admin.menus';
 
     public function edit($id)
     {

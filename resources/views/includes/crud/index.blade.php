@@ -22,7 +22,7 @@
                                 @include('includes.crud.actions')
                             @else
                                 @if ($col == '__toString')
-                                    <a href="{{ $object->absoluteUrl }}">{{ $object }}</a>
+                                    {{ $object }}
                                 @else
                                     {{ $object->{$col} }}
                                 @endif

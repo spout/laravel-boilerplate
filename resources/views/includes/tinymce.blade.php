@@ -1,9 +1,9 @@
 @push('scripts')
 <?php
-$lang = $this->request->params['lang'];
+$lang = \App::getLocale();
 $languageUrl = sprintf('/js/tinymce/langs/%s_%s.js', $lang, strtoupper($lang));
-$elFinderUrl = $this->request->webroot . 'elfinder/?' . http_build_query([
-    'lang' => $this->request->param('lang'),
+$elFinderUrl = '/elfinder/?' . http_build_query([
+    'lang' => $lang,
     'optionsCallback' => 'elFinderOptionsCallback()'
 ]);
 ?>
@@ -12,9 +12,9 @@ $elFinderUrl = $this->request->webroot . 'elfinder/?' . http_build_query([
     tinymce.init({
         selector: 'textarea.wysiwyg',
         height: "200",
-        <?php if($lang != 'en'): ?>
+        <?php /*if($lang != 'en'): ?>
         language_url: '<?php echo $languageUrl; ?>',
-        <?php endif; ?>
+        <?php endif;*/ ?>
         plugins: [
             'advlist autolink lists link image charmap print preview anchor',
             'searchreplace visualblocks code fullscreen',

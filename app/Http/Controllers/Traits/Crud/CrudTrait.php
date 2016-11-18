@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Crud;
+namespace App\Http\Controllers\Traits\Crud;
 
 trait CrudTrait
 {

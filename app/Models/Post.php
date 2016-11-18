@@ -5,8 +5,14 @@ class Post extends Model
 {
     protected $fillable = [
         'title',
+        'category_id',
         'content',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     public function __toString()
     {
@@ -15,7 +21,7 @@ class Post extends Model
 
     public function getAbsoluteUrlAttribute()
     {
-        //return route('blog.show', ['id' => $this->id]);
+        //return route('blog.show', ['blog' => $this->id]);
         return '#';
     }
 }
