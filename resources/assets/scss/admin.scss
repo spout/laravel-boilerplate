@@ -2,5 +2,11 @@
 @import "~font-awesome/css/font-awesome.min.css";
 
 body {
-    padding-top: 70px;
+  padding-top: 70px;
+}
+
+iframe.elfinder {
+  width: 100%;
+  height: 420px;
+  border: 0;
 }

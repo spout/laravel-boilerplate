@@ -5,6 +5,6 @@ class FileManagerController extends AdminController
 {
     public function index()
     {
-        return view('admin.file_manager.index');
+        return view('admin.fileManager.index');
     }
 }

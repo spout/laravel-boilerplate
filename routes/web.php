@@ -114,17 +114,4 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     ]);
 });
 
-/**
- * Define elFinder routes here before catch all /{slug} below
- */
-Route::group(['namespace' => 'Barryvdh\Elfinder', 'prefix' => 'elfinder'], function () {
-    Route::get('/', 'ElfinderController@showIndex');
-    Route::any('connector', ['as' => 'elfinder.connector', 'uses' => 'ElfinderController@showConnector']);
-    Route::get('popup/{input_id}', ['as' => 'elfinder.popup', 'uses' => 'ElfinderController@showPopup']);
-    Route::get('filepicker/{input_id}', ['as' => 'elfinder.filepicker', 'uses' => 'ElfinderController@showFilePicker']);
-    Route::get('tinymce', ['as' => 'elfinder.tinymce', 'uses' => 'ElfinderController@showTinyMCE']);
-    Route::get('tinymce4', ['as' => 'elfinder.tinymce4', 'uses' => 'ElfinderController@showTinyMCE4']);
-    Route::get('ckeditor', ['as' => 'elfinder.ckeditor', 'uses' => 'ElfinderController@showCKeditor4']);
-});
-
-Route::get('/{slug}', 'ContentsController@show')->where('slug', '[a-z0-9-]+');
+Route::get('/{slug}', 'ContentsController@show')->where('slug', '(?!elfinder\b)\b[a-z0-9-]+');
