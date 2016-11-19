@@ -20,7 +20,8 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 
 Route::group(['prefix' => 'blog'], function () {
-    Route::get('/', 'BlogController@index');
+    Route::get('/', 'BlogController@index')->name('blog.index');
+    Route::get('/{pk}-{slug}', 'BlogController@show')->name('blog.show');
 });
 
 Route::get('datatables', ['uses' => 'DatatablesController@getIndex', 'as' => 'datatables']);

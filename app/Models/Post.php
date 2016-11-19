@@ -3,11 +3,7 @@ namespace App\Models;
 
 class Post extends Model
 {
-    protected $fillable = [
-        'title',
-        'category_id',
-        'content',
-    ];
+    protected $guarded = ['created_at', 'updated_at'];
 
     public function category()
     {
@@ -21,7 +17,6 @@ class Post extends Model
 
     public function getAbsoluteUrlAttribute()
     {
-        //return route('blog.show', ['blog' => $this->id]);
-        return '#';
+        return route('blog.show', ['pk' => $this->pk, 'slug' => $this->slug]);
     }
 }

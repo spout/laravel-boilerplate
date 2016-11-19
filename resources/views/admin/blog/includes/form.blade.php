@@ -10,6 +10,10 @@
 {!! Form::text('title') !!}
 {!! Form::closeGroup() !!}
 
+{!! Form::openGroup('slug', __('Slug')) !!}
+{!! Form::text('slug') !!}
+{!! Form::closeGroup() !!}
+
 {!! Form::openGroup('category_id', __('Category')) !!}
 {!! Form::select('category_id', $categories, null, ['placeholder' => '-']) !!}
 {!! Form::closeGroup() !!}
