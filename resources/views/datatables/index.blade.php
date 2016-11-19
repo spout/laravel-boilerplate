@@ -14,7 +14,7 @@
     </table>
 @stop
 
-@include('includes.datatables')
+@include('includes.datatables.datatables')
 @push('scripts')
 <script>
     $(function () {

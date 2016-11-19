@@ -8,5 +8,5 @@ class CategoriesController extends AdminController
 {
     protected static $model = Category::class;
     protected static $requestClass = CategoryFormRequest::class;
-    protected static $resourcePrefix = 'categories.users';
+    protected static $resourcePrefix = 'admin.categories';
 }
