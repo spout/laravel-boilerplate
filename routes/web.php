@@ -56,6 +56,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
+    Route::get('blog/datatables', ['uses' => 'BlogController@datatables', 'as' => 'admin.blog.datatables']);
     Route::resource('blog', 'BlogController', [
         'names' => [
             'store' => 'admin.blog.store',
@@ -68,6 +69,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
+    Route::get('categories/datatables', ['uses' => 'CategoriesController@datatables', 'as' => 'admin.categories.datatables']);
     Route::resource('categories', 'CategoriesController', [
         'names' => [
             'store' => 'admin.categories.store',
@@ -80,6 +82,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
+    Route::get('menus/datatables', ['uses' => 'MenusController@datatables', 'as' => 'admin.menus.datatables']);
     Route::resource('menus', 'MenusController', [
         'names' => [
             'store' => 'admin.menus.store',
@@ -105,6 +108,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
+    Route::get('configs/datatables', ['uses' => 'ConfigsController@datatables', 'as' => 'admin.configs.datatables']);
     Route::resource('configs', 'ConfigsController', [
         'names' => [
             'store' => 'admin.configs.store',

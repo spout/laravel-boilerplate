@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Content;
 use App\Http\Controllers\Traits\DatatablesTrait;
+use App\Models\Content;
 
 class ContentsController extends AdminController
 {

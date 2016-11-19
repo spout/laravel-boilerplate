@@ -3,12 +3,12 @@
 @section('title', __("Posts"))
 
 @section('content')
-    @include('includes.crud.index', [
-        'cols' => [
-            '__toString' => __("Title"),
+    @include('includes.datatables.table', [
+        'columns' => [
+            'title' => __("Title"),
             'slug' => __("Slug"),
-            'items' => __("Items"),
             'actions' => __("Actions"),
         ],
+        'ajax' => route('admin.menus.datatables'),
     ])
 @endsection
