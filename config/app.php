@@ -187,6 +187,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Xinax\LaravelGettext\LaravelGettextServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        Barryvdh\Elfinder\ElfinderServiceProvider::class,
     ],
 
     /*

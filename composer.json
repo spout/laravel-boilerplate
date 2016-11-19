@@ -12,7 +12,8 @@
         "laracasts/flash": "^2.0",
         "barryvdh/laravel-debugbar": "^2.3",
         "xinax/laravel-gettext": "dev-master",
-        "yajra/laravel-datatables-oracle": "~6.0"
+        "yajra/laravel-datatables-oracle": "~6.0",
+        "barryvdh/laravel-elfinder": "^0.3.8"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
