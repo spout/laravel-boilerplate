@@ -8,6 +8,8 @@ class Category extends Model
         'parent_id',
     ];
 
+    public $timestamps = false;
+
     public function posts()
     {
         return $this->hasMany(Post::class);
