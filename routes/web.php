@@ -24,14 +24,6 @@ Route::group(['prefix' => 'blog'], function () {
     Route::get('/{pk}-{slug}', 'BlogController@show')->name('blog.show');
 });
 
-Route::get('datatables', ['uses' => 'DatatablesController@getIndex', 'as' => 'datatables']);
-Route::get('datatables/{data}', ['uses' => 'DatatablesController@anyData', 'as' => 'datatables.data']);
-
-//Route::controller('datatables', 'DatatablesController', [
-//    'anyData'  => 'datatables.data',
-//    'getIndex' => 'datatables',
-//]);
-
 Route::group(['prefix' => 'pages'], function () {
     Route::get('{slug}', 'PagesController@show');
 });
@@ -43,7 +35,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     //    Route::get('/', 'BlogController@index');
     //});
 
-    Route::get('contents/datatables', ['uses' => 'ContentsController@datatables', 'as' => 'admin.contents.datatables']);
+    Route::get('contents/datatables', 'ContentsController@datatables')->name('admin.contents.datatables');
     Route::resource('contents', 'ContentsController', [
         'names' => [
             'store' => 'admin.contents.store',
@@ -56,7 +48,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
-    Route::get('blog/datatables', ['uses' => 'BlogController@datatables', 'as' => 'admin.blog.datatables']);
+    Route::get('blog/datatables', 'BlogController@datatables')->name('admin.blog.datatables');
     Route::resource('blog', 'BlogController', [
         'names' => [
             'store' => 'admin.blog.store',
@@ -69,7 +61,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
-    Route::get('categories/datatables', ['uses' => 'CategoriesController@datatables', 'as' => 'admin.categories.datatables']);
+    Route::get('categories/datatables', 'CategoriesController@datatables')->name('admin.categories.datatables');
     Route::resource('categories', 'CategoriesController', [
         'names' => [
             'store' => 'admin.categories.store',
@@ -82,7 +74,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
-    Route::get('menus/datatables', ['uses' => 'MenusController@datatables', 'as' => 'admin.menus.datatables']);
+    Route::get('menus/datatables', 'MenusController@datatables')->name('admin.menus.datatables');
     Route::resource('menus', 'MenusController', [
         'names' => [
             'store' => 'admin.menus.store',
@@ -95,7 +87,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
-    Route::get('users/datatables', ['uses' => 'UsersController@datatables', 'as' => 'admin.users.datatables']);
+    Route::get('users/datatables', 'UsersController@datatables')->name('admin.users.datatables');
     Route::resource('users', 'UsersController', [
         'names' => [
             'store' => 'admin.users.store',
@@ -108,7 +100,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         ]
     ]);
 
-    Route::get('configs/datatables', ['uses' => 'ConfigsController@datatables', 'as' => 'admin.configs.datatables']);
+    Route::get('configs/datatables', 'ConfigsController@datatables')->name('admin.configs.datatables');
     Route::resource('configs', 'ConfigsController', [
         'names' => [
             'store' => 'admin.configs.store',
