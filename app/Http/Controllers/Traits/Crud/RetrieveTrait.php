@@ -12,7 +12,7 @@ trait RetrieveTrait
     public function show($id)
     {
         $model = static::$model;
-        $object = $model::find($id);
+        $object = $model::findOrFail($id);
         return view(sprintf('%s.show', $this->viewPath()), compact('object'));
     }
 }

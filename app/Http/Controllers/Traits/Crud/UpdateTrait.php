@@ -14,7 +14,7 @@ trait UpdateTrait
     public function edit($id)
     {
         $model = static::$model;
-        $object = $model::find($id);
+        $object = $model::findOrFail($id);
         return view(sprintf('%s.edit', $this->viewPath()), compact('object'));
     }
 
