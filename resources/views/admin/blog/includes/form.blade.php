@@ -23,9 +23,14 @@
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('image', __('Featured image')) !!}
-{!! Form::text('image') !!}
+<div class="input-group">
+    {!! Form::text('image') !!}
+    <div class="input-group-addon">
+        <a href="#" class="popup_selector" data-inputid="image">{{ __("Select image") }}</a>
+    </div>
+</div>
 {!! Form::closeGroup() !!}
-<a href="" class="popup_selector" data-inputid="image">Select Image</a>
+
 
 {!! Form::openGroup('content', __('Content')) !!}
 {!! Form::textarea('content', null, ['class' => 'wysiwyg']) !!}

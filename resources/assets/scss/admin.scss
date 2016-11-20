@@ -11,3 +11,26 @@ iframe.elfinder {
   height: 420px;
   border: 0;
 }
+
+
+.dataTable {
+  .sorting,
+  .sorting_asc,
+  .sorting_desc {
+    cursor: pointer;
+  }
+
+  .sorting_asc:after,
+  .sorting_desc:after {
+    font-family: 'Glyphicons Halflings';
+    float: right;
+  }
+
+  .sorting_asc:after {
+    content: "\e155";
+  }
+
+  .sorting_desc:after {
+    content: "\e156";
+  }
+}
