@@ -1,5 +1,5 @@
-@include('includes.ace-editor')
-@include('includes.validation-errors')
+@include('includes.tinymce')
+@include('includes.elfinder-standalonepopup')
 
 {!! Form::model($object, [
     'route' => empty($object->id) ? ['admin.blog.store'] : ['admin.blog.update', $object->id],
@@ -19,15 +19,16 @@
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('excerpt', __('Excerpt')) !!}
-{!! Form::textarea('excerpt') !!}
+{!! Form::textarea('excerpt', null, ['rows' => 3]) !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('image', __('Featured image')) !!}
 {!! Form::text('image') !!}
 {!! Form::closeGroup() !!}
+<a href="" class="popup_selector" data-inputid="image">Select Image</a>
 
 {!! Form::openGroup('content', __('Content')) !!}
-{!! Form::textarea('content', null, ['data-editor' => 'html']) !!}
+{!! Form::textarea('content', null, ['class' => 'wysiwyg']) !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}

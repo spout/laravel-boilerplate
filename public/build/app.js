@@ -48,11 +48,9 @@
 	window.$ = window.jQuery = __webpack_require__(1);
 	__webpack_require__(2);
 
-	// require('bootstrap/dist/css/bootstrap.min.css');
-	// require('font-awesome/css/font-awesome.min.css');
-	__webpack_require__(21);
+	__webpack_require__(28);
 
-	__webpack_require__(20);
+	__webpack_require__(27);
 
 /***/ },
 
@@ -10296,13 +10294,14 @@
 
 /***/ },
 
-/***/ 20:
+/***/ 27:
 /***/ function(module, exports) {
 
 	$(function () {
 	    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
 	    $('[data-toggle="tooltip"]').tooltip();
 	});
+
 
 	if (!String.prototype.format) {
 	    String.prototype.format = function () {
@@ -10319,7 +10318,7 @@
 
 /***/ },
 
-/***/ 21:
+/***/ 28:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

@@ -3,6 +3,7 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
+
 if (!String.prototype.format) {
     String.prototype.format = function () {
         var args;
