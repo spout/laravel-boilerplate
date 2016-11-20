@@ -3,7 +3,10 @@ namespace App\Models;
 
 class Post extends Model
 {
-    protected $guarded = ['created_at', 'updated_at'];
+    protected $guarded = [
+        'created_at',
+        'updated_at'
+    ];
 
     public function category()
     {

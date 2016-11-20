@@ -15,7 +15,15 @@
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('category_id', __('Category')) !!}
-{!! Form::select('category_id', $categories, null, ['placeholder' => '-']) !!}
+{!! Form::select('category_id', $categoryList, null, ['placeholder' => '-']) !!}
+{!! Form::closeGroup() !!}
+
+{!! Form::openGroup('excerpt', __('Excerpt')) !!}
+{!! Form::textarea('excerpt') !!}
+{!! Form::closeGroup() !!}
+
+{!! Form::openGroup('image', __('Featured image')) !!}
+{!! Form::text('image') !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('content', __('Content')) !!}

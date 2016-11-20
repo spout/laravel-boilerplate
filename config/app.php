@@ -180,6 +180,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ObserverServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
 
         //Collective\Html\HtmlServiceProvider::class,
         App\Providers\HtmlServiceProvider::class,

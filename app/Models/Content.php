@@ -7,11 +7,9 @@ class Content extends Model
 {
     use TranslatableTrait;
 
-    protected $fillable = [
-        'title',
-        'slug',
-        'path',
-        'content',
+    protected $guarded = [
+        'created_at',
+        'updated_at',
     ];
 
     protected $translatableFields = [
