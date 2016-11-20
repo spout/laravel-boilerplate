@@ -5,7 +5,7 @@
 @section('content')
     @include('includes.datatables.table', [
         'columns' => [
-            'key' => __("Id"),
+            'key' => __("Key"),
             'actions' => __("Actions"),
         ],
         'ajax' => route('admin.configs.datatables'),

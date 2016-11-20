@@ -5,7 +5,6 @@
 @section('content')
     @include('includes.datatables.table', [
         'columns' => [
-            'id' => __("Id"),
             'title' => __("Title"),
             'slug' => __("Slug"),
             'path' => __("Path"),

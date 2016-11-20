@@ -5,7 +5,6 @@
 @section('content')
     @include('includes.datatables.table', [
         'columns' => [
-            'id' => __("Id"),
             'username' => __("Username"),
             'email' => __("Email"),
             'created_at' => __("Created"),

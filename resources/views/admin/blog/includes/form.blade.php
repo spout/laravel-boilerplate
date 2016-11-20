@@ -31,7 +31,6 @@
 </div>
 {!! Form::closeGroup() !!}
 
-
 {!! Form::openGroup('content', __('Content')) !!}
 {!! Form::textarea('content', null, ['class' => 'wysiwyg']) !!}
 {!! Form::closeGroup() !!}
