@@ -34,6 +34,7 @@
 </nav>
 <div class="container">
     @include('flash::message')
+    @include('includes.validation-errors')
     @yield('content')
 </div>
 <script src="{{ asset('build/app.js') }}"></script>

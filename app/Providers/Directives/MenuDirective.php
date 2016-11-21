@@ -20,7 +20,7 @@ class MenuDirective
                 }
             } elseif (!empty($item->route)) {
                 $route = Yaml::parse($item->route);
-                $item->url = route($route['name'], $route['parameters']);
+                $item->url = route($route['name'], empty($route['parameters']) ? [] : $route['parameters']);
             }
         }
 

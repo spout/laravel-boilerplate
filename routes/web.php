@@ -16,7 +16,9 @@
 //});
 
 Route::get('/', 'PagesController@show');
-Route::get('/home', 'HomeController@index');
+Route::get('contact', 'ContactsController@form')->name('contacts.form');
+Route::post('contact', 'ContactsController@send')->name('contacts.send');
+
 Auth::routes();
 
 Route::group(['prefix' => 'blog'], function () {
@@ -45,6 +47,19 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
             'update' => 'admin.contents.update',
             'show' => 'admin.contents.show',
             'edit' => 'admin.contents.edit',
+        ]
+    ]);
+
+    Route::get('contacts/datatables', 'ContactsController@datatables')->name('admin.contacts.datatables');
+    Route::resource('contacts', 'ContactsController', [
+        'names' => [
+            'store' => 'admin.contacts.store',
+            'index' => 'admin.contacts.index',
+            'create' => 'admin.contacts.create',
+            'destroy' => 'admin.contacts.destroy',
+            'update' => 'admin.contacts.update',
+            'show' => 'admin.contacts.show',
+            'edit' => 'admin.contacts.edit',
         ]
     ]);
 

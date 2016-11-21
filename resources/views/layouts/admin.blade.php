@@ -32,6 +32,7 @@
                 ['title' => __("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
                 ['title' => __("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
                 ['title' => __("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
+                ['title' => __("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
                 ['title' => __("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file_manager.index'],
                 ['title' => __("Configs"), 'icon' => 'cogs', 'route' => 'admin.configs.index'],
             ];
