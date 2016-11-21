@@ -11,6 +11,7 @@
             'created_at' => __("Created"),
             'updated_at' => __("Updated"),
             'actions' => __("Actions"),
+            'bulk' => __("Bulk"),
         ],
         'ajax' => route('admin.contents.datatables'),
     ])
