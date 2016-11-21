@@ -23,18 +23,25 @@
                 'association' => __("Associated page"),
                 'title' => __("Title"),
                 'url' => __("URL"),
-                //'route' => __("Route"),
+                'route' => __("Route"),
                 'sort' => __("Sort order"),
             ];
             ?>
             @foreach($fields as $field => $label)
                 {!! Form::openGroup(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), $label) !!}
                 @if ($field == 'association')
-                    {!! Form::select(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), $associations, sprintf('%s:%s', $item->model, $item->foreign_key), ['class' => 'form-control']) !!}
+                    {!! Form::select(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), $associations, sprintf('%s:%s', $item->model, $item->foreign_key)) !!}
+                @elseif ($field == 'url')
+                    <div class="input-group">
+                        <div class="input-group-addon">{{ url('/') }}</div>
+                        {!! Form::text(sprintf('menuItems[%d][%s]', $loop->parent->index, $field)) !!}
+                    </div>
                 @elseif ($field == 'route')
-                    {!! Form::textarea(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), null, ['class' => 'form-control', 'rows' => 3]) !!}
+                    {!! Form::textarea(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), null, ['rows' => 3]) !!}
+                @elseif ($field == 'sort')
+                    {!! Form::number(sprintf('menuItems[%d][%s]', $loop->parent->index, $field)) !!}
                 @else
-                    {!! Form::text(sprintf('menuItems[%d][%s]', $loop->parent->index, $field), null, ['class' => 'form-control']) !!}
+                    {!! Form::text(sprintf('menuItems[%d][%s]', $loop->parent->index, $field)) !!}
                 @endif
                 {!! Form::closeGroup() !!}
             @endforeach
