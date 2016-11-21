@@ -4,7 +4,7 @@
 
 @section('content')
     @include('includes.crud.show', [
-        'cols' => [
+        'columns' => [
             'id' => __("Id"),
             'parent_id' => __("Parent"),
             'title' => __("Title"),

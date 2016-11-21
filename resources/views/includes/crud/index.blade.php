@@ -1,10 +1,10 @@
 @include('includes.paginator-counter', ['results' => $objectList])
 
 <table class="table table-striped">
-    @if (isset($cols))
+    @if (isset($columns))
         <thead>
             <tr>
-                @foreach ($cols as $col => $label)
+                @foreach ($columns as $column => $label)
                     <th>{{ $label }}</th>
                 @endforeach
             </tr>
@@ -13,18 +13,18 @@
     <tbody>
         @foreach ($objectList as $object)
             <tr>
-                @foreach ($cols as $col => $label)
+                @foreach ($columns as $column => $label)
                     <td>
-                        @if (View::exists(sprintf('%s.includes.cols.%s', $resourcePrefix, $col)))
-                            @include(sprintf('%s.includes.cols.%s', $resourcePrefix, $col))
+                        @if (View::exists(sprintf('%s.includes.columns.%s', $resourcePrefix, $column)))
+                            @include(sprintf('%s.includes.columns.%s', $resourcePrefix, $column))
                         @else
-                            @if ($col == 'actions')
+                            @if ($column == 'actions')
                                 @include('includes.crud.actions')
                             @else
-                                @if ($col == '__toString')
+                                @if ($column == '__toString')
                                     {{ $object }}
                                 @else
-                                    {{ $object->{$col} }}
+                                    {{ $object->{$column} }}
                                 @endif
                             @endif
                         @endif

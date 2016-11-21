@@ -1,8 +1,8 @@
 <dl class="dl-horizontal">
-    @if (!empty($cols))
-        @foreach ($cols as $col => $label)
+    @if (!empty($columns))
+        @foreach ($columns as $column => $label)
             <dt>{{ $label }}</dt>
-            <dd>{{ $object->{$col} }}</dd>
+            <dd>{{ $object->{$column} }}</dd>
         @endforeach
     @else
         @foreach ($object['attributes'] as $attribute => $value)
