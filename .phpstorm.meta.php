@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2016-11-19.
+    * Generated on 2016-11-22.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -60,6 +60,7 @@ namespace PHPSTORM_META {
             'excel' instanceof \Maatwebsite\Excel\Excel,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'datatables.fractal' instanceof \League\Fractal\Manager,
+            'command.elfinder.publish' instanceof \Barryvdh\Elfinder\Console\PublishCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
@@ -193,6 +194,7 @@ namespace PHPSTORM_META {
             'excel' instanceof \Maatwebsite\Excel\Excel,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'datatables.fractal' instanceof \League\Fractal\Manager,
+            'command.elfinder.publish' instanceof \Barryvdh\Elfinder\Console\PublishCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
@@ -326,6 +328,7 @@ namespace PHPSTORM_META {
             'excel' instanceof \Maatwebsite\Excel\Excel,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'datatables.fractal' instanceof \League\Fractal\Manager,
+            'command.elfinder.publish' instanceof \Barryvdh\Elfinder\Console\PublishCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
@@ -459,6 +462,7 @@ namespace PHPSTORM_META {
             'excel' instanceof \Maatwebsite\Excel\Excel,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'datatables.fractal' instanceof \League\Fractal\Manager,
+            'command.elfinder.publish' instanceof \Barryvdh\Elfinder\Console\PublishCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
