@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title')</title>
+    <title>@yield('title') :: {{ __("Administration") }}</title>
 
     @stack('styles')
     <link href="{{ asset('build/admin.css') }}" rel="stylesheet">
@@ -18,7 +18,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">{{ __("Admin") }}</a>
+            <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">{{ __("Administration") }}</a>
         </div>
     </div>
 </nav>
