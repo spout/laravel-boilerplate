@@ -14,10 +14,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::get('/', 'PagesController@show');
 
+    Auth::routes();
+
     Route::get('contact', 'ContactsController@form')->name('contacts.form');
     Route::post('contact', 'ContactsController@send')->name('contacts.send');
-
-    Auth::routes();
 
     Route::group(['prefix' => 'blog'], function () {
         Route::get('/', 'BlogController@index')->name('blog.index');
