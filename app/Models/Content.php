@@ -28,4 +28,9 @@ class Content extends Model
     {
         return '#';
     }
+
+    public static function bulkActive($bulk)
+    {
+        return self::whereIn('id', $bulk)->update(['active' => true]);
+    }
 }

@@ -33,6 +33,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('/file-manager', 'FileManagerController@index')->name('admin.file_manager.index');
 
         Route::get('contents/datatables', 'ContentsController@datatables')->name('admin.contents.datatables');
+        Route::post('contents/bulk', 'ContentsController@bulk')->name('admin.contents.bulk');
         Route::resource('contents', 'ContentsController', [
             'names' => [
                 'store' => 'admin.contents.store',

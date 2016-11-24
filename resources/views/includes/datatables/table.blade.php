@@ -1,4 +1,7 @@
-{!! Form::open() !!}
+@if (!empty($columns['bulk']))
+    {!! Form::open(['route' => sprintf('%s.bulk', $resourcePrefix)]) !!}
+@endif
+
 <table class="table table-bordered table-condensed" id="contents-table">
     <thead>
     <tr>
@@ -8,8 +11,17 @@
     </tr>
     </thead>
 </table>
-{!! Form::submit(__('Bulk'), ['class' => 'btn btn-primary']) !!}
-{!! Form::close() !!}
+
+@if (!empty($columns['bulk']))
+    {{--<div class="input-group">--}}
+        {{--{!! Form::select('action', ['' => '-', 'active' => __("Make active")]) !!}--}}
+        {{--<span class="input-group-btn">--}}
+            {{--<button class="btn btn-default btn-xs" type="submit">{{ __("Submit") }}</button>--}}
+        {{--</span>--}}
+    {{--</div>--}}
+
+    {!! Form::close() !!}
+@endif
 
 @include('includes.datatables.assets')
 

@@ -1,1 +1,1 @@
-{{ Form::checkbox(sprintf('bulk[%s]', $object->pk)) }}
+{{ Form::checkbox('bulk[]', $object->pk) }}
