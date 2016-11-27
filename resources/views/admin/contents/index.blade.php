@@ -13,6 +13,9 @@
             'actions' => __("Actions"),
             'bulk' => __("Bulk"),
         ],
+        'bulkActions' => [
+            'active' => __("Make active"),
+        ],
         'ajax' => route('admin.contents.datatables'),
     ])
 @endsection

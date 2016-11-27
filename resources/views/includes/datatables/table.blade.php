@@ -12,13 +12,17 @@
     </thead>
 </table>
 
-@if (!empty($columns['bulk']))
-    {{--<div class="input-group">--}}
-        {{--{!! Form::select('action', ['' => '-', 'active' => __("Make active")]) !!}--}}
-        {{--<span class="input-group-btn">--}}
-            {{--<button class="btn btn-default btn-xs" type="submit">{{ __("Submit") }}</button>--}}
-        {{--</span>--}}
-    {{--</div>--}}
+@if (!empty($columns['bulk']) && !empty($bulkActions))
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="input-group">
+                {!! Form::select('action', ['' => '-'] + $bulkActions) !!}
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-xs" type="submit">{{ __("Submit") }}</button>
+                </span>
+            </div>
+        </div>
+    </div>
 
     {!! Form::close() !!}
 @endif
