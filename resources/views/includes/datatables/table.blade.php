@@ -6,7 +6,11 @@
     <thead>
     <tr>
         @foreach($columns as $column => $label)
-            <th>{{ $label }}</th>
+            @if ($column == 'bulk')
+                <th>{!! Form::checkbox('bulk_all', 1, null, ['data-check-all' => true, 'data-target' => '.bulk-checkbox']) !!}</th>
+            @else
+                <th>{{ $label }}</th>
+            @endif
         @endforeach
     </tr>
     </thead>

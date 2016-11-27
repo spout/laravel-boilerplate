@@ -1,1 +1,1 @@
-{{ Form::checkbox('bulk[]', $object->pk) }}
+{{ Form::checkbox('bulk[]', $object->pk, null, ['class' => 'bulk-checkbox']) }}

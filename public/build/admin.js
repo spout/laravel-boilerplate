@@ -55,7 +55,18 @@
 	__webpack_require__(29);
 
 	$(function () {
+	    /**
+	     * Select2
+	     */
+	    $.fn.select2.defaults.set("minimumResultsForSearch", "10");
 	    $('select').select2();
+
+	    /**
+	     * Checkboxes check all
+	     */
+	    $('input[type="checkbox"][data-check-all]').change(function () {
+	        $($(this).data('target')).prop('checked', $(this).prop('checked'));
+	    });
 	});
 
 /***/ },
