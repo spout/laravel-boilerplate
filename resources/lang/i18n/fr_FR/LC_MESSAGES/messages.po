@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2016-11-27 16:52+0100\n"
-"PO-Revision-Date: 2016-11-27 16:56+0100\n"
+"POT-Creation-Date: 2016-12-03 09:27+0000\n"
+"PO-Revision-Date: 2016-12-03 09:27+0000\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;__;gettext;_n:1,2;ngettext:1,2\n"
 "X-Poedit-Basepath: ../../../../../app\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -253,7 +253,7 @@ msgstr "Rendre actif"
 
 #: ../storage/framework/messages//547632f4310ca307e6da22a114717d83d2ac5511.php.php:1
 msgid "Update post"
-msgstr "Modifier post"
+msgstr "Modifier article"
 
 #: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:27
 msgid "Submit"
