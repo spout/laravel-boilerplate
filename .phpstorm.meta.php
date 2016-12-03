@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2016-11-22.
+    * Generated on 2016-12-03.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -61,7 +61,10 @@ namespace PHPSTORM_META {
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'datatables.fractal' instanceof \League\Fractal\Manager,
             'command.elfinder.publish' instanceof \Barryvdh\Elfinder\Console\PublishCommand,
+            'Mcamara\LaravelLocalization\LaravelLocalization' instanceof \Mcamara\LaravelLocalization\LaravelLocalization,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translator' instanceof \Illuminate\Translation\Translator,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -139,8 +142,6 @@ namespace PHPSTORM_META {
             'queue.failer' instanceof \Illuminate\Queue\Failed\DatabaseFailedJobProvider,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBrokerManager,
             'auth.password.broker' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
-            'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
         ],
         \Illuminate\Contracts\Container\Container::make('') => [
@@ -195,7 +196,10 @@ namespace PHPSTORM_META {
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'datatables.fractal' instanceof \League\Fractal\Manager,
             'command.elfinder.publish' instanceof \Barryvdh\Elfinder\Console\PublishCommand,
+            'Mcamara\LaravelLocalization\LaravelLocalization' instanceof \Mcamara\LaravelLocalization\LaravelLocalization,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translator' instanceof \Illuminate\Translation\Translator,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -273,8 +277,6 @@ namespace PHPSTORM_META {
             'queue.failer' instanceof \Illuminate\Queue\Failed\DatabaseFailedJobProvider,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBrokerManager,
             'auth.password.broker' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
-            'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
         ],
         \App::make('') => [
@@ -329,7 +331,10 @@ namespace PHPSTORM_META {
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'datatables.fractal' instanceof \League\Fractal\Manager,
             'command.elfinder.publish' instanceof \Barryvdh\Elfinder\Console\PublishCommand,
+            'Mcamara\LaravelLocalization\LaravelLocalization' instanceof \Mcamara\LaravelLocalization\LaravelLocalization,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translator' instanceof \Illuminate\Translation\Translator,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -407,8 +412,6 @@ namespace PHPSTORM_META {
             'queue.failer' instanceof \Illuminate\Queue\Failed\DatabaseFailedJobProvider,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBrokerManager,
             'auth.password.broker' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
-            'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
         ],
         \app('') => [
@@ -463,7 +466,10 @@ namespace PHPSTORM_META {
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'datatables.fractal' instanceof \League\Fractal\Manager,
             'command.elfinder.publish' instanceof \Barryvdh\Elfinder\Console\PublishCommand,
+            'Mcamara\LaravelLocalization\LaravelLocalization' instanceof \Mcamara\LaravelLocalization\LaravelLocalization,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translator' instanceof \Illuminate\Translation\Translator,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Contracts\Broadcasting\Broadcaster' instanceof \Illuminate\Broadcasting\Broadcasters\LogBroadcaster,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -541,8 +547,6 @@ namespace PHPSTORM_META {
             'queue.failer' instanceof \Illuminate\Queue\Failed\DatabaseFailedJobProvider,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBrokerManager,
             'auth.password.broker' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
-            'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
         ],
     ];
