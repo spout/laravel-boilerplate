@@ -29,4 +29,13 @@ class ContactSendFormRequest extends FormRequest
             'message' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'email.required' => __("The email is required."),
+            'subject.required' => __("The subject is required."),
+            'message.required' => __("The message is required."),
+        ];
+    }
 }

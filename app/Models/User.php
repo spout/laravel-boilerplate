@@ -9,6 +9,14 @@ class User extends Authenticatable
 {
     use Notifiable, CommonTrait;
 
+    const ROLE_ADMIN = 'admin';
+    const ROLE_MEMBER = 'member';
+
+    public static $roles = [
+        self::ROLE_ADMIN => self::ROLE_ADMIN,
+        self::ROLE_MEMBER => self::ROLE_MEMBER,
+    ];
+
     /**
      * The attributes that are mass assignable.
      *

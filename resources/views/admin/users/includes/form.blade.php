@@ -24,7 +24,7 @@
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('role', __('Role')) !!}
-{!! Form::text('role') !!}
+{!! Form::select('role', ['' => '-'] + \App\Models\User::$roles) !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
