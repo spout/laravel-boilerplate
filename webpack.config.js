@@ -25,13 +25,15 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
-                }, {
-                    loader: "css-loader" // translates CSS into CommonJS
-                }, {
-                    loader: "sass-loader" // compiles Sass to CSS
-                }]
+                loader: ExtractTextPlugin.extract({
+                    loader: [{
+                        loader: "css-loader"
+                    }, {
+                        loader: "sass-loader"
+                    }],
+                    // use style-loader in development
+                    fallbackLoader: "style-loader"
+                })
             },
             {
                 test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
