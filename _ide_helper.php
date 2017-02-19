@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.30 on 2017-02-16.
+ * Generated for Laravel 5.3.30 on 2017-02-19.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -14204,6 +14204,18 @@ namespace Mcamara\LaravelLocalization\Facades {
         public static function getSupportedLocales()
         {
             return \Mcamara\LaravelLocalization\LaravelLocalization::getSupportedLocales();
+        }
+        
+        /**
+         * Return an array of all supported Locales but in the order the user
+         * has specified in the config file. Useful for the language selector.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getLocalesOrder()
+        {
+            return \Mcamara\LaravelLocalization\LaravelLocalization::getLocalesOrder();
         }
         
         /**
