@@ -1,4 +1,4 @@
-{!! $dataTable->table() !!}
+{!! $dataTable->table(['class' => 'table table-bordered table-condensed']) !!}
 
 @include('includes.datatables.assets')
 

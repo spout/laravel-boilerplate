@@ -17,12 +17,12 @@ class UsersDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            'username',
-            'email',
-            'role',
-            'created_at',
-            'updated_at',
+            ['data' => 'id', 'title' => __("ID")],
+            ['data' => 'username', 'title' => __("Username")],
+            ['data' => 'email', 'title' => __("Email")],
+            ['data' => 'role', 'title' => __("Role")],
+            ['data' => 'created_at', 'title' => __("Created")],
+            ['data' => 'updated_at', 'title' => __("Updated")],
         ];
     }
 }

@@ -17,7 +17,7 @@ class ConfigsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'key',
+            ['data' => 'key', 'title' => __("Key")],
         ];
     }
 }

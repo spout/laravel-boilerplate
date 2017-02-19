@@ -17,11 +17,11 @@ class ContactsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            'email',
-            'subject',
-            'created_at',
-            'updated_at',
+            ['data' => 'id', 'title' => __("ID")],
+            ['data' => 'email', 'title' => __("Email")],
+            ['data' => 'subject', 'title' => __("Subject")],
+            ['data' => 'created_at', 'title' => __("Created")],
+            ['data' => 'updated_at', 'title' => __("Updated")],
         ];
     }
 }
