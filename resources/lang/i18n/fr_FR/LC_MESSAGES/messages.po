@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2016-12-03 09:27+0000\n"
-"PO-Revision-Date: 2016-12-03 09:27+0000\n"
+"POT-Creation-Date: 2017-02-19 10:29+0100\n"
+"PO-Revision-Date: 2017-02-19 10:34+0100\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8\n"
 "X-Poedit-KeywordsList: _;__;gettext;_n:1,2;ngettext:1,2\n"
 "X-Poedit-Basepath: ../../../../../app\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -245,7 +245,7 @@ msgstr "Chemin"
 
 #: ../storage/framework/messages//54062608d7e939d5e8dcb3e3ca6912029cf0d7d3.php.php:12
 msgid "Bulk"
-msgstr ""
+msgstr "Lot"
 
 #: ../storage/framework/messages//54062608d7e939d5e8dcb3e3ca6912029cf0d7d3.php.php:15
 msgid "Make active"
@@ -258,6 +258,66 @@ msgstr "Modifier article"
 #: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:27
 msgid "Submit"
 msgstr "Envoyer"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:63
+msgid "No data available in table"
+msgstr "Pas de donnée disponible dans la table"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:64
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:65
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Affichage de l'élément 0 à 0 sur 0 élément"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:66
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(filtré de _MAX_ éléments au total)"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:69
+msgid "Show _MENU_ entries"
+msgstr "Afficher _MENU_ éléments"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:70
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:71
+msgid "Processing..."
+msgstr "Chargement en cours..."
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:73
+msgid "No matching records found"
+msgstr "Aucun élément à afficher"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:75
+msgid "First"
+msgstr "Premier"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:76
+msgid "Last"
+msgstr "Dernier"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:77
+msgid "Next"
+msgstr "Suivant"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:78
+msgid "Previous"
+msgstr "Précédent"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:81
+msgid ": activate to sort column ascending"
+msgstr ": activer pour trier la colonne par ordre croissant"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:82
+msgid ": activate to sort column descending"
+msgstr ": activer pour trier la colonne par ordre décroissant"
+
+#: ../storage/framework/messages//58d8852a52823004fabe0da3c4b4c68f2bf94ded.php.php:84
+msgid "Quick search..."
+msgstr "Recherche rapide..."
 
 #: ../storage/framework/messages//59d6d5f72328be0087346b8ed7d0c82f3ffe7df8.php.php:16
 #: Http/Controllers/Traits/Crud/DeleteTrait.php:16
