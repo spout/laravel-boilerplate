@@ -1,3 +1,8 @@
+{!! $dataTable->table() !!}
+
+@include('includes.datatables.assets')
+
+<?php /*
 @if (!empty($columns['bulk']))
     {!! Form::open(['route' => sprintf('%s.bulk', $resourcePrefix)]) !!}
 @endif
@@ -84,3 +89,4 @@
     });
 </script>
 @endpush
+*/

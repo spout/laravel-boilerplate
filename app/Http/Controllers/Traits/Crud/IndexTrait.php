@@ -1,22 +1,19 @@
 <?php
 namespace App\Http\Controllers\Traits\Crud;
 
+use Yajra\Datatables\Datatables;
+use Yajra\Datatables\Request;
+
 trait IndexTrait
 {
-    public $paginate = [
-        'perPage' => 10
-    ];
-
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function index()
     {
-        $model = static::$model;
-        $resourcePrefix = static::$resourcePrefix;
-        $objectList = $model::paginate($this->paginate['perPage']);
-        return view(sprintf('%s.index', $this->viewPath()), compact('objectList', 'resourcePrefix'));
+        $request = new Request();
+        $viewFactory = view();
+        $dataTable = new static::$dataTableClass(new Datatables($request), $viewFactory);
+        return $dataTable->render(sprintf('%s.index', $this->viewPath()));
     }
 }

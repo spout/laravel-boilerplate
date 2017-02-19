@@ -1,17 +1,15 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Traits\DatatablesTrait;
+use App\DataTables\MenusDataTable;
 use App\Models\Content;
 use App\Models\Menu;
 use App\Models\Post;
 
 class MenusController extends AdminController
 {
-    use DatatablesTrait;
-
     protected static $model = Menu::class;
-    protected static $resourcePrefix = 'admin.menus';
+    protected static $dataTableClass = MenusDataTable::class;
 
     public function edit($id)
     {
