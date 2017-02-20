@@ -13,7 +13,7 @@ trait CreateTrait
     public function create()
     {
         $object = new static::$model;
-        return view(sprintf('%s.create', $this->viewPath()), compact('object'));
+        return view("{$this->viewPath()}.create", compact('object'));
     }
 
     /**

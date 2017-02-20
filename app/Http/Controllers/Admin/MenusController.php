@@ -24,7 +24,7 @@ class MenusController extends AdminController
         foreach ($models as $model => $label) {
             $rows = $model::all();
             foreach ($rows as $row) {
-                $associations[$label][sprintf('%s:%s', $model, $row->pk)] = $row->__toString();
+                $associations[$label]["$model:{$row->pk}"] = $row->__toString();
             }
         }
 

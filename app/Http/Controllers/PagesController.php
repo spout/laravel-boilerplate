@@ -5,6 +5,6 @@ class PagesController extends Controller
 {
     public function show($slug = 'index')
     {
-        return view(sprintf('pages.%s', $slug))->with('slug', $slug);
+        return view("pages.$slug")->with('slug', $slug);
     }
 }

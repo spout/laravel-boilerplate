@@ -23,7 +23,7 @@ trait CommonTrait
         $prefix = request()->route()->getPrefix();
         if (!empty($prefix)) {
             list($locale, $prefix) = explode('/', $prefix);
-            $path = sprintf('%s.%s', $prefix, $path);
+            $path = "$prefix.$path";
         }
         return $path;
     }

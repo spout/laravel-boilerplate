@@ -14,6 +14,6 @@ trait IndexTrait
         $request = new Request();
         $viewFactory = view();
         $dataTable = new static::$dataTableClass(new Datatables($request), $viewFactory);
-        return $dataTable->render(sprintf('%s.index', $this->viewPath()));
+        return $dataTable->render("{$this->viewPath()}.index");
     }
 }

@@ -12,7 +12,7 @@ trait BulkTrait
 
         if (!empty($action) && !empty($bulk)) {
             $model = static::$model;
-            $method = sprintf('bulk%s', studly_case($action));
+            $method = 'bulk' . studly_case($action);
             $model::$method($bulk);
             flash(__("Records were updated successfully!"), 'success');
         }

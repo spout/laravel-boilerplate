@@ -13,6 +13,6 @@ trait RetrieveTrait
     {
         $model = static::$model;
         $object = $model::findOrFail($id);
-        return view(sprintf('%s.show', $this->viewPath()), compact('object'));
+        return view("{$this->viewPath()}.show", compact('object'));
     }
 }
