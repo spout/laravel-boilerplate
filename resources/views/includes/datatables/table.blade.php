@@ -1,4 +1,4 @@
-{{--{!! Form::open(['route' => sprintf('%s.bulk', $resourcePrefix)]) !!}--}}
+{{--{!! Form::open(['route' => "$resourcePrefix.bulk"]) !!}--}}
 {!! $dataTable->table(['class' => 'table table-bordered table-condensed table-striped']) !!}
 {{--<div class="row">--}}
     {{--<div class="col-sm-4">--}}

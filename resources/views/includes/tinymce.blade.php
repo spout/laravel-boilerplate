@@ -1,7 +1,8 @@
 @push('scripts')
 <?php
 $lang = \App::getLocale();
-//$languageUrl = sprintf('/js/tinymce/langs/%s_%s.js', $lang, strtoupper($lang));
+$langUpper = strtoupper($lang);
+//$languageUrl = "/js/tinymce/langs/{$lang}_{$langUpper}.js";
 ?>
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <script>

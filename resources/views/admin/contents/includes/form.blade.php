@@ -10,20 +10,20 @@
 <div class="tab-content">
     @foreach(Config::get('app.locales') as $lang => $locale)
         <div role="tabpanel" class="tab-pane{{ $lang == \App::getLocale() ? ' active' : '' }}" id="lang-{{ $lang }}">
-            {!! Form::openGroup(sprintf('title_%s', $lang), __('Title')) !!}
-            {!! Form::text(sprintf('title_%s', $lang)) !!}
+            {!! Form::openGroup("title_$lang", __('Title')) !!}
+            {!! Form::text("title_$lang") !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup(sprintf('slug_%s', $lang), __('Slug')) !!}
-            {!! Form::text(sprintf('slug_%s', $lang)) !!}
+            {!! Form::openGroup("slug_$lang", __('Slug')) !!}
+            {!! Form::text("slug_$lang") !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup(sprintf('path_%s', $lang), __('Path')) !!}
-            {!! Form::text(sprintf('path_%s', $lang)) !!}
+            {!! Form::openGroup("path_$lang", __('Path')) !!}
+            {!! Form::text("path_$lang") !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup(sprintf('content_%s', $lang), __('Content')) !!}
-            {!! Form::textarea(sprintf('content_%s', $lang), null, ['class' => 'wysiwyg']) !!}
+            {!! Form::openGroup("content_$lang", __('Content')) !!}
+            {!! Form::textarea("content_$lang", null, ['class' => 'wysiwyg']) !!}
             {!! Form::closeGroup() !!}
         </div>
     @endforeach
