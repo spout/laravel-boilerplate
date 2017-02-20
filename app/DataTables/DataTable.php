@@ -2,6 +2,9 @@
 
 namespace App\DataTables;
 
+use App\Html\FormBuilder;
+use Collective\Html\FormFacade;
+
 abstract class DataTable extends \Yajra\Datatables\Services\DataTable
 {
     /**
@@ -17,11 +20,14 @@ abstract class DataTable extends \Yajra\Datatables\Services\DataTable
                 $resourcePrefix = static::$resourcePrefix;
                 return view('includes.datatables.action', compact('object', 'resourcePrefix'));
             })
+            //->addColumn('bulk', function ($object) {
+            //    return view('includes.datatables.bulk', compact('object'));
+            //})
             ->make(true);
     }
 
     /**
-     * Get the query object to be processed by dataTables.
+     * Get the query object to be processed by dataaTables.
      *
      * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder|\Illuminate\Support\Collection
      */
@@ -44,6 +50,7 @@ abstract class DataTable extends \Yajra\Datatables\Services\DataTable
             ->columns($this->getColumns())
             ->ajax('')
             ->addAction(['width' => '200px'])
+            //->addColumn(['data' => 'bulk', 'title' => '<input type="checkbox" data-check-all="true" data-target=".bulk-checkbox">', 'orderable' => false])
             ->parameters($this->getBuilderParameters())
             ->parameters([
                 'language' => [
