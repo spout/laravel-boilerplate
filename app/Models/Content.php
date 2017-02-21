@@ -12,7 +12,7 @@ class Content extends Model
         'updated_at',
     ];
 
-    protected $translatableFields = [
+    public static $translatableFields = [
         'title',
         'slug',
         'path',

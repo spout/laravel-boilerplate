@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Html\FormBuilder;
+use App\Models\Traits\TranslatableTrait;
 use Collective\Html\FormFacade;
 
 abstract class DataTable extends \Yajra\Datatables\Services\DataTable
@@ -14,16 +15,30 @@ abstract class DataTable extends \Yajra\Datatables\Services\DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        $ajax = $this->datatables
             ->eloquent($this->query())
             ->addColumn('action', function ($object) {
                 $resourcePrefix = static::$resourcePrefix;
                 return view('includes.datatables.action', compact('object', 'resourcePrefix'));
-            })
+            });
             //->addColumn('bulk', function ($object) {
             //    return view('includes.datatables.bulk', compact('object'));
             //})
-            ->make(true);
+
+        /**
+         * Fix the TranslatableTrait::getAttribute not being called
+         */
+        $model = static::$model;
+        $traits = class_uses($model);
+        if ($traits && in_array(TranslatableTrait::class, $traits)) {
+            foreach ($model::$translatableFields as $field) {
+                $ajax->editColumn($field, function ($object) use ($field) {
+                    return $object->{$field};
+                });
+            }
+        }
+
+        return $ajax->make(true);
     }
 
     /**

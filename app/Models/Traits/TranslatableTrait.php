@@ -19,7 +19,7 @@ trait TranslatableTrait
     {
         $suffix = '_' . static::$locale;
 
-        if (!ends_with($key, $suffix) && in_array($key, $this->translatableFields)) {
+        if (!ends_with($key, $suffix) && in_array($key, static::$translatableFields)) {
             $attribute = parent::getAttribute($key . $suffix);
         }
 
