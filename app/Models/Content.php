@@ -7,6 +7,11 @@ class Content extends Model
 {
     use TranslatableTrait;
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
     protected $guarded = [
         'created_at',
         'updated_at',
