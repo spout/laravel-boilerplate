@@ -14,7 +14,8 @@
         "xinax/laravel-gettext": "dev-master",
         "yajra/laravel-datatables-oracle": "~6.0",
         "barryvdh/laravel-elfinder": "^0.3.8",
-        "mcamara/laravel-localization": "^1.1"
+        "mcamara/laravel-localization": "^1.1",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -3,6 +3,11 @@ namespace App\Models\Traits;
 
 trait CommonTrait
 {
+    public static function getTableName()
+    {
+        return with(new static)->getTable();
+    }
+
     /**
      * Common primaryKey accessor
      *
