@@ -7,20 +7,20 @@ use Config;
 trait TranslatableTrait
 {
     protected static $locale;
-    protected static $fallbackLocale;
+    protected static $localeSuffix;
+    protected static $localeFallback;
 
     public static function bootTranslatableTrait()
     {
         static::$locale = App::getLocale();
-        static::$fallbackLocale = Config::get('app.fallback_locale');
+        static::$localeSuffix = '_' . static::$locale;
+        static::$localeFallback = Config::get('app.fallback_locale');
     }
 
     public function getAttribute($key)
     {
-        $suffix = '_' . static::$locale;
-
-        if (!ends_with($key, $suffix) && in_array($key, static::$translatableFields)) {
-            $attribute = parent::getAttribute($key . $suffix);
+        if (!ends_with($key, static::$localeSuffix) && in_array($key, static::$translatableFields)) {
+            $attribute = parent::getAttribute($key . static::$localeSuffix);
         }
 
         if (empty($attribute)) {
@@ -34,4 +34,15 @@ trait TranslatableTrait
     //{
     //    parent::setAttribute($key, $value);
     //}
+
+    /**
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param $column
+     * @param $value
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeLocale($query, $column, $value)
+    {
+        return $query->where($column . static::$localeSuffix, $value);
+    }
 }

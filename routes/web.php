@@ -12,7 +12,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect']], function () {
-    Route::get('/', 'PagesController@show');
+    Route::get('/', 'PagesController@show')->name('homepage');
 
     Auth::routes();
 
@@ -125,5 +125,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         ]);
     });
 
-    Route::get('/{slug}', 'ContentsController@show')->where('slug', '(?!elfinder\b)\b[a-z0-9-]+');
+    Route::get('/{slug}', 'ContentsController@show')->where('slug', '(?!elfinder\b)\b[a-z0-9-]+')->name('contents.show');
 });

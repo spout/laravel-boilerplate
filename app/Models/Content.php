@@ -31,7 +31,7 @@ class Content extends Model
 
     public function getAbsoluteUrlAttribute()
     {
-        return '#';
+        return route('contents.show', ['slug' => $this->slug]);
     }
 
     public static function bulkActive($bulk)

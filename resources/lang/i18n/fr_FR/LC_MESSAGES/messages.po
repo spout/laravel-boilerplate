@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2017-02-20 18:06+0100\n"
-"PO-Revision-Date: 2017-02-20 18:06+0100\n"
+"POT-Creation-Date: 2017-02-23 17:47+0100\n"
+"PO-Revision-Date: 2017-02-23 17:48+0100\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -54,6 +54,11 @@ msgstr "Route"
 msgid "Sort order"
 msgstr "Ordre de tri"
 
+#: ../resources/views/includes/datatables/action.blade.php:7
+#: ../storage/framework/messages//675ab1d0352419a79851bf3b708ac287b0dc8c46.php.php:7
+msgid "Are you sure?"
+msgstr "Vous êtes sûr ?"
+
 #: ../resources/views/layouts/admin.blade.php:30
 #: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:30
 #: ../storage/framework/messages//54062608d7e939d5e8dcb3e3ca6912029cf0d7d3.php.php:1
@@ -92,7 +97,7 @@ msgstr "Contacts"
 #: ../resources/views/layouts/admin.blade.php:36
 #: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:36
 #: ../storage/framework/messages//6f688495414aee643ed26f0278a7421f9eb81002.php.php:1
-#: ../storage/framework/messages//8ff6c2f30398e7a5a894897c0dad326c90ffa6e4.php.php:27
+#: ../storage/framework/messages//8ff6c2f30398e7a5a894897c0dad326c90ffa6e4.php.php:28
 msgid "File manager"
 msgstr "Gestionnaire de fichiers"
 
@@ -115,6 +120,18 @@ msgstr "Tableau de bord"
 #: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:21
 msgid "Administration"
 msgstr "Administration"
+
+#: ../storage/framework/messages//0b541214eabea38412c2eb06471142311adac6f9.php.php:36
+msgid "The email is required."
+msgstr "L'email est requis."
+
+#: ../storage/framework/messages//0b541214eabea38412c2eb06471142311adac6f9.php.php:37
+msgid "The subject is required."
+msgstr "Le sujet est requis."
+
+#: ../storage/framework/messages//0b541214eabea38412c2eb06471142311adac6f9.php.php:38
+msgid "The message is required."
+msgstr "Le message est requis."
 
 #: ../storage/framework/messages//18c3204dc2831907564eaed2cb74deee58396549.php.php:6
 #: ../storage/framework/messages//2e2813d565726a251d79ecba123361e4bca73b0e.php.php:21
@@ -279,15 +296,11 @@ msgstr "Posts"
 msgid "Update content"
 msgstr "Modifier contenu"
 
-#: ../storage/framework/messages//675ab1d0352419a79851bf3b708ac287b0dc8c46.php.php:2
+#: ../storage/framework/messages//675ab1d0352419a79851bf3b708ac287b0dc8c46.php.php:3
 msgid "Edit"
 msgstr "Modifier"
 
-#: ../storage/framework/messages//675ab1d0352419a79851bf3b708ac287b0dc8c46.php.php:3
-msgid "Are your sure?"
-msgstr "Vous êtes sûr ?"
-
-#: ../storage/framework/messages//675ab1d0352419a79851bf3b708ac287b0dc8c46.php.php:8
+#: ../storage/framework/messages//675ab1d0352419a79851bf3b708ac287b0dc8c46.php.php:10
 #: ../storage/framework/messages//78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:26
 msgid "Delete"
 msgstr "Supprimer"
@@ -319,63 +332,63 @@ msgstr "Elément de menu %d"
 msgid "Post"
 msgstr "Article"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:53
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:72
 msgid "No data available in table"
 msgstr "Pas de donnée disponible dans la table"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:54
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:73
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:55
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:74
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Affichage de l'élément 0 à 0 sur 0 élément"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:56
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:75
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(filtré de _MAX_ éléments au total)"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:58
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:77
 msgid "Show _MENU_ entries"
 msgstr "Afficher _MENU_ éléments"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:59
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:78
 msgid "Loading..."
 msgstr "Chargement..."
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:60
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:79
 msgid "Processing..."
 msgstr "Chargement en cours..."
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:62
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:81
 msgid "No matching records found"
 msgstr "Aucun élément à afficher"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:64
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:83
 msgid "First"
 msgstr "Premier"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:65
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:84
 msgid "Last"
 msgstr "Dernier"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:66
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:85
 msgid "Next"
 msgstr "Suivant"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:67
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:86
 msgid "Previous"
 msgstr "Précédent"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:70
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:89
 msgid ": activate to sort column ascending"
 msgstr ": activer pour trier la colonne par ordre croissant"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:71
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:90
 msgid ": activate to sort column descending"
 msgstr ": activer pour trier la colonne par ordre décroissant"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:73
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:92
 msgid "Quick search..."
 msgstr "Recherche rapide..."
 
@@ -448,6 +461,9 @@ msgstr "Modifier menu"
 #: ../storage/framework/messages//f51aff405c72479c91639cfe54e081978c5d5111.php.php:1
 msgid "Create user"
 msgstr "Créer utilisateur"
+
+#~ msgid "Are your sure?"
+#~ msgstr "Vous êtes sûr ?"
 
 #~ msgid "Actions"
 #~ msgstr "Actions"

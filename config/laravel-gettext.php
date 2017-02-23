@@ -71,6 +71,7 @@ return [
      */
     'source-paths' => [
         'Http/Controllers',
+        'Http/Requests',
         //'../resources/views',
         '../resources/views',
         //'Console/Commands',

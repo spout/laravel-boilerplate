@@ -24,11 +24,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Laravel</a>
+            <a class="navbar-brand" href="{{ route('homepage') }}">Laravel</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
             @menu(['menu' => 'principal'])
+
+            <ul class="nav navbar-nav navbar-right">
+                @if (Auth::check())
+                    <li>
+                        <a href="#" onclick="document.logout.submit();return false;"><i class="fa fa-sign-out"></i> {{ "Logout" }}</a>
+                        {{ Form::open(['route' => 'logout', 'method' => 'post', 'name' => 'logout']) }}
+                        {{ Form::close() }}
+                    </li>
+                @else
+                    <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> {{ "Login" }}</a></li>
+                @endif
+            </ul>
         </div>
     </div>
 </nav>

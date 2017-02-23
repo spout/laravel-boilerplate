@@ -9,7 +9,7 @@ class ContentsController extends Controller
 
     public function show($slug)
     {
-        $content = Content::where('slug', $slug)->firstOrFail();
+        $content = Content::locale('slug', $slug)->firstOrFail();
         return view('contents.show', compact('content'));
     }
 }
