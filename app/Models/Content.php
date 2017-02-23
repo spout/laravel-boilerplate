@@ -17,7 +17,7 @@ class Content extends Model
         'updated_at',
     ];
 
-    public static $translatableFields = [
+    public static $translatableColumns = [
         'title',
         'slug',
         'path',

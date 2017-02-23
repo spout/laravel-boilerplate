@@ -31,9 +31,9 @@ abstract class DataTable extends \Yajra\Datatables\Services\DataTable
         $model = static::$model;
         $traits = class_uses($model);
         if ($traits && in_array(TranslatableTrait::class, $traits)) {
-            foreach ($model::$translatableFields as $field) {
-                $ajax->editColumn($field, function ($object) use ($field) {
-                    return $object->{$field};
+            foreach ($model::$translatableColumns as $column) {
+                $ajax->editColumn($column, function ($object) use ($column) {
+                    return $object->{$column};
                 });
             }
         }

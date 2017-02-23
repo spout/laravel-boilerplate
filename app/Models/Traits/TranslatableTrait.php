@@ -19,7 +19,7 @@ trait TranslatableTrait
 
     public function getAttribute($key)
     {
-        if (!ends_with($key, static::$localeSuffix) && in_array($key, static::$translatableFields)) {
+        if (!ends_with($key, static::$localeSuffix) && in_array($key, static::$translatableColumns)) {
             $attribute = parent::getAttribute($key . static::$localeSuffix);
         }
 
