@@ -1,7 +1,7 @@
 @include('includes.ace-editor')
 
 {!! Form::model($object, [
-    'route' => empty($object->key) ? ['admin.configs.store'] : ['admin.configs.update', $object->key],
+    'route' => empty($object->key) ? ['admin.settings.store'] : ['admin.settings.update', $object->key],
     'method' => empty($object->key) ? 'POST' : 'PUT'
 ]) !!}
 

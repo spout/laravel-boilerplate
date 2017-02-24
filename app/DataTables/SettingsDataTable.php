@@ -2,12 +2,12 @@
 
 namespace App\DataTables;
 
-use App\Models\Config;
+use App\Models\Setting;
 
-class ConfigsDataTable extends DataTable
+class SettingsDataTable extends DataTable
 {
-    protected static $model = Config::class;
-    protected static $resourcePrefix = 'admin.configs';
+    protected static $model = Setting::class;
+    protected static $resourcePrefix = 'admin.settings';
 
     /**
      * Get columns.

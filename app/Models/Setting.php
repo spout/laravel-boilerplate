@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-class Config extends Model
+class Setting extends Model
 {
     public $incrementing = false;
     public $timestamps = false;

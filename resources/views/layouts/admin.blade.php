@@ -34,7 +34,7 @@
                 ['title' => __("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
                 ['title' => __("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
                 ['title' => __("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file_manager.index'],
-                ['title' => __("Configs"), 'icon' => 'cogs', 'route' => 'admin.configs.index'],
+                ['title' => __("Settings"), 'icon' => 'cogs', 'route' => 'admin.settings.index'],
             ];
             ?>
             <ul class="nav nav-pills nav-stacked">

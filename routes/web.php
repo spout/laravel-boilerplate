@@ -111,16 +111,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
-        Route::get('configs/datatables', 'ConfigsController@datatables')->name('admin.configs.datatables');
-        Route::resource('configs', 'ConfigsController', [
+        Route::get('settings/datatables', 'SettingsController@datatables')->name('admin.settings.datatables');
+        Route::resource('settings', 'SettingsController', [
             'names' => [
-                'store' => 'admin.configs.store',
-                'index' => 'admin.configs.index',
-                'create' => 'admin.configs.create',
-                'destroy' => 'admin.configs.destroy',
-                'update' => 'admin.configs.update',
-                'show' => 'admin.configs.show',
-                'edit' => 'admin.configs.edit',
+                'store' => 'admin.settings.store',
+                'index' => 'admin.settings.index',
+                'create' => 'admin.settings.create',
+                'destroy' => 'admin.settings.destroy',
+                'update' => 'admin.settings.update',
+                'show' => 'admin.settings.show',
+                'edit' => 'admin.settings.edit',
             ]
         ]);
     });
