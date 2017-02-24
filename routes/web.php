@@ -32,8 +32,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('/', 'DashboardController@index')->name('admin.dashboard.index');
         Route::get('/file-manager', 'FileManagerController@index')->name('admin.file_manager.index');
 
-        Route::get('contents/datatables', 'ContentsController@datatables')->name('admin.contents.datatables');
-        Route::post('contents/bulk', 'ContentsController@bulk')->name('admin.contents.bulk');
+        //Route::post('contents/bulk', 'ContentsController@bulk')->name('admin.contents.bulk');
         Route::resource('contents', 'ContentsController', [
             'names' => [
                 'store' => 'admin.contents.store',
@@ -46,7 +45,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
-        Route::get('contacts/datatables', 'ContactsController@datatables')->name('admin.contacts.datatables');
         Route::resource('contacts', 'ContactsController', [
             'names' => [
                 'store' => 'admin.contacts.store',
@@ -59,7 +57,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
-        Route::get('blog/datatables', 'BlogController@datatables')->name('admin.blog.datatables');
         Route::resource('blog', 'BlogController', [
             'names' => [
                 'store' => 'admin.blog.store',
@@ -72,7 +69,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
-        Route::get('categories/datatables', 'CategoriesController@datatables')->name('admin.categories.datatables');
         Route::resource('categories', 'CategoriesController', [
             'names' => [
                 'store' => 'admin.categories.store',
@@ -85,7 +81,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
-        Route::get('menus/datatables', 'MenusController@datatables')->name('admin.menus.datatables');
         Route::resource('menus', 'MenusController', [
             'names' => [
                 'store' => 'admin.menus.store',
@@ -98,7 +93,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
-        Route::get('users/datatables', 'UsersController@datatables')->name('admin.users.datatables');
         Route::resource('users', 'UsersController', [
             'names' => [
                 'store' => 'admin.users.store',
@@ -111,7 +105,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
-        Route::get('settings/datatables', 'SettingsController@datatables')->name('admin.settings.datatables');
         Route::resource('settings', 'SettingsController', [
             'names' => [
                 'store' => 'admin.settings.store',
