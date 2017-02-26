@@ -9,9 +9,9 @@
 {!! Form::text('key') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('value', __('Value')) !!}
-{!! Form::textarea('value', null, ['data-editor' => 'json']) !!}
-{!! Form::closeGroup() !!}
+{{--{!! Form::openGroup('value', __('Value')) !!}--}}
+{{--{!! Form::textarea('value', !empty($object->value) ? json_encode($object->value) : null, ['data-editor' => 'json']) !!}--}}
+{{--{!! Form::closeGroup() !!}--}}
 
 {!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
 
