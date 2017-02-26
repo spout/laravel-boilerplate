@@ -24,7 +24,11 @@
 </nav>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-md-9 col-md-push-3">
+            @include('flash::message')
+            @yield('content')
+        </div>
+        <div class="col-md-3 col-md-pull-9">
             <?php
             $navs = [
                 ['title' => __("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
@@ -44,10 +48,6 @@
                     </li>
                 @endforeach
             </ul>
-        </div>
-        <div class="col-sm-9">
-            @include('flash::message')
-            @yield('content')
         </div>
     </div>
 </div>
