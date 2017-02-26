@@ -15,7 +15,10 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('admin.blog.includes.form', function ($view) {
+        View::composer([
+            'admin.blog.includes.form',
+            'admin.categories.includes.form'
+        ], function ($view) {
             $view->with('categoryList', Category::all()->pluck('title', 'id'));
         });
     }
