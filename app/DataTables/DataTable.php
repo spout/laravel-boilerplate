@@ -2,9 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Html\FormBuilder;
 use App\Models\Traits\TranslatableTrait;
-use Collective\Html\FormFacade;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 abstract class DataTable extends \Yajra\Datatables\Services\DataTable
 {
@@ -25,15 +24,22 @@ abstract class DataTable extends \Yajra\Datatables\Services\DataTable
             //    return view('includes.datatables.bulk', compact('object'));
             //})
 
-        /**
-         * Fix the TranslatableTrait::getAttribute not being called
-         */
         $model = static::$model;
         $traits = class_uses($model);
         if ($traits && in_array(TranslatableTrait::class, $traits)) {
             foreach ($model::$translatableColumns as $column) {
+                /**
+                 * Fix the TranslatableTrait::getAttribute not being called
+                 */
                 $ajax->editColumn($column, function ($object) use ($column) {
                     return $object->{$column};
+                });
+
+                /**
+                 * Search on translated columns
+                 */
+                $ajax->filterColumn($column, function ($query, $keyword) use ($column) {
+                    $query->where($column . '_' . LaravelLocalization::getCurrentLocale(), 'like', '%' . $keyword . '%');
                 });
             }
         }

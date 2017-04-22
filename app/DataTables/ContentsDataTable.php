@@ -17,12 +17,12 @@ class ContentsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'id', 'title' => __("ID")],
-            ['data' => 'title', 'title' => __("Title")],
-            ['data' => 'slug', 'title' => __("Slug")],
-            ['data' => 'path', 'title' => __("Path")],
-            ['data' => 'created_at', 'title' => __("Created")],
-            ['data' => 'updated_at', 'title' => __("Updated")],
+            ['data' => 'id', 'name' => 'id', 'title' => __("ID")],
+            ['data' => 'title', 'name' => 'title', 'title' => __("Title")],
+            ['data' => 'slug', 'name' => 'slug', 'title' => __("Slug")],
+            ['data' => 'path', 'name' => 'path', 'title' => __("Path")],
+            ['data' => 'created_at', 'name' => 'created_at', 'title' => __("Created")],
+            ['data' => 'updated_at', 'name' => 'updated_at', 'title' => __("Updated")],
         ];
     }
 }

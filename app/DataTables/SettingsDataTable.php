@@ -17,7 +17,7 @@ class SettingsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'key', 'title' => __("Key")],
+            ['data' => 'key', 'name' => 'key', 'title' => __("Key")],
         ];
     }
 }
