@@ -17,7 +17,7 @@ class MenusDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'id', 'name' => 'id', 'title' => __("ID")],
+            ['data' => 'id', 'name' => 'id', 'title' => __("ID"), 'searchable' => false],
             ['data' => 'title', 'name' => 'title', 'title' => __("Title")],
             ['data' => 'slug', 'name' => 'slug', 'title' => __("Slug")],
         ];
