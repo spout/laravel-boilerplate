@@ -11,7 +11,8 @@ trait IndexTrait
      */
     public function index()
     {
-        $request = new Request();
+        $illuminateRequest = request();
+        $request = new Request($illuminateRequest);
         $viewFactory = view();
         $dataTable = new static::$dataTableClass(new Datatables($request), $viewFactory);
         return $dataTable->render("{$this->viewPath()}.index");
