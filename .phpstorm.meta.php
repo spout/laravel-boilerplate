@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-04-27.
+    * Generated on 2017-05-03.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -51,7 +51,6 @@ namespace PHPSTORM_META {
             'Xinax\LaravelGettext\LaravelGettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
             'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
-            'datatables.fractal' instanceof \League\Fractal\Manager,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \App\Html\FormBuilder,
@@ -194,7 +193,6 @@ namespace PHPSTORM_META {
             'Xinax\LaravelGettext\LaravelGettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
             'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
-            'datatables.fractal' instanceof \League\Fractal\Manager,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \App\Html\FormBuilder,
@@ -337,7 +335,6 @@ namespace PHPSTORM_META {
             'Xinax\LaravelGettext\LaravelGettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
             'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
-            'datatables.fractal' instanceof \League\Fractal\Manager,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \App\Html\FormBuilder,
@@ -480,7 +477,6 @@ namespace PHPSTORM_META {
             'Xinax\LaravelGettext\LaravelGettext' instanceof \Xinax\LaravelGettext\LaravelGettext,
             'xinax::gettext.create' instanceof \Xinax\LaravelGettext\Commands\GettextCreate,
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
-            'datatables.fractal' instanceof \League\Fractal\Manager,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \App\Html\FormBuilder,
