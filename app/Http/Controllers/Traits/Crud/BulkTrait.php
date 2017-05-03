@@ -14,7 +14,7 @@ trait BulkTrait
             $model = static::$model;
             $method = 'bulk' . studly_case($action);
             $model::$method($bulk);
-            flash(__("Records were updated successfully!"), 'success');
+            flash(_i("Records were updated successfully!"), 'success');
         }
 
         return redirect()->back();

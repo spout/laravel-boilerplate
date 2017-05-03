@@ -25,7 +25,7 @@ $langUpper = strtoupper($lang);
     function elFinderBrowser(field_name, url, type, win) {
         tinymce.activeEditor.windowManager.open({
             file: '<?= route('elfinder.tinymce4') ?>',// use an absolute path!
-            title: "{{ __("File manager") }}",
+            title: "{{ _i("File manager") }}",
             width: 900,
             height: 450,
             resizable: 'yes'

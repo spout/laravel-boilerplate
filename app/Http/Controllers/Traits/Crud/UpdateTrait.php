@@ -32,7 +32,7 @@ trait UpdateTrait
         $input = $request->all();
         $object->update($input);
         $object->save();
-        flash(__("Record was updated successfully!"), 'success');
+        flash(_i("Record was updated successfully!"), 'success');
         return redirect()->back();
     }
 }

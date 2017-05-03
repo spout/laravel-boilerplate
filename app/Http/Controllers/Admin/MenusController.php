@@ -16,8 +16,8 @@ class MenusController extends AdminController
         $view = parent::edit($id);
 
         $models = [
-            Content::class => __("Content"),
-            Post::class => __("Post"),
+            Content::class => _i("Content"),
+            Post::class => _i("Post"),
         ];
 
         $associations = ['' => '-'];

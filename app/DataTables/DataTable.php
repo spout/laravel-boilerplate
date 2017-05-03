@@ -75,27 +75,27 @@ abstract class DataTable extends \Yajra\Datatables\Services\DataTable
             ->parameters($this->getBuilderParameters())
             ->parameters([
                 'language' => [
-                    'emptyTable' => __("No data available in table"),
-                    'info' => __("Showing _START_ to _END_ of _TOTAL_ entries"),
-                    'infoEmpty' => __("Showing 0 to 0 of 0 entries"),
-                    'infoFiltered' => __("(filtered from _MAX_ total entries)"),
+                    'emptyTable' => _i("No data available in table"),
+                    'info' => _i("Showing _START_ to _END_ of _TOTAL_ entries"),
+                    'infoEmpty' => _i("Showing 0 to 0 of 0 entries"),
+                    'infoFiltered' => _i("(filtered from _MAX_ total entries)"),
                     'infoPostFix' => '',
-                    'lengthMenu' => __("Show _MENU_ entries"),
-                    'loadingRecords' => __("Loading..."),
-                    'processing' => __("Processing..."),
+                    'lengthMenu' => _i("Show _MENU_ entries"),
+                    'loadingRecords' => _i("Loading..."),
+                    'processing' => _i("Processing..."),
                     'search' => '_INPUT_',
-                    'zeroRecords' => __("No matching records found"),
+                    'zeroRecords' => _i("No matching records found"),
                     'paginate' => [
-                        'first' => __("First"),
-                        'last' => __("Last"),
-                        'next' => __("Next"),
-                        'previous' => __("Previous"),
+                        'first' => _i("First"),
+                        'last' => _i("Last"),
+                        'next' => _i("Next"),
+                        'previous' => _i("Previous"),
                     ],
                     'aria' => [
-                        'sortAscending' => __(": activate to sort column ascending"),
-                        'sortDescending' => __(": activate to sort column descending"),
+                        'sortAscending' => _i(": activate to sort column ascending"),
+                        'sortDescending' => _i(": activate to sort column descending"),
                     ],
-                    'searchPlaceholder' => __("Quick search..."),
+                    'searchPlaceholder' => _i("Quick search..."),
                 ]
             ]);
     }

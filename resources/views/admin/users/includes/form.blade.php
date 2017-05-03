@@ -3,30 +3,30 @@
     'method' => empty($object->id) ? 'POST' : 'PUT'
 ]) !!}
 
-{!! Form::openGroup('username', __('Username')) !!}
+{!! Form::openGroup('username', _i('Username')) !!}
 {!! Form::text('username') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('email', __('Email')) !!}
+{!! Form::openGroup('email', _i('Email')) !!}
 {!! Form::text('email') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('password', __('Password')) !!}
+{!! Form::openGroup('password', _i('Password')) !!}
 {!! Form::password('password') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('firstname', __('Firstname')) !!}
+{!! Form::openGroup('firstname', _i('Firstname')) !!}
 {!! Form::text('firstname') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('lastname', __('Lastname')) !!}
+{!! Form::openGroup('lastname', _i('Lastname')) !!}
 {!! Form::text('lastname') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('role', __('Role')) !!}
+{!! Form::openGroup('role', _i('Role')) !!}
 {!! Form::select('role', ['' => '-'] + \App\Models\User::$roles) !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
+{!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}

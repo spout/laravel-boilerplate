@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
-@section('title', __("Contents"))
+@section('title', _i("Contents"))
 
 @section('content')
     @include('includes.datatables.table', [
         'bulkActions' => [
-            'active' => __("Make active"),
+            'active' => _i("Make active"),
         ],
     ])
 @endsection

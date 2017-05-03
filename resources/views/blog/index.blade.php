@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __("Blog"))
+@section('title', _i("Blog"))
 
 @section('content')
     @if ($posts)

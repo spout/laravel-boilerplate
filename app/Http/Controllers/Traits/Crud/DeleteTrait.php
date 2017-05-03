@@ -13,7 +13,7 @@ trait DeleteTrait
     {
         $model = static::$model;
         $model::destroy($id);
-        flash(__("Record was deleted successfully!"), 'success');
+        flash(_i("Record was deleted successfully!"), 'success');
         return redirect()->back();
     }
 }

@@ -10,25 +10,25 @@
 <div class="tab-content">
     @foreach(Config::get('app.locales') as $lang => $locale)
         <div role="tabpanel" class="tab-pane{{ $lang == \App::getLocale() ? ' active' : '' }}" id="lang-{{ $lang }}">
-            {!! Form::openGroup("title_$lang", __('Title')) !!}
+            {!! Form::openGroup("title_$lang", _i('Title')) !!}
             {!! Form::text("title_$lang") !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup("slug_$lang", __('Slug')) !!}
+            {!! Form::openGroup("slug_$lang", _i('Slug')) !!}
             {!! Form::text("slug_$lang") !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup("path_$lang", __('Path')) !!}
+            {!! Form::openGroup("path_$lang", _i('Path')) !!}
             {!! Form::text("path_$lang") !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup("content_$lang", __('Content')) !!}
+            {!! Form::openGroup("content_$lang", _i('Content')) !!}
             {!! Form::textarea("content_$lang", null, ['class' => 'wysiwyg']) !!}
             {!! Form::closeGroup() !!}
         </div>
     @endforeach
 </div>
 
-{!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
+{!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}

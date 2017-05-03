@@ -1,1 +1,1 @@
-{{ __('%d - %d of %d', [$results->firstItem(), $results->lastItem(), $results->count()]) }}
+{{ _i('%d - %d of %d', [$results->firstItem(), $results->lastItem(), $results->count()]) }}

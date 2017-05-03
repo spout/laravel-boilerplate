@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', __("Dashboard"))
+@section('title', _i("Dashboard"))
 
 @section('content')
     <div class="jumbotron">
-        <h1>{{ __("Administration") }}</h1>
+        <h1>{{ _i("Administration") }}</h1>
     </div>
 @endsection

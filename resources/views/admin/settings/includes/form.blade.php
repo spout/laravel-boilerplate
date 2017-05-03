@@ -5,14 +5,14 @@
     'method' => empty($object->key) ? 'POST' : 'PUT'
 ]) !!}
 
-{!! Form::openGroup('key', __('Key')) !!}
+{!! Form::openGroup('key', _i('Key')) !!}
 {!! Form::text('key') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('value_display', __('Value')) !!}
+{!! Form::openGroup('value_display', _i('Value')) !!}
 {!! Form::textarea('value_display', !empty($object->value) ? json_encode($object->value) : null, ['data-editor' => 'json']) !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
+{!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}

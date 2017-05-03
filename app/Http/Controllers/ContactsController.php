@@ -18,7 +18,7 @@ class ContactsController extends Controller
         $contact = Contact::create($request->all());
         $contact->save();
 
-        flash(__("Message was sent successfully."), 'success');
+        flash(_i("Message was sent successfully."), 'success');
         return redirect()->back();
     }
 }

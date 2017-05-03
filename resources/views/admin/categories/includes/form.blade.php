@@ -3,14 +3,14 @@
     'method' => empty($object->id) ? 'POST' : 'PUT'
 ]) !!}
 
-{!! Form::openGroup('parent_id', __('Parent')) !!}
+{!! Form::openGroup('parent_id', _i('Parent')) !!}
 {!! Form::select('parent_id', $categoryList, null, ['placeholder' => '-']) !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('title', __('Title')) !!}
+{!! Form::openGroup('title', _i('Title')) !!}
 {!! Form::text('title') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
+{!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}

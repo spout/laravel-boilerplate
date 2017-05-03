@@ -42,7 +42,7 @@ class TranslatableCreateColumns extends Command
     {
         $model = $this->argument('model');
         if (empty($model)) {
-            $model = $this->ask(__("Which model ?"));
+            $model = $this->ask(_i("Which model ?"));
         }
         $modelClass = 'App\\Models\\' . $model;
         $table = $modelClass::getTableName();

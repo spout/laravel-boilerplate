@@ -5,11 +5,11 @@
 @section('content')
     @include('includes.crud.show', [
         'columns' => [
-            'id' => __("Id"),
-            'title' => __("Title"),
-            'content' => __("Content"),
-            'created_at' => __("Created"),
-            'updated_at' => __("Updated"),
+            'id' => _i("Id"),
+            'title' => _i("Title"),
+            'content' => _i("Content"),
+            'created_at' => _i("Created"),
+            'updated_at' => _i("Updated"),
         ]
     ])
 @endsection

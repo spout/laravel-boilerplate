@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title') :: {{ __("Administration") }}</title>
+    <title>@yield('title') :: {{ _i("Administration") }}</title>
 
     @stack('styles')
     <link href="{{ asset('build/admin.css') }}" rel="stylesheet">
@@ -18,7 +18,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">{{ __("Administration") }}</a>
+            <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">{{ _i("Administration") }}</a>
         </div>
     </div>
 </nav>
@@ -31,14 +31,14 @@
         <div class="col-md-3 col-md-pull-9">
             <?php
             $navs = [
-                ['title' => __("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
-                ['title' => __("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
-                ['title' => __("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
-                ['title' => __("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
-                ['title' => __("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
-                ['title' => __("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
-                ['title' => __("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file_manager.index'],
-                ['title' => __("Settings"), 'icon' => 'cogs', 'route' => 'admin.settings.index'],
+                ['title' => _i("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
+                ['title' => _i("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
+                ['title' => _i("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
+                ['title' => _i("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
+                ['title' => _i("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
+                ['title' => _i("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
+                ['title' => _i("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file_manager.index'],
+                ['title' => _i("Settings"), 'icon' => 'cogs', 'route' => 'admin.settings.index'],
             ];
             ?>
             <ul class="nav nav-pills nav-stacked">

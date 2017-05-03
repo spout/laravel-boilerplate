@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', __("Categories"))
+@section('title', _i("Categories"))
 
 @section('content')
     @include('includes.datatables.table')

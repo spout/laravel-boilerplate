@@ -5,9 +5,9 @@
 @section('content')
     @include('includes.crud.show', [
         'columns' => [
-            'email' => __("Email"),
-            'subject' => __("Subject"),
-            'message' => __("Message"),
+            'email' => _i("Email"),
+            'subject' => _i("Subject"),
+            'message' => _i("Message"),
         ]
     ])
 @endsection

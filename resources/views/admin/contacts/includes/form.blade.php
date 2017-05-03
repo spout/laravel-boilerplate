@@ -3,18 +3,18 @@
     'method' => empty($object->key) ? 'POST' : 'PUT'
 ]) !!}
 
-{!! Form::openGroup('email', __('Email')) !!}
+{!! Form::openGroup('email', _i('Email')) !!}
 {!! Form::text('email') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('subject', __('Subject')) !!}
+{!! Form::openGroup('subject', _i('Subject')) !!}
 {!! Form::text('subject') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('message', __('Message')) !!}
+{!! Form::openGroup('message', _i('Message')) !!}
 {!! Form::textarea('message') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
+{!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}

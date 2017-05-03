@@ -33,9 +33,9 @@ class ContactSendFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => __("The email is required."),
-            'subject.required' => __("The subject is required."),
-            'message.required' => __("The message is required."),
+            'email.required' => _i("The email is required."),
+            'subject.required' => _i("The subject is required."),
+            'message.required' => _i("The message is required."),
         ];
     }
 }

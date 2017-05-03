@@ -3,28 +3,28 @@
     'method' => empty($object->id) ? 'POST' : 'PUT'
 ]) !!}
 
-{!! Form::openGroup('title', __('Title')) !!}
+{!! Form::openGroup('title', _i('Title')) !!}
 {!! Form::text('title') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('slug', __('Slug')) !!}
+{!! Form::openGroup('slug', _i('Slug')) !!}
 {!! Form::text('slug') !!}
 {!! Form::closeGroup() !!}
 
 @foreach($object->menuItems as $item)
     <div class="panel panel-default">
         <div class="panel-heading">
-            {{ __("Menu item %d", $loop->iteration) }}
-            <button type="button" class="btn btn-danger btn-xs pull-right">{{ __("Delete") }}</button>
+            {{ _i("Menu item %d", $loop->iteration) }}
+            <button type="button" class="btn btn-danger btn-xs pull-right">{{ _i("Delete") }}</button>
         </div>
         <div class="panel-body">
             <?php
             $fields = [
-                'association' => __("Associated page"),
-                'title' => __("Title"),
-                'url' => __("URL"),
-                'route' => __("Route"),
-                'sort' => __("Sort order"),
+                'association' => _i("Associated page"),
+                'title' => _i("Title"),
+                'url' => _i("URL"),
+                'route' => _i("Route"),
+                'sort' => _i("Sort order"),
             ];
             ?>
             @foreach($fields as $field => $label)
@@ -49,6 +49,6 @@
     </div>
 @endforeach
 
-{!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
+{!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}

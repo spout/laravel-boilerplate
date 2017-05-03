@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', __("Update user"))
+@section('title', _i("Update user"))
 
 @section('content')
     @include('admin.users.includes.form')
