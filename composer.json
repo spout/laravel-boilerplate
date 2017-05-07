@@ -9,7 +9,7 @@
         "laravel/framework": "5.4.*",
         "laravelcollective/html": "^5.4",
         "barryvdh/laravel-ide-helper": "^2.3",
-        "laracasts/flash": "^2.0",
+        "laracasts/flash": "^3.0",
         "barryvdh/laravel-debugbar": "^2.3",
         "yajra/laravel-datatables-oracle": "^7.3",
         "barryvdh/laravel-elfinder": "^0.3.8",
