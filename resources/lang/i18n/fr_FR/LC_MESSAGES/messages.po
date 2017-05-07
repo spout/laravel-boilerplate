@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2017-02-24 18:14+0100\n"
-"PO-Revision-Date: 2017-02-24 18:15+0100\n"
+"POT-Creation-Date: 2017-05-07 19:03+0100\n"
+"PO-Revision-Date: 2017-05-07 19:04+0100\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8\n"
-"X-Poedit-KeywordsList: _;__;gettext;_n:1,2;ngettext:1,2\n"
+"X-Poedit-KeywordsList: _;__;_i;_s;gettext;_n:1,2;ngettext:1,2;dgettext:2\n"
 "X-Poedit-Basepath: ../../../../../app\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: Http/Controllers\n"
@@ -63,51 +63,51 @@ msgstr "Ordre de tri"
 msgid "Are you sure?"
 msgstr "Vous êtes sûr ?"
 
-#: ../resources/views/layouts/admin.blade.php:30
-#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:30
+#: ../resources/views/layouts/admin.blade.php:34
+#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:34
 #: ../storage/framework/messages//54062608d7e939d5e8dcb3e3ca6912029cf0d7d3.php.php:1
 msgid "Contents"
 msgstr "Contenus"
 
-#: ../resources/views/layouts/admin.blade.php:31
+#: ../resources/views/layouts/admin.blade.php:35
 #: ../storage/framework/messages//4e69d0e6b85b727fcfb14f049bb2ba6a2af18d24.php.php:1
-#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:31
+#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:35
 msgid "Blog"
 msgstr "Blog"
 
-#: ../resources/views/layouts/admin.blade.php:32
+#: ../resources/views/layouts/admin.blade.php:36
 #: ../storage/framework/messages//2bd19341ef60fa0bba360fa5784ca7f29d733cc2.php.php:1
-#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:32
+#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:36
 msgid "Categories"
 msgstr "Catégories"
 
-#: ../resources/views/layouts/admin.blade.php:33
-#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:33
+#: ../resources/views/layouts/admin.blade.php:37
+#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:37
 msgid "Menus"
 msgstr "Menus"
 
-#: ../resources/views/layouts/admin.blade.php:34
+#: ../resources/views/layouts/admin.blade.php:38
 #: ../storage/framework/messages//04b42f8e3af548713efc7476fa18cb09dbb83781.php.php:1
-#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:34
+#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:38
 msgid "Users"
 msgstr "Utilisateurs"
 
-#: ../resources/views/layouts/admin.blade.php:35
-#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:35
+#: ../resources/views/layouts/admin.blade.php:39
+#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:39
 #: ../storage/framework/messages//c6335d1b25368de7d5c354a5d2fafc3c95a02931.php.php:1
 msgid "Contacts"
 msgstr "Contacts"
 
-#: ../resources/views/layouts/admin.blade.php:36
-#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:36
+#: ../resources/views/layouts/admin.blade.php:40
+#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:40
 #: ../storage/framework/messages//6f688495414aee643ed26f0278a7421f9eb81002.php.php:1
 #: ../storage/framework/messages//8ff6c2f30398e7a5a894897c0dad326c90ffa6e4.php.php:28
 msgid "File manager"
 msgstr "Gestionnaire de fichiers"
 
-#: ../resources/views/layouts/admin.blade.php:37
+#: ../resources/views/layouts/admin.blade.php:41
 #: ../storage/framework/messages//0eb90773c2a258c04abd72c02f0ffdbbc24777f4.php.php:1
-#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:37
+#: ../storage/framework/messages//51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:41
 msgid "Settings"
 msgstr "Paramètres"
 
@@ -243,8 +243,8 @@ msgstr "Enregistrer"
 msgid "Slug"
 msgstr "Permalien"
 
-#: ../storage/framework/messages//3e168345f0a351e61c5ee223af4d895b901d00db.php.php:21
-#: Http/Controllers/ContactsController.php:21
+#: ../storage/framework/messages//3e168345f0a351e61c5ee223af4d895b901d00db.php.php:25
+#: Http/Controllers/ContactsController.php:25
 msgid "Message was sent successfully."
 msgstr "Message envoyé avec succès."
 
@@ -358,84 +358,88 @@ msgstr "Elément de menu %d"
 msgid "Post"
 msgstr "Article"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:72
-#: DataTables/DataTable.php:72
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:78
+#: DataTables/DataTable.php:78
 msgid "No data available in table"
 msgstr "Pas de donnée disponible dans la table"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:73
-#: DataTables/DataTable.php:73
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:79
+#: DataTables/DataTable.php:79
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:74
-#: DataTables/DataTable.php:74
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:80
+#: DataTables/DataTable.php:80
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Affichage de l'élément 0 à 0 sur 0 élément"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:75
-#: DataTables/DataTable.php:75
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:81
+#: DataTables/DataTable.php:81
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(filtré de _MAX_ éléments au total)"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:77
-#: DataTables/DataTable.php:77
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:83
+#: DataTables/DataTable.php:83
 msgid "Show _MENU_ entries"
 msgstr "Afficher _MENU_ éléments"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:78
-#: DataTables/DataTable.php:78
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:84
+#: DataTables/DataTable.php:84
 msgid "Loading..."
 msgstr "Chargement..."
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:79
-#: DataTables/DataTable.php:79
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:85
+#: DataTables/DataTable.php:85
 msgid "Processing..."
 msgstr "Chargement en cours..."
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:81
-#: DataTables/DataTable.php:81
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:87
+#: DataTables/DataTable.php:87
 msgid "No matching records found"
 msgstr "Aucun élément à afficher"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:83
-#: DataTables/DataTable.php:83
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:89
+#: DataTables/DataTable.php:89
 msgid "First"
 msgstr "Premier"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:84
-#: DataTables/DataTable.php:84
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:90
+#: DataTables/DataTable.php:90
 msgid "Last"
 msgstr "Dernier"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:85
-#: DataTables/DataTable.php:85
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:91
+#: DataTables/DataTable.php:91
 msgid "Next"
 msgstr "Suivant"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:86
-#: DataTables/DataTable.php:86
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:92
+#: DataTables/DataTable.php:92
 msgid "Previous"
 msgstr "Précédent"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:89
-#: DataTables/DataTable.php:89
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:95
+#: DataTables/DataTable.php:95
 msgid ": activate to sort column ascending"
 msgstr ": activer pour trier la colonne par ordre croissant"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:90
-#: DataTables/DataTable.php:90
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:96
+#: DataTables/DataTable.php:96
 msgid ": activate to sort column descending"
 msgstr ": activer pour trier la colonne par ordre décroissant"
 
-#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:92
-#: DataTables/DataTable.php:92
+#: ../storage/framework/messages//8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:98
+#: DataTables/DataTable.php:98
 msgid "Quick search..."
 msgstr "Recherche rapide..."
 
 #: ../storage/framework/messages//9408e0200f73a3b121ab3d31404f8473c713fe14.php.php:1
 msgid "Create content"
 msgstr "Créer contenu"
+
+#: ../storage/framework/messages//9d53f220df289905ab75cd8971e03e2fecccec5e.php.php:3
+msgid "Please correct the errors below:"
+msgstr "Veuillez corriger les erreurs ci-dessous :"
 
 #: ../storage/framework/messages//b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:24
 msgid "Category"
