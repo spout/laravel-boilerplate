@@ -1,4 +1,4 @@
-@if (!empty($breadcrumbs))
+@if (count($breadcrumbs) > 1)
     <ul class="breadcrumb">
         @foreach ($breadcrumbs as $breadcrumb)
             @if ($loop->last)
