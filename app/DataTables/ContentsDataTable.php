@@ -20,8 +20,7 @@ class ContentsDataTable extends DataTable
             ['data' => 'id', 'name' => 'id', 'title' => _i("ID"), 'searchable' => false],
             ['data' => 'title', 'name' => 'title', 'title' => _i("Title")],
             ['data' => 'slug', 'name' => 'slug', 'title' => _i("Slug")],
-            ['data' => 'path', 'name' => 'path', 'title' => _i("Path")],
-            ['data' => 'created_at', 'name' => 'created_at', 'title' => _i("Created"), 'searchable' => false],
+            ['data' => 'created_at', 'name' => 'created_at', 'twitle' => _i("Created"), 'searchable' => false],
             ['data' => 'updated_at', 'name' => 'updated_at', 'title' => _i("Updated"), 'searchable' => false],
         ];
     }

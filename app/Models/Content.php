@@ -2,10 +2,12 @@
 namespace App\Models;
 
 use App\Models\Traits\TranslatableTrait;
+use App\Models\Traits\AdjacencyListTrait;
 
 class Content extends Model
 {
     use TranslatableTrait;
+    use AdjacencyListTrait;
 
     protected $dates = [
         'created_at',
@@ -20,7 +22,6 @@ class Content extends Model
     public static $translatableColumns = [
         'title',
         'slug',
-        'path',
         'content',
     ];
 

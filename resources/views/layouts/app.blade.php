@@ -45,6 +45,7 @@
     </div>
 </nav>
 <div class="container">
+    @renderBreadcrumbs()
     @include('flash::message')
     @include('includes.validation-errors')
     @yield('content')
