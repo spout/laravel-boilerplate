@@ -31,7 +31,6 @@ trait UpdateTrait
         $object = $model::find($id);
         $input = $request->all();
         $object->update($input);
-        $object->save();
         flash(_i("Record was updated successfully!"), 'success');
         return redirect()->back();
     }
