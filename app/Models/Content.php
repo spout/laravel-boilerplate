@@ -2,12 +2,12 @@
 namespace App\Models;
 
 use App\Models\Traits\TranslatableTrait;
-use App\Models\Traits\AdjacencyListTrait;
+//use App\Models\Traits\AdjacencyListTrait;
 
 class Content extends Model
 {
     use TranslatableTrait;
-    use AdjacencyListTrait;
+    //use AdjacencyListTrait;
 
     protected $dates = [
         'created_at',

@@ -23,11 +23,11 @@ class ComposerServiceProvider extends ServiceProvider
             $view->with('categoryList', Category::all()->pluck('title', 'id'));
         });
 
-        View::composer([
-            'admin.contents.includes.form'
-        ], function ($view) {
-            $view->with('contentList', Content::where('id', '!=', $view->object->id)->pluck('title', 'id'));
-        });
+        //View::composer([
+        //    'admin.contents.includes.form'
+        //], function ($view) {
+        //    $view->with('contentList', Content::where('id', '!=', $view->object->id)->pluck('title', 'id'));
+        //});
     }
 
     /**

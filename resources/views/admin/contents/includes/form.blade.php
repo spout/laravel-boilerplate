@@ -8,9 +8,9 @@
 @include('includes.form-locales-tabs')
 
 <div class="tab-content">
-    {!! Form::openGroup("parent_id", _i('Parent')) !!}
-    {!! Form::select("parent_id", $contentList, null, ['placeholder' => '-']) !!}
-    {!! Form::closeGroup() !!}
+    {{--{!! Form::openGroup("parent_id", _i('Parent')) !!}--}}
+    {{--{!! Form::select("parent_id", $contentList, null, ['placeholder' => '-']) !!}--}}
+    {{--{!! Form::closeGroup() !!}--}}
 
     @foreach(Config::get('app.locales') as $lang => $locale)
         <div role="tabpanel" class="tab-pane{{ $lang == \App::getLocale() ? ' active' : '' }}" id="lang-{{ $lang }}">
