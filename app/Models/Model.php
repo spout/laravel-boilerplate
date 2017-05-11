@@ -6,4 +6,6 @@ use App\Models\Traits\CommonTrait;
 class Model extends \Illuminate\Database\Eloquent\Model
 {
     use CommonTrait;
+
+    public $timestamps = false;
 }
