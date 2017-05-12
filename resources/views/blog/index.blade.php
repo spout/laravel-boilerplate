@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('blog.layout')
 
 @section('title', _i("Blog"))
 
@@ -11,7 +11,7 @@
                         <a href="{{ $post->absoluteUrl }}">{{ $post->title }}</a>
                     </div>
                     <div class="panel-body">
-                        {{ $post->content }}
+                        {!! $post->content !!}
                     </div>
                 </div>
             @endforeach

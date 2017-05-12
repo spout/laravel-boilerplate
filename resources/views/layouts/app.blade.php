@@ -45,7 +45,12 @@
     </div>
 </nav>
 <div class="container">
-    @renderBreadcrumbs()
+    @hasSection('breadcrumbs')
+        <ul class="breadcrumb">
+            <li><a href="{{ route('homepage') }}">{{ config('app.name') }}</a></li>
+            @yield('breadcrumbs')
+        </ul>
+    @endif
     @include('flash::message')
     @include('includes.validation-errors')
     @yield('content')
