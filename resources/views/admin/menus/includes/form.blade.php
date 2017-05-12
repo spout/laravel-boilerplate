@@ -15,9 +15,9 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             {{ _i("Menu item %d", $loop->iteration) }}
-            <button type="button" class="btn btn-danger btn-xs pull-right">{{ _i("Delete") }}</button>
         </div>
         <div class="panel-body">
+            {!! Form::hidden("menuItems[{$loop->index}][id]") !!}
             <?php
             $fields = [
                 'association' => _i("Associated page"),
@@ -25,22 +25,19 @@
                 'url' => _i("URL"),
                 'route' => _i("Route"),
                 'sort' => _i("Sort order"),
+                'delete' => _i("Delete ?")
             ];
             ?>
             @foreach($fields as $field => $label)
-                {!! Form::hidden("menuItems[{$loop->parent->index}][id]") !!}
                 {!! Form::openGroup("menuItems[{$loop->parent->index}][$field]", $label) !!}
                 @if ($field == 'association')
                     {!! Form::select("menuItems[{$loop->parent->index}][$field]", $associations, "{$item->model}.{$item->foreign_key}") !!}
-                @elseif ($field == 'url')
-                    <div class="input-group">
-                        <div class="input-group-addon">{{ url('/') }}</div>
-                        {!! Form::text("menuItems[{$loop->parent->index}][$field]") !!}
-                    </div>
                 @elseif ($field == 'route')
                     {!! Form::textarea("menuItems[{$loop->parent->index}][$field]", null, ['rows' => 3]) !!}
                 @elseif ($field == 'sort')
                     {!! Form::number("menuItems[{$loop->parent->index}][$field]") !!}
+                @elseif ($field == 'delete')
+                    {!! Form::checkbox("menuItems[{$loop->parent->index}][$field]") !!}
                 @else
                     {!! Form::text("menuItems[{$loop->parent->index}][$field]") !!}
                 @endif

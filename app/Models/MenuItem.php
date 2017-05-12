@@ -3,14 +3,7 @@ namespace App\Models;
 
 class MenuItem extends Model
 {
-    protected $fillable = [
-        'model',
-        'foreign_key',
-        'url',
-        'route',
-        'title',
-        'sort',
-    ];
+    protected $guarded = [];
 
     public function __toString()
     {

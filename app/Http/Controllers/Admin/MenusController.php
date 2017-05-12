@@ -30,22 +30,25 @@ class MenusController extends AdminController
             }
         }
 
+        $view->object->menuItems->push(new MenuItem());
         $view->associations = $associations;
         return $view;
     }
 
     public function update(Request $request, $id)
     {
+        $response = parent::update($request, $id);
+        $menu = Menu::find($id);
         foreach ($request->input('menuItems') as $item) {
-            $menuItem = MenuItem::find($item['id']);
-            if (strpos($item['association'], '.') !== false) {
-                list($item['model'], $item['foreign_key']) = explode('.', $item['association']);
+            if (empty($item['id'])) {
+                $menu->menuItems()->create($item);
+            } else {
+                $menuItem = MenuItem::find($item['id']);
+                $menuItem->fill($item);
+                $menu->menuItems()->save($menuItem);
             }
-            unset($item['association']);
-
-            $menuItem->update($item);
         }
 
-        return parent::update($request, $id);
+        return $response;
     }
 }
