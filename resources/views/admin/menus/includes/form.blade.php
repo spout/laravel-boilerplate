@@ -28,9 +28,10 @@
             ];
             ?>
             @foreach($fields as $field => $label)
+                {!! Form::hidden("menuItems[{$loop->parent->index}][id]") !!}
                 {!! Form::openGroup("menuItems[{$loop->parent->index}][$field]", $label) !!}
                 @if ($field == 'association')
-                    {!! Form::select("menuItems[{$loop->parent->index}][$field]", $associations, "{$item->model}:{$item->foreign_key}") !!}
+                    {!! Form::select("menuItems[{$loop->parent->index}][$field]", $associations, "{$item->model}.{$item->foreign_key}") !!}
                 @elseif ($field == 'url')
                     <div class="input-group">
                         <div class="input-group-addon">{{ url('/') }}</div>
