@@ -20,6 +20,7 @@
             {!! Form::hidden("menuItems[{$loop->index}][id]") !!}
             <?php
             $fields = [
+                'parent_id' => _i("Parent"),
                 'association' => _i("Associated page"),
                 'title' => _i("Title"),
                 'url' => _i("URL"),
@@ -30,7 +31,9 @@
             ?>
             @foreach($fields as $field => $label)
                 {!! Form::openGroup("menuItems[{$loop->parent->index}][$field]", $label) !!}
-                @if ($field == 'association')
+                @if ($field == 'parent_id')
+                    {!! Form::select("menuItems[{$loop->parent->index}][$field]", $parentList) !!}
+                @elseif ($field == 'association')
                     {!! Form::select("menuItems[{$loop->parent->index}][$field]", $associations, "{$item->model}.{$item->foreign_key}") !!}
                 @elseif ($field == 'route')
                     {!! Form::textarea("menuItems[{$loop->parent->index}][$field]", null, ['rows' => 3]) !!}

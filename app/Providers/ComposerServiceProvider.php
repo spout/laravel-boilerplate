@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Category;
-use App\Models\Content;
+use App\Models\MenuItem;
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -23,11 +23,11 @@ class ComposerServiceProvider extends ServiceProvider
             $view->with('categoryList', Category::all()->pluck('title', 'id'));
         });
 
-        //View::composer([
-        //    'admin.contents.includes.form'
-        //], function ($view) {
-        //    $view->with('contentList', Content::where('id', '!=', $view->object->id)->pluck('title', 'id'));
-        //});
+        View::composer([
+            'admin.menus.includes.form'
+        ], function ($view) {
+            $view->with('parentList', MenuItem::where('menu_id', $view->object->id)->get()->pluck('title', 'id'));
+        });
     }
 
     /**
