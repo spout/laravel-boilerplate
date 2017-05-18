@@ -122,20 +122,21 @@ class FormBuilder extends CollectiveFormBuilder
     /**
      * Create a select box field.
      *
-     * @param  string $name
-     * @param  array $list
-     * @param  string $selected
-     * @param  array $options
+     * @param string $name
+     * @param array $list
+     * @param null $selected
+     * @param array $selectAttributes
+     * @param array $optionsAttributes
      *
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
-    public function select($name, $list = [], $selected = null, $options = [])
+    public function select($name, $list = [], $selected = null, array $selectAttributes = [], array $optionsAttributes = [])
     {
-        $options = $this->appendClassToOptions('form-control', $options);
+        $selectAttributes = $this->appendClassToOptions('form-control', $selectAttributes);
 
         // Call the parent select method so that Laravel can handle
         // the rest of the select set up.
-        return parent::select($name, $list, $selected, $options);
+        return parent::select($name, $list, $selected, $selectAttributes, $optionsAttributes);
     }
 
     /**
