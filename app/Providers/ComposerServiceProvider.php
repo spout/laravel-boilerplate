@@ -21,19 +21,19 @@ class ComposerServiceProvider extends ServiceProvider
             'admin.blog.includes.form',
             'admin.categories.includes.form'
         ], function ($view) {
-            $view->with('categoryList', Category::all()->pluck('title', 'id'));
+            $view->with('categoryList', Category::all()->pluck('title', 'id')->prepend('-', ''));
         });
 
         View::composer([
             'admin.contents.includes.form'
         ], function ($view) {
-            $view->with('contentList', Content::where('id', '!=', $view->object->id)->get()->pluck('title', 'id'));
+            $view->with('contentList', Content::where('id', '!=', $view->object->id)->get()->pluck('title', 'id')->prepend('-', ''));
         });
 
         View::composer([
             'admin.menus.includes.form'
         ], function ($view) {
-            $view->with('parentList', MenuItem::where('menu_id', $view->object->id)->get()->pluck('title', 'id'));
+            $view->with('parentList', MenuItem::where('menu_id', $view->object->id)->get()->pluck('title', 'id')->prepend('-', ''));
         });
     }
 

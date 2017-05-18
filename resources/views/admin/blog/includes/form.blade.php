@@ -15,7 +15,7 @@
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('category_id', _i('Category')) !!}
-{!! Form::select('category_id', $categoryList, null, ['placeholder' => '-']) !!}
+{!! Form::select('category_id', $categoryList) !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('excerpt', _i('Excerpt')) !!}

@@ -4,7 +4,7 @@
 ]) !!}
 
 {!! Form::openGroup('parent_id', _i('Parent')) !!}
-{!! Form::select('parent_id', $categoryList, null, ['placeholder' => '-']) !!}
+{!! Form::select('parent_id', $categoryList) !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('title', _i('Title')) !!}

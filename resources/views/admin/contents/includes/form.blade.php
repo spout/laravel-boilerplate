@@ -9,7 +9,7 @@
 
 <div class="tab-content">
     {!! Form::openGroup("parent_id", _i('Parent')) !!}
-    {!! Form::select("parent_id", $contentList, null, ['placeholder' => '-']) !!}
+    {!! Form::select("parent_id", $contentList) !!}
     {!! Form::closeGroup() !!}
 
     @foreach(Config::get('app.locales') as $lang => $locale)
