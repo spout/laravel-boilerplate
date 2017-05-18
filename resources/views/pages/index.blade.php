@@ -1,4 +1,4 @@
-@extends('pages.layouts.app')
+@extends('pages.layout')
 
 @section('title', ucfirst($slug))
 
