@@ -7,9 +7,9 @@ class ContentsController extends Controller
 {
     protected static $model = Content::class;
 
-    public function show($slug)
+    public function show($path)
     {
-        $content = Content::locale('slug', $slug)->firstOrFail();
+        $content = Content::locale('path', $path)->firstOrFail();
         return view('contents.show', compact('content'));
     }
 }

@@ -118,5 +118,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         ]);
     });
 
-    Route::get('/{slug}', 'ContentsController@show')->where('slug', '(?!elfinder\b)\b[a-z0-9-]+')->name('contents.show');
+    Route::get('/{path}', 'ContentsController@show')->where('path', '(?!elfinder\b)\b[a-z0-9-/]+')->name('contents.show');
 });

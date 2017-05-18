@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Content;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Category;
@@ -21,6 +22,12 @@ class ComposerServiceProvider extends ServiceProvider
             'admin.categories.includes.form'
         ], function ($view) {
             $view->with('categoryList', Category::all()->pluck('title', 'id'));
+        });
+
+        View::composer([
+            'admin.contents.includes.form'
+        ], function ($view) {
+            $view->with('contentList', Content::where('id', '!=', $view->object->id)->get()->pluck('title', 'id'));
         });
 
         View::composer([

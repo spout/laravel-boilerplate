@@ -2,12 +2,12 @@
 namespace App\Models;
 
 use App\Models\Traits\TranslatableTrait;
-//use App\Models\Traits\AdjacencyListTrait;
+use App\Models\Traits\AdjacencyListTrait;
 
 class Content extends Model
 {
     use TranslatableTrait;
-    //use AdjacencyListTrait;
+    use AdjacencyListTrait;
 
     protected $dates = [
         'created_at',
@@ -22,6 +22,7 @@ class Content extends Model
     public static $translatableColumns = [
         'title',
         'slug',
+        'path',
         'content',
     ];
 
@@ -32,7 +33,7 @@ class Content extends Model
 
     public function getAbsoluteUrlAttribute()
     {
-        return route('contents.show', ['slug' => $this->slug]);
+        return route('contents.show', ['path' => $this->path]);
     }
 
     public static function bulkActive($bulk)
