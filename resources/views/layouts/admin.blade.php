@@ -15,25 +15,24 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">{{ _i("Toggle navigation") }}</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">{{ _i("Administration") }}</a>
         </div>
-    </div>
-</nav>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-9 col-md-push-3">
-            @include('flash::message')
-            @yield('content')
-        </div>
-        <div class="col-md-3 col-md-pull-9">
+
+        <div class="collapse navbar-collapse" id="navbar-collapse">
             <?php
             $navs = [
                 ['title' => _i("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
-                ['title' => _i("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
-                ['title' => _i("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
+                //['title' => _i("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
+                //['title' => _i("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
                 ['title' => _i("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
                 ['title' => _i("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
                 ['title' => _i("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
@@ -41,7 +40,7 @@
                 ['title' => _i("Settings"), 'icon' => 'cogs', 'route' => 'admin.settings.index'],
             ];
             ?>
-            <ul class="nav nav-pills nav-stacked">
+            <ul class="nav navbar-nav">
                 @foreach($navs as $nav)
                     <li>
                         <a href="{{ route($nav['route']) }}"><i class="fa fa-{{ $nav['icon'] }} fa-fw"></i> {{ $nav['title'] }}</a>
@@ -50,6 +49,11 @@
             </ul>
         </div>
     </div>
+</nav>
+
+<div class="container-fluid">
+    @include('flash::message')
+    @yield('content')
 </div>
 <script src="{{ asset('build/admin.js') }}"></script>
 @stack('scripts')
