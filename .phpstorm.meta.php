@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-05-07.
+    * Generated on 2017-05-18.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -53,7 +53,6 @@ namespace PHPSTORM_META {
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'html' instanceof \Collective\Html\HtmlBuilder,
-            'form' instanceof \App\Html\FormBuilder,
             'datatables.html' instanceof \Yajra\Datatables\Html\Builder,
             'excel.identifier' instanceof \Maatwebsite\Excel\Classes\FormatIdentifier,
             'excel.parsers.css' instanceof \Maatwebsite\Excel\Parsers\CssParser,
@@ -195,7 +194,6 @@ namespace PHPSTORM_META {
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'html' instanceof \Collective\Html\HtmlBuilder,
-            'form' instanceof \App\Html\FormBuilder,
             'datatables.html' instanceof \Yajra\Datatables\Html\Builder,
             'excel.identifier' instanceof \Maatwebsite\Excel\Classes\FormatIdentifier,
             'excel.parsers.css' instanceof \Maatwebsite\Excel\Parsers\CssParser,
@@ -337,7 +335,6 @@ namespace PHPSTORM_META {
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'html' instanceof \Collective\Html\HtmlBuilder,
-            'form' instanceof \App\Html\FormBuilder,
             'datatables.html' instanceof \Yajra\Datatables\Html\Builder,
             'excel.identifier' instanceof \Maatwebsite\Excel\Classes\FormatIdentifier,
             'excel.parsers.css' instanceof \Maatwebsite\Excel\Parsers\CssParser,
@@ -479,7 +476,6 @@ namespace PHPSTORM_META {
             'xinax::gettext.update' instanceof \Xinax\LaravelGettext\Commands\GettextUpdate,
             'datatables' instanceof \Yajra\Datatables\Datatables,
             'html' instanceof \Collective\Html\HtmlBuilder,
-            'form' instanceof \App\Html\FormBuilder,
             'datatables.html' instanceof \Yajra\Datatables\Html\Builder,
             'excel.identifier' instanceof \Maatwebsite\Excel\Classes\FormatIdentifier,
             'excel.parsers.css' instanceof \Maatwebsite\Excel\Parsers\CssParser,
