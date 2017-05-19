@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use App\Models\Content;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use App\Models\Category;
-use App\Models\MenuItem;
+use App\Http\ViewComposers\CategoryComposer;
+use App\Http\ViewComposers\ContentComposer;
+use App\Http\ViewComposers\MenuComposer;
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -17,24 +17,15 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer([
-            'admin.blog.includes.form',
-            'admin.categories.includes.form'
-        ], function ($view) {
-            $view->with('categoryList', Category::all()->pluck('title', 'id')->prepend('-', ''));
-        });
+        $composers = [
+            CategoryComposer::class => ['admin.blog.includes.form', 'admin.categories.includes.form'],
+            ContentComposer::class => ['admin.contents.includes.form'],
+            MenuComposer::class => ['admin.menus.includes.form'],
+        ];
 
-        View::composer([
-            'admin.contents.includes.form'
-        ], function ($view) {
-            $view->with('contentList', Content::where('id', '!=', $view->object->id)->get()->pluck('title', 'id')->prepend('-', ''));
-        });
-
-        View::composer([
-            'admin.menus.includes.form'
-        ], function ($view) {
-            $view->with('parentList', MenuItem::where('menu_id', $view->object->id)->get()->pluck('title', 'id')->prepend('-', ''));
-        });
+        foreach ($composers as $callback => $views) {
+            View::composer($views, $callback);
+        }
     }
 
     /**
