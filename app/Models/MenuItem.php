@@ -7,6 +7,7 @@ class MenuItem extends Model
 {
     use AdjacencyListTrait;
 
+    public $timestamps = false;
     protected $guarded = [];
 
     public function getTitleAttribute($value)

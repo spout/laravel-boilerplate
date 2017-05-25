@@ -5,6 +5,8 @@ use Symfony\Component\Yaml\Yaml;
 
 class Menu extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = [
         'title',
         'slug',
