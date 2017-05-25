@@ -38,6 +38,6 @@ class Content extends Model
 
     public static function bulkActive($bulk)
     {
-        return self::whereIn('id', $bulk)->update(['active' => true]);
+        return static::whereIn('id', $bulk)->update(['active' => true]);
     }
 }

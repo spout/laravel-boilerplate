@@ -15,7 +15,7 @@ trait AdjacencyListTrait
      */
     public function children()
     {
-        return $this->hasMany(self::class, static::$parentColumn);
+        return $this->hasMany(static::class, static::$parentColumn);
     }
 
     /**
@@ -31,7 +31,7 @@ trait AdjacencyListTrait
      */
     public function parent()
     {
-        return $this->belongsTo(self::class, static::$parentColumn);
+        return $this->belongsTo(static::class, static::$parentColumn);
     }
 
     /**
