@@ -24,7 +24,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('homepage') }}">Laravel</a>
+            <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -45,11 +45,13 @@
     </div>
 </nav>
 <div class="container">
-    @hasSection('breadcrumbs')
-        <ul class="breadcrumb">
-            <li><a href="{{ route('homepage') }}">{{ config('app.name') }}</a></li>
-            @yield('breadcrumbs')
-        </ul>
+    @if (Route::current()->getName() !== 'homepage')
+        @hasSection('breadcrumbs')
+            <ul class="breadcrumb">
+                <li><a href="{{ route('homepage') }}">{{ config('app.name') }}</a></li>
+                @yield('breadcrumbs')
+            </ul>
+        @endif
     @endif
     @include('flash::message')
     @include('includes.validation-errors')
