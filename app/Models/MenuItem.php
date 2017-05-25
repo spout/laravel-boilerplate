@@ -9,11 +9,6 @@ class MenuItem extends Model
 
     protected $guarded = [];
 
-    public function __toString()
-    {
-        return $this->title;
-    }
-
     public function getTitleAttribute($value)
     {
         if (!empty($this->model) && !empty($this->foreign_key)) {

@@ -13,11 +13,6 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function __toString()
-    {
-        return $this->title;
-    }
-
     public function getAbsoluteUrlAttribute()
     {
         return route('blog.show', ['pk' => $this->pk, 'slug' => $this->slug]);

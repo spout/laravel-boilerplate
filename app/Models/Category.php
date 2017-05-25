@@ -15,11 +15,6 @@ class Category extends Model
         return $this->hasMany(Post::class);
     }
 
-    public function __toString()
-    {
-        return $this->title;
-    }
-
     public function getAbsoluteUrlAttribute()
     {
         return '#';

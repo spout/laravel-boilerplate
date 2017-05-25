@@ -26,11 +26,6 @@ class Content extends Model
         'content',
     ];
 
-    public function __toString()
-    {
-        return $this->title;
-    }
-
     public function getAbsoluteUrlAttribute()
     {
         return route('contents.show', ['path' => $this->path]);

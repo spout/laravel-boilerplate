@@ -11,11 +11,6 @@ class Menu extends Model
         'attributes',
     ];
 
-    public function __toString()
-    {
-        return $this->title;
-    }
-
     public function getAbsoluteUrlAttribute()
     {
         return '#';

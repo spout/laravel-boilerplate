@@ -15,11 +15,6 @@ class Setting extends Model
         'value' => 'array',
     ];
 
-    public function __toString()
-    {
-        return $this->key;
-    }
-
     public function getAbsoluteUrlAttribute()
     {
         return '#';
