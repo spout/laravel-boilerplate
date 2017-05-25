@@ -18,12 +18,12 @@
             {!! Form::text("title_$lang") !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup("slug_$lang", _i('Slug')) !!}
-            {!! Form::text("slug_$lang") !!}
-            {!! Form::closeGroup() !!}
+            {{--{!! Form::openGroup("slug_$lang", _i('Slug')) !!}--}}
+            {{--{!! Form::text("slug_$lang") !!}--}}
+            {{--{!! Form::closeGroup() !!}--}}
 
             {!! Form::openGroup("path_$lang", _i('Path')) !!}
-            {!! Form::text("path_$lang", null, ['readonly' => 'readonly']) !!}
+            {!! Form::text("path_$lang") !!}
             {!! Form::closeGroup() !!}
 
             {!! Form::openGroup("content_$lang", _i('Content')) !!}
