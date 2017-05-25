@@ -3,6 +3,7 @@ namespace App\Models\Traits;
 
 use App;
 use Config;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 trait TranslatableTrait
 {
@@ -12,7 +13,7 @@ trait TranslatableTrait
 
     public static function bootTranslatableTrait()
     {
-        static::$locale = App::getLocale();
+        static::$locale = LaravelLocalization::getCurrentLocale();
         static::$localeSuffix = '_' . static::$locale;
         static::$localeFallback = Config::get('app.fallback_locale');
     }
