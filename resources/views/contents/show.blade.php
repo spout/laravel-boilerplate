@@ -4,13 +4,12 @@
 
 @section('breadcrumbs')
     @parent
-    @if (!empty($content->parentRecursive))
-        @foreach ($content->parentRecursive->all() as $parent)
-            <li><a href="{{ $parent->absoluteUrl }}">{{ $parent->title }}</a></li>
+    @if ($content->ancestors->count())
+        @foreach ($content->ancestors as $ancestor)
+            <li><a href="{{ $ancestor->absoluteUrl }}">{{ $ancestor->title }}</a></li>
         @endforeach
-    @else
-        <li><a href="{{ $content->absoluteUrl }}">{{ $content->title }}</a></li>
     @endif
+    <li><a href="{{ $content->absoluteUrl }}">{{ $content->title }}</a></li>
 @endsection
 
 @section('content')

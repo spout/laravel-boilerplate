@@ -41,4 +41,28 @@ trait AdjacencyListTrait
     {
         return $this->parent()->with('parentRecursive');
     }
+
+    /**
+     * @link https://stackoverflow.com/a/29972187/1656355
+     * @return mixed
+     */
+    public function ancestors()
+    {
+        $ancestors = $this->where('id', '=', $this->parent_id)->get();
+
+        while ($ancestors->last() && $ancestors->last()->parent_id !== null)
+        {
+            $parent = $this->where('id', '=', $ancestors->last()->parent_id)->get();
+            $ancestors = $ancestors->merge($parent);
+        }
+
+        return $ancestors;
+    }
+
+    public function getAncestorsAttribute()
+    {
+        return $this->ancestors();
+        // or like this, if you want it the other way around
+        // return $this->ancestors()->reverse();
+    }
 }
