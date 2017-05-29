@@ -26,7 +26,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     });
 
     Route::group(['prefix' => 'pages'], function () {
-        Route::get('{slug}', 'PagesController@show')->name('pages.show');
+        Route::get('{path}', 'PagesController@show')->where('path', '[a-z0-9-/]+')->name('pages.show');
     });
 
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {

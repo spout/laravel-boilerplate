@@ -3,8 +3,8 @@ namespace App\Http\Controllers;
 
 class PagesController extends Controller
 {
-    public function show($slug = 'index')
+    public function show($path = 'index')
     {
-        return view("pages.$slug", compact('slug'));
+        return view("pages.$path", compact('path'));
     }
 }
