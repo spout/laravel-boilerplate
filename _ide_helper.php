@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.23 on 2017-05-18.
+ * Generated for Laravel 5.4.23 on 2017-05-29.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11661,6 +11661,21 @@ namespace Collective\Html {
         {
             //Method inherited from \Collective\Html\FormBuilder            
             return \App\Html\FormBuilder::hidden($name, $value, $options);
+        }
+        
+        /**
+         * Create a search input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function search($name, $value = null, $options = array())
+        {
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::search($name, $value, $options);
         }
         
         /**
