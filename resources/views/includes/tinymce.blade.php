@@ -8,6 +8,7 @@ $langUpper = strtoupper($lang);
 <script>
     tinymce.init({
         selector: 'textarea.wysiwyg',
+        content_css: '{{ asset('build/app.css') }}',
         height: "200",
         <?php /*if($lang != 'en'): ?>
         language_url: '<?php echo $languageUrl; ?>',
