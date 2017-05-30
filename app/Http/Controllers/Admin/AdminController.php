@@ -8,8 +8,8 @@ class AdminController extends Controller
 {
     use CrudTrait;
 
-    //public function __construct()
-    //{
-    //    $this->middleware('auth');
-    //}
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

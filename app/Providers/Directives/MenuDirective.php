@@ -14,9 +14,11 @@ class MenuDirective
             if (!empty($item->model) && !empty($item->foreign_key)) {
                 $modelClass = $item->model;
                 $row = $modelClass::find($item->foreign_key);
-                $item->url = $row->absoluteUrl;
-                if (empty($item->title)) {
-                    $item->title = $row; // __toString()
+                if (!empty($row)) {
+                    $item->url = $row->absoluteUrl;
+                    if (empty($item->title)) {
+                        $item->title = $row; // __toString()
+                    }
                 }
             } elseif (!empty($item->route)) {
                 $route = Yaml::parse($item->route);
