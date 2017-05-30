@@ -2,6 +2,11 @@
 
 @section('title', _i("Contact us"))
 
+@section('breadcrumbs')
+    @parent
+    <li><a href="{{ route('contacts.form') }}">{{ _i("Contact us") }}</a></li>
+@endsection
+
 @section('content')
     {!! Form::open() !!}
 
