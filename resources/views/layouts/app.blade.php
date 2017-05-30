@@ -33,12 +33,12 @@
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::check())
                     <li>
-                        <a href="#" onclick="document.logout.submit();return false;"><i class="fa fa-sign-out"></i> {{ "Logout" }}</a>
+                        <a href="#" onclick="document.logout.submit();return false;"><i class="fa fa-sign-out"></i> {{ _i("Logout") }}</a>
                         {{ Form::open(['route' => 'logout', 'method' => 'post', 'name' => 'logout']) }}
                         {{ Form::close() }}
                     </li>
                 @else
-                    <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> {{ "Login" }}</a></li>
+                    <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> {{ _i("Login") }}</a></li>
                 @endif
             </ul>
         </div>
