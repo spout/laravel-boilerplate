@@ -2,6 +2,7 @@
 namespace App\Models;
 
 use App\Models\Traits\AdjacencyListTrait;
+use App\Scopes\OrderScope;
 
 class MenuItem extends Model
 {
@@ -9,6 +10,13 @@ class MenuItem extends Model
 
     public $timestamps = false;
     protected $guarded = [];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new OrderScope('sort'));
+    }
 
     public function getTitleAttribute($value)
     {
