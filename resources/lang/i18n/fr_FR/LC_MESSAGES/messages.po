@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2017-05-30 19:05+0100\n"
-"PO-Revision-Date: 2017-05-30 19:05+0100\n"
+"POT-Creation-Date: 2017-06-07 18:28+0100\n"
+"PO-Revision-Date: 2017-06-07 18:28+0100\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -145,7 +145,7 @@ msgstr "Le message est requis."
 #: ../storage/framework/messages//2e2813d565726a251d79ecba123361e4bca73b0e.php.php:21
 #: ../storage/framework/messages//435d7616868b600488c9e48130cb9394d69b3a1f.php.php:22
 #: ../storage/framework/messages//477ee0a26237d5850c0f4446c6df6cb27ed7bfd4.php.php:8
-#: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:7
+#: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:12
 #: ../storage/framework/messages//bd4855d750f731456bfc295fa267351443445f46.php.php:14
 #: ../storage/framework/messages//d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:7
 #: DataTables/ContactsDataTable.php:21 DataTables/UsersDataTable.php:22
@@ -154,14 +154,14 @@ msgstr "Email"
 
 #: ../storage/framework/messages//18c3204dc2831907564eaed2cb74deee58396549.php.php:7
 #: ../storage/framework/messages//2e2813d565726a251d79ecba123361e4bca73b0e.php.php:22
-#: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:14
+#: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:19
 #: ../storage/framework/messages//d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:14
 #: DataTables/ContactsDataTable.php:22
 msgid "Subject"
 msgstr "Sujet"
 
 #: ../storage/framework/messages//18c3204dc2831907564eaed2cb74deee58396549.php.php:8
-#: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:21
+#: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:26
 #: ../storage/framework/messages//d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:21
 msgid "Message"
 msgstr "Message"
@@ -336,10 +336,11 @@ msgid "Delete"
 msgstr "Supprimer"
 
 #: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:1
+#: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:5
 msgid "Contact us"
 msgstr "Contactez-nous"
 
-#: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:28
+#: ../storage/framework/messages//69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:33
 msgid "Send"
 msgstr "Envoyer"
 
@@ -449,6 +450,14 @@ msgstr "Créer contenu"
 #: ../storage/framework/messages//9d53f220df289905ab75cd8971e03e2fecccec5e.php.php:3
 msgid "Please correct the errors below:"
 msgstr "Veuillez corriger les erreurs ci-dessous :"
+
+#: ../storage/framework/messages//a7e649ba49171e4c2e67191505af4fd67d26948c.php.php:36
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: ../storage/framework/messages//a7e649ba49171e4c2e67191505af4fd67d26948c.php.php:43
+msgid "Login"
+msgstr "Connexion"
 
 #: ../storage/framework/messages//b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:24
 msgid "Category"
