@@ -1,8 +1,6 @@
 <?php
 namespace App\Models;
 
-use Symfony\Component\Yaml\Yaml;
-
 class Menu extends Model
 {
     public $timestamps = false;
@@ -21,10 +19,5 @@ class Menu extends Model
     public function menuItems()
     {
         return $this->hasMany(MenuItem::class)->orderBy('sort');
-    }
-
-    public function getAttributesAttribute($attributes)
-    {
-        return Yaml::parse($attributes);
     }
 }

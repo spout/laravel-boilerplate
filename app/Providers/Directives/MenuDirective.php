@@ -2,13 +2,13 @@
 namespace App\Providers\Directives;
 
 use App\Models\Menu;
-use Symfony\Component\Yaml\Yaml;
 
 class MenuDirective
 {
     public static function display($expression)
     {
         $menu = Menu::where('slug', $expression['menu'])->first();
+        $menu->attributes = json_decode($menu->attributes, true);
 
         foreach ($menu->menuItems ?:[] as &$item) {
             if (!empty($item->model) && !empty($item->foreign_key)) {
@@ -21,7 +21,7 @@ class MenuDirective
                     }
                 }
             } elseif (!empty($item->route)) {
-                $route = Yaml::parse($item->route);
+                $route = json_decode($item->route, true);
                 $item->url = route($route['name'], empty($route['parameters']) ? [] : $route['parameters']);
             }
         }

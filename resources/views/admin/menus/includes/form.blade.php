@@ -1,3 +1,5 @@
+@include('includes.ace-editor')
+
 {!! Form::model($object, [
     'route' => empty($object->id) ? ['admin.menus.store'] : ['admin.menus.update', $object->id],
     'method' => empty($object->id) ? 'POST' : 'PUT'
@@ -9,6 +11,11 @@
 
 {!! Form::openGroup('slug', _i('Slug')) !!}
 {!! Form::text('slug') !!}
+{!! Form::closeGroup() !!}
+
+{!! Form::openGroup('attributes', _i('Attributes')) !!}
+{{-- TODO: setting attributes textarea value as null causes an error (array) --}}
+{!! Form::textarea('attributes', $object->attributes, ['rows' => 3, 'data-editor' => 'json']) !!}
 {!! Form::closeGroup() !!}
 
 @foreach($object->menuItems as $item)
@@ -36,7 +43,7 @@
                 @elseif ($field == 'association')
                     {!! Form::select("menuItems[{$loop->parent->index}][$field]", $associations, "{$item->model}.{$item->foreign_key}") !!}
                 @elseif ($field == 'route')
-                    {!! Form::textarea("menuItems[{$loop->parent->index}][$field]", null, ['rows' => 3]) !!}
+                    {!! Form::textarea("menuItems[{$loop->parent->index}][$field]", null, ['rows' => 3, 'data-editor' => 'json']) !!}
                 @elseif ($field == 'sort')
                     {!! Form::number("menuItems[{$loop->parent->index}][$field]") !!}
                 @elseif ($field == 'delete')
