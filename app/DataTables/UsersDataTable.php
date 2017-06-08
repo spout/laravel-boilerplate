@@ -18,7 +18,7 @@ class UsersDataTable extends DataTable
     {
         return [
             ['data' => 'id', 'name' => 'id', 'title' => _i("ID"), 'searchable' => false],
-            ['data' => 'username', 'name' => 'username', 'title' => _i("Username")],
+            ['data' => 'name', 'name' => 'name', 'title' => _i("Name")],
             ['data' => 'email', 'name' => 'email', 'title' => _i("Email")],
             ['data' => 'role', 'name' => 'role', 'title' => _i("Role")],
             ['data' => 'created_at', 'name' => 'created_at', 'title' => _i("Created"), 'searchable' => false],
