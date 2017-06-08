@@ -1,5 +1,5 @@
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
 <script>
     $(function () {
         // https://gist.github.com/duncansmart/5267653
@@ -20,6 +20,8 @@
             editor.getSession().setMode("ace/mode/" + mode);
             editor.setTheme("ace/theme/{{ $theme or 'monokai' }}");
             editor.setShowPrintMargin(false);
+            editor.setAutoScrollEditorIntoView(true);
+            editor.setOption("maxLines", 30);
 
             // copy back to textarea on form submit...
             textarea.closest('form').submit(function () {
