@@ -106,6 +106,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
+        Route::resource('snippets', 'SnippetsController', [
+            'names' => [
+                'store' => 'admin.snippets.store',
+                'index' => 'admin.snippets.index',
+                'create' => 'admin.snippets.create',
+                'destroy' => 'admin.snippets.destroy',
+                'update' => 'admin.snippets.update',
+                'show' => 'admin.snippets.show',
+                'edit' => 'admin.snippets.edit',
+            ]
+        ]);
+
         Route::resource('settings', 'SettingsController', [
             'names' => [
                 'store' => 'admin.settings.store',

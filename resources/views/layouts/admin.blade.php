@@ -34,6 +34,7 @@
                 //['title' => _i("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
                 //['title' => _i("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
                 ['title' => _i("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
+                ['title' => _i("Snippets"), 'icon' => 'link', 'route' => 'admin.snippets.index'],
                 ['title' => _i("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
                 ['title' => _i("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
                 ['title' => _i("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file_manager.index'],
