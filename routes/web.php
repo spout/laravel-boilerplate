@@ -32,6 +32,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         Route::get('/', 'DashboardController@index')->name('admin.dashboard.index');
         Route::get('/file-manager', 'FileManagerController@index')->name('admin.file_manager.index');
+        Route::get('/routes', 'RoutesController@index')->name('admin.routes.index');
 
         //Route::post('contents/bulk', 'ContentsController@bulk')->name('admin.contents.bulk');
         Route::resource('contents', 'ContentsController', [
