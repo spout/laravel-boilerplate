@@ -25,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('renderBreadcrumbs', function ($expression) {
             return "<?php echo App\\Providers\\Directives\\BreadcrumbsDirective::renderBreadcrumbs($expression); ?>";
         });
+
+        Blade::directive('snippet', function ($expression) {
+            return "<?php echo App\\Providers\\Directives\\SnippetDirective::display($expression); ?>";
+        });
     }
 
     /**
