@@ -26,8 +26,8 @@ trait CreateTrait
     {
         $model = static::$model;
         $input = $request->all();
-        $model::create($input);
+        $object = $model::create($input);
         flash(_i("Record was created successfully!"), 'success');
-        return redirect()->back();
+        return redirect()->route("{$this->viewPath()}.edit", ['id' => $object->id]);
     }
 }
