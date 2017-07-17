@@ -7,7 +7,7 @@ class MenuDirective
 {
     public static function display($expression)
     {
-        $menu = Menu::where('slug', $expression['menu'])->first();
+        $menu = Menu::where('slug', $expression['slug'])->first();
         $menu->attributes = json_decode($menu->attributes, true);
 
         foreach ($menu->menuItems ?:[] as &$item) {

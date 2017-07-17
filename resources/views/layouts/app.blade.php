@@ -28,7 +28,7 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
-            @menu(['menu' => 'principal'])
+            @menu(['slug' => 'principal'])
 
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::check())
