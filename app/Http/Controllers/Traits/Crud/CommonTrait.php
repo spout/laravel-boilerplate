@@ -19,7 +19,7 @@ trait CommonTrait
 
     protected function viewPath()
     {
-        $path = strtolower(str_replace('Controller', '', class_basename(static::class)));
+        $path = kebab_case(str_replace('Controller', '', class_basename(static::class)));
         $prefix = request()->route()->getPrefix();
         if (!empty($prefix)) {
             list($locale, $prefix) = explode('/', $prefix);
