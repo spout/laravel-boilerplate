@@ -20,8 +20,8 @@
             editor.getSession().setMode("ace/mode/" + mode);
             editor.setTheme("ace/theme/{{ $theme or 'monokai' }}");
             editor.setShowPrintMargin(false);
-            editor.setAutoScrollEditorIntoView(true);
-            editor.setOption("maxLines", 30);
+            //editor.setAutoScrollEditorIntoView(true);
+            //editor.setOption("maxLines", 30);
 
             // copy back to textarea on form submit...
             textarea.closest('form').submit(function () {
