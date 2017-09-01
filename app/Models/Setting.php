@@ -11,9 +11,6 @@ class Setting extends Model
         'key',
         'value',
     ];
-    protected $casts = [
-        'value' => 'array',
-    ];
 
     public function getAbsoluteUrlAttribute()
     {
