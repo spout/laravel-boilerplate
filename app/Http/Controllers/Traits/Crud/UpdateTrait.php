@@ -8,27 +8,29 @@ trait UpdateTrait
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $pk
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit($id)
+    public function edit($pk)
     {
         $model = static::$model;
-        $object = $model::findOrFail($id);
+        $object = $model::findOrFail($pk);
         return view("{$this->viewPath()}.edit", compact('object'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param $pk
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $pk)
     {
         $model = static::$model;
-        $object = $model::find($id);
+        $object = $model::find($pk);
         $input = $request->all();
         $object->update($input);
         flash(_i("Record was updated successfully!"), 'success');

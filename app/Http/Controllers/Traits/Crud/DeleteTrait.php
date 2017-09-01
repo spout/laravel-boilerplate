@@ -6,13 +6,14 @@ trait DeleteTrait
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $pk
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy($pk)
     {
         $model = static::$model;
-        $model::destroy($id);
+        $model::destroy($pk);
         flash(_i("Record was deleted successfully!"), 'success');
         return redirect()->back();
     }

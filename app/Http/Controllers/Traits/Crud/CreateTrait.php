@@ -28,6 +28,6 @@ trait CreateTrait
         $input = $request->all();
         $object = $model::create($input);
         flash(_i("Record was created successfully!"), 'success');
-        return redirect()->route("{$this->viewPath()}.edit", ['id' => $object->id]);
+        return redirect()->route("{$this->viewPath()}.edit", [$object->pk]);
     }
 }
