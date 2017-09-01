@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') :: {{ _i("Administration") }}</title>
 
     @stack('styles')
@@ -37,7 +38,7 @@
                 ['title' => _i("Snippets"), 'icon' => 'link', 'route' => 'admin.snippets.index'],
                 ['title' => _i("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
                 ['title' => _i("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
-                ['title' => _i("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file_manager.index'],
+                ['title' => _i("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file-manager.index'],
                 ['title' => _i("Settings"), 'icon' => 'cogs', 'route' => 'admin.settings.index'],
                 ['title' => _i("Routes"), 'icon' => 'road', 'route' => 'admin.routes.index'],
             ];
