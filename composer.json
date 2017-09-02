@@ -5,30 +5,29 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
-        "laravel/framework": "5.4.*",
-        "laravelcollective/html": "^5.4",
-        "barryvdh/laravel-ide-helper": "^2.3",
+        "php": ">=7.0.0",
+        "laravel/framework": "5.5.*",
+        "laravelcollective/html": "^5.5",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "laracasts/flash": "^3.0",
-        "barryvdh/laravel-debugbar": "^2.3",
-        "yajra/laravel-datatables-oracle": "^7.3",
-        "barryvdh/laravel-elfinder": "^0.3.8",
-        "mcamara/laravel-localization": "^1.1",
-        "doctrine/dbal": "^2.5",
+        "yajra/laravel-datatables-oracle": "8.*",
+        "barryvdh/laravel-elfinder": "^0.3.11",
+        "mcamara/laravel-localization": "^1.2",
+        "doctrine/dbal": "^2.6",
         "belphemur/laravel-gettext": "^5.0",
-        "yajra/laravel-datatables-buttons": "^2.0",
-        "yajra/laravel-datatables-html": "^2.0",
-        "intervention/image": "^2.3",
+        "intervention/image": "^2.4",
         "intervention/imagecache": "^2.3",
         "sabre/vobject": "^4.1",
-        "google/apiclient": "^2.2"
+        "google/apiclient": "^2.2",
+        "barryvdh/laravel-debugbar": "^3.0",
+        "yajra/laravel-datatables-buttons": "3.*"
     },
     "require-dev": {
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "fzaninotto/faker": "^1.7",
+        "mockery/mockery": "^0.9.9",
+        "phpunit/phpunit": "~6.0",
+        "symfony/css-selector": "^3.3",
+        "symfony/dom-crawler": "^3.3"
     },
     "autoload": {
         "classmap": [

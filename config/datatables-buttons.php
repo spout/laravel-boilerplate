@@ -2,11 +2,6 @@
 
 return [
     /**
-     * DataTables internal index id response column name.
-     */
-    'index_column'    => 'DT_Row_Index',
-
-    /**
      * Namespaces used by the generator.
      */
     'namespace'       => [
@@ -32,12 +27,17 @@ return [
     ],
 
     /**
+     * Set Custom stub folder
+     */
+    //'stub' => '/resources/custom_stub',
+
+    /**
      * PDF generator to be used when converting the table to pdf.
      * Available generators: excel, snappy
      * Snappy package: barryvdh/laravel-snappy
      * Excel package: maatwebsite/excel
      */
-    'pdf_generator'   => 'excel',
+    'pdf_generator'   => 'snappy',
 
     /**
      * Snappy PDF options.
@@ -52,4 +52,18 @@ return [
         ],
         'orientation' => 'landscape',
     ],
+
+    /**
+     * Default html builder parameters.
+     */
+    'parameters' => [
+        'order'   => [[0, 'desc']],
+        'buttons' => [
+            'create',
+            'export',
+            'print',
+            'reset',
+            'reload',
+        ],
+    ]
 ];

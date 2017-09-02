@@ -5,7 +5,7 @@ namespace App\DataTables;
 use App\Models\Traits\TranslatableTrait;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-abstract class DataTable extends \Yajra\Datatables\Services\DataTable
+abstract class DataTable extends \Yajra\DataTables\Services\DataTable
 {
     /**
      * Display ajax response.
@@ -14,7 +14,7 @@ abstract class DataTable extends \Yajra\Datatables\Services\DataTable
      */
     public function ajax()
     {
-        $ajax = $this->datatables
+        $ajax = datatables()
             ->eloquent($this->query())
             ->addColumn('action', function ($object) {
                 $resourcePrefix = static::$resourcePrefix;

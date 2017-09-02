@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Controllers\Traits\Crud;
 
-use Yajra\Datatables\Datatables;
-use Yajra\Datatables\Request;
+use Yajra\DataTables\DataTables;
+use \Yajra\DataTables\Utilities\Request;
 
 trait IndexTrait
 {
@@ -14,7 +14,7 @@ trait IndexTrait
         $illuminateRequest = request();
         $request = new Request($illuminateRequest);
         $viewFactory = view();
-        $dataTable = new static::$dataTableClass(new Datatables($request), $viewFactory);
+        $dataTable = new static::$dataTableClass(new DataTables($request), $viewFactory);
         return $dataTable->render("{$this->viewPath()}.index");
     }
 }
