@@ -2,6 +2,9 @@
 
 namespace App\Console;
 
+use App\Console\Commands\PropertiesCreateEvents;
+use App\Console\Commands\PropertiesSendEmails;
+use App\Console\Commands\TranslatableCreateColumns;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +16,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\Commands\TranslatableCreateColumns::class,
+        TranslatableCreateColumns::class,
+        PropertiesCreateEvents::class,
+        PropertiesSendEmails::class,
     ];
 
     /**

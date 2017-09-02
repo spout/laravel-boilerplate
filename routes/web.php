@@ -31,7 +31,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         Route::get('/', 'DashboardController@index')->name('admin.dashboard.index');
-        Route::get('/file-manager', 'FileManagerController@index')->name('admin.file_manager.index');
+        Route::get('/file-manager', 'FileManagerController@index')->name('admin.file-manager.index');
         Route::get('/routes', 'RoutesController@index')->name('admin.routes.index');
 
         //Route::post('contents/bulk', 'ContentsController@bulk')->name('admin.contents.bulk');
@@ -130,6 +130,52 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
                 'edit' => 'admin.settings.edit',
             ]
         ]);
+
+        Route::match(['get', 'post'], 'properties/send-email/{id}/{type}', 'PropertiesController@sendEmail')->name('admin.properties.send-email');
+        Route::post('properties/get-email-data/{id}', 'PropertiesController@getEmailData')->name('admin.properties.get-email-data');
+
+        Route::resource('properties', 'PropertiesController', [
+            'names' => [
+                'store' => 'admin.properties.store',
+                'index' => 'admin.properties.index',
+                'create' => 'admin.properties.create',
+                'destroy' => 'admin.properties.destroy',
+                'update' => 'admin.properties.update',
+                'show' => 'admin.properties.show',
+                'edit' => 'admin.properties.edit',
+            ]
+        ]);
+
+        Route::resource('email-templates', 'EmailTemplatesController', [
+            'names' => [
+                'store' => 'admin.email-templates.store',
+                'index' => 'admin.email-templates.index',
+                'create' => 'admin.email-templates.create',
+                'destroy' => 'admin.email-templates.destroy',
+                'update' => 'admin.email-templates.update',
+                'show' => 'admin.email-templates.show',
+                'edit' => 'admin.email-templates.edit',
+            ]
+        ]);
+
+        Route::resource('event-templates', 'EventTemplatesController', [
+            'names' => [
+                'store' => 'admin.event-templates.store',
+                'index' => 'admin.event-templates.index',
+                'create' => 'admin.event-templates.create',
+                'destroy' => 'admin.event-templates.destroy',
+                'update' => 'admin.event-templates.update',
+                'show' => 'admin.event-templates.show',
+                'edit' => 'admin.event-templates.edit',
+            ]
+        ]);
+    });
+
+    Route::get('/cron', function () {
+        $exitCode = Artisan::call('properties:create-events');
+        $exitCode = Artisan::call('properties:send-emails');
+
+        var_dump($exitCode);
     });
 
     Route::get('/{path}', 'ContentsController@show')->where('path', '^(?!(elfinder|imagecache)\b)\b[a-z0-9-\/]+')->name('contents.show');

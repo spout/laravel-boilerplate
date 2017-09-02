@@ -5,3 +5,6 @@
 Homestead.json
 Homestead.yaml
 .env
+/quickstart.php
+/calendar-php-quickstart.json
+/config/google-calendar/*

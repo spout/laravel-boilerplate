@@ -10347,6 +10347,13 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
 $(function () {
   $('div.alert').not('.alert-important').delay(3000).fadeOut(350)
   $('[data-toggle="tooltip"]').tooltip()
+
+  // https://laravel.com/docs/5.4/csrf#csrf-x-csrf-token
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  })
 })
 
 if (!String.prototype.format) {
