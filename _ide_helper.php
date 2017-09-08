@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.1 on 2017-09-02.
+ * Generated for Laravel 5.5.1 on 2017-09-08.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13115,6 +13115,112 @@ namespace Collective\Html {
  
 }
 
+namespace Yajra\DataTables\Facades { 
+
+    class DataTables {
+        
+        /**
+         * Make a DataTable instance from source.
+         * 
+         * Alias of make for backward compatibility.
+         *
+         * @param mixed $source
+         * @return mixed 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function of($source)
+        {
+            return \Yajra\DataTables\DataTables::of($source);
+        }
+        
+        /**
+         * Make a DataTable instance from source.
+         *
+         * @param mixed $source
+         * @return mixed 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function make($source)
+        {
+            return \Yajra\DataTables\DataTables::make($source);
+        }
+        
+        /**
+         * Get request object.
+         *
+         * @return \Yajra\DataTables\Utilities\Request 
+         * @static 
+         */ 
+        public static function getRequest()
+        {
+            return \Yajra\DataTables\DataTables::getRequest();
+        }
+        
+        /**
+         * Get config instance.
+         *
+         * @return \Yajra\DataTables\Utilities\Config 
+         * @static 
+         */ 
+        public static function getConfig()
+        {
+            return \Yajra\DataTables\DataTables::getConfig();
+        }
+        
+        /**
+         * DataTables using Query Builder.
+         *
+         * @param \Illuminate\Database\Query\Builder|mixed $builder
+         * @return \Yajra\DataTables\QueryDataTable 
+         * @static 
+         */ 
+        public static function queryBuilder($builder)
+        {
+            return \Yajra\DataTables\DataTables::queryBuilder($builder);
+        }
+        
+        /**
+         * DataTables using Eloquent Builder.
+         *
+         * @param \Illuminate\Database\Eloquent\Builder|mixed $builder
+         * @return \Yajra\DataTables\EloquentDataTable 
+         * @static 
+         */ 
+        public static function eloquent($builder)
+        {
+            return \Yajra\DataTables\DataTables::eloquent($builder);
+        }
+        
+        /**
+         * DataTables using Collection.
+         *
+         * @param \Illuminate\Support\Collection|array $collection
+         * @return \Yajra\DataTables\CollectionDataTable 
+         * @static 
+         */ 
+        public static function collection($collection)
+        {
+            return \Yajra\DataTables\DataTables::collection($collection);
+        }
+        
+        /**
+         * Get html builder instance.
+         *
+         * @return \Yajra\DataTables\Html\Builder 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function getHtmlBuilder()
+        {
+            return \Yajra\DataTables\DataTables::getHtmlBuilder();
+        }
+         
+    }
+ 
+}
+
 namespace Mcamara\LaravelLocalization\Facades { 
 
     class LaravelLocalization {
@@ -13581,112 +13687,6 @@ namespace Laracasts\Flash {
         public static function clear()
         {
             return \Laracasts\Flash\FlashNotifier::clear();
-        }
-         
-    }
- 
-}
-
-namespace Yajra\DataTables\Facades { 
-
-    class DataTables {
-        
-        /**
-         * Make a DataTable instance from source.
-         * 
-         * Alias of make for backward compatibility.
-         *
-         * @param mixed $source
-         * @return mixed 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function of($source)
-        {
-            return \Yajra\DataTables\DataTables::of($source);
-        }
-        
-        /**
-         * Make a DataTable instance from source.
-         *
-         * @param mixed $source
-         * @return mixed 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function make($source)
-        {
-            return \Yajra\DataTables\DataTables::make($source);
-        }
-        
-        /**
-         * Get request object.
-         *
-         * @return \Yajra\DataTables\Utilities\Request 
-         * @static 
-         */ 
-        public static function getRequest()
-        {
-            return \Yajra\DataTables\DataTables::getRequest();
-        }
-        
-        /**
-         * Get config instance.
-         *
-         * @return \Yajra\DataTables\Utilities\Config 
-         * @static 
-         */ 
-        public static function getConfig()
-        {
-            return \Yajra\DataTables\DataTables::getConfig();
-        }
-        
-        /**
-         * DataTables using Query Builder.
-         *
-         * @param \Illuminate\Database\Query\Builder|mixed $builder
-         * @return \Yajra\DataTables\QueryDataTable 
-         * @static 
-         */ 
-        public static function queryBuilder($builder)
-        {
-            return \Yajra\DataTables\DataTables::queryBuilder($builder);
-        }
-        
-        /**
-         * DataTables using Eloquent Builder.
-         *
-         * @param \Illuminate\Database\Eloquent\Builder|mixed $builder
-         * @return \Yajra\DataTables\EloquentDataTable 
-         * @static 
-         */ 
-        public static function eloquent($builder)
-        {
-            return \Yajra\DataTables\DataTables::eloquent($builder);
-        }
-        
-        /**
-         * DataTables using Collection.
-         *
-         * @param \Illuminate\Support\Collection|array $collection
-         * @return \Yajra\DataTables\CollectionDataTable 
-         * @static 
-         */ 
-        public static function collection($collection)
-        {
-            return \Yajra\DataTables\DataTables::collection($collection);
-        }
-        
-        /**
-         * Get html builder instance.
-         *
-         * @return \Yajra\DataTables\Html\Builder 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function getHtmlBuilder()
-        {
-            return \Yajra\DataTables\DataTables::getHtmlBuilder();
         }
          
     }
@@ -16670,13 +16670,13 @@ namespace  {
 
     class Html extends \Collective\Html\HtmlFacade {}
 
+    class DataTables extends \Yajra\DataTables\Facades\DataTables {}
+
     class LaravelLocalization extends \Mcamara\LaravelLocalization\Facades\LaravelLocalization {}
 
     class Image extends \Intervention\Image\Facades\Image {}
 
     class Flash extends \Laracasts\Flash\Flash {}
-
-    class DataTables extends \Yajra\DataTables\Facades\DataTables {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
 
