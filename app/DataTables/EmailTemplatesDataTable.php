@@ -17,8 +17,15 @@ class EmailTemplatesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'type', 'name' => 'type', 'title' => _i("Type"), 'searchable' => false],
-            ['data' => 'title', 'name' => 'title', 'title' => _i("Title")],
+            ['data' => 'email_type.title', 'name' => 'emailType.title', 'title' => _i("Type")],
         ];
+    }
+
+    public function query()
+    {
+        $model = static::$model;
+        $query = $model::with('emailType')->select('email_templates.*');
+
+        return $this->applyScopes($query);
     }
 }

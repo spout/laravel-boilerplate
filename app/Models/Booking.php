@@ -4,6 +4,7 @@ namespace App\Models;
 class Booking extends Model
 {
     protected $dates = ['arrival_date', 'departure_date'];
+    protected $guarded = [];
 
     public function property()
     {

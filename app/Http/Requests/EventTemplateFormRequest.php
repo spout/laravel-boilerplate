@@ -24,11 +24,20 @@ class EventTemplateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
             'template' => 'required',
             'time_start' => 'required',
             'time_end' => 'required',
             'color' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'template.required' => _i("The template is required."),
+            'time_start.required' => _i("The start time is required."),
+            'time_end.required' => _i("The end time is required."),
+            'color.required' => _i("The color is required."),
         ];
     }
 }

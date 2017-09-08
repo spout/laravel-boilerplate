@@ -17,7 +17,15 @@ class EventTemplatesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'title', 'name' => 'title', 'title' => _i("Title")],
+            ['data' => 'event_type.title', 'name' => 'eventType.title', 'title' => _i("Type")],
         ];
+    }
+
+    public function query()
+    {
+        $model = static::$model;
+        $query = $model::with('eventType')->select('event_templates.*');
+
+        return $this->applyScopes($query);
     }
 }

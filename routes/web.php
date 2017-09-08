@@ -132,7 +132,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         ]);
 
         Route::match(['get', 'post'], 'properties/send-email/{id}/{type}', 'PropertiesController@sendEmail')->name('admin.properties.send-email');
-        Route::post('properties/get-email-data/{id}', 'PropertiesController@getEmailData')->name('admin.properties.get-email-data');
 
         Route::resource('properties', 'PropertiesController', [
             'names' => [
@@ -172,9 +171,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     });
 
     Route::get('/cron', function () {
-        $exitCode = Artisan::call('properties:create-events');
-        $exitCode = Artisan::call('properties:send-emails');
-
+        $exitCode = Artisan::call('properties');
         var_dump($exitCode);
     });
 

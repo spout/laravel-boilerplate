@@ -3,10 +3,6 @@
     'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
-{!! Form::openGroup('title', _i('Title')) !!}
-{!! Form::text('title') !!}
-{!! Form::closeGroup() !!}
-
 @include('includes.templates-tags-form', ['title' => _i("Available tags for summary and template:")])
 
 {!! Form::openGroup('summary', _i('Summary')) !!}

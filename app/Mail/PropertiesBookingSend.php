@@ -7,7 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class PropertiesSendEmails extends Mailable
+class PropertiesBookingSend extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -34,6 +34,6 @@ class PropertiesSendEmails extends Mailable
             ->from(config('mail.from.address'), config('mail.from.name'))
             ->to($this->email->to)
             ->subject($this->email->subject)
-            ->view('emails.properties.sendEmails');
+            ->view('emails.properties.bookingSend');
     }
 }

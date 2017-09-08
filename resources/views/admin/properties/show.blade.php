@@ -24,6 +24,12 @@
         'created_at' => _i("Created"),
         'updated_at' => _i("Updated"),
     ];
+
+    echo '<ul>';
+    foreach ($object->icalUrlAsObject->VEVENT as $vevent) {
+        echo "<li>{$vevent->SUMMARY}</li>";
+    }
+    echo '</ul>';
     ?>
 
     <div class="panel panel-default">

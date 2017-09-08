@@ -6,8 +6,6 @@
     <?php
     $columns = [
         'id' => _i("ID"),
-//        'email_type_id' => _i("Email type"),
-        'title' => _i("Title"),
         'subject' => _i("Subject"),
         'template' => _i("Template"),
     ];

@@ -24,10 +24,18 @@ class EmailTemplateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
             'to' => 'required',
             'subject' => 'required',
             'template' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'to.required' => _i("The to field is required."),
+            'subject.required' => _i("The subject is required."),
+            'template.required' => _i("The template is required."),
         ];
     }
 }

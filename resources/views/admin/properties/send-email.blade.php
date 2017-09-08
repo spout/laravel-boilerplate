@@ -5,7 +5,7 @@
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="panel-title">{{ $emailTemplate->title }}</h2>
+            <h2 class="panel-title">{{ _i("Send email to %s", $emailType->title) }}</h2>
         </div>
         <div class="panel-body">
             {!! Form::open() !!}
