@@ -3,6 +3,8 @@ namespace App\Models;
 
 class Event extends Model
 {
+    public $incrementing = false;
+
     protected $guarded = [];
     protected $dates = [
         'start',
@@ -15,5 +17,10 @@ class Event extends Model
     public function eventType()
     {
         return $this->belongsTo(EventType::class, 'type', 'event_type');
+    }
+
+    public function booking()
+    {
+        return $this->belongsTo(Booking::class);
     }
 }

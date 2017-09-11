@@ -201,7 +201,7 @@ class Properties extends Command
             /** @var \Google_Service_Calendar_Event $googleCalendarEvent */
             $extendedProperties = $googleCalendarEvent->getExtendedProperties();
             Event::firstOrCreate([
-                'event_id' => $googleCalendarEvent->getId(),
+                'id' => $googleCalendarEvent->getId(),
             ], [
                 'event_type' => $extendedProperties['private']['event_type'],
                 'booking_id' => $extendedProperties['private']['booking_id'],
