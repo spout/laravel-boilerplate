@@ -97,6 +97,7 @@ class GoogleCalendar
         foreach ($events as $event) {
             $request = $this->insert($event, true);
             $batch->add($request);
+            break; // TODO: remove me !
         }
         return $batch->execute();
     }

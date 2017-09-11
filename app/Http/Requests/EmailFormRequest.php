@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PropertiesFormRequest extends FormRequest
+class EmailFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,10 @@ class PropertiesFormRequest extends FormRequest
     {
         return [
             'property_type_id' => 'required',
-            'ical_url' => 'required|url',
-            'owner_email' => 'required|email',
-            'name' => 'required',
+            'email_type' => 'required',
+            'to' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required',
         ];
     }
 
@@ -35,11 +36,11 @@ class PropertiesFormRequest extends FormRequest
     {
         return [
             'property_type_id.required' => _i("The property type is required."),
-            'ical_url.required' => _i("The iCal URL is required."),
-            'ical_url.url' => _i("The iCal URL is not a valid URL."),
-            'owner_email.required' => _i("The owner email is required."),
-            'owner_email.email' => _i("The owner email is not a valid email address."),
-            'name.required' => _i("The name is required."),
+            'email_type.required' => _i("The email type is required."),
+            'to.required' => _i("The to field is required."),
+            'to.email' => _i("The to field is not a valid email."),
+            'subject.required' => _i("The subject is required."),
+            'message.required' => _i("The message is required."),
         ];
     }
 }

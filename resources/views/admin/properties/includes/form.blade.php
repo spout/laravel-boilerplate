@@ -1,4 +1,5 @@
 @include('includes.google-place-autocomplete', ['domId' => 'address'])
+@include('includes.elfinder-standalonepopup')
 
 {!! Form::model($object, [
     'route' => empty($object->id) ? ['admin.properties.store'] : ['admin.properties.update', $object->id],
@@ -84,14 +85,14 @@
 {!! Form::number('keys') !!}
 {!! Form::closeGroup() !!}
 
-{{--{!! Form::openGroup('image', _i('Featured image')) !!}--}}
-{{--<div class="input-group">--}}
-    {{--{!! Form::text('image') !!}--}}
-    {{--<div class="input-group-addon">--}}
-        {{--<a href="#" class="popup_selector" data-inputid="image">{{ _i("Select image") }}</a>--}}
-    {{--</div>--}}
-{{--</div>--}}
-{{--{!! Form::closeGroup() !!}--}}
+{!! Form::openGroup('keys_photo', _i('Keys photo')) !!}
+<div class="input-group">
+    {!! Form::text('keys_photo') !!}
+    <div class="input-group-addon">
+        <a href="#" class="popup_selector" data-inputid="keys_photo">{{ _i("Select photo") }}</a>
+    </div>
+</div>
+{!! Form::closeGroup() !!}
 
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 

@@ -132,7 +132,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         ]);
 
         Route::match(['get', 'post'], 'properties/send-email/{id}/{type}', 'PropertiesController@sendEmail')->name('admin.properties.send-email');
-
+        Route::get('properties/bookings-datatables', 'PropertiesController@bookingsDatatables')->name('admin.properties.bookings-datatables');
         Route::resource('properties', 'PropertiesController', [
             'names' => [
                 'store' => 'admin.properties.store',
@@ -166,6 +166,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
                 'update' => 'admin.event-templates.update',
                 'show' => 'admin.event-templates.show',
                 'edit' => 'admin.event-templates.edit',
+            ]
+        ]);
+
+        Route::resource('emails', 'EmailsController', [
+            'names' => [
+                'store' => 'admin.emails.store',
+                'index' => 'admin.emails.index',
+                'create' => 'admin.emails.create',
+                'destroy' => 'admin.emails.destroy',
+                'update' => 'admin.emails.update',
+                'show' => 'admin.emails.show',
+                'edit' => 'admin.emails.edit',
             ]
         ]);
     });

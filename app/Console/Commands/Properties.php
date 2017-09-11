@@ -3,10 +3,12 @@
 namespace App\Console\Commands;
 
 use App\Libraries\GoogleCalendar;
-use App\Mail\PropertiesBookingSend;
+use App\Mail\PropertiesNotificationSend;
 use App\Models\Booking;
 use App\Models\Email;
+use App\Models\EmailTemplate;
 use App\Models\EmailType;
+use App\Models\Event;
 use App\Models\EventTemplate;
 use App\Models\EventType;
 use App\Models\Property;
@@ -58,6 +60,7 @@ class Properties extends Command
             'phone' => '/PHONE:\s(?P<phone>\+[0-9\s]+)\n/',
             'email' => '/EMAIL:\s(?P<email>[0-9a-zA-Z-\.@]+)\n/',
         ];
+        $now = Carbon::now();
 
         /**
          * Iterate over properties to parse iCal and create corresponding bookings and Google Calendar events
@@ -72,7 +75,7 @@ class Properties extends Command
                 /**
                  * Check if booking is expired
                  */
-                if (true /*$departureDate >= $now*/) {
+                if ($departureDate >= $now) {
                     /**
                      * Name extraction from pattern like this:
                      * Yann Saint Pierre (4Q2PTN)
@@ -156,6 +159,7 @@ class Properties extends Command
                                     'end' => $end,
                                     'colorId' => $colorId,
                                     'reminders' => ['useDefault' => true],
+                                    'extendedProperties' => ['private' => ['event_type' => $eventType->type, 'booking_id' => $booking->id]],
                                 ];
                             }
                         }
@@ -164,32 +168,56 @@ class Properties extends Command
 
                         /**
                          * For bookings day - 3
+                         * Send notification email
                          */
                         if (Carbon::now()->addDays(3)->lt($arrivalDate)) {
-                            // Send notification mail
+                            $emailType = EmailType::find('not-available');
+
+                            $to = templates_tags_replace($property, $emailType->emailTemplate['to']);
+                            $subject = templates_tags_replace($property, $emailType->emailTemplate['subject']);
+                            $message = templates_tags_replace($property, $emailType->emailTemplate['template']);
+
                             $email = Email::create([
                                 'property_id' => $property->id,
-                                //'booking_id' => $booking->id,
+                                'booking_id' => null,
                                 'email_type' => 'not-available',
-                                'to' => '',
-                                'subject' => '',
-                                'message' => '',
+                                'to' => $to,
+                                'subject' => $subject,
+                                'message' => $message,
                             ]);
-                            Mail::send(new PropertiesBookingSend($email));
+                            Mail::send(new PropertiesNotificationSend($email));
                         }
                     } else {
-                        $this->warn(_i("Skipping booking not matching patterns"));
+                        $this->warn(_i("Skipping booking without ref or not available"));
                     }
                 }
             }
         }
 
-        //$googleCalendar->insertBatch($events);
+        $this->info(_i("Inserting Google Calendar events"));
+        $googleCalendarEvents = $googleCalendar->insertBatch($events);
+
+        foreach ($googleCalendarEvents as $googleCalendarEvent) {
+            /** @var \Google_Service_Calendar_Event $googleCalendarEvent */
+            $extendedProperties = $googleCalendarEvent->getExtendedProperties();
+            Event::firstOrCreate([
+                'event_id' => $googleCalendarEvent->getId(),
+            ], [
+                'event_type' => $extendedProperties['private']['event_type'],
+                'booking_id' => $extendedProperties['private']['booking_id'],
+                'summary' => $googleCalendarEvent->getSummary(),
+                'location' => $googleCalendarEvent->getLocation(),
+                'description' => $googleCalendarEvent->getDescription(),
+                'start' => Carbon::createFromFormat(Carbon::RFC3339, $googleCalendarEvent->getStart()->getDateTime()),
+                'end' => Carbon::createFromFormat(Carbon::RFC3339, $googleCalendarEvent->getEnd()->getDateTime()),
+                'html_link' => $googleCalendarEvent->getHtmlLink(),
+            ]);
+        }
 
         /**
          * Iterate over bookings to send notification emails
          */
-        $bookings = Booking::all();
+        $bookings = Booking::where('departure_date', '>=', Carbon::now())->get();
 
         foreach ($bookings as $booking) {
             foreach ($emailTypes as $emailType) {
@@ -206,7 +234,7 @@ class Properties extends Command
                     'message' => $message,
                 ]);
 
-                Mail::send(new PropertiesBookingSend($email));
+                Mail::send(new PropertiesNotificationSend($email));
             }
         }
 

@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@include('includes.datatables.assets')
+
 @section('title', $object)
 
 @section('content')
@@ -24,12 +26,6 @@
         'created_at' => _i("Created"),
         'updated_at' => _i("Updated"),
     ];
-
-    echo '<ul>';
-    foreach ($object->icalUrlAsObject->VEVENT as $vevent) {
-        echo "<li>{$vevent->SUMMARY}</li>";
-    }
-    echo '</ul>';
     ?>
 
     <div class="panel panel-default">
@@ -91,7 +87,7 @@
             <h2 class="panel-title">{{ _i("Bookings") }}</h2>
         </div>
 
-        <table class="table table-condensed table-striped table-bordered">
+        <table class="table table-condensed table-striped table-bordered" id="property-bookings-table">
             <thead>
             <tr>
                 <th>{{ _i("ID") }}</th>
@@ -101,12 +97,12 @@
                 <th>{{ _i("Nights") }}</th>
                 <th>{{ _i("Phone") }}</th>
                 <th>{{ _i("Email") }}</th>
-                <th>{{ _i("Emails send") }}</th>
-                <th>{{ _i("Actions") }}</th>
+                <th>{{ _i("Sent") }}</th>
+                <th>{{ _i("Send email") }}</th>
             </tr>
             </thead>
             <tbody>
-            @if($object->bookings->count())
+            {{--@if($object->bookings->count())
                 @foreach($object->bookings as $booking)
                     <tr>
                         <td>{{ $booking->id }}</td>
@@ -128,8 +124,31 @@
                 <tr>
                     <td colspan="9">{{ _i("No record") }}</td>
                 </tr>
-            @endif
+            @endif--}}
             </tbody>
         </table>
     </div>
 @endsection
+
+@push('scripts')
+<script>
+  $(function() {
+    $('#property-bookings-table').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: '{!! route('admin.properties.bookings-datatables') !!}',
+      columns: [
+        {data: 'id', name: 'id'},
+        {data: 'name', name: 'name'},
+        {data: 'arrival_date', name: 'arrival_date'},
+        {data: 'departure_date', name: 'departure_date'},
+        {data: 'nights', name: 'nights'},
+        {data: 'phone', name: 'phone'},
+        {data: 'email', name: 'email'},
+        {data: 'sent', name: 'sent'},
+        {data: 'send', name: 'send'},
+      ]
+    });
+  });
+</script>
+@endpush

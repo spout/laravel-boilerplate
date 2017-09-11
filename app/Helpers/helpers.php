@@ -1,7 +1,13 @@
 <?php
-
 if (!function_exists('templates_tags_replace')) {
-    function templates_tags_replace(\App\Models\Booking $booking, $subject)
+    /**
+     * @param \App\Models\Booking|\App\Models\Property $modelInstance
+     * @param $subject
+     *
+     * @return mixed
+     * @throws Exception
+     */
+    function templates_tags_replace($modelInstance, $subject)
     {
         $search  = [];
         $replace = [];
@@ -9,14 +15,20 @@ if (!function_exists('templates_tags_replace')) {
             list($entity, $attribute) = explode('.', $tag);
             $search[] = "[$tag]";
 
-            switch ($entity) {
-                case 'booking':
-                    $replace[] = $booking->{$attribute};
-                    break;
+            if ($modelInstance instanceof \App\Models\Booking) {
+                switch ($entity) {
+                    case 'booking':
+                        $replace[] = $modelInstance->{$attribute};
+                        break;
 
-                case 'property':
-                    $replace[] = $booking->property[$attribute];
-                    break;
+                    case 'property':
+                        $replace[] = $modelInstance->property[$attribute];
+                        break;
+                }
+            } elseif ($modelInstance instanceof \App\Models\Property) {
+                $replace[] = $modelInstance->{$attribute};
+            } else {
+                throw new Exception("Model instance must be Booking or Property");
             }
         }
 
