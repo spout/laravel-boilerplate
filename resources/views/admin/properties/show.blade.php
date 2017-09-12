@@ -87,56 +87,52 @@
             <h2 class="panel-title">{{ _i("Bookings") }}</h2>
         </div>
 
-        <table class="table table-condensed table-striped table-bordered" id="property-bookings-table">
-            <thead>
-            <tr>
-                <th>{{ _i("ID") }}</th>
-                <th>{{ _i("Name") }}</th>
-                <th>{{ _i("Arrival date") }}</th>
-                <th>{{ _i("Departure date") }}</th>
-                <th>{{ _i("Nights") }}</th>
-                <th>{{ _i("Phone") }}</th>
-                <th>{{ _i("Email") }}</th>
-                <th>{{ _i("Sent") }}</th>
-                <th>{{ _i("Send email") }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{--@if($object->bookings->count())
-                @foreach($object->bookings as $booking)
-                    <tr>
-                        <td>{{ $booking->id }}</td>
-                        <td>{{ $booking->name }}</td>
-                        <td>{{ $booking->arrival_date->format('d/m/Y') }}</td>
-                        <td>{{ $booking->departure_date->format('d/m/Y') }}</td>
-                        <td>{{ $booking->nights }}</td>
-                        <td><a href="tel:{{ $booking->phone }}">{{ $booking->phone }}</a></td>
-                        <td><a href="mailto:{{ $booking->email }}">{{ $booking->email }}</a></td>
-                        <td><span class="badge">{{ $booking->emails->count() }}</span></td>
-                        <td>
-                            <div class="btn-group btn-group-xs">
-                                <a href="{{ route('admin.properties.send-email', ['id' => $booking->id, 'type' => 'traveler']) }}" class="btn btn-primary">{{ _i("Send emails") }}</a>
-                            </div>
-                        </td>
-                    </tr>
+        <div class="panel-body">
+            <?php
+            $navs = [
+                'future' => _i("Future"),
+                'expired' => _i("Expired"),
+            ];
+            ?>
+            <ul class="nav nav-tabs" role="tablist">
+                @foreach($navs as $nav => $title)
+                    <li class="{{ $loop->first ? 'active' : '' }}"><a href="#{{ $nav }}" data-toggle="tab">{{ $title }}</a></li>
                 @endforeach
-            @else
-                <tr>
-                    <td colspan="9">{{ _i("No record") }}</td>
-                </tr>
-            @endif--}}
-            </tbody>
-        </table>
+            </ul>
+
+            <div class="tab-content">
+                @foreach($navs as $nav => $title)
+                    <div class="tab-pane active" id="{{ $nav }}">
+                        <table class="table table-condensed table-striped table-bordered" id="property-bookings-table-{{ $nav }}" data-ajax="{!! route('admin.properties.bookings-datatables', ['scope' => $nav]) !!}">
+                            <thead>
+                            <tr>
+                                <th>{{ _i("ID") }}</th>
+                                <th>{{ _i("Name") }}</th>
+                                <th>{{ _i("Arrival date") }}</th>
+                                <th>{{ _i("Departure date") }}</th>
+                                <th>{{ _i("Nights") }}</th>
+                                <th>{{ _i("Phone") }}</th>
+                                <th>{{ _i("Email") }}</th>
+                                <th>{{ _i("Sent") }}</th>
+                                <th>{{ _i("Send email") }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </div>
 @endsection
 
 @push('scripts')
 <script>
   $(function() {
-    $('#property-bookings-table').DataTable({
+    $('#property-bookings-table-future, #property-bookings-table-expired').DataTable({
       processing: true,
       serverSide: true,
-      ajax: '{!! route('admin.properties.bookings-datatables') !!}',
       columns: [
         {data: 'id', name: 'id'},
         {data: 'name', name: 'name'},
@@ -147,7 +143,8 @@
         {data: 'email', name: 'email'},
         {data: 'sent', name: 'sent'},
         {data: 'send', name: 'send'},
-      ]
+      ],
+      language: {!! json_encode(\App\DataTables\DataTable::getLanguage()) !!}
     });
   });
 </script>

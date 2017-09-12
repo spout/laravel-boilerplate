@@ -132,7 +132,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         ]);
 
         Route::match(['get', 'post'], 'properties/send-email/{id}/{type}', 'PropertiesController@sendEmail')->name('admin.properties.send-email');
-        Route::get('properties/bookings-datatables', 'PropertiesController@bookingsDatatables')->name('admin.properties.bookings-datatables');
+        Route::get('properties/bookings-datatables/{scope}', 'PropertiesController@bookingsDatatables')->name('admin.properties.bookings-datatables')->where('scope', 'future|expired');
         Route::resource('properties', 'PropertiesController', [
             'names' => [
                 'store' => 'admin.properties.store',
