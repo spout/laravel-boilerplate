@@ -5,6 +5,8 @@ use App\Scopes\OrderScope;
 
 class EmailType extends Model
 {
+    const NOT_AVAILABLE = 'not-available';
+
     public $incrementing = false;
     public $timestamps = false;
 
