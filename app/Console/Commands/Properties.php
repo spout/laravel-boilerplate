@@ -171,21 +171,25 @@ class Properties extends Command
                          * Send notification email
                          */
                         if (Carbon::now()->addDays(3)->lt($arrivalDate)) {
-                            $emailType = EmailType::find('not-available');
+                            $sentEmails = Email::where('property_id', $property->id)->where('email_type', EmailType::NOT_AVAILABLE)->get();
 
-                            $to = templates_tags_replace($property, $emailType->emailTemplate['to']);
-                            $subject = templates_tags_replace($property, $emailType->emailTemplate['subject']);
-                            $message = templates_tags_replace($property, $emailType->emailTemplate['template']);
+                            if ($sentEmails->count() === 0) {
+                                $emailType = EmailType::find(EmailType::NOT_AVAILABLE);
 
-                            $email = Email::create([
-                                'property_id' => $property->id,
-                                'booking_id' => null,
-                                'email_type' => 'not-available',
-                                'to' => $to,
-                                'subject' => $subject,
-                                'message' => $message,
-                            ]);
-                            Mail::send(new PropertiesNotificationSend($email));
+                                $to = templates_tags_replace($property, $emailType->emailTemplate['to']);
+                                $subject = templates_tags_replace($property, $emailType->emailTemplate['subject']);
+                                $message = templates_tags_replace($property, $emailType->emailTemplate['template']);
+
+                                $email = Email::create([
+                                    'property_id' => $property->id,
+                                    'booking_id' => null,
+                                    'email_type' => EmailType::NOT_AVAILABLE,
+                                    'to' => $to,
+                                    'subject' => $subject,
+                                    'message' => $message,
+                                ]);
+                                Mail::send(new PropertiesNotificationSend($email));
+                            }
                         }
                     } else {
                         $this->warn(_i("Skipping booking without ref or not available"));
@@ -217,24 +221,56 @@ class Properties extends Command
         /**
          * Iterate over bookings to send notification emails
          */
-        $bookings = Booking::where('departure_date', '>=', Carbon::now())->get();
+        $bookings = Booking::where('departure_date', '<=', Carbon::now())->get();
 
         foreach ($bookings as $booking) {
             foreach ($emailTypes as $emailType) {
-                $to = templates_tags_replace($booking, $emailType->emailTemplate['to']);
-                $subject = templates_tags_replace($booking, $emailType->emailTemplate['subject']);
-                $message = templates_tags_replace($booking, $emailType->emailTemplate['template']);
+                /** @var Carbon $arrivalDate */
+                $arrivalDate = $booking->arrival_date->copy();
+                /** @var Carbon $departureDate */
+                $departureDate = $booking->departure_date->copy();
+                $send = false;
 
-                $email = Email::create([
-                    'property_id' => $booking->property['id'],
-                    'booking_id' => $booking->id,
-                    'email_type' => $emailType->type,
-                    'to' => $to,
-                    'subject' => $subject,
-                    'message' => $message,
-                ]);
+                /**
+                 * Can be done via relationships conditions but missing time
+                 */
+                $sentEmails = Email::where('booking_id', $booking->id)->where('email_type', $emailType->type)->get();
 
-                Mail::send(new PropertiesNotificationSend($email));
+                if ($sentEmails->count() === 0) {
+                    switch ($emailType->type) {
+                        case 'traveler':
+                            // 7 days before arrival
+                            $send = $arrivalDate->subDays(7)->lte($now) && $departureDate->gt($now);
+                            break;
+
+                        case 'owner':
+                            // immediately
+                            $send = $departureDate->gt($now);
+                            break;
+
+                        case 'concierge':
+                            // at departure date
+                            $send = $departureDate->diffInDays($now) === 0;
+                            break;
+                    }
+
+                    if ($send === true) {
+                        $to = templates_tags_replace($booking, $emailType->emailTemplate['to']);
+                        $subject = templates_tags_replace($booking, $emailType->emailTemplate['subject']);
+                        $message = templates_tags_replace($booking, $emailType->emailTemplate['template']);
+
+                        $email = Email::create([
+                            'property_id' => $booking->property['id'],
+                            'booking_id' => $booking->id,
+                            'email_type' => $emailType->type,
+                            'to' => $to,
+                            'subject' => $subject,
+                            'message' => $message,
+                        ]);
+
+                        Mail::send(new PropertiesNotificationSend($email));
+                    }
+                }
             }
         }
 
