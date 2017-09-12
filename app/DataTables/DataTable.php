@@ -74,29 +74,7 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
             //->addColumn(['data' => 'bulk', 'title' => '<input type="checkbox" data-check-all="true" data-target=".bulk-checkbox">', 'orderable' => false])
             ->parameters($this->getBuilderParameters())
             ->parameters([
-                'language' => [
-                    'emptyTable' => _i("No data available in table"),
-                    'info' => _i("Showing _START_ to _END_ of _TOTAL_ entries"),
-                    'infoEmpty' => _i("Showing 0 to 0 of 0 entries"),
-                    'infoFiltered' => _i("(filtered from _MAX_ total entries)"),
-                    'infoPostFix' => '',
-                    'lengthMenu' => _i("Show _MENU_ entries"),
-                    'loadingRecords' => _i("Loading..."),
-                    'processing' => _i("Processing..."),
-                    'search' => '_INPUT_',
-                    'zeroRecords' => _i("No matching records found"),
-                    'paginate' => [
-                        'first' => _i("First"),
-                        'last' => _i("Last"),
-                        'next' => _i("Next"),
-                        'previous' => _i("Previous"),
-                    ],
-                    'aria' => [
-                        'sortAscending' => _i(": activate to sort column ascending"),
-                        'sortDescending' => _i(": activate to sort column descending"),
-                    ],
-                    'searchPlaceholder' => _i("Quick search..."),
-                ]
+                'language' => static::getLanguage()
             ]);
     }
 
@@ -108,5 +86,37 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
     protected function filename()
     {
         return strtolower(static::$model);
+    }
+
+    /**
+     * Returns datatable language for i18n
+     *
+     * @return array
+     */
+    public static function getLanguage()
+    {
+        return [
+            'emptyTable' => _i("No data available in table"),
+            'info' => _i("Showing _START_ to _END_ of _TOTAL_ entries"),
+            'infoEmpty' => _i("Showing 0 to 0 of 0 entries"),
+            'infoFiltered' => _i("(filtered from _MAX_ total entries)"),
+            'infoPostFix' => '',
+            'lengthMenu' => _i("Show _MENU_ entries"),
+            'loadingRecords' => _i("Loading..."),
+            'processing' => _i("Processing..."),
+            'search' => '_INPUT_',
+            'zeroRecords' => _i("No matching records found"),
+            'paginate' => [
+                'first' => _i("First"),
+                'last' => _i("Last"),
+                'next' => _i("Next"),
+                'previous' => _i("Previous"),
+            ],
+            'aria' => [
+                'sortAscending' => _i(": activate to sort column ascending"),
+                'sortDescending' => _i(": activate to sort column descending"),
+            ],
+            'searchPlaceholder' => _i("Quick search..."),
+        ];
     }
 }
