@@ -35,6 +35,14 @@ class GoogleCalendar
     }
 
     /**
+     * @return Google_Service_Calendar
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
+
+    /**
      * @param array $optParams
      *
      * @return Google_Service_Calendar_Event
@@ -52,12 +60,13 @@ class GoogleCalendar
     }
 
     /**
-     * @param $event
+     * @param array $event
      * @param bool $returnRequest
+     * @param array $optParams
      *
      * @return Google_Service_Calendar_Event|RequestInterface
      */
-    public function insert($event, $returnRequest = false)
+    public function insert(array $event, $returnRequest = false, array $optParams = [])
     {
         $calendarEvent = new Google_Service_Calendar_Event($event);
 
@@ -79,7 +88,7 @@ class GoogleCalendar
         $end->setDateTime($endDateTime);
         $calendarEvent->setEnd($end);
 
-        $insertedEvent = $this->service->events->insert($this->calendarId, $calendarEvent);
+        $insertedEvent = $this->service->events->insert($this->calendarId, $calendarEvent, $optParams);
         return $returnRequest ? $insertedEvent : $insertedEvent->getId();
     }
 
@@ -97,16 +106,12 @@ class GoogleCalendar
         foreach ($events as $event) {
             $request = $this->insert($event, true);
             $batch->add($request);
-            break; // TODO: remove me !
         }
         return $batch->execute();
     }
 
-    /**
-     * @return Google_Service_Calendar
-     */
-    public function getService()
+    public function delete(string $eventId, array $optParams = [])
     {
-        return $this->service;
+        return $this->service->events->delete($this->calendarId, $eventId, $optParams);
     }
 }

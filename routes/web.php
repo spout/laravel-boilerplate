@@ -182,10 +182,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         ]);
     });
 
-    Route::get('/cron', function () {
-        $exitCode = Artisan::call('properties');
-        var_dump($exitCode);
-    });
+    $allowedCommands = ['properties'];
+    Route::get('artisan/{command}', function ($command) {
+        $exitCode = Artisan::call($command);
+        dump($exitCode);
+    })->where('command', implode('|', $allowedCommands));
 
     Route::get('/{path}', 'ContentsController@show')->where('path', '^(?!(elfinder|imagecache)\b)\b[a-z0-9-\/]+')->name('contents.show');
 });
