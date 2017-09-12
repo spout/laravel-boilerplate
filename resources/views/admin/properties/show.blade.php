@@ -102,7 +102,7 @@
 
             <div class="tab-content">
                 @foreach($navs as $nav => $title)
-                    <div class="tab-pane active" id="{{ $nav }}">
+                    <div class="{{ $loop->first ? 'tab-pane active' : 'tab-pane' }}" id="{{ $nav }}">
                         <table class="table table-condensed table-striped table-bordered" id="property-bookings-table-{{ $nav }}" data-ajax="{!! route('admin.properties.bookings-datatables', ['scope' => $nav]) !!}">
                             <thead>
                             <tr>
