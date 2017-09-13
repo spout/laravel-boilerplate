@@ -3,10 +3,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\PropertiesDataTable;
 use App\Http\Requests\PropertyFormRequest;
+use App\Mail\PropertiesNotificationSend;
 use App\Models\Booking;
 use App\Models\EmailType;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PropertiesController extends AdminController
 {
@@ -17,13 +19,19 @@ class PropertiesController extends AdminController
     public function sendEmail(Request $request, $id, $type)
     {
         $emailType = EmailType::find($type);
-        $booking = Booking::findOrFail($id);
+        $booking = Booking::find($id);
 
         if ($request->isMethod('post')) {
-            dd($request->all());
+            $email = Email::create([
+                'property_id' => $booking->property['id'],
+                'booking_id' => $booking->id,
+                'email_type' => $type,
+                'to' => $request->input('to'),
+                'subject' => $request->input('subject'),
+                'message' => $request->input('message'),
+            ]);
 
-            //$email = Email::create($request->all());
-            //Mail::send(new PropertiesNotificationSend($email));
+            Mail::send(new PropertiesNotificationSend($email));
 
             flash(_i("Email was sent successfully."), 'success');
             return redirect()->back();
@@ -36,11 +44,11 @@ class PropertiesController extends AdminController
         return view('admin.properties.send-email', compact('emailType', 'to', 'subject', 'message'));
     }
 
-    public function bookingsDatatables($scope = 'future')
+    public function bookingsDatatables($id, $scope = 'future')
     {
         $emailTypes = EmailType::where('type', '!=', 'not-available')->get();
 
-        return datatables(Booking::query()->{$scope}())
+        return datatables(Booking::where('property_id', $id)->{$scope}())
             ->editColumn('arrival_date', function (Booking $booking) {
                 return $booking->arrival_date->format('d/m/Y');
             })

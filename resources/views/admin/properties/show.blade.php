@@ -103,7 +103,7 @@
             <div class="tab-content">
                 @foreach($navs as $nav => $title)
                     <div class="{{ $loop->first ? 'tab-pane active' : 'tab-pane' }}" id="{{ $nav }}">
-                        <table class="table table-condensed table-striped table-bordered" id="property-bookings-table-{{ $nav }}" data-ajax="{!! route('admin.properties.bookings-datatables', ['scope' => $nav]) !!}">
+                        <table class="table table-condensed table-striped table-bordered property-bookings-table" data-ajax="{!! route('admin.properties.bookings-datatables', ['id' => $object->id, 'scope' => $nav]) !!}">
                             <thead>
                             <tr>
                                 <th>{{ _i("ID") }}</th>
@@ -130,7 +130,7 @@
 @push('scripts')
 <script>
   $(function() {
-    $('#property-bookings-table-future, #property-bookings-table-expired').DataTable({
+    $('.property-bookings-table').DataTable({
       processing: true,
       serverSide: true,
       columns: [
