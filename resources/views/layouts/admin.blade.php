@@ -55,6 +55,7 @@
                 @endforeach
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li class="navbar-text">{{ Auth::user()->name }}</li>
                 <li>
                     <a href="#" onclick="document.logout.submit();return false;"><i class="fa fa-sign-out"></i> {{ _i("Logout") }}</a>
                     {{ Form::open(['route' => 'logout', 'method' => 'post', 'name' => 'logout']) }}
