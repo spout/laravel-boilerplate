@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <?php
             $navs = [
-                //['title' => _i("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
+                ['title' => _i("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
                 //['title' => _i("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
                 //['title' => _i("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
                 //['title' => _i("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
