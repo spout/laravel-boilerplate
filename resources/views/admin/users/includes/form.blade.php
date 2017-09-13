@@ -3,8 +3,8 @@
     'method' => empty($object->id) ? 'POST' : 'PUT'
 ]) !!}
 
-{!! Form::openGroup('username', _i('Username')) !!}
-{!! Form::text('username') !!}
+{!! Form::openGroup('name', _i('Name')) !!}
+{!! Form::text('name') !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('email', _i('Email')) !!}
