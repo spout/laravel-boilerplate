@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2017-09-13 21:25+0200\n"
-"PO-Revision-Date: 2017-09-13 21:25+0200\n"
+"POT-Creation-Date: 2017-09-13 21:40+0200\n"
+"PO-Revision-Date: 2017-09-13 21:40+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -293,6 +293,12 @@ msgstr "Expiré"
 msgid "Are you sure?"
 msgstr "Vous êtes sûr ?"
 
+#: ../resources/views/layouts/admin.blade.php:34
+#: ../storage/framework/messages/51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:34
+#: ../storage/framework/messages/54062608d7e939d5e8dcb3e3ca6912029cf0d7d3.php.php:1
+msgid "Contents"
+msgstr "Contenus"
+
 #: ../resources/views/layouts/admin.blade.php:39
 #: ../storage/framework/messages/51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:39
 #: ../storage/framework/messages/b6ef708291add73b6e18aa2d6ced2ceb4fdf7784.php.php:1
@@ -323,15 +329,41 @@ msgstr "Emails"
 msgid "Users"
 msgstr "Utilisateurs"
 
-#: ../resources/views/layouts/admin.blade.php:47
-#: ../storage/framework/messages/4591d5ed419498488d93d12478568f052e133fe0.php.php:1
-#: ../storage/framework/messages/51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:47
-msgid "Routes"
-msgstr "Routes"
-
 #: ../storage/framework/messages/05319bd05d28d61e42033340353358388bf3b677.php.php:1
 msgid "Create contact"
 msgstr "Créer contact"
+
+#: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:6
+#: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:54
+#: ../storage/framework/messages/a7e649ba49171e4c2e67191505af4fd67d26948c.php.php:44
+msgid "Login"
+msgstr "Connexion"
+
+#: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:13
+#: ../storage/framework/messages/18c3204dc2831907564eaed2cb74deee58396549.php.php:6
+#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:21
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:22
+#: ../storage/framework/messages/477ee0a26237d5850c0f4446c6df6cb27ed7bfd4.php.php:8
+#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:12
+#: ../storage/framework/messages/87dd313cf0af3dcf8a70fdbe518d3c490c2a2dca.php.php:113
+#: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:14
+#: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:7
+#: DataTables/ContactsDataTable.php:21 DataTables/UsersDataTable.php:22
+msgid "Email"
+msgstr "Email"
+
+#: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:27
+#: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:21
+msgid "Password"
+msgstr "Mot de passe"
+
+#: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:44
+msgid "Remember me"
+msgstr "Se souvenir"
+
+#: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:59
+msgid "Forgot your password?"
+msgstr "Mot de passe perdu ?"
 
 #: ../storage/framework/messages/0ae5124624bd9060740d03087a85d4f97126e94b.php.php:1
 msgid "Dashboard"
@@ -381,18 +413,6 @@ msgstr "Le champ vers est requis."
 #: Http/Requests/EventTemplateFormRequest.php:37
 msgid "The template is required."
 msgstr "Le template est requis."
-
-#: ../storage/framework/messages/18c3204dc2831907564eaed2cb74deee58396549.php.php:6
-#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:21
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:22
-#: ../storage/framework/messages/477ee0a26237d5850c0f4446c6df6cb27ed7bfd4.php.php:8
-#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:12
-#: ../storage/framework/messages/87dd313cf0af3dcf8a70fdbe518d3c490c2a2dca.php.php:113
-#: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:14
-#: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:7
-#: DataTables/ContactsDataTable.php:21 DataTables/UsersDataTable.php:22
-msgid "Email"
-msgstr "Email"
 
 #: ../storage/framework/messages/18c3204dc2831907564eaed2cb74deee58396549.php.php:8
 #: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:26
@@ -505,6 +525,10 @@ msgstr "Vers"
 msgid "Available tags for subject and template:"
 msgstr "Etiquettes disponibles pour le sujet et le gabarit :"
 
+#: ../storage/framework/messages/4591d5ed419498488d93d12478568f052e133fe0.php.php:1
+msgid "Routes"
+msgstr "Routes"
+
 #: ../storage/framework/messages/4591d5ed419498488d93d12478568f052e133fe0.php.php:10
 msgid "Method"
 msgstr "Méthode"
@@ -534,10 +558,6 @@ msgstr "Blog"
 #: ../storage/framework/messages/51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:23
 msgid "Toggle navigation"
 msgstr "Basculer navigation"
-
-#: ../storage/framework/messages/54062608d7e939d5e8dcb3e3ca6912029cf0d7d3.php.php:1
-msgid "Contents"
-msgstr "Contenus"
 
 #: ../storage/framework/messages/54062608d7e939d5e8dcb3e3ca6912029cf0d7d3.php.php:7
 msgid "Make active"
@@ -804,10 +824,6 @@ msgstr "Modifier propriété"
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: ../storage/framework/messages/a7e649ba49171e4c2e67191505af4fd67d26948c.php.php:44
-msgid "Login"
-msgstr "Connexion"
-
 #: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:7
 msgid "Available tags for summary and template:"
 msgstr "Etiquettes disponibles pour le résumé et le gabarit :"
@@ -851,10 +867,6 @@ msgstr "Modifier fragment"
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:7
 msgid "Username"
 msgstr "Nom d'utilisateur"
-
-#: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:21
-msgid "Password"
-msgstr "Mot de passe"
 
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:28
 msgid "Firstname"
