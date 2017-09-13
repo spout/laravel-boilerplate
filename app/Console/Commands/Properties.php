@@ -82,7 +82,7 @@ class Properties extends Command
                         $name = $matches['name'];
                         $ref  = $matches['ref'];
 
-                        $booking = Booking::firstOrNew(['ref' => $ref]);
+                        $booking = Booking::withTrashed()->firstOrNew(['ref' => $ref]);
 
                         $verb = $booking->exists ? _i("Updating") : _i("Creating");
                         $this->info("$verb: $ref: $arrivalDateDisplay -> $departureDateDisplay");

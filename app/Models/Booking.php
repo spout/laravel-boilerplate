@@ -2,9 +2,12 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Booking extends Model
 {
+    use SoftDeletes;
+
     protected $dates = ['arrival_date', 'departure_date'];
     protected $guarded = [];
 
