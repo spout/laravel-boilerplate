@@ -30,6 +30,6 @@ class Email extends Model
 
     public function getCreatedAtAttribute($value)
     {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y H:i:s');
     }
 }
