@@ -73,7 +73,7 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->ajax('')
-            ->addAction(['width' => '200px'])
+            ->addAction(['width' => '300px'])
             //->addColumn(['data' => 'bulk', 'title' => '<input type="checkbox" data-check-all="true" data-target=".bulk-checkbox">', 'orderable' => false])
             ->parameters($this->getBuilderParameters())
             ->parameters([
