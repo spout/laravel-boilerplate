@@ -7,6 +7,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 abstract class DataTable extends \Yajra\DataTables\Services\DataTable
 {
+    protected static $actionColumnActions = ['show', 'edit', 'delete'];
+
     /**
      * Display ajax response.
      *
@@ -18,7 +20,8 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
             ->eloquent($this->query())
             ->addColumn('action', function ($object) {
                 $resourcePrefix = static::$resourcePrefix;
-                return view('includes.datatables.action', compact('object', 'resourcePrefix'));
+                $actions = static::$actionColumnActions;
+                return view('includes.datatables.action', compact('object', 'resourcePrefix', 'actions'));
             });
             //->addColumn('bulk', function ($object) {
             //    return view('includes.datatables.bulk', compact('object'));

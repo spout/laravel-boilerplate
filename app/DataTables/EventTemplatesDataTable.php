@@ -8,6 +8,7 @@ class EventTemplatesDataTable extends DataTable
 {
     protected static $model = EventTemplate::class;
     protected static $resourcePrefix = 'admin.event-templates';
+    protected static $actionColumnActions = ['edit'];
 
     /**
      * Get columns.

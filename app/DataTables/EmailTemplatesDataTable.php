@@ -8,6 +8,7 @@ class EmailTemplatesDataTable extends DataTable
 {
     protected static $model = EmailTemplate::class;
     protected static $resourcePrefix = 'admin.email-templates';
+    protected static $actionColumnActions = ['edit'];
 
     /**
      * Get columns.

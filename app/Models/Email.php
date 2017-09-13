@@ -5,6 +5,11 @@ class Email extends Model
 {
     protected $guarded = [];
 
+    public function __toString()
+    {
+        return $this->subject;
+    }
+
     public function property()
     {
         return $this->belongsTo(Property::class);
