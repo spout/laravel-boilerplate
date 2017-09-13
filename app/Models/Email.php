@@ -1,8 +1,11 @@
 <?php
 namespace App\Models;
 
+use Carbon\Carbon;
+
 class Email extends Model
 {
+    protected $dates = ['created_at', 'updated_at'];
     protected $guarded = [];
 
     public function __toString()
@@ -22,6 +25,11 @@ class Email extends Model
 
     public function emailType()
     {
-        return $this->belongsTo(EmailType::class, 'type', 'email_type');
+        return $this->belongsTo(EmailType::class, 'email_type', 'type');
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y');
     }
 }
