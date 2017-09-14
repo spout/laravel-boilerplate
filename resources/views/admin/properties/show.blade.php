@@ -23,6 +23,8 @@
         'check_out' => _i("Needs check-out?"),
         'household_hours' => _i("Household hours"),
         'keys' => _i("Number of keys"),
+        'keys_photo' => _i("Keys photo"),
+        'custom_fields' => _i("Custom fields"),
         'created_at' => _i("Created"),
         'updated_at' => _i("Updated"),
     ];
@@ -37,36 +39,54 @@
             <tbody>
             @foreach($columns as $column => $label)
                 <?php
-                $td = $object->{$column};
+                $value = $object->{$column};
                 switch ($column) {
                     case 'property_type_id':
-                        $td = $object->propertyType->title;
+                        $value = $object->propertyType->title;
                         break;
 
                     case 'ical_url':
-                        $td = !empty($td) ? sprintf('<a href="%1$s" target="_blank">%1$s</a>', $td) : '';
+                        $value = !empty($value) ? sprintf('<a href="%1$s" target="_blank">%1$s</a>', $value) : '';
                         break;
 
                     case 'owner_email':
-                        $td = !empty($td) ? sprintf('<a href="mailto:%1$s">%1$s</a>', $td) : '';
+                        $value = !empty($value) ? sprintf('<a href="mailto:%1$s">%1$s</a>', $value) : '';
                         break;
 
                     case 'capacity':
-                        $td = _i("%s persons", $td);
+                        $value = _i("%s persons", $value);
                         break;
 
                     case 'surface':
-                        $td = _i("%s m<sup>2</sup>", $td);
+                        $value = _i("%s m<sup>2</sup>", $value);
                         break;
 
                     case 'check_in':
                     case 'check_out':
-                        $td = !empty($td) ? _i("Yes") : _i("No");
+                        $value = !empty($value) ? _i("Yes") : _i("No");
+                        break;
+
+                    case 'keys_photo':
+                        if (!empty($value)) {
+                            $value = sprintf('<a href="%s"><img src="%s" alt=""></a>', url($value), route('imagecache', ['template' => 'small', 'filename' => $value]));
+                        }
+                        break;
+
+                    case 'custom_fields':
+                        if (!empty($value)) {
+                            $output = '<dl>';
+                            foreach ($value as $customField) {
+                                $output .= '<dt>' . e($customField['name']) . '</dt>';
+                                $output .= '<dd>' . nl2br(e($customField['value'])) . '</dd>';
+                            }
+                            $output .= '</dl>';
+                            $value = $output;
+                        }
                         break;
 
                     case 'created_at':
                     case 'updated_at':
-                        $td = $td->format('d/m/Y H:i:s');
+                        $value = $value->format('d/m/Y H:i:s');
                         break;
 
                     default:
@@ -75,7 +95,7 @@
                 ?>
                 <tr>
                     <th>{{ $label }}</th>
-                    <td>{!! $td !!}</td>
+                    <td>{!! $value !!}</td>
                 </tr>
             @endforeach
             </tbody>

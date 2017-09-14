@@ -10,6 +10,10 @@ class Property extends Model
         'updated_at'
     ];
 
+    protected $casts = [
+        'custom_fields' => 'array',
+    ];
+
     public function __toString()
     {
         return $this->name;

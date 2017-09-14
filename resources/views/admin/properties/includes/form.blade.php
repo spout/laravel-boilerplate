@@ -37,25 +37,36 @@
     </div>
 </div>
 
-{!! Form::openGroup('owner_name', _i('Owner name')) !!}
-{!! Form::text('owner_name') !!}
-{!! Form::closeGroup() !!}
+<div class="row">
+    <div class="col-sm-4">
+        {!! Form::openGroup('owner_name', _i('Owner name')) !!}
+        {!! Form::text('owner_name') !!}
+        {!! Form::closeGroup() !!}
+    </div>
+    <div class="col-sm-4">
+        {!! Form::openGroup('owner_phone', _i('Owner phone')) !!}
+        {!! Form::text('owner_phone') !!}
+        {!! Form::closeGroup() !!}
+    </div>
+    <div class="col-sm-4">
+        {!! Form::openGroup('owner_email', _i('Owner email')) !!}
+        {!! Form::email('owner_email') !!}
+        {!! Form::closeGroup() !!}
+    </div>
+</div>
 
-{!! Form::openGroup('owner_phone', _i('Owner phone')) !!}
-{!! Form::text('owner_phone') !!}
-{!! Form::closeGroup() !!}
-
-{!! Form::openGroup('owner_email', _i('Owner email')) !!}
-{!! Form::email('owner_email') !!}
-{!! Form::closeGroup() !!}
-
-{!! Form::openGroup('beds_double', _i('Number of double beds')) !!}
-{!! Form::number('beds_double') !!}
-{!! Form::closeGroup() !!}
-
-{!! Form::openGroup('beds_single', _i('Number of single beds')) !!}
-{!! Form::number('beds_single') !!}
-{!! Form::closeGroup() !!}
+<div class="row">
+    <div class="col-sm-6">
+        {!! Form::openGroup('beds_double', _i('Number of double beds')) !!}
+        {!! Form::number('beds_double') !!}
+        {!! Form::closeGroup() !!}
+    </div>
+    <div class="col-sm-6">
+        {!! Form::openGroup('beds_single', _i('Number of single beds')) !!}
+        {!! Form::number('beds_single') !!}
+        {!! Form::closeGroup() !!}
+    </div>
+</div>
 
 {!! Form::openGroup('bathrooms', _i('Number of bathrooms')) !!}
 {!! Form::number('bathrooms') !!}
@@ -93,6 +104,24 @@
     </div>
 </div>
 {!! Form::closeGroup() !!}
+
+<fieldset>
+    <legend>{{ _i("Custom fields") }}</legend>
+    <div class="row">
+        @foreach($object->custom_fields as $k => $customField)
+            <div class="col-sm-3">
+                {!! Form::openGroup("custom_fields[$k][name]", _i('Name')) !!}
+                {!! Form::text("custom_fields[$k][name]", $customField['name']) !!}
+                {!! Form::closeGroup() !!}
+            </div>
+            <div class="col-sm-9">
+                {!! Form::openGroup("custom_fields[$k][value]", _i('Value')) !!}
+                {!! Form::textarea("custom_fields[$k][value]", $customField['value'], ['rows' => 3]) !!}
+                {!! Form::closeGroup() !!}
+            </div>
+        @endforeach
+    </div>
+</fieldset>
 
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
