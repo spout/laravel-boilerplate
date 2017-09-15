@@ -108,7 +108,11 @@
 <fieldset>
     <legend>{{ _i("Custom fields") }}</legend>
     <?php
-    $customFields = array_merge($object->custom_fields, array_fill(0, 1, ['name' => '', 'value' => '']));
+    $customFields = $object->custom_fields;
+    if (!is_array($customFields)) {
+        $customFields = [];
+    }
+    $customFields = array_merge($customFields, array_fill(0, 1, ['name' => '', 'value' => '']));
     ?>
     {!! Form::hidden('custom_fields_count', count($customFields), ['id' => 'custom-fields-count']) !!}
     <div class="row" id="custom-fields">
