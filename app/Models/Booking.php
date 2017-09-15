@@ -21,6 +21,11 @@ class Booking extends Model
         return $this->hasMany(Email::class);
     }
 
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
     /**
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder

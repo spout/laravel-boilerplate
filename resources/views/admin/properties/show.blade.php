@@ -123,7 +123,7 @@
             <div class="tab-content">
                 @foreach($navs as $nav => $title)
                     <div class="{{ $loop->first ? 'tab-pane active' : 'tab-pane' }}" id="{{ $nav }}">
-                        <table class="table table-condensed table-striped table-bordered property-bookings-table" data-ajax="{!! route('admin.properties.bookings-datatables', ['id' => $object->id, 'scope' => $nav]) !!}">
+                        <table class="table table-condensed table-striped table-bordered property-bookings-table" data-ajax="{!! route('admin.properties.booking-datatables', ['id' => $object->id, 'scope' => $nav]) !!}">
                             <thead>
                             <tr>
                                 <th>{{ _i("ID") }}</th>
@@ -135,6 +135,7 @@
                                 <th>{{ _i("Email") }}</th>
                                 <th>{{ _i("Sent") }}</th>
                                 <th>{{ _i("Send email") }}</th>
+                                <th>{{ _i("Action") }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -163,6 +164,7 @@
         {data: 'email', name: 'email'},
         {data: 'sent', name: 'sent'},
         {data: 'send', name: 'send'},
+        {data: 'action', name: 'action'}
       ],
       language: {!! json_encode(\App\DataTables\DataTable::getLanguage()) !!}
     });

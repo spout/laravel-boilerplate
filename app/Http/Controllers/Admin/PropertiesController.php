@@ -44,7 +44,7 @@ class PropertiesController extends AdminController
         return view('admin.properties.send-email', compact('emailType', 'to', 'subject', 'message'));
     }
 
-    public function bookingsDatatables($id, $scope = 'future')
+    public function bookingDatatables($id, $scope = 'future')
     {
         $emailTypes = EmailType::where('type', '!=', 'not-available')->get();
 
@@ -67,8 +67,10 @@ class PropertiesController extends AdminController
             ->addColumn('send', function (Booking $booking) use ($emailTypes) {
                 return view('admin.properties.datatables.booking-send', compact('booking', 'emailTypes'));
             })
-            ->rawColumns(['phone', 'email', 'sent', 'send'])
+            ->addColumn('action', function (Booking $booking) {
+                return view('admin.properties.datatables.booking-delete', compact('booking'));
+            })
+            ->rawColumns(['phone', 'email', 'sent', 'send', 'action'])
             ->toJson();
     }
-
 }
