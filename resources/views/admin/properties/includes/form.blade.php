@@ -107,22 +107,39 @@
 
 <fieldset>
     <legend>{{ _i("Custom fields") }}</legend>
-    <div class="row">
-        @foreach($object->custom_fields as $k => $customField)
-            <div class="col-sm-3">
-                {!! Form::openGroup("custom_fields[$k][name]", _i('Name')) !!}
-                {!! Form::text("custom_fields[$k][name]", $customField['name']) !!}
-                {!! Form::closeGroup() !!}
-            </div>
-            <div class="col-sm-9">
-                {!! Form::openGroup("custom_fields[$k][value]", _i('Value')) !!}
-                {!! Form::textarea("custom_fields[$k][value]", $customField['value'], ['rows' => 3]) !!}
-                {!! Form::closeGroup() !!}
-            </div>
+    <?php
+    $customFields = array_merge($object->custom_fields, array_fill(0, 1, ['name' => '', 'value' => '']));
+    ?>
+    {!! Form::hidden('custom_fields_count', count($customFields), ['id' => 'custom-fields-count']) !!}
+    <div class="row" id="custom-fields">
+        @foreach($customFields as $k => $customField)
+            @include('admin.properties.includes.custom-fields-inputs', compact('k', 'customField'))
         @endforeach
     </div>
+    <div id="custom-fields-empty-form" class="hidden">
+        <?php
+        $k = '__index__'
+        ?>
+        @include('admin.properties.includes.custom-fields-inputs', compact('k', 'customField'))
+    </div>
+    <p>
+        <button type="button" class="btn btn-default btn-sm" id="custom-field-add">{{ _i("Add custom field") }}</button>
+    </p>
 </fieldset>
 
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}
+
+@push('scripts')
+    <script>
+        $(function () {
+          $('#custom-field-add').on('click', function (e) {
+            var $customFieldsCount = $('#custom-fields-count');
+            var formIndex = parseInt($customFieldsCount.val());
+            $('#custom-fields').append($('#custom-fields-empty-form').html().replace(/__index__/g, formIndex));
+            $customFieldsCount.val(formIndex + 1);
+          });
+        });
+    </script>
+@endpush
