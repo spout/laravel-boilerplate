@@ -123,7 +123,7 @@
             <div class="tab-content">
                 @foreach($navs as $nav => $title)
                     <div class="{{ $loop->first ? 'tab-pane active' : 'tab-pane' }}" id="{{ $nav }}">
-                        <table class="table table-condensed table-striped table-bordered property-bookings-table" data-ajax="{!! route('admin.properties.booking-datatables', ['id' => $object->id, 'scope' => $nav]) !!}">
+                        <table class="table table-condensed table-striped table-bordered property-bookings-table" data-ajax="{!! route('admin.properties.booking-datatables', ['id' => $object->id, 'scope' => $nav]) !!}" style="width: 100%">
                             <thead>
                             <tr>
                                 <th>{{ _i("ID") }}</th>
