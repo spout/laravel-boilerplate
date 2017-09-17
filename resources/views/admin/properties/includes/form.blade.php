@@ -114,8 +114,7 @@
     }
     $customFields = array_merge($customFields, array_fill(0, 1, ['name' => '', 'value' => '']));
     ?>
-    {!! Form::hidden('custom_fields_count', count($customFields), ['id' => 'custom-fields-count']) !!}
-    <div class="row" id="custom-fields">
+    <div class="row" id="custom-fields" data-count="{{ count($customFields) }}">
         @foreach($customFields as $k => $customField)
             @include('admin.properties.includes.custom-fields-inputs', compact('k', 'customField'))
         @endforeach
@@ -139,10 +138,10 @@
     <script>
         $(function () {
           $('#custom-field-add').on('click', function (e) {
-            var $customFieldsCount = $('#custom-fields-count');
-            var formIndex = parseInt($customFieldsCount.val());
-            $('#custom-fields').append($('#custom-fields-empty-form').html().replace(/__index__/g, formIndex));
-            $customFieldsCount.val(formIndex + 1);
+            var $customFields = $('#custom-fields');
+            var formIndex = parseInt($customFields.attr('data-count'));
+            $customFields.append($('#custom-fields-empty-form').html().replace(/__index__/g, formIndex));
+            $customFields.attr('data-count', formIndex + 1);
           });
         });
     </script>
