@@ -34,6 +34,6 @@ class PropertiesNotificationSend extends Mailable
             ->from(config('mail.from.address'), config('mail.from.name'))
             ->to($this->email->to)
             ->subject($this->email->subject)
-            ->text('emails.properties.notification-send');
+            ->view('emails.properties.notification-send');
     }
 }
