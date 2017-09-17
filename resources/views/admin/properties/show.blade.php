@@ -81,6 +81,8 @@
                             }
                             $output .= '</dl>';
                             $value = $output;
+                        } else {
+                            $value = '';
                         }
                         break;
 
