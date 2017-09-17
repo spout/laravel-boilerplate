@@ -7,7 +7,6 @@ use App\Mail\PropertiesNotificationSend;
 use App\Models\Booking;
 use App\Models\EmailType;
 use App\Models\Property;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class PropertiesController extends AdminController
@@ -16,19 +15,19 @@ class PropertiesController extends AdminController
     protected static $requestClass = PropertyFormRequest::class;
     protected static $dataTableClass = PropertiesDataTable::class;
 
-    public function sendEmail(Request $request, $id, $type)
+    public function sendEmail($id, $type)
     {
         $emailType = EmailType::find($type);
         $booking = Booking::find($id);
 
-        if ($request->isMethod('post')) {
+        if (request()->isMethod('post')) {
             $email = Email::create([
                 'property_id' => $booking->property['id'],
                 'booking_id' => $booking->id,
                 'email_type' => $type,
-                'to' => $request->input('to'),
-                'subject' => $request->input('subject'),
-                'message' => $request->input('message'),
+                'to' => request()->input('to'),
+                'subject' => request()->input('subject'),
+                'message' => request()->input('message'),
             ]);
 
             Mail::send(new PropertiesNotificationSend($email));
