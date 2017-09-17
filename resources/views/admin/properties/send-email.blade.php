@@ -1,3 +1,5 @@
+@include('includes.tinymce')
+
 @extends('layouts.admin')
 
 @section('title', _i("Send emails"))
@@ -19,7 +21,7 @@
             {!! Form::closeGroup() !!}
 
             {!! Form::openGroup('message', _i("Message")) !!}
-            {!! Form::textarea('message', $message) !!}
+            {!! Form::textarea('message', $message, ['class' => 'wysiwyg']) !!}
             {!! Form::closeGroup() !!}
 
             {!! Form::submit(_i('Send'), ['class' => 'btn btn-primary btn-block']) !!}
