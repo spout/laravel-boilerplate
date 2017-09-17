@@ -101,64 +101,67 @@ class Properties extends Command
 
                         $booking->save();
 
-                        foreach ($eventTypes as $eventType) {
-                            $insertEvent = false;
-                            $summary = $eventType->eventTemplate['summary'];
-                            $location = $property->address;
-                            $description = $eventType->eventTemplate['template'];
-                            $start = Carbon::create();
-                            $end = Carbon::create();
-                            $timeStart = $eventType->eventTemplate['time_start'];
-                            $timeEnd = $eventType->eventTemplate['time_end'];
-                            $timeModify = $eventType->eventTemplate['time_modify'];
-                            $colorId = $eventType->eventTemplate['color'];
+                        // Check if events not already created
+                        if ($booking->events->count() === 0) {
+                            foreach ($eventTypes as $eventType) {
+                                $insertEvent = false;
+                                $summary = $eventType->eventTemplate['summary'];
+                                $location = $property->address;
+                                $description = $eventType->eventTemplate['template'];
+                                $start = Carbon::create();
+                                $end = Carbon::create();
+                                $timeStart = $eventType->eventTemplate['time_start'];
+                                $timeEnd = $eventType->eventTemplate['time_end'];
+                                $timeModify = $eventType->eventTemplate['time_modify'];
+                                $colorId = $eventType->eventTemplate['color'];
 
-                            $summary = templates_tags_replace($booking, $summary);
-                            $description = templates_tags_replace($booking, $description);
+                                $summary = templates_tags_replace($booking, $summary);
+                                $description = templates_tags_replace($booking, $description);
 
-                            list($startHour, $startMinute,) = explode(':', $timeStart);
-                            list($endHour, $endMinute,) = explode(':', $timeEnd);
+                                list($startHour, $startMinute,) = explode(':', $timeStart);
+                                list($endHour, $endMinute,) = explode(':', $timeEnd);
 
-                            switch ($eventType->type) {
-                                case 'arrival':
-                                    if (!empty($property->check_in)) {
-                                        $insertEvent = true;
-                                        $start = $arrivalDate->setTime($startHour, $startMinute);
-                                        $end = $arrivalDate->setTime($endHour, $endMinute);
-                                    }
-                                    break;
+                                switch ($eventType->type) {
+                                    case 'arrival':
+                                        if (!empty($property->check_in)) {
+                                            $insertEvent = true;
+                                            $start = $arrivalDate->setTime($startHour, $startMinute);
+                                            $end = $arrivalDate->setTime($endHour, $endMinute);
+                                        }
+                                        break;
 
-                                case 'departure':
-                                    if (!empty($property->check_out)) {
+                                    case 'departure':
+                                        if (!empty($property->check_out)) {
+                                            $insertEvent = true;
+                                            $start = $departureDate->setTime($startHour, $startMinute);
+                                            $end = $departureDate->setTime($endHour, $endMinute);
+                                        }
+                                        break;
+
+                                    case 'household':
                                         $insertEvent = true;
                                         $start = $departureDate->setTime($startHour, $startMinute);
-                                        $end = $departureDate->setTime($endHour, $endMinute);
-                                    }
-                                    break;
+                                        $end = $departureDate->setTime($endHour + $property->household_hours, $endMinute);
+                                        break;
+                                }
 
-                                case 'household':
-                                    $insertEvent = true;
-                                    $start = $departureDate->setTime($startHour, $startMinute);
-                                    $end = $departureDate->setTime($endHour + $property->household_hours, $endMinute);
-                                    break;
-                            }
+                                if (!empty($timeModify)) {
+                                    $start->modify($timeModify);
+                                    $end->modify($timeModify);
+                                }
 
-                            if (!empty($timeModify)) {
-                                $start->modify($timeModify);
-                                $end->modify($timeModify);
-                            }
-
-                            if ($insertEvent === true) {
-                                $events[] = [
-                                    'summary' => $summary,
-                                    'location' => $location,
-                                    'description' => $description,
-                                    'start' => $start,
-                                    'end' => $end,
-                                    'colorId' => $colorId,
-                                    'reminders' => ['useDefault' => true],
-                                    'extendedProperties' => ['private' => ['event_type' => $eventType->type, 'booking_id' => $booking->id]],
-                                ];
+                                if ($insertEvent === true) {
+                                    $events[] = [
+                                        'summary' => $summary,
+                                        'location' => $location,
+                                        'description' => $description,
+                                        'start' => $start,
+                                        'end' => $end,
+                                        'colorId' => $colorId,
+                                        'reminders' => ['useDefault' => true],
+                                        'extendedProperties' => ['private' => ['event_type' => $eventType->type, 'booking_id' => $booking->id]],
+                                    ];
+                                }
                             }
                         }
                     } elseif (trim($vevent->summary) !== 'Not available') {
