@@ -14,21 +14,30 @@ if (!function_exists('templates_tags_replace')) {
         foreach (config('templates-tags') as $tag => $label) {
             list($entity, $attribute) = explode('.', $tag);
             $search[] = "[$tag]";
+            $replaceTmp = null;
 
             if ($modelInstance instanceof \App\Models\Booking) {
                 switch ($entity) {
                     case 'booking':
-                        $replace[] = $modelInstance->{$attribute};
+                        $replaceTmp = $modelInstance->{$attribute};
                         break;
 
                     case 'property':
-                        $replace[] = $modelInstance->property[$attribute];
+                        $replaceTmp = $modelInstance->property[$attribute];
                         break;
                 }
             } elseif ($modelInstance instanceof \App\Models\Property) {
-                $replace[] = $modelInstance->{$attribute};
+                $replaceTmp = $modelInstance->{$attribute};
             } else {
                 throw new Exception("Model instance must be Booking or Property");
+            }
+
+            if ($replaceTmp instanceof Carbon\Carbon) {
+                $replaceTmp = $replaceTmp->format('d/m/Y');
+            }
+
+            if (!is_null($replaceTmp)) {
+                $replace[] = $replaceTmp;
             }
         }
 
