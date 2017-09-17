@@ -28,6 +28,7 @@ class PropertyFormRequest extends FormRequest
             'ical_url' => 'required|url',
             'owner_email' => 'required|email',
             'name' => 'required',
+            'household_hours' => 'required',
         ];
     }
 
@@ -40,6 +41,7 @@ class PropertyFormRequest extends FormRequest
             'owner_email.required' => _i("The owner email is required."),
             'owner_email.email' => _i("The owner email is not a valid email address."),
             'name.required' => _i("The name is required."),
+            'household_hours.required' => _i("The household hours is required."),
         ];
     }
 }
