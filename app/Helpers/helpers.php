@@ -14,30 +14,25 @@ if (!function_exists('templates_tags_replace')) {
         foreach (config('templates-tags') as $tag => $label) {
             list($entity, $attribute) = explode('.', $tag);
             $search[] = "[$tag]";
-            $replaceTmp = null;
 
             if ($modelInstance instanceof \App\Models\Booking) {
                 switch ($entity) {
                     case 'booking':
-                        $replaceTmp = $modelInstance->{$attribute};
+                        if (in_array($attribute, ['arrival_date', 'departure_date'])) {
+                            $replace[] = $modelInstance->{$attribute}->format('d/m/Y');
+                        } else {
+                            $replace[] = $modelInstance->{$attribute};
+                        }
                         break;
 
                     case 'property':
-                        $replaceTmp = $modelInstance->property[$attribute];
+                        $replace[] = $modelInstance->property[$attribute];
                         break;
                 }
             } elseif ($modelInstance instanceof \App\Models\Property) {
-                $replaceTmp = $modelInstance->{$attribute};
+                $replace[] = $modelInstance->{$attribute};
             } else {
                 throw new Exception("Model instance must be Booking or Property");
-            }
-
-            if ($replaceTmp instanceof Carbon\Carbon) {
-                $replaceTmp = $replaceTmp->format('d/m/Y');
-            }
-
-            if (!is_null($replaceTmp)) {
-                $replace[] = $replaceTmp;
             }
         }
 
