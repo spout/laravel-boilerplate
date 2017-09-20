@@ -108,8 +108,8 @@ class Properties extends Command
                                 $summary = $eventType->eventTemplate['summary'];
                                 $location = $property->address;
                                 $description = $eventType->eventTemplate['template'];
-                                $start = Carbon::create();
-                                $end = Carbon::create();
+                                $start = null;
+                                $end = null;
                                 $timeStart = $eventType->eventTemplate['time_start'];
                                 $timeEnd = $eventType->eventTemplate['time_end'];
                                 $timeModify = $eventType->eventTemplate['time_modify'];
@@ -125,27 +125,27 @@ class Properties extends Command
                                     case 'arrival':
                                         if (!empty($property->check_in)) {
                                             $insertEvent = true;
-                                            $start = $arrivalDate->setTime($startHour, $startMinute);
-                                            $end = $arrivalDate->setTime($endHour, $endMinute);
+                                            $start = $arrivalDate->copy()->setTime($startHour, $startMinute);
+                                            $end = $arrivalDate->copy()->setTime($endHour, $endMinute);
                                         }
                                         break;
 
                                     case 'departure':
                                         if (!empty($property->check_out)) {
                                             $insertEvent = true;
-                                            $start = $departureDate->setTime($startHour, $startMinute);
-                                            $end = $departureDate->setTime($endHour, $endMinute);
+                                            $start = $departureDate->copy()->setTime($startHour, $startMinute);
+                                            $end = $departureDate->copy()->setTime($endHour, $endMinute);
                                         }
                                         break;
 
                                     case 'household':
                                         $insertEvent = true;
-                                        $start = $departureDate->setTime($startHour, $startMinute);
-                                        $end = $departureDate->setTime($endHour + $property->household_hours, $endMinute);
+                                        $start = $departureDate->copy()->setTime($startHour, $startMinute);
+                                        $end = $departureDate->copy()->setTime($endHour, $endMinute)->addHours($property->household_hours);
                                         break;
                                 }
 
-                                if (!empty($timeModify)) {
+                                if (isset($start, $end, $timeModify)) {
                                     $start->modify($timeModify);
                                     $end->modify($timeModify);
                                 }
