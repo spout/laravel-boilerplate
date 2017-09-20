@@ -145,12 +145,12 @@ class Properties extends Command
                                         break;
                                 }
 
-                                if (isset($start, $end, $timeModify)) {
-                                    $start->modify($timeModify);
-                                    $end->modify($timeModify);
-                                }
-
                                 if ($insertEvent === true) {
+                                    if (!empty($timeModify)) {
+                                        $start->modify($timeModify);
+                                        $end->modify($timeModify);
+                                    }
+
                                     $events[] = [
                                         'summary' => $summary,
                                         'location' => $location,
