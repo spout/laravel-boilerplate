@@ -20,7 +20,11 @@
       var $template = $('#template');
       var caretPos = $template[0].selectionStart;
       var textAreaTxt = $template.val();
-      $template.val(textAreaTxt.substring(0, caretPos) + $(this).text() + textAreaTxt.substring(caretPos) );
+      if ($template.hasClass('wysiwyg') && typeof tinymce !== 'undefined') {
+        tinymce.activeEditor.execCommand('mceInsertContent', false, $(this).text());
+      } else {
+        $template.val(textAreaTxt.substring(0, caretPos) + $(this).text() + textAreaTxt.substring(caretPos) );
+      }
     });
   });
 </script>
