@@ -1,6 +1,7 @@
 {!! Form::model($object, [
     'route' => empty($object->pk) ? ['admin.event-templates.store'] : ['admin.event-templates.update', $object->pk],
-    'method' => empty($object->pk) ? 'POST' : 'PUT'
+    'method' => empty($object->pk) ? 'POST' : 'PUT',
+    'data-event-type' => $object->event_type,
 ]) !!}
 
 @include('includes.templates-tags-form', ['title' => _i("Available tags for summary and template:")])
@@ -21,14 +22,27 @@
     </div>
     <div class="col-sm-6">
         {!! Form::openGroup('time_end', _i('Time end')) !!}
-        {!! Form::time('time_end') !!}
+        @if ($object->event_type === 'household')
+            {!! Form::hidden('time_end', null, ['id' => 'time_end']) !!}
+            <p class="help-text">{{ _i("The time end is calculated from time start with added property household hours.") }}</p>
+        @else
+            {!! Form::time('time_end') !!}
+        @endif
         {!! Form::closeGroup() !!}
     </div>
 </div>
 
-{!! Form::openGroup('time_modify', _i('Time modify')) !!}
-{!! Form::text('time_modify') !!}
-{!! Form::closeGroup() !!}
+@if ($object->event_type === 'departure')
+    <?php
+    $timeModifyList = ['' => _i("Same day")];
+    foreach (range(1, 10) as $i) {
+        $timeModifyList["+{$i} day"] = _n("+%d day", "+%d days", $i, $i);
+    }
+    ?>
+    {!! Form::openGroup('time_modify', _i('Modify the date from the day of departure')) !!}
+    {!! Form::select('time_modify', $timeModifyList) !!}
+    {!! Form::closeGroup() !!}
+@endif
 
 {!! Form::openGroup('color', _i('Color')) !!}
 {!! Form::select('color', $colorList) !!}
@@ -51,6 +65,10 @@
           $('#color').select2({
             templateResult: formatState,
             templateSelection: formatState
+          });
+
+          $('form[data-event-type="household"] #time_start').on('change', function () {
+            $('#time_end').val($(this).val());
           });
         });
     </script>

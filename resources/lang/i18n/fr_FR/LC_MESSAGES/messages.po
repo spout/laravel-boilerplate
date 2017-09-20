@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2017-09-17 16:02+0200\n"
-"PO-Revision-Date: 2017-09-17 16:02+0200\n"
+"POT-Creation-Date: 2017-09-20 20:04+0200\n"
+"PO-Revision-Date: 2017-09-20 20:04+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -13,6 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _;__;_i;_s;gettext;_n:1,2;ngettext:1,2;dgettext:2\n"
 "X-Poedit-Basepath: ../../../../../app\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: Http/Controllers\n"
 "X-Poedit-SearchPath-1: Http/Requests\n"
 "X-Poedit-SearchPath-2: ../resources/views\n"
@@ -46,29 +47,42 @@ msgstr "ID"
 #: ../resources/views/admin/email-templates/show.blade.php:9
 #: ../storage/framework/messages/18c3204dc2831907564eaed2cb74deee58396549.php.php:7
 #: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:22
-#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:16
+#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:18
 #: ../storage/framework/messages/529dd17c085e5db78c380143b5638ef4a7e6ebf5.php.php:7
 #: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:19
 #: ../storage/framework/messages/7756ecc2ee00e71a6ddafc21e50265fea1f32712.php.php:8
 #: ../storage/framework/messages/ac13c79e1dd7e4bbd9e8a3759eabca26f09b88b0.php.php:14
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:14
-#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:19
+#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:23
 #: DataTables/ContactsDataTable.php:22
 msgid "Subject"
 msgstr "Sujet"
 
 #: ../resources/views/admin/email-templates/show.blade.php:10
 #: ../resources/views/admin/event-templates/show.blade.php:10
-#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:23
+#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:25
 #: ../storage/framework/messages/529dd17c085e5db78c380143b5638ef4a7e6ebf5.php.php:8
 #: ../storage/framework/messages/6300e92abb60c4edeca96a77b6bab4338fdf0223.php.php:8
-#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:16
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:17
 msgid "Template"
 msgstr "Gabarit"
 
+#: ../resources/views/admin/event-templates/includes/form.blade.php:37
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:51
+msgid "Same day"
+msgstr "Même jour"
+
+#: ../resources/views/admin/event-templates/includes/form.blade.php:39
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:53
+#, php-format
+msgid "+%d day"
+msgid_plural "+%d days"
+msgstr[0] "+%d jour"
+msgstr[1] "+%d jours"
+
 #: ../resources/views/admin/event-templates/show.blade.php:9
 #: ../storage/framework/messages/6300e92abb60c4edeca96a77b6bab4338fdf0223.php.php:7
-#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:9
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:10
 msgid "Summary"
 msgstr "Résumé"
 
@@ -435,7 +449,7 @@ msgstr "Le template est requis."
 #: ../storage/framework/messages/7756ecc2ee00e71a6ddafc21e50265fea1f32712.php.php:9
 #: ../storage/framework/messages/ac13c79e1dd7e4bbd9e8a3759eabca26f09b88b0.php.php:21
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:21
-#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:26
+#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:30
 msgid "Message"
 msgstr "Message"
 
@@ -505,13 +519,13 @@ msgid "Create snippet"
 msgstr "Créer fragment"
 
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:21
-#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:30
+#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:32
 #: ../storage/framework/messages/666bb58ff86b365a974109c02c497e015fe06cdd.php.php:23
 #: ../storage/framework/messages/6e94feaea2393cdd0ad236dae735aedf0085f88c.php.php:55
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:80
 #: ../storage/framework/messages/8ceb84d387dce7dc4e5978f3200158edecc4c988.php.php:191
 #: ../storage/framework/messages/ac13c79e1dd7e4bbd9e8a3759eabca26f09b88b0.php.php:28
-#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:56
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:71
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:57
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:43
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:28
@@ -530,14 +544,14 @@ msgstr "Message envoyé avec succès."
 msgid "Role"
 msgstr "Rôle"
 
-#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:7
+#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:9
 #: ../storage/framework/messages/7756ecc2ee00e71a6ddafc21e50265fea1f32712.php.php:7
 #: ../storage/framework/messages/ac13c79e1dd7e4bbd9e8a3759eabca26f09b88b0.php.php:7
-#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:12
+#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:16
 msgid "To"
 msgstr "Vers"
 
-#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:14
+#: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:16
 msgid "Available tags for subject and template:"
 msgstr "Etiquettes disponibles pour le sujet et le gabarit :"
 
@@ -562,8 +576,8 @@ msgstr "Action"
 msgid "Middleware"
 msgstr "Middleware"
 
-#: ../storage/framework/messages/491dd0c4b53919635acd7f6f09535facd1ed7f4b.php.php:36
-#: Http/Controllers/Admin/PropertiesController.php:36
+#: ../storage/framework/messages/491dd0c4b53919635acd7f6f09535facd1ed7f4b.php.php:35
+#: Http/Controllers/Admin/PropertiesController.php:35
 msgid "Email was sent successfully."
 msgstr "Email envoyé avec succès."
 
@@ -645,7 +659,7 @@ msgid "Contact us"
 msgstr "Contactez-nous"
 
 #: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:33
-#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:33
+#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:37
 msgid "Send"
 msgstr "Envoyer"
 
@@ -844,23 +858,31 @@ msgstr "Veuillez corriger les erreurs ci-dessous :"
 msgid "Update property"
 msgstr "Modifier propriété"
 
-#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:7
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:8
 msgid "Available tags for summary and template:"
 msgstr "Etiquettes disponibles pour le résumé et le gabarit :"
 
-#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:25
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:26
 msgid "Time start"
 msgstr "Heure de début"
 
-#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:33
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:34
 msgid "Time end"
 msgstr "Heure de fin"
 
-#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:42
-msgid "Time modify"
-msgstr "Modification de l'heure"
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:39
+msgid ""
+"The time end is calculated from time start with added property household "
+"hours."
+msgstr ""
+"L'heure de fin est calculée par rapport à l'heure de début avec les heures "
+"de ménage ajoutées."
 
-#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:49
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:56
+msgid "Modify the date from the day of departure"
+msgstr "Modifier la date par rapport au jour de départ"
+
+#: ../storage/framework/messages/ac76a21453280945dcc1f7719c1a7a5f151df313.php.php:64
 msgid "Color"
 msgstr "Couleur"
 
@@ -951,11 +973,11 @@ msgstr "Créer catégorie"
 msgid "Update event template"
 msgstr "Modifier gabarit événement"
 
-#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:1
+#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:5
 msgid "Send emails"
 msgstr "Envoyer emails"
 
-#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:6
+#: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:10
 #, php-format
 msgid "Send email to %s"
 msgstr "Envoyer email à %s"
@@ -999,6 +1021,9 @@ msgstr "Le champ vers n'est pas un email valide."
 #: ../storage/framework/messages/f51aff405c72479c91639cfe54e081978c5d5111.php.php:1
 msgid "Create user"
 msgstr "Créer utilisateur"
+
+#~ msgid "Time modify"
+#~ msgstr "Modification de l'heure"
 
 #~ msgid "Username"
 #~ msgstr "Nom d'utilisateur"
