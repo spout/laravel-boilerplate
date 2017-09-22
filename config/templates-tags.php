@@ -16,4 +16,5 @@ return [
     'property.bathrooms' => "Nombre de salles de bain",
     'property.capacity' => "Capacité maximum",
     'property.surface' => "Surface",
+    'property.custom_fields' => "Champs personnalisés",
 ];
