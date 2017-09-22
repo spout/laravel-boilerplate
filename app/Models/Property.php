@@ -56,7 +56,7 @@ class Property extends Model
         $output = '';
         if (!empty($this->custom_fields)) {
             foreach ($this->custom_fields as $customField) {
-                $output .= $customField['name'] . PHP_EOL;
+                $output .= "{$customField['name']} :" . PHP_EOL;
                 $output .= $customField['value'] . PHP_EOL;
             }
         }
