@@ -15,6 +15,8 @@ class EmailsDataTable extends DataTable
             ['data' => 'id', 'name' => 'id', 'title' => _i("ID"), 'searchable' => false],
             ['data' => 'property.name', 'name' => 'property.name', 'title' => _i("Property")],
             ['data' => 'email_type.title', 'name' => 'emailType.title', 'title' => _i("Type")],
+            ['data' => 'to', 'name' => 'to', 'title' => _i("To")],
+            ['data' => 'subject', 'name' => 'subject', 'title' => _i("Subject")],
             ['data' => 'created_at', 'name' => 'created_at', 'title' => _i("Date")],
         ];
     }
