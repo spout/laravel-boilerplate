@@ -222,7 +222,7 @@ class Properties extends Command
         /**
          * Iterate over bookings to send notification emails
          */
-        $bookings = Booking::where('departure_date', '<=', Carbon::now())->whereNotNull('email')->get();
+        $bookings = Booking::whereDate('departure_date', '>=', Carbon::now())->whereNotNull('email')->get();
 
         foreach ($bookings as $booking) {
             foreach ($emailTypes as $emailType) {
