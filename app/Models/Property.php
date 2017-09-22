@@ -36,4 +36,30 @@ class Property extends Model
             fopen($this->ical_url, 'r')
         );
     }
+
+    public function getCustomFieldsHtmlAttribute()
+    {
+        $output = '';
+        if (!empty($this->custom_fields)) {
+            $output = '<dl>';
+            foreach ($this->custom_fields as $customField) {
+                $output .= '<dt>' . e($customField['name']) . '</dt>';
+                $output .= '<dd>' . nl2br(e($customField['value'])) . '</dd>';
+            }
+            $output .= '</dl>';
+        }
+        return $output;
+    }
+
+    public function getCustomFieldsTextAttribute()
+    {
+        $output = '';
+        if (!empty($this->custom_fields)) {
+            foreach ($this->custom_fields as $customField) {
+                $output .= $customField['name'] . PHP_EOL;
+                $output .= $customField['value'] . PHP_EOL;
+            }
+        }
+        return $output;
+    }
 }

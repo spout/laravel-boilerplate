@@ -3,17 +3,22 @@ if (!function_exists('templates_tags_replace')) {
     /**
      * @param \App\Models\Booking|\App\Models\Property $modelInstance
      * @param $subject
+     * @param $html
      *
      * @return mixed
      * @throws Exception
      */
-    function templates_tags_replace($modelInstance, $subject)
+    function templates_tags_replace($modelInstance, $subject, $html = false)
     {
         $search  = [];
         $replace = [];
         foreach (config('templates-tags') as $tag => $label) {
             list($entity, $attribute) = explode('.', $tag);
             $search[] = "[$tag]";
+
+            if ($attribute === 'custom_fields') {
+                $attribute = $html === true ? 'custom_fields_html' : 'custom_fields_text';
+            }
 
             if ($modelInstance instanceof \App\Models\Booking) {
                 switch ($entity) {

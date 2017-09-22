@@ -24,7 +24,7 @@
         'household_hours' => _i("Household hours"),
         'keys' => _i("Number of keys"),
         'keys_photo' => _i("Keys photo"),
-        'custom_fields' => _i("Custom fields"),
+        'custom_fields_html' => _i("Custom fields"),
         'created_at' => _i("Created"),
         'updated_at' => _i("Updated"),
     ];
@@ -69,20 +69,6 @@
                     case 'keys_photo':
                         if (!empty($value)) {
                             $value = sprintf('<a href="%s"><img src="%s" alt=""></a>', url($value), route('imagecache', ['template' => 'small', 'filename' => $value]));
-                        }
-                        break;
-
-                    case 'custom_fields':
-                        if (!empty($value)) {
-                            $output = '<dl>';
-                            foreach ($value as $customField) {
-                                $output .= '<dt>' . e($customField['name']) . '</dt>';
-                                $output .= '<dd>' . nl2br(e($customField['value'])) . '</dd>';
-                            }
-                            $output .= '</dl>';
-                            $value = $output;
-                        } else {
-                            $value = '';
                         }
                         break;
 

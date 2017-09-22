@@ -258,7 +258,7 @@ class Properties extends Command
                     if ($send === true) {
                         $to = templates_tags_replace($booking, $emailType->emailTemplate['to']);
                         $subject = templates_tags_replace($booking, $emailType->emailTemplate['subject']);
-                        $message = templates_tags_replace($booking, $emailType->emailTemplate['template']);
+                        $message = templates_tags_replace($booking, $emailType->emailTemplate['template'], true);
 
                         $email = Email::create([
                             'property_id' => $booking->property['id'],
