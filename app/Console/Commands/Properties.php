@@ -138,8 +138,13 @@ class Properties extends Command
 
                                     case 'household':
                                         $insertEvent = true;
+                                        list($hours, $minutes) = explode(':', $property->household_hours);
                                         $start = $departureDate->copy()->setTime($startHour, $startMinute);
-                                        $end = $departureDate->copy()->setTime($endHour, $endMinute)->addHours($property->household_hours);
+                                        $end = $departureDate
+                                            ->copy()
+                                            ->setTime($endHour, $endMinute)
+                                            ->addHours($hours)
+                                            ->addMinutes($minutes);
                                         break;
                                 }
 

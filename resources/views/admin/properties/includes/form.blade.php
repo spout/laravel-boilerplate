@@ -89,7 +89,7 @@
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('household_hours', _i('Household hours')) !!}
-{!! Form::number('household_hours') !!}
+{!! Form::time('household_hours', null, ['step' => 30 * 60, 'min' => '00:30']) !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('keys', _i('Number of keys')) !!}
