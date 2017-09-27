@@ -7,6 +7,7 @@ use App\Mail\PropertiesNotificationSend;
 use App\Models\Booking;
 use App\Models\EmailType;
 use App\Models\Property;
+use App\Models\Email;
 use Illuminate\Support\Facades\Mail;
 
 class PropertiesController extends AdminController
