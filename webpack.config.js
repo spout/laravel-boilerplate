@@ -20,33 +20,40 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
+          use: 'css-loader',
+          fallback: 'style-loader'
         })
       },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
-          loader: [{
-            loader: 'css-loader'
-          }, {
-            loader: 'sass-loader'
-          }],
-          // use style-loader in development
-          fallbackLoader: 'style-loader'
+          use: ['css-loader', 'sass-loader'],
+          fallback: 'style-loader'
         })
       },
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          mimetype: 'application/font-woff'
+        }
       },
       {
         test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          mimetype: 'application/font-woff'
+        }
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          mimetype: 'application/octet-stream'
+        }
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
@@ -54,7 +61,11 @@ module.exports = {
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          mimetype: 'image/svg+xml'
+        }
       },
       {
         test: /\.(ico|jpe?g|png|gif)$/,
