@@ -32,19 +32,19 @@
             <?php
             $navs = [
                 ['title' => _i("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
-                //['title' => _i("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
-                //['title' => _i("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
-                //['title' => _i("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
-                //['title' => _i("Snippets"), 'icon' => 'link', 'route' => 'admin.snippets.index'],
-                ['title' => _i("Properties"), 'icon' => 'home', 'route' => 'admin.properties.index'],
-                ['title' => _i("Event templates"), 'icon' => 'calendar-o', 'route' => 'admin.event-templates.index'],
-                ['title' => _i("Email templates"), 'icon' => 'envelope-o', 'route' => 'admin.email-templates.index'],
+                ['title' => _i("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
+                ['title' => _i("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
+                ['title' => _i("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
+                ['title' => _i("Snippets"), 'icon' => 'link', 'route' => 'admin.snippets.index'],
+                //['title' => _i("Properties"), 'icon' => 'home', 'route' => 'admin.properties.index'],
+                //['title' => _i("Event templates"), 'icon' => 'calendar-o', 'route' => 'admin.event-templates.index'],
+                //['title' => _i("Email templates"), 'icon' => 'envelope-o', 'route' => 'admin.email-templates.index'],
                 ['title' => _i("Emails"), 'icon' => 'envelope', 'route' => 'admin.emails.index'],
                 ['title' => _i("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
-                //['title' => _i("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
-                //['title' => _i("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file-manager.index'],
-                //['title' => _i("Settings"), 'icon' => 'cogs', 'route' => 'admin.settings.index'],
-                //['title' => _i("Routes"), 'icon' => 'road', 'route' => 'admin.routes.index'],
+                ['title' => _i("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
+                ['title' => _i("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file-manager.index'],
+                ['title' => _i("Settings"), 'icon' => 'cogs', 'route' => 'admin.settings.index'],
+                ['title' => _i("Routes"), 'icon' => 'road', 'route' => 'admin.routes.index'],
             ];
             ?>
             <ul class="nav navbar-nav">
