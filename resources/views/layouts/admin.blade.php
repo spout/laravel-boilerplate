@@ -39,7 +39,7 @@
                 //['title' => _i("Properties"), 'icon' => 'home', 'route' => 'admin.properties.index'],
                 //['title' => _i("Event templates"), 'icon' => 'calendar-o', 'route' => 'admin.event-templates.index'],
                 //['title' => _i("Email templates"), 'icon' => 'envelope-o', 'route' => 'admin.email-templates.index'],
-                ['title' => _i("Emails"), 'icon' => 'envelope', 'route' => 'admin.emails.index'],
+                //['title' => _i("Emails"), 'icon' => 'envelope', 'route' => 'admin.emails.index'],
                 ['title' => _i("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
                 ['title' => _i("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
                 ['title' => _i("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file-manager.index'],
