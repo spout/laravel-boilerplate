@@ -44,3 +44,19 @@ if (!function_exists('templates_tags_replace')) {
         return str_replace($search, $replace, $subject);
     }
 }
+
+if (!function_exists('setting')) {
+    function setting($key, $value = null, $default = null)
+    {
+        $cacheKey = "setting-$key";
+        $cacheMinutes = 60;
+        $setting = Cache::remember($cacheKey, $cacheMinutes, function () use ($key) {
+            return \App\Models\Setting::find($key)->first();
+        });
+
+        if (empty($value)) {
+            return $setting->value_as_array;
+        }
+        return array_get($setting->value_as_array, $value, $default);
+    }
+}

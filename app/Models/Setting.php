@@ -16,4 +16,9 @@ class Setting extends Model
     {
         return '#';
     }
+
+    public function getValueAsArrayAttribute()
+    {
+        return json_decode($this->value, true);
+    }
 }
