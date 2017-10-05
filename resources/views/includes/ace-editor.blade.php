@@ -9,8 +9,8 @@
             var editDiv = $('<div>', {
                 position: 'absolute',
                 width: textarea.width(),
-                //height: textarea.height(),
-                height: '500px',
+                height: textarea.height(),
+                //height: '500px',
                 'class': textarea.attr('class')
             }).insertBefore(textarea);
             textarea.css('display', 'none');
