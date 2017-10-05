@@ -1,6 +1,8 @@
 <?php
 namespace App\Models\Traits;
 
+use App\Libraries\TreeCollection;
+
 /**
  * Class AdjacencyListTrait
  * @link http://stackoverflow.com/a/24679043/1656355
@@ -9,6 +11,7 @@ namespace App\Models\Traits;
 trait AdjacencyListTrait
 {
     public static $parentColumn = 'parent_id';
+    protected $subtree;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -48,10 +51,10 @@ trait AdjacencyListTrait
      */
     public function ancestors()
     {
-        $ancestors = $this->where('id', '=', $this->parent_id)->get();
+        $ancestors = $this->where('id', '=', $this->{static::$parentColumn})->get();
 
-        while ($ancestors->last() && $ancestors->last()->parent_id !== null) {
-            $parent = $this->where('id', '=', $ancestors->last()->parent_id)->get();
+        while ($ancestors->last() && $ancestors->last()->{static::$parentColumn} !== null) {
+            $parent = $this->where('id', '=', $ancestors->last()->{static::$parentColumn})->get();
             $ancestors = $ancestors->merge($parent);
         }
 
@@ -63,5 +66,19 @@ trait AdjacencyListTrait
         return $this->ancestors();
         // or like this, if you want it the other way around
         // return $this->ancestors()->reverse();
+    }
+
+    /**
+     * @link https://laracasts.com/discuss/channels/general-discussion/eloquent-infinite-children-into-usable-array-and-render-it-to-nested-ul/replies/34455
+     * @return TreeCollection
+     */
+    public function getSubtreeAttribute()
+    {
+        return $this->subtree = $this->subtree ?: $this->newCollection();
+    }
+
+    public function newCollection(array $models = array())
+    {
+        return new TreeCollection($models);
     }
 }
