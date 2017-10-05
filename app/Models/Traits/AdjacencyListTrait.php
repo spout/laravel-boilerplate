@@ -50,8 +50,7 @@ trait AdjacencyListTrait
     {
         $ancestors = $this->where('id', '=', $this->parent_id)->get();
 
-        while ($ancestors->last() && $ancestors->last()->parent_id !== null)
-        {
+        while ($ancestors->last() && $ancestors->last()->parent_id !== null) {
             $parent = $this->where('id', '=', $ancestors->last()->parent_id)->get();
             $ancestors = $ancestors->merge($parent);
         }
