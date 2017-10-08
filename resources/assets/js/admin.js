@@ -3,6 +3,7 @@ const $ = window.$
 require('bootstrap/dist/js/bootstrap.min.js')
 require('jquery-colorbox/jquery.colorbox-min.js')
 require('select2/dist/js/select2.min.js')
+require('jstree')
 require('./global')
 
 require('../scss/admin.scss')

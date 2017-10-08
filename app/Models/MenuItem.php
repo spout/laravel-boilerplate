@@ -20,7 +20,7 @@ class MenuItem extends Model
 
     public function getTitleAttribute($value)
     {
-        if (!empty($this->model) && !empty($this->foreign_key)) {
+        if (empty($value) && !empty($this->model) && !empty($this->foreign_key)) {
             $modelClass = $this->model;
             $row = $modelClass::find($this->foreign_key);
             return $row; // __toString

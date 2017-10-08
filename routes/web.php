@@ -83,6 +83,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
+        Route::match(['get', 'post'], 'menus/tree-data/{id}', 'MenusController@treeData')->name('admin.menus.tree-data');
+        Route::post('menus/tree-save', 'MenusController@treeSave')->name('admin.menus.tree-save');
+        Route::post('menus/tree-destroy', 'MenusController@treeDestroy')->name('admin.menus.tree-destroy');
         Route::resource('menus', 'MenusController', [
             'names' => [
                 'store' => 'admin.menus.store',

@@ -22,16 +22,15 @@ class MenusController extends AdminController
             Post::class => _i("Post"),
         ];
 
-        $associations = ['' => '-'];
+        $associationList = ['' => '-'];
         foreach ($models as $model => $label) {
             $rows = $model::all();
             foreach ($rows as $row) {
-                $associations[$label]["$model.{$row->pk}"] = $row->__toString();
+                $associationList[$label]["{$model}.{$row->pk}"] = $row->__toString();
             }
         }
 
-        $view->object->menuItems->push(new MenuItem());
-        $view->associations = $associations;
+        $view->associationList = $associationList;
         return $view;
     }
 
@@ -39,7 +38,7 @@ class MenusController extends AdminController
     {
         $response = parent::update($request, $id);
         $menu = Menu::find($id);
-        foreach ($request->input('menuItems') as $item) {
+        foreach ($request->input('menuItems', []) as $item) {
             if (empty($item['id'])) {
                 $menu->menuItems()->create($item);
             } else {
@@ -50,5 +49,47 @@ class MenusController extends AdminController
         }
 
         return $response;
+    }
+
+    public function treeData($id)
+    {
+        $menu = Menu::find($id);
+
+        $data = [];
+        foreach ($menu->menuItems as $item) {
+            $data[] = [
+                'id' => $item->id,
+                'parent' => $item->parent_id ?? '#',
+                'text' => $item->title,
+                'data' => $item->toArray(),
+            ];
+        }
+        return response()->json($data);
+    }
+
+    public function treeSave(Request $request)
+    {
+        $id = $request->input('id');
+
+        /**
+         * jstree creates id like j1_1
+         */
+        if (is_numeric($id)) {
+            $menuItem = MenuItem::find($id);
+        } else {
+            $menuItem = new MenuItem;
+        }
+
+        $menuItem->fill($request->except('id'));
+        $saved = $menuItem->save();
+
+        return response()->json(['status' => $saved ? 'success' : 'error', 'data' => $menuItem->toArray()], $saved ? 200 : 400);
+    }
+
+    public function treeDestroy(Request $request)
+    {
+        $count = MenuItem::destroy($request->input('id'));
+
+        return response()->json(['status' => !empty($count) ? 'success' : 'error'], !empty($count) ? 200 : 400);
     }
 }

@@ -8,6 +8,11 @@ class MenuComposer
 {
     public function compose(View $view)
     {
-        $view->with('parentList', MenuItem::where('menu_id', $view->object->id)->get()->pluck('title', 'id')->prepend('-', ''));
+        $menuItems = MenuItem::where('menu_id', $view->object->id)->get();
+        $view
+            ->with([
+                'parentList' => $menuItems->pluck('title', 'id')->prepend('-', ''),
+                'tree' => $menuItems->buildTree(),
+            ]);
     }
 }

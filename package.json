@@ -21,6 +21,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "jquery-colorbox": "^1.6.4",
+    "jstree": "^3.3.4",
     "lodash": "^4.17.4",
     "select2": "^4.0.4"
   }

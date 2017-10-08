@@ -2,6 +2,7 @@
 @import "~font-awesome/css/font-awesome.min.css";
 @import "~jquery-colorbox/example1/colorbox.css";
 @import "~select2/dist/css/select2.min.css";
+@import "~jstree/dist/themes/default/style.css";
 
 body {
   //padding-top: 70px;
@@ -41,4 +42,8 @@ iframe.elfinder {
   width: 100%;
   height: 250px;
   margin-bottom: 10px;
+}
+
+#menu-items-tree {
+  margin: 10px 0;
 }
