@@ -1,5 +1,3 @@
 @if (!empty($node->subtree))
-    <ul>
-        @tree(['tree' => $node->subtree, 'params' => $params])
-    </ul>
+    @tree(['tree' => $node->subtree, 'params' => $params])
 @endif
