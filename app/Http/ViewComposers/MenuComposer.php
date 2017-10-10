@@ -9,10 +9,7 @@ class MenuComposer
     public function compose(View $view)
     {
         $menuItems = MenuItem::where('menu_id', $view->object->id)->get();
-        $view
-            ->with([
-                'parentList' => $menuItems->pluck('title', 'id')->prepend('-', ''),
-                'tree' => $menuItems->buildTree(),
-            ]);
+        $parentList = $menuItems->pluck('title', 'id')->prepend('-', '');
+        $view->with(compact('parentList'));
     }
 }
