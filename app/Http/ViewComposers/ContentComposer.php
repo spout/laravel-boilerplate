@@ -8,6 +8,12 @@ class ContentComposer
 {
     public function compose(View $view)
     {
-        $view->with('contentList', Content::where('id', '!=', $view->object->id)->get()->pluck('title', 'id')->prepend('-', ''));
+        $contentList = Content::where('id', '!=', $view->object->id)
+            ->whereNull('parent_id')
+            ->get()
+            ->pluck('title', 'id')
+            ->prepend('-', '');
+
+        $view->with(compact('contentList'));
     }
 }
