@@ -18,6 +18,11 @@ class MenuItem extends Model
         static::addGlobalScope(new OrderScope('sort'));
     }
 
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class);
+    }
+
     public function getTitleAttribute($value)
     {
         if (empty($value) && !empty($this->model) && !empty($this->foreign_key)) {
@@ -32,10 +37,5 @@ class MenuItem extends Model
     public function getAbsoluteUrlAttribute()
     {
         return '#';
-    }
-
-    public function menu()
-    {
-        return $this->belongsTo(Menu::class);
     }
 }
