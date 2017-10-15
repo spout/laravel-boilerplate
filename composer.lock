@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d764b94c19381a2a59cadbabd041618",
+    "content-hash": "73773da08b80364d9041119fd1458664",
     "packages": [
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -2828,12 +2828,12 @@
             "version": "2.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fruux/sabre-uri.git",
+                "url": "https://github.com/sabre-io/uri.git",
                 "reference": "a42126042c7dcb53e2978dadb6d22574d1359b4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruux/sabre-uri/zipball/a42126042c7dcb53e2978dadb6d22574d1359b4c",
+                "url": "https://api.github.com/repos/sabre-io/uri/zipball/a42126042c7dcb53e2978dadb6d22574d1359b4c",
                 "reference": "a42126042c7dcb53e2978dadb6d22574d1359b4c",
                 "shasum": ""
             },
@@ -2879,12 +2879,12 @@
             "version": "4.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fruux/sabre-vobject.git",
+                "url": "https://github.com/sabre-io/vobject.git",
                 "reference": "d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruux/sabre-vobject/zipball/d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c",
+                "url": "https://api.github.com/repos/sabre-io/vobject/zipball/d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c",
                 "reference": "d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c",
                 "shasum": ""
             },
@@ -2976,12 +2976,12 @@
             "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fruux/sabre-xml.git",
+                "url": "https://github.com/sabre-io/xml.git",
                 "reference": "054292959a1f2b64c10c9c7a03a816ba1872b8a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruux/sabre-xml/zipball/054292959a1f2b64c10c9c7a03a816ba1872b8a3",
+                "url": "https://api.github.com/repos/sabre-io/xml/zipball/054292959a1f2b64c10c9c7a03a816ba1872b8a3",
                 "reference": "054292959a1f2b64c10c9c7a03a816ba1872b8a3",
                 "shasum": ""
             },
@@ -4154,6 +4154,62 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "webwizo/laravel-shortcodes",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webwizo/laravel-shortcodes.git",
+                "reference": "9173476967380aec446f7040e4dfa1d638151893"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webwizo/laravel-shortcodes/zipball/9173476967380aec446f7040e4dfa1d638151893",
+                "reference": "9173476967380aec446f7040e4dfa1d638151893",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "~5.5.0",
+                "illuminate/support": "~5.5.0",
+                "illuminate/view": "~5.5.0",
+                "php": "~7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5",
+                "phpunit/phpunit": "6.*",
+                "scrutinizer/ocular": "~1.1",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "tests/TestCase.php"
+                ],
+                "psr-4": {
+                    "Webwizo\\Shortcodes\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Asif Iqbal",
+                    "email": "webwizo@gmail.com",
+                    "homepage": "http://www.webwizo.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Wordpress like shortcodes for Laravel 5.x",
+            "homepage": "https://github.com/webwizo/laravel-shortcodes",
+            "keywords": [
+                "laravel",
+                "shortcodes",
+                "wordpress"
+            ],
+            "time": "2017-10-05T15:30:50+00:00"
         },
         {
             "name": "yajra/laravel-datatables-buttons",

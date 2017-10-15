@@ -78,7 +78,7 @@ return [
     */
 
     'locale' => 'en',
-    'locales' => ['fr' => 'Français', 'en' => 'English', 'nl' => 'Nederlands'],
+    'locales' => ['fr' => 'Français' /*, 'en' => 'English'*/, 'nl' => 'Nederlands'],
 
     /*
     |--------------------------------------------------------------------------
@@ -181,6 +181,7 @@ return [
         App\Providers\ObserverServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
+        App\Providers\ShortcodesServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
         //Collective\Html\HtmlServiceProvider::class,
@@ -193,6 +194,7 @@ return [
         Barryvdh\Elfinder\ElfinderServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Webwizo\Shortcodes\ShortcodesServiceProvider::class,
     ],
 
     /*
@@ -246,6 +248,7 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Shortcode' => Webwizo\Shortcodes\Facades\Shortcode::class,
     ],
 
 ];

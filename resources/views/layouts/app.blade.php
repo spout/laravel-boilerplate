@@ -19,8 +19,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -29,7 +28,8 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
-            @menu(['slug' => 'principal'])
+            {{--@menu(['slug' => 'principal'])--}}
+            @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
 
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::check())
