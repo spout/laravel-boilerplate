@@ -2,14 +2,20 @@
 namespace App\Models;
 
 use App\Models\Traits\AdjacencyListTrait;
+use App\Models\Traits\TranslatableTrait;
 use App\Scopes\OrderScope;
 
 class MenuItem extends Model
 {
+    use TranslatableTrait;
     use AdjacencyListTrait;
 
     public $timestamps = false;
     protected $guarded = [];
+
+    public static $translatableColumns = [
+        'title',
+    ];
 
     protected static function boot()
     {
