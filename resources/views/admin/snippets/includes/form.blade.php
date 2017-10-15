@@ -14,11 +14,11 @@
 
     @foreach(Config::get('app.locales') as $lang => $locale)
         <div role="tabpanel" class="tab-pane{{ $lang == \App::getLocale() ? ' active' : '' }}" id="lang-{{ $lang }}">
-            {!! Form::openGroup("title_$lang", _i('Title')) !!}
+            {!! Form::openGroup("title_$lang", _i('Title (%s)', $lang)) !!}
             {!! Form::text("title_$lang") !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup("content_$lang", _i('Content')) !!}
+            {!! Form::openGroup("content_$lang", _i('Content (%s)', $lang)) !!}
             {!! Form::textarea("content_$lang", null, ['class' => 'wysiwyg']) !!}
             {!! Form::closeGroup() !!}
         </div>

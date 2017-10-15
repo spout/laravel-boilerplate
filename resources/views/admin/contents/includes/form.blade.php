@@ -14,7 +14,7 @@
 
     @foreach(Config::get('app.locales') as $lang => $locale)
         <div role="tabpanel" class="tab-pane{{ $lang == \App::getLocale() ? ' active' : '' }}" id="lang-{{ $lang }}">
-            {!! Form::openGroup("title_$lang", _i('Title')) !!}
+            {!! Form::openGroup("title_$lang", _i('Title (%s)', $lang)) !!}
             {!! Form::text("title_$lang") !!}
             {!! Form::closeGroup() !!}
 
@@ -22,7 +22,7 @@
             {{--{!! Form::text("slug_$lang") !!}--}}
             {{--{!! Form::closeGroup() !!}--}}
 
-            {!! Form::openGroup("path_$lang", _i('Path')) !!}
+            {!! Form::openGroup("path_$lang", _i('Path (%s)', $lang)) !!}
             {!! Form::text("path_$lang") !!}
             @if (!empty($object->{"path_$lang"}))
                 <a href="{{ LaravelLocalization::getLocalizedURL($lang, route('contents.show', ['path' => $object->{"path_$lang"}])) }}" target="_blank">
@@ -31,7 +31,7 @@
             @endif
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup("content_$lang", _i('Content')) !!}
+            {!! Form::openGroup("content_$lang", _i('Content (%s)', $lang)) !!}
             {!! Form::textarea("content_$lang", null, ['class' => 'wysiwyg']) !!}
             {!! Form::closeGroup() !!}
         </div>
