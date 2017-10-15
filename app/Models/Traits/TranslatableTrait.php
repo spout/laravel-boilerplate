@@ -1,7 +1,6 @@
 <?php
 namespace App\Models\Traits;
 
-use App;
 use Config;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -30,11 +29,6 @@ trait TranslatableTrait
 
         return $attribute;
     }
-
-    //public function setAttribute($key, $value)
-    //{
-    //    parent::setAttribute($key, $value);
-    //}
 
     /**
      * @param \Illuminate\Database\Eloquent\Builder $query
