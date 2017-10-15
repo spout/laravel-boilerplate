@@ -6,6 +6,11 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class SnippetFormRequest extends FormRequest
 {
+    protected $fields = [
+        'title' => 'required',
+        'content' => 'required',
+    ];
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -23,10 +28,43 @@ class SnippetFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title' => 'required',
-            'slug' => 'required',
-            'content' => 'required',
-        ];
+        $rules = [];
+        $locales = \Config::get('app.locales');
+
+        foreach ($this->fields as $field => $rule) {
+            foreach ($locales as $lang => $locale) {
+                $rules["{$field}_{$lang}"] = $rule;
+            }
+        }
+
+        return $rules;
+    }
+
+    public function messages()
+    {
+        $messages = [];
+        $locales = \Config::get('app.locales');
+
+        foreach ($this->fields as $field => $rule) {
+            foreach ($locales as $lang => $locale) {
+                switch ($field) {
+                    case 'title':
+                        $message = _i("The title (%s) field is required.", $lang);
+                        break;
+
+                    case 'content':
+                        $message = _i("The content (%s) field is required.", $lang);
+                        break;
+
+                    default:
+                        $message = _i("This field is required.");
+                        break;
+                }
+
+                $messages["{$field}_{$lang}.required"] = $message;
+            }
+        }
+
+        return $messages;
     }
 }

@@ -47,21 +47,21 @@ class ContentFormRequest extends FormRequest
         $locales = \Config::get('app.locales');
 
         foreach ($this->fields as $field => $rule) {
-            switch ($field) {
-                case 'title':
-                    $message = _i("The title field is required.");
-                    break;
-
-                case 'path':
-                    $message = _i("The path field is required.");
-                    break;
-
-                default:
-                    $message = _i("This field is required.");
-                    break;
-            }
-
             foreach ($locales as $lang => $locale) {
+                switch ($field) {
+                    case 'title':
+                        $message = _i("The title (%s) field is required.", $lang);
+                        break;
+
+                    case 'path':
+                        $message = _i("The path (%s) field is required.", $lang);
+                        break;
+
+                    default:
+                        $message = _i("This field is required.");
+                        break;
+                }
+
                 $messages["{$field}_{$lang}.required"] = $message;
             }
         }
