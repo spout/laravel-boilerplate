@@ -1,8 +1,8 @@
 @include('includes.tinymce')
 
 {!! Form::model($object, [
-    'route' => empty($object->id) ? ['admin.snippets.store'] : ['admin.snippets.update', $object->id],
-    'method' => empty($object->id) ? 'POST' : 'PUT'
+    'route' => empty($object->pk) ? ['admin.snippets.store'] : ['admin.snippets.update', $object->pk],
+    'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
 @include('includes.form-locales-tabs')

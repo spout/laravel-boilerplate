@@ -1,6 +1,6 @@
 {!! Form::model($object, [
-    'route' => empty($object->id) ? ['admin.categories.store'] : ['admin.categories.update', $object->id],
-    'method' => empty($object->id) ? 'POST' : 'PUT'
+    'route' => empty($object->pk) ? ['admin.categories.store'] : ['admin.categories.update', $object->pk],
+    'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
 {!! Form::openGroup('parent_id', _i('Parent')) !!}

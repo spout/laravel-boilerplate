@@ -1,8 +1,8 @@
 @include('includes.ace-editor')
 
 {!! Form::model($object, [
-    'route' => empty($object->id) ? ['admin.menus.store'] : ['admin.menus.update', $object->id],
-    'method' => empty($object->id) ? 'POST' : 'PUT'
+    'route' => empty($object->pk) ? ['admin.menus.store'] : ['admin.menus.update', $object->pk],
+    'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
 {!! Form::openGroup('title', _i('Title')) !!}

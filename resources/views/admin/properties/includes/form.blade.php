@@ -2,8 +2,8 @@
 @include('includes.elfinder-standalonepopup')
 
 {!! Form::model($object, [
-    'route' => empty($object->id) ? ['admin.properties.store'] : ['admin.properties.update', $object->id],
-    'method' => empty($object->id) ? 'POST' : 'PUT'
+    'route' => empty($object->pk) ? ['admin.properties.store'] : ['admin.properties.update', $object->pk],
+    'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
 {!! Form::openGroup('name', _i('Property name')) !!}

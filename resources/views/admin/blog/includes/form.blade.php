@@ -2,8 +2,8 @@
 @include('includes.elfinder-standalonepopup')
 
 {!! Form::model($object, [
-    'route' => empty($object->id) ? ['admin.blog.store'] : ['admin.blog.update', $object->id],
-    'method' => empty($object->id) ? 'POST' : 'PUT'
+    'route' => empty($object->pk) ? ['admin.blog.store'] : ['admin.blog.update', $object->pk],
+    'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
 {!! Form::openGroup('title', _i('Title')) !!}
