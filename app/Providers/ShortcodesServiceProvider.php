@@ -23,6 +23,16 @@ class ShortcodesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        foreach (glob(app_path() . '/Shortcodes/*.php') as $filename) {
+            $filename = pathinfo($filename, PATHINFO_FILENAME);
+            $class = 'App\\Shortcodes\\' . $filename;
+            if (property_exists($class, 'name')) {
+                $name = $class::$name;
+            } else {
+                $name = strtolower(class_basename(str_replace('Shortcode', '', $filename)));
+            }
+
+            \Shortcode::register($name, $class);
+        }
     }
 }

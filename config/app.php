@@ -181,6 +181,7 @@ return [
         App\Providers\ObserverServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
+        Webwizo\Shortcodes\ShortcodesServiceProvider::class, // Must be before App\Providers\ShortcodesServiceProvider
         App\Providers\ShortcodesServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
@@ -194,7 +195,6 @@ return [
         Barryvdh\Elfinder\ElfinderServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Webwizo\Shortcodes\ShortcodesServiceProvider::class,
     ],
 
     /*

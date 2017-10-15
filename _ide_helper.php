@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.1 on 2017-09-08.
+ * Generated for Laravel 5.5.1 on 2017-10-15.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11194,6 +11194,20 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the evaluated view contents for the given view.
          *
+         * @param string $view
+         * @param array $data
+         * @param array $mergeData
+         * @return \Illuminate\Contracts\View\View|string|\View 
+         * @static 
+         */ 
+        public static function make($view, $data = array(), $mergeData = array())
+        {
+            return \Webwizo\Shortcodes\View\Factory::make($view, $data, $mergeData);
+        }
+        
+        /**
+         * Get the evaluated view contents for the given view.
+         *
          * @param string $path
          * @param array $data
          * @param array $mergeData
@@ -11202,21 +11216,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function file($path, $data = array(), $mergeData = array())
         {
-            return \Illuminate\View\Factory::file($path, $data, $mergeData);
-        }
-        
-        /**
-         * Get the evaluated view contents for the given view.
-         *
-         * @param string $view
-         * @param array $data
-         * @param array $mergeData
-         * @return \Illuminate\Contracts\View\View 
-         * @static 
-         */ 
-        public static function make($view, $data = array(), $mergeData = array())
-        {
-            return \Illuminate\View\Factory::make($view, $data, $mergeData);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::file($path, $data, $mergeData);
         }
         
         /**
@@ -11230,7 +11231,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function first($views, $data = array(), $mergeData = array())
         {
-            return \Illuminate\View\Factory::first($views, $data, $mergeData);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::first($views, $data, $mergeData);
         }
         
         /**
@@ -11245,7 +11247,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function renderWhen($condition, $view, $data = array(), $mergeData = array())
         {
-            return \Illuminate\View\Factory::renderWhen($condition, $view, $data, $mergeData);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::renderWhen($condition, $view, $data, $mergeData);
         }
         
         /**
@@ -11260,7 +11263,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function renderEach($view, $data, $iterator, $empty = 'raw|')
         {
-            return \Illuminate\View\Factory::renderEach($view, $data, $iterator, $empty);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::renderEach($view, $data, $iterator, $empty);
         }
         
         /**
@@ -11272,7 +11276,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function exists($view)
         {
-            return \Illuminate\View\Factory::exists($view);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::exists($view);
         }
         
         /**
@@ -11285,7 +11290,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getEngineFromPath($path)
         {
-            return \Illuminate\View\Factory::getEngineFromPath($path);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getEngineFromPath($path);
         }
         
         /**
@@ -11298,7 +11304,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function share($key, $value = null)
         {
-            return \Illuminate\View\Factory::share($key, $value);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::share($key, $value);
         }
         
         /**
@@ -11309,7 +11316,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function incrementRender()
         {
-            \Illuminate\View\Factory::incrementRender();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::incrementRender();
         }
         
         /**
@@ -11320,7 +11328,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function decrementRender()
         {
-            \Illuminate\View\Factory::decrementRender();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::decrementRender();
         }
         
         /**
@@ -11331,7 +11340,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function doneRendering()
         {
-            return \Illuminate\View\Factory::doneRendering();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::doneRendering();
         }
         
         /**
@@ -11343,7 +11353,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function addLocation($location)
         {
-            \Illuminate\View\Factory::addLocation($location);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::addLocation($location);
         }
         
         /**
@@ -11356,7 +11367,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function addNamespace($namespace, $hints)
         {
-            return \Illuminate\View\Factory::addNamespace($namespace, $hints);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::addNamespace($namespace, $hints);
         }
         
         /**
@@ -11369,7 +11381,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function prependNamespace($namespace, $hints)
         {
-            return \Illuminate\View\Factory::prependNamespace($namespace, $hints);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::prependNamespace($namespace, $hints);
         }
         
         /**
@@ -11382,7 +11395,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function replaceNamespace($namespace, $hints)
         {
-            return \Illuminate\View\Factory::replaceNamespace($namespace, $hints);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::replaceNamespace($namespace, $hints);
         }
         
         /**
@@ -11396,7 +11410,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function addExtension($extension, $engine, $resolver = null)
         {
-            \Illuminate\View\Factory::addExtension($extension, $engine, $resolver);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::addExtension($extension, $engine, $resolver);
         }
         
         /**
@@ -11407,7 +11422,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function flushState()
         {
-            \Illuminate\View\Factory::flushState();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::flushState();
         }
         
         /**
@@ -11418,7 +11434,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function flushStateIfDoneRendering()
         {
-            \Illuminate\View\Factory::flushStateIfDoneRendering();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::flushStateIfDoneRendering();
         }
         
         /**
@@ -11429,7 +11446,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getExtensions()
         {
-            return \Illuminate\View\Factory::getExtensions();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getExtensions();
         }
         
         /**
@@ -11440,7 +11458,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getEngineResolver()
         {
-            return \Illuminate\View\Factory::getEngineResolver();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getEngineResolver();
         }
         
         /**
@@ -11451,7 +11470,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getFinder()
         {
-            return \Illuminate\View\Factory::getFinder();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getFinder();
         }
         
         /**
@@ -11463,7 +11483,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function setFinder($finder)
         {
-            \Illuminate\View\Factory::setFinder($finder);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::setFinder($finder);
         }
         
         /**
@@ -11474,7 +11495,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function flushFinderCache()
         {
-            \Illuminate\View\Factory::flushFinderCache();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::flushFinderCache();
         }
         
         /**
@@ -11485,7 +11507,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getDispatcher()
         {
-            return \Illuminate\View\Factory::getDispatcher();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getDispatcher();
         }
         
         /**
@@ -11497,7 +11520,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function setDispatcher($events)
         {
-            \Illuminate\View\Factory::setDispatcher($events);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::setDispatcher($events);
         }
         
         /**
@@ -11508,7 +11532,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getContainer()
         {
-            return \Illuminate\View\Factory::getContainer();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getContainer();
         }
         
         /**
@@ -11520,7 +11545,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function setContainer($container)
         {
-            \Illuminate\View\Factory::setContainer($container);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::setContainer($container);
         }
         
         /**
@@ -11533,7 +11559,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function shared($key, $default = null)
         {
-            return \Illuminate\View\Factory::shared($key, $default);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::shared($key, $default);
         }
         
         /**
@@ -11544,7 +11571,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getShared()
         {
-            return \Illuminate\View\Factory::getShared();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getShared();
         }
         
         /**
@@ -11557,7 +11585,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function startComponent($name, $data = array())
         {
-            \Illuminate\View\Factory::startComponent($name, $data);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::startComponent($name, $data);
         }
         
         /**
@@ -11568,7 +11597,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function renderComponent()
         {
-            return \Illuminate\View\Factory::renderComponent();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::renderComponent();
         }
         
         /**
@@ -11581,7 +11611,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function slot($name, $content = null)
         {
-            \Illuminate\View\Factory::slot($name, $content);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::slot($name, $content);
         }
         
         /**
@@ -11592,7 +11623,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function endSlot()
         {
-            \Illuminate\View\Factory::endSlot();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::endSlot();
         }
         
         /**
@@ -11605,7 +11637,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function creator($views, $callback)
         {
-            return \Illuminate\View\Factory::creator($views, $callback);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::creator($views, $callback);
         }
         
         /**
@@ -11617,7 +11650,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function composers($composers)
         {
-            return \Illuminate\View\Factory::composers($composers);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::composers($composers);
         }
         
         /**
@@ -11630,7 +11664,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function composer($views, $callback)
         {
-            return \Illuminate\View\Factory::composer($views, $callback);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::composer($views, $callback);
         }
         
         /**
@@ -11642,7 +11677,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function callComposer($view)
         {
-            \Illuminate\View\Factory::callComposer($view);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::callComposer($view);
         }
         
         /**
@@ -11654,7 +11690,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function callCreator($view)
         {
-            \Illuminate\View\Factory::callCreator($view);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::callCreator($view);
         }
         
         /**
@@ -11667,7 +11704,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function startSection($section, $content = null)
         {
-            \Illuminate\View\Factory::startSection($section, $content);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::startSection($section, $content);
         }
         
         /**
@@ -11680,7 +11718,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function inject($section, $content)
         {
-            \Illuminate\View\Factory::inject($section, $content);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::inject($section, $content);
         }
         
         /**
@@ -11691,7 +11730,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function yieldSection()
         {
-            return \Illuminate\View\Factory::yieldSection();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::yieldSection();
         }
         
         /**
@@ -11704,7 +11744,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function stopSection($overwrite = false)
         {
-            return \Illuminate\View\Factory::stopSection($overwrite);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::stopSection($overwrite);
         }
         
         /**
@@ -11716,7 +11757,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function appendSection()
         {
-            return \Illuminate\View\Factory::appendSection();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::appendSection();
         }
         
         /**
@@ -11729,7 +11771,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function yieldContent($section, $default = '')
         {
-            return \Illuminate\View\Factory::yieldContent($section, $default);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::yieldContent($section, $default);
         }
         
         /**
@@ -11741,7 +11784,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function parentPlaceholder($section = '')
         {
-            return \Illuminate\View\Factory::parentPlaceholder($section);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::parentPlaceholder($section);
         }
         
         /**
@@ -11753,7 +11797,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function hasSection($name)
         {
-            return \Illuminate\View\Factory::hasSection($name);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::hasSection($name);
         }
         
         /**
@@ -11766,7 +11811,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getSection($name, $default = null)
         {
-            return \Illuminate\View\Factory::getSection($name, $default);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getSection($name, $default);
         }
         
         /**
@@ -11777,7 +11823,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getSections()
         {
-            return \Illuminate\View\Factory::getSections();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getSections();
         }
         
         /**
@@ -11788,7 +11835,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function flushSections()
         {
-            \Illuminate\View\Factory::flushSections();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::flushSections();
         }
         
         /**
@@ -11800,7 +11848,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function addLoop($data)
         {
-            \Illuminate\View\Factory::addLoop($data);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::addLoop($data);
         }
         
         /**
@@ -11811,7 +11860,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function incrementLoopIndices()
         {
-            \Illuminate\View\Factory::incrementLoopIndices();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::incrementLoopIndices();
         }
         
         /**
@@ -11822,7 +11872,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function popLoop()
         {
-            \Illuminate\View\Factory::popLoop();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::popLoop();
         }
         
         /**
@@ -11833,7 +11884,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getLastLoop()
         {
-            return \Illuminate\View\Factory::getLastLoop();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getLastLoop();
         }
         
         /**
@@ -11844,7 +11896,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getLoopStack()
         {
-            return \Illuminate\View\Factory::getLoopStack();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::getLoopStack();
         }
         
         /**
@@ -11857,7 +11910,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function startPush($section, $content = '')
         {
-            \Illuminate\View\Factory::startPush($section, $content);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::startPush($section, $content);
         }
         
         /**
@@ -11869,7 +11923,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function stopPush()
         {
-            return \Illuminate\View\Factory::stopPush();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::stopPush();
         }
         
         /**
@@ -11882,7 +11937,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function startPrepend($section, $content = '')
         {
-            \Illuminate\View\Factory::startPrepend($section, $content);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::startPrepend($section, $content);
         }
         
         /**
@@ -11894,7 +11950,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function stopPrepend()
         {
-            return \Illuminate\View\Factory::stopPrepend();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::stopPrepend();
         }
         
         /**
@@ -11907,7 +11964,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function yieldPushContent($section, $default = '')
         {
-            return \Illuminate\View\Factory::yieldPushContent($section, $default);
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::yieldPushContent($section, $default);
         }
         
         /**
@@ -11918,7 +11976,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function flushStacks()
         {
-            \Illuminate\View\Factory::flushStacks();
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::flushStacks();
         }
         
         /**
@@ -11930,7 +11989,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function startTranslation($replacements = array())
         {
-            \Illuminate\View\Factory::startTranslation($replacements);
+            //Method inherited from \Illuminate\View\Factory            
+            \Webwizo\Shortcodes\View\Factory::startTranslation($replacements);
         }
         
         /**
@@ -11941,7 +12001,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function renderTranslation()
         {
-            return \Illuminate\View\Factory::renderTranslation();
+            //Method inherited from \Illuminate\View\Factory            
+            return \Webwizo\Shortcodes\View\Factory::renderTranslation();
         }
          
     }
@@ -13583,6 +13644,71 @@ namespace Intervention\Image\Facades {
         public static function cache($callback, $lifetime = null, $returnObj = false)
         {
             return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
+        }
+         
+    }
+ 
+}
+
+namespace Webwizo\Shortcodes\Facades { 
+
+    class Shortcode {
+        
+        /**
+         * Register a new shortcode
+         *
+         * @param string $name
+         * @param callable|string $callback
+         * @return \Webwizo\Shortcodes\Shortcode 
+         * @static 
+         */ 
+        public static function register($name, $callback)
+        {
+            return \Webwizo\Shortcodes\Shortcode::register($name, $callback);
+        }
+        
+        /**
+         * Enable the laravel-shortcodes
+         *
+         * @return \Webwizo\Shortcodes\Shortcode 
+         * @static 
+         */ 
+        public static function enable()
+        {
+            return \Webwizo\Shortcodes\Shortcode::enable();
+        }
+        
+        /**
+         * Disable the laravel-shortcodes
+         *
+         * @return \Webwizo\Shortcodes\Shortcode 
+         * @static 
+         */ 
+        public static function disable()
+        {
+            return \Webwizo\Shortcodes\Shortcode::disable();
+        }
+        
+        /**
+         * Compile the given string
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */ 
+        public static function compile($value)
+        {
+            return \Webwizo\Shortcodes\Shortcode::compile($value);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function strip($value)
+        {
+            return \Webwizo\Shortcodes\Shortcode::strip($value);
         }
          
     }
@@ -16675,6 +16801,8 @@ namespace  {
     class LaravelLocalization extends \Mcamara\LaravelLocalization\Facades\LaravelLocalization {}
 
     class Image extends \Intervention\Image\Facades\Image {}
+
+    class Shortcode extends \Webwizo\Shortcodes\Facades\Shortcode {}
 
     class Flash extends \Laracasts\Flash\Flash {}
 
