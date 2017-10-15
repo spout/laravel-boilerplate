@@ -8,11 +8,13 @@ class GlobalComposer
 {
     public function compose(View $view)
     {
-        $menuPrincipal = MenuItem::whereHas('menu', function ($query) {
-                $query->where('slug', 'principal');
-            })
-            ->get()
-            ->buildTree();
-        $view->with(compact('menuPrincipal'));
+        if (php_sapi_name() !== 'cli') {
+            $menuPrincipal = MenuItem::whereHas('menu', function ($query) {
+                    $query->where('slug', 'principal');
+                })
+                ->get()
+                ->buildTree();
+            $view->with(compact('menuPrincipal'));
+        }
     }
 }
