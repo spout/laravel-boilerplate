@@ -40,6 +40,22 @@ class MenuItem extends Model
         return $value;
     }
 
+    public function getUrlAttribute($value)
+    {
+        if (!empty($this->model) && !empty($this->foreign_key)) {
+            $modelClass = $this->model;
+            $row = $modelClass::find($this->foreign_key);
+            if (!empty($row)) {
+                $value = $row->absoluteUrl;
+            }
+        } elseif (!empty($this->route)) {
+            $route = json_decode($this->route, true);
+            $value = route($route['name'], empty($route['parameters']) ? [] : $route['parameters']);
+        }
+
+        return $value;
+    }
+
     public function getAbsoluteUrlAttribute()
     {
         return '#';
