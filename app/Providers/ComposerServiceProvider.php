@@ -21,7 +21,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         $composers = [
-            GlobalComposer::class => '*',
+            GlobalComposer::class => ['layouts.app'],
             CategoryComposer::class => ['admin.blog.includes.form', 'admin.categories.includes.form'],
             ContentComposer::class => ['admin.contents.includes.form'],
             MenuComposer::class => ['admin.menus.includes.form'],
