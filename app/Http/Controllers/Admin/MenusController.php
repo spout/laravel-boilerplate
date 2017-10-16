@@ -2,10 +2,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\DataTables\MenusDataTable;
+use App\Libraries\TreeCollection;
 use App\Models\Content;
 use App\Models\Menu;
 use App\Models\MenuItem;
 use App\Models\Post;
+use App\Models\Traits\AdjacencyListTrait;
 use Illuminate\Http\Request;
 
 class MenusController extends AdminController
@@ -22,11 +24,29 @@ class MenusController extends AdminController
             Post::class => _i("Post"),
         ];
 
+        $treeList = function (TreeCollection $tree, $model, &$list = [], $level = 0) use (&$treeList) {
+            foreach ($tree as $node) {
+                $levelDelim = $level ? str_repeat('&nbsp;&nbsp;&nbsp;', $level) . ' &rArr; ' : '';
+                $list["{$model}.{$node->pk}"] = "{$levelDelim}{$node->__toString()}";
+
+                if ($node->subtree->isNotEmpty()) {
+                    $treeList($node->subtree, $model, $list, $level + 1);
+                }
+            }
+        };
+
         $associationList = ['' => '-'];
         foreach ($models as $model => $label) {
-            $rows = $model::all();
-            foreach ($rows as $row) {
-                $associationList[$label]["{$model}.{$row->pk}"] = $row->__toString();
+            if (in_array(AdjacencyListTrait::class, class_uses($model))) {
+                $tree = $model::all()->buildTree();
+                $list = [];
+                $treeList($tree, $model, $list);
+                $associationList[$label] = $list;
+            } else {
+                $rows = $model::all();
+                foreach ($rows as $row) {
+                    $associationList[$label]["{$model}.{$row->pk}"] = $row->__toString();
+                }
             }
         }
 
