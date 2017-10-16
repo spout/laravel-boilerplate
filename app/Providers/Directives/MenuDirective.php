@@ -11,8 +11,8 @@ class MenuDirective
         $menu->attributes = json_decode($menu->attributes, true);
 
         foreach ($menu->menuItems ?:[] as &$item) {
-            if (!empty($item->model) && !empty($item->foreign_key)) {
-                $modelClass = $item->model;
+            if (!empty($item->model_class) && !empty($item->foreign_key)) {
+                $modelClass = $item->model_class;
                 $row = $modelClass::find($item->foreign_key);
                 if (!empty($row)) {
                     $item->url = $row->absoluteUrl;

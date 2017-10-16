@@ -31,8 +31,8 @@ class MenuItem extends Model
 
     public function getTitleAttribute($value)
     {
-        if (empty($value) && !empty($this->model) && !empty($this->foreign_key)) {
-            $modelClass = $this->model;
+        if (empty($value) && !empty($this->model_class) && !empty($this->foreign_key)) {
+            $modelClass = $this->model_class;
             $row = $modelClass::find($this->foreign_key);
             return $row; // __toString
         }
@@ -42,8 +42,8 @@ class MenuItem extends Model
 
     public function getUrlAttribute($value)
     {
-        if (!empty($this->model) && !empty($this->foreign_key)) {
-            $modelClass = $this->model;
+        if (!empty($this->model_class) && !empty($this->foreign_key)) {
+            $modelClass = $this->model_class;
             $row = $modelClass::find($this->foreign_key);
             if (!empty($row)) {
                 $value = $row->absoluteUrl;
