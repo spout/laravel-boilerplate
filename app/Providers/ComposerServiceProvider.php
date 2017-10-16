@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Http\ViewComposers\CategoryComposer;
 use App\Http\ViewComposers\ContentComposer;
-use App\Http\ViewComposers\MenuComposer;
 use App\Http\ViewComposers\PropertyTypeComposer;
 use App\Http\ViewComposers\EventTemplateComposer;
 
