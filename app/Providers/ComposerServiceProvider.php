@@ -24,7 +24,6 @@ class ComposerServiceProvider extends ServiceProvider
             GlobalComposer::class => ['layouts.app'],
             CategoryComposer::class => ['admin.blog.includes.form', 'admin.categories.includes.form'],
             ContentComposer::class => ['admin.contents.includes.form'],
-            MenuComposer::class => ['admin.menus.includes.form'],
             PropertyTypeComposer::class => ['admin.properties.includes.form'],
             EventTemplateComposer::class => ['admin.event-templates.includes.form'],
         ];
