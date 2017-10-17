@@ -76,9 +76,6 @@
           'data': function (node) {
             return {'id': node.id};
           }
-        },
-        "themes": {
-          "variant": "large"
         }
       },
       'contextmenu': {
@@ -103,11 +100,16 @@
           return (a1.sort > b1.sort) ? 1 : -1;
         }
       },
+      "types": {
+        "#": {
+          "max_depth": 2,
+        },
+      },
       "plugins": [
+        "types",
         "contextmenu",
         "dnd",
         "state",
-        "wholerow",
         "sort"
       ]
     }).on("select_node.jstree", function (e, data) {

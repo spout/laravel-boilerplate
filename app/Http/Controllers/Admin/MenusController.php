@@ -15,34 +15,6 @@ class MenusController extends AdminController
     protected static $model = Menu::class;
     protected static $dataTableClass = MenusDataTable::class;
 
-    public function edit($id)
-    {
-        $view = parent::edit($id);
-
-        $models = [
-            Content::class => _i("Content"),
-            Post::class => _i("Post"),
-        ];
-
-        $associationList = ['' => '-'];
-        foreach ($models as $model => $label) {
-            if (in_array(AdjacencyListTrait::class, class_uses($model))) {
-                $tree = $model::all()->buildTree();
-                $associationList[$label] = $model::getTreeList($tree, function ($node) use ($model) {
-                    return "{$model}.{$node->pk}";
-                });
-            } else {
-                $rows = $model::all();
-                foreach ($rows as $row) {
-                    $associationList[$label]["{$model}.{$row->pk}"] = $row->__toString();
-                }
-            }
-        }
-
-        $view->associationList = $associationList;
-        return $view;
-    }
-
     public function update(Request $request, $id)
     {
         $response = parent::update($request, $id);
