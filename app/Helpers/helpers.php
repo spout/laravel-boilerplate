@@ -46,17 +46,21 @@ if (!function_exists('templates_tags_replace')) {
 }
 
 if (!function_exists('setting')) {
-    function setting($key, $value = null, $default = null)
+    function setting($key, $default = null)
     {
+        $keys = explode('.', $key);
+        $key = array_shift($keys);
+        $valueKey = implode('.', $keys);
+
         $cacheKey = "setting-$key";
         $cacheMinutes = 60;
         $setting = Cache::remember($cacheKey, $cacheMinutes, function () use ($key) {
             return \App\Models\Setting::find($key)->first();
         });
 
-        if (empty($value)) {
+        if (empty($valueKey)) {
             return $setting->value_as_array;
         }
-        return array_get($setting->value_as_array, $value, $default);
+        return array_get($setting->value_as_array, $valueKey, $default);
     }
 }
