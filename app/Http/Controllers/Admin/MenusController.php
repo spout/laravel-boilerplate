@@ -24,24 +24,13 @@ class MenusController extends AdminController
             Post::class => _i("Post"),
         ];
 
-        $treeList = function (TreeCollection $tree, $model, &$list = [], $level = 0) use (&$treeList) {
-            foreach ($tree as $node) {
-                $levelDelim = $level ? str_repeat('&nbsp;', $level * 3) . '&gt; ' : '';
-                $list["{$model}.{$node->pk}"] = "{$levelDelim}{$node->__toString()}";
-
-                if ($node->subtree->isNotEmpty()) {
-                    $treeList($node->subtree, $model, $list, $level + 1);
-                }
-            }
-        };
-
         $associationList = ['' => '-'];
         foreach ($models as $model => $label) {
             if (in_array(AdjacencyListTrait::class, class_uses($model))) {
                 $tree = $model::all()->buildTree();
-                $list = [];
-                $treeList($tree, $model, $list);
-                $associationList[$label] = $list;
+                $associationList[$label] = $model::getTreeList($tree, function ($node) use ($model) {
+                    return "{$model}.{$node->pk}";
+                });
             } else {
                 $rows = $model::all();
                 foreach ($rows as $row) {

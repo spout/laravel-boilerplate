@@ -81,4 +81,30 @@ trait AdjacencyListTrait
     {
         return new TreeCollection($models);
     }
+
+    /**
+     * @param TreeCollection $tree
+     * @param string $key
+     * @param string $column
+     * @param array $list
+     * @param int $level
+     *
+     * @return array
+     */
+    public static function getTreeList(TreeCollection $tree, $key = 'id', $column = 'title', &$list = [], $level = 0)
+    {
+        $levelDelim = $level ? str_repeat('&nbsp;', $level * 3) . '&gt; ' : '';
+
+        foreach ($tree as $node) {
+            $keyValue = is_callable($key) ? call_user_func($key, $node) : $node->{$key};
+            $columnValue = is_callable($column) ? call_user_func($column, $node) : $node->{$column};
+            $list[$keyValue] = "{$levelDelim}{$columnValue}";
+
+            if (!empty($node->subtree) && $node->subtree->isNotEmpty()) {
+                static::getTreeList($node->subtree, $key, $column, $list, $level + 1);
+            }
+        }
+
+        return $list;
+    }
 }
