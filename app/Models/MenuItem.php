@@ -34,7 +34,7 @@ class MenuItem extends Model
         if (empty($value) && !empty($this->model_class) && !empty($this->foreign_key)) {
             $modelClass = $this->model_class;
             $row = $modelClass::find($this->foreign_key);
-            return $row; // __toString
+            return $row->__toString();
         }
 
         return $value;
