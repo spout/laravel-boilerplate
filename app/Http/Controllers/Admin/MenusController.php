@@ -26,7 +26,7 @@ class MenusController extends AdminController
 
         $treeList = function (TreeCollection $tree, $model, &$list = [], $level = 0) use (&$treeList) {
             foreach ($tree as $node) {
-                $levelDelim = $level ? str_repeat('&nbsp;&nbsp;&nbsp;', $level) . ' &rArr; ' : '';
+                $levelDelim = $level ? str_repeat('&nbsp;', $level * 3) . '&gt; ' : '';
                 $list["{$model}.{$node->pk}"] = "{$levelDelim}{$node->__toString()}";
 
                 if ($node->subtree->isNotEmpty()) {
