@@ -100,7 +100,7 @@ trait AdjacencyListTrait
             $columnValue = is_callable($column) ? call_user_func($column, $node) : $node->{$column};
             $list[$keyValue] = "{$levelDelim}{$columnValue}";
 
-            if (!empty($node->subtree) && $node->subtree->isNotEmpty()) {
+            if ($node->subtree instanceof TreeCollection && $node->subtree->isNotEmpty()) {
                 static::getTreeList($node->subtree, $key, $column, $list, $level + 1);
             }
         }
