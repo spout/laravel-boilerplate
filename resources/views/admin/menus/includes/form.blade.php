@@ -41,7 +41,7 @@
         </p>
         <div class="collapse" id="menu-item-advanced">
             {!! Form::openGroup('menu_item_url', _i("URL")) !!}
-            {!! Form::url('menu_item_url') !!}
+            {!! Form::text('menu_item_url') !!}
             {!! Form::closeGroup() !!}
 
             {!! Form::openGroup('menu_item_route', _i("Route")) !!}
