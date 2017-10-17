@@ -91,7 +91,7 @@ trait AdjacencyListTrait
      *
      * @return array
      */
-    public static function getTreeList(TreeCollection $tree, $key = 'id', $column = 'title', &$list = [], $level = 0)
+    public static function getTreeList(TreeCollection $tree, $key = 'pk', $column = 'title', &$list = [], $level = 0)
     {
         $levelDelim = $level ? str_repeat('&nbsp;', $level * 3) . '&gt; ' : '';
 
