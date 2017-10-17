@@ -17,7 +17,7 @@ class MenuDirective
                 if (!empty($row)) {
                     $item->url = $row->absoluteUrl;
                     if (empty($item->title)) {
-                        $item->title = $row; // __toString()
+                        $item->title = $row->__toString();
                     }
                 }
             } elseif (!empty($item->route)) {
