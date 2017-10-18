@@ -29,8 +29,10 @@ class ShortcodesServiceProvider extends ServiceProvider
             if (property_exists($class, 'name')) {
                 $name = $class::$name;
             } else {
-                $name = strtolower(class_basename(str_replace('Shortcode', '', $filename)));
+                $name = kebab_case(class_basename(str_replace('Shortcode', '', $filename)));
             }
+
+            dump($name);
 
             \Shortcode::register($name, $class);
         }
