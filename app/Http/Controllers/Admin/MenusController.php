@@ -61,8 +61,14 @@ class MenusController extends AdminController
             $menuItem = new MenuItem;
         }
 
-        $menuItem->fill($request->except('id'));
+        $menuItem->fill($request->except(['id', 'siblings']));
         $saved = $menuItem->save();
+
+        if ($saved) {
+            foreach ($request->input('siblings', []) as $sort => $id) {
+                MenuItem::where('id', $id)->update(compact('sort'));
+            }
+        }
 
         return response()->json(['status' => $saved ? 'success' : 'error', 'data' => $menuItem->toArray()], $saved ? 200 : 400);
     }

@@ -122,7 +122,8 @@
     }).on("rename_node.jstree move_node.jstree", function (e, data) {
       var parentId = data.node.parent == '#' ? null : data.node.parent;
       var sort = typeof data.position === 'undefined' ? null : data.position;
-      var ajaxData = {id: data.node.id, menu_id: menuId, parent_id: parentId, title: data.node.text, sort: sort};
+      var siblings = data.instance.get_node(data.node.parent).children;
+      var ajaxData = {id: data.node.id, menu_id: menuId, parent_id: parentId, title: data.node.text, sort: sort, siblings: siblings};
 
       $.post('{{ route('admin.menus.tree-save') }}', ajaxData)
         .done(function () {
