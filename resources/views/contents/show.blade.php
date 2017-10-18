@@ -13,8 +13,7 @@
 @endsection
 
 @section('content')
-    {{--<h1>{{ $content->title }}</h1>--}}
     <div>
-        {!! $content->content !!}
+        {!! Shortcode::compile($content->content) !!}
     </div>
 @endsection
