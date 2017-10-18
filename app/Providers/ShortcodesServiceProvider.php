@@ -31,9 +31,6 @@ class ShortcodesServiceProvider extends ServiceProvider
             } else {
                 $name = kebab_case(class_basename(str_replace('Shortcode', '', $filename)));
             }
-
-            dump($name);
-
             \Shortcode::register($name, $class);
         }
     }
