@@ -12,6 +12,10 @@
     {!! Form::text('slug') !!}
     {!! Form::closeGroup() !!}
 
+    {!! Form::openGroup("template", _i('Template')) !!}
+    {!! Form::select("template", []) !!}
+    {!! Form::closeGroup() !!}
+
     @foreach(Config::get('app.locales') as $lang => $locale)
         <div role="tabpanel" class="tab-pane{{ $lang == \App::getLocale() ? ' active' : '' }}" id="lang-{{ $lang }}">
             {!! Form::openGroup("title_$lang", _i('Title (%s)', $lang)) !!}

@@ -10,12 +10,7 @@ class Snippet extends Model
     public $incrementing = false;
     public $timestamps = false;
     protected $primaryKey = 'slug';
-
-    protected $fillable = [
-        'title',
-        'slug',
-        'content',
-    ];
+    protected $guarded = [];
 
     public static $translatableColumns = [
         'title',
