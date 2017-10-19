@@ -32,8 +32,7 @@ class MenuItem extends Model
     public function getTitleAttribute($value)
     {
         if (empty($value) && !empty($this->model_class) && !empty($this->foreign_key)) {
-            $modelClass = $this->model_class;
-            $row = $modelClass::find($this->foreign_key);
+            $row = $this->findAssociatedModel($this->model_class, $this->foreign_key);
             return $row->__toString();
         }
 
@@ -43,8 +42,7 @@ class MenuItem extends Model
     public function getUrlAttribute($value)
     {
         if (!empty($this->model_class) && !empty($this->foreign_key)) {
-            $modelClass = $this->model_class;
-            $row = $modelClass::find($this->foreign_key);
+            $row = $this->findAssociatedModel($this->model_class, $this->foreign_key);
             if (!empty($row)) {
                 $value = $row->absoluteUrl;
             }
@@ -54,6 +52,17 @@ class MenuItem extends Model
         }
 
         return $value;
+    }
+
+    public function findAssociatedModel($modelClass, $foreignKey)
+    {
+        $cacheKey = __CLASS__ . $modelClass . $foreignKey;
+        $cacheMinutes = 60;
+        $modelClass = $this->model_class;
+        $foreignKey = $this->foreign_key;
+        return \Cache::remember($cacheKey, $cacheMinutes, function () use ($modelClass, $foreignKey) {
+            return $modelClass::find($foreignKey);
+        });
     }
 
     public function getAbsoluteUrlAttribute()
