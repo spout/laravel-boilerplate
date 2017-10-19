@@ -34,6 +34,6 @@ trait UpdateTrait
         $input = $request->all();
         $object->update($input);
         flash(_i("Record was updated successfully!"), 'success');
-        return redirect()->back();
+        return redirect()->route("{$this->viewPath()}.edit", [$object->pk]);
     }
 }
