@@ -37,14 +37,24 @@ class MenusController extends AdminController
         $menu = Menu::find($id);
 
         $data = [];
-        foreach ($menu->menuItems as $item) {
+        if ($menu->menuItems->isNotEmpty()) {
+            foreach ($menu->menuItems as $item) {
+                $data[] = [
+                    'id' => $item->id,
+                    'parent' => $item->parent_id ?? '#',
+                    'text' => $item->title,
+                    'data' => $item->toArray(),
+                ];
+            }
+        } else {
             $data[] = [
-                'id' => $item->id,
-                'parent' => $item->parent_id ?? '#',
-                'text' => $item->title,
-                'data' => $item->toArray(),
+                'id' => 'default',
+                'parent' => '#',
+                'text' => _i("Default"),
+                'data' => [],
             ];
         }
+
         return response()->json($data);
     }
 
