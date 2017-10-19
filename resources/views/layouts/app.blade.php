@@ -58,6 +58,19 @@
     @include('flash::message')
     @include('includes.validation-errors')
     @yield('content')
+    <footer>
+        <div class="row">
+            <div class="col-sm-6">
+                @snippet(['slug' => 'footer-about'])
+            </div>
+            <div class="col-sm-3">
+                @snippet(['slug' => 'footer-products'])
+            </div>
+            <div class="col-sm-3">
+                @snippet(['slug' => 'footer-address'])
+            </div>
+        </div>
+    </footer>
 </div>
 <script src="{{ asset('build/app.js') }}"></script>
 @include('includes.js-i18n')
