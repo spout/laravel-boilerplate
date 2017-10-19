@@ -13,7 +13,7 @@
     {!! Form::closeGroup() !!}
 
     {!! Form::openGroup("component", _i('Component')) !!}
-    {!! Form::text("component") !!}
+    {!! Form::select("component", $componentList) !!}
     {!! Form::closeGroup() !!}
 
     @foreach(Config::get('app.locales') as $lang => $locale)

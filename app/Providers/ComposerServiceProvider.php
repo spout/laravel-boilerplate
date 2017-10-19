@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Http\ViewComposers\GlobalComposer;
 use App\Http\ViewComposers\MenuComposer;
+use App\Http\ViewComposers\SnippetComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Http\ViewComposers\CategoryComposer;
@@ -27,6 +28,7 @@ class ComposerServiceProvider extends ServiceProvider
             ContentComposer::class => ['admin.contents.includes.form'],
             PropertyTypeComposer::class => ['admin.properties.includes.form'],
             EventTemplateComposer::class => ['admin.event-templates.includes.form'],
+            SnippetComposer::class => ['admin.snippets.includes.form'],
         ];
 
         foreach ($composers as $callback => $views) {
