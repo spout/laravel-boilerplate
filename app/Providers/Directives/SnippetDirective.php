@@ -8,7 +8,7 @@ class SnippetDirective
     public static function display($expression)
     {
         $snippet = Snippet::where('slug', $expression['slug'])->first();
-        $view = isset($expression['view']) ? $expression['view'] : 'snippets.display';
+        $view = $expression['view'] ?? 'snippets.display';
         return view($view, compact('snippet'));
     }
 }
