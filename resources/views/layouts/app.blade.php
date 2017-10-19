@@ -60,6 +60,7 @@
     @yield('content')
 </div>
 <script src="{{ asset('build/app.js') }}"></script>
+@include('includes.js-i18n')
 @stack('scripts')
 </body>
 </html>
