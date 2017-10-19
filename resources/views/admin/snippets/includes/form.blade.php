@@ -12,8 +12,8 @@
     {!! Form::text('slug') !!}
     {!! Form::closeGroup() !!}
 
-    {!! Form::openGroup("template", _i('Template')) !!}
-    {!! Form::select("template", []) !!}
+    {!! Form::openGroup("component", _i('Component')) !!}
+    {!! Form::text("component") !!}
     {!! Form::closeGroup() !!}
 
     @foreach(Config::get('app.locales') as $lang => $locale)
