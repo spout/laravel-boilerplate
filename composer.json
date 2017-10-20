@@ -20,7 +20,8 @@
         "sabre/vobject": "^4.1",
         "google/apiclient": "^2.2",
         "barryvdh/laravel-debugbar": "^3.0",
-        "yajra/laravel-datatables-buttons": "3.*"
+        "yajra/laravel-datatables-buttons": "3.*",
+        "embed/embed": "^3.2"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.7",
