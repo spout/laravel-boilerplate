@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
 "POT-Creation-Date: 2017-10-20 15:37+0200\n"
-"PO-Revision-Date: 2017-10-20 15:37+0200\n"
+"PO-Revision-Date: 2017-10-20 16:05+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -456,7 +456,7 @@ msgstr "Id"
 #: DataTables/BlogDataTable.php:22 DataTables/MenusDataTable.php:22
 #: DataTables/SnippetsDataTable.php:20
 msgid "Slug"
-msgstr "Permalien"
+msgstr "Identifiant"
 
 #: ../storage/framework/messages/2d19aff6d1b54b7ee0f90a4e3616b652c79d9b50.php.php:9
 #: ../storage/framework/messages/5c94d9c64a1bb0899948bff13b8e39c1dcbb841e.php.php:8
