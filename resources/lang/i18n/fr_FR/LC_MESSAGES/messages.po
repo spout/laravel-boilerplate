@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2017-10-20 15:37+0200\n"
-"PO-Revision-Date: 2017-10-20 16:05+0200\n"
+"POT-Creation-Date: 2017-10-20 18:43+0200\n"
+"PO-Revision-Date: 2017-10-20 18:43+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -47,7 +47,7 @@ msgstr "ID"
 #: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:22
 #: ../storage/framework/messages/44925bcd88c2ff61f4bbf88239d09ba090a86415.php.php:18
 #: ../storage/framework/messages/529dd17c085e5db78c380143b5638ef4a7e6ebf5.php.php:7
-#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:19
+#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:47
 #: ../storage/framework/messages/7756ecc2ee00e71a6ddafc21e50265fea1f32712.php.php:8
 #: ../storage/framework/messages/ac13c79e1dd7e4bbd9e8a3759eabca26f09b88b0.php.php:14
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:14
@@ -344,7 +344,7 @@ msgstr "Connexion"
 #: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:21
 #: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:22
 #: ../storage/framework/messages/477ee0a26237d5850c0f4446c6df6cb27ed7bfd4.php.php:8
-#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:12
+#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:40
 #: ../storage/framework/messages/87dd313cf0af3dcf8a70fdbe518d3c490c2a2dca.php.php:121
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:14
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:7
@@ -411,7 +411,7 @@ msgid "The template is required."
 msgstr "Le template est requis."
 
 #: ../storage/framework/messages/18c3204dc2831907564eaed2cb74deee58396549.php.php:8
-#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:26
+#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:54
 #: ../storage/framework/messages/7756ecc2ee00e71a6ddafc21e50265fea1f32712.php.php:9
 #: ../storage/framework/messages/ac13c79e1dd7e4bbd9e8a3759eabca26f09b88b0.php.php:21
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:21
@@ -675,6 +675,12 @@ msgstr "Modifier"
 msgid "Delete"
 msgstr "Supprimer"
 
+#: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:22
+#: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:19
+#: DataTables/SnippetsDataTable.php:22
+msgid "Component"
+msgstr "Composant"
+
 #: ../storage/framework/messages/68185b10b2f801cb818501380ee41f01dbe28c4c.php.php:1
 msgid "Create email template"
 msgstr "Créer gabarit email"
@@ -684,7 +690,24 @@ msgstr "Créer gabarit email"
 msgid "Contact us"
 msgstr "Contactez-nous"
 
+#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:12
+msgid "Company"
+msgstr "Société"
+
+#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:19
+msgid "Firstname"
+msgstr "Prénom"
+
+#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:26
+msgid "Lastname"
+msgstr "Nom"
+
 #: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:33
+#: ../storage/framework/messages/87dd313cf0af3dcf8a70fdbe518d3c490c2a2dca.php.php:120
+msgid "Phone"
+msgstr "Téléphone"
+
+#: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:61
 #: ../storage/framework/messages/dcd991312c32f7db195af647865c72db500e8466.php.php:37
 msgid "Send"
 msgstr "Envoyer"
@@ -804,10 +827,6 @@ msgstr "Date de départ"
 #: ../storage/framework/messages/87dd313cf0af3dcf8a70fdbe518d3c490c2a2dca.php.php:119
 msgid "Nights"
 msgstr "Nuitées"
-
-#: ../storage/framework/messages/87dd313cf0af3dcf8a70fdbe518d3c490c2a2dca.php.php:120
-msgid "Phone"
-msgstr "Téléphone"
 
 #: ../storage/framework/messages/87dd313cf0af3dcf8a70fdbe518d3c490c2a2dca.php.php:122
 msgid "Sent"
@@ -1062,10 +1081,6 @@ msgstr "Envoyer emails"
 msgid "Send email to %s"
 msgstr "Envoyer email à %s"
 
-#: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:19
-msgid "Component"
-msgstr "Composant"
-
 #: ../storage/framework/messages/e1134f8b8817396b3c820c4325043d41c5500cbc.php.php:23
 #: DataTables/ContentsDataTable.php:23
 msgid "Path"
@@ -1117,6 +1132,11 @@ msgstr "Le champ vers n'est pas un email valide."
 msgid "Create user"
 msgstr "Créer utilisateur"
 
+#, fuzzy
+#~| msgid "Phone"
+#~ msgid "phone"
+#~ msgstr "Téléphone"
+
 #~ msgid "Post"
 #~ msgstr "Article"
 
@@ -1134,12 +1154,6 @@ msgstr "Créer utilisateur"
 
 #~ msgid "Time modify"
 #~ msgstr "Modification de l'heure"
-
-#~ msgid "Firstname"
-#~ msgstr "Prénom"
-
-#~ msgid "Lastname"
-#~ msgstr "Nom"
 
 #~ msgid "Emails send"
 #~ msgstr "Emails envoyés"

@@ -10,6 +10,22 @@
 @section('content')
     {!! Form::open() !!}
 
+    {!! Form::openGroup('company', _i('Company')) !!}
+    {!! Form::text('company') !!}
+    {!! Form::closeGroup() !!}
+
+    {!! Form::openGroup('firstname', _i('Firstname')) !!}
+    {!! Form::text('firstname') !!}
+    {!! Form::closeGroup() !!}
+
+    {!! Form::openGroup('lastname', _i('Lastname')) !!}
+    {!! Form::text('lastname') !!}
+    {!! Form::closeGroup() !!}
+
+    {!! Form::openGroup('phone', _i('Phone')) !!}
+    {!! Form::text('phone') !!}
+    {!! Form::closeGroup() !!}
+
     {!! Form::openGroup('email', _i('Email')) !!}
     {!! Form::email('email') !!}
     {!! Form::closeGroup() !!}
