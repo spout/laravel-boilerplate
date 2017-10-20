@@ -146,24 +146,32 @@
           e.preventDefault();
           var ref = $('#menu-items-tree').jstree(true),
             sel = ref.get_selected();
-          if (!sel.length) { return false; }
 
           switch ($(this).data('action')) {
             case 'create':
-              sel = sel[0];
-              sel = ref.create_node(sel);
+              if (sel.length) {
+                sel = sel[0];
+                sel = ref.create_node(sel);
+              } else {
+                sel = ref.create_node('#');
+              }
+
               if (sel) {
                 ref.edit(sel);
               }
               break;
 
             case 'edit':
-              sel = sel[0];
-              ref.edit(sel);
+              if (sel.length) {
+                sel = sel[0];
+                ref.edit(sel);
+              }
               break;
 
             case 'delete':
-              ref.delete_node(sel);
+              if (sel.length) {
+                ref.delete_node(sel);
+              }
               break;
           }
 
