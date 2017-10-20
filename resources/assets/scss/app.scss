@@ -2,3 +2,13 @@
 @import "~bootswatch/lumen/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
 @import "~jquery-colorbox/example1/colorbox.css";
+
+footer {
+  .partners {
+    text-align: center;
+
+    img {
+      height: 50px;
+    }
+  }
+}
