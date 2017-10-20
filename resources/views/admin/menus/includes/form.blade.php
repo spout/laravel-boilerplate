@@ -24,6 +24,7 @@
             <div class="btn-group btn-group-xs" id="tree-actions">
                 <button class="btn btn-success" data-action="create"><i class="fa fa-plus"></i> {{ _i("Create") }}</button>
                 <button class="btn btn-warning" data-action="edit"><i class="fa fa-edit"></i> {{ _i("Edit") }}</button>
+                <button class="btn btn-info" data-action="deselect"><i class="fa fa-check-square-o"></i> {{ _i("Deselect") }}</button>
                 <button class="btn btn-danger" data-action="delete"><i class="fa fa-trash"></i> {{ _i("Delete") }}</button>
             </div>
             <div id="menu-items-tree"></div>
@@ -172,6 +173,10 @@
               if (sel.length) {
                 ref.delete_node(sel);
               }
+              break;
+
+            case 'deselect':
+              ref.deselect_all();
               break;
           }
 
