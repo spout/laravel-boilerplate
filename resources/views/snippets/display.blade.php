@@ -3,8 +3,8 @@
         @slot('title')
             {{ $snippet->title }}
         @endslot
-        {!! $snippet->content or '' !!}
+        {!! Shortcode::compile($snippet->content) !!}
     @endcomponent
 @else
-    {!! $snippet->content or '' !!}
+    {!! Shortcode::compile($snippet->content) !!}
 @endif
