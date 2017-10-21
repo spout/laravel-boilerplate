@@ -59,7 +59,9 @@
     @include('includes.validation-errors')
     @yield('content')
     <footer>
+        <hr>
         @snippet(['slug' => 'partners'])
+        <hr>
         <div class="row">
             <div class="col-sm-6">
                 @snippet(['slug' => 'footer-about'])
