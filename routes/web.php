@@ -205,7 +205,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
     Route::get('/{path}', 'ContentsController@show')->where('path', '^(?!(elfinder|imagecache)\b)\b[a-z0-9-\/]+')->name('contents.show');
 
-    Route::get('/sitemap.{ext}', 'SitemapController@index')->where('ext', '^(xml|txt)$');
+    Route::get('/sitemap.{ext}', 'SitemapController@index')->where('ext', '^(' . implode('|', array_keys(config('sitemap.types'))) . ')$');
 });
 
 Route::get('/manifest.json', 'ManifestController@index');
