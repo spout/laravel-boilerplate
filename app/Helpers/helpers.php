@@ -59,7 +59,7 @@ if (!function_exists('setting')) {
         });
 
         if (empty($valueKey)) {
-            return $setting->value_as_array;
+            return $setting->value_as_array ?? $default;
         }
         return array_get($setting->value_as_array, $valueKey, $default);
     }
