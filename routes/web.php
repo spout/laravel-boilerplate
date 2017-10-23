@@ -204,6 +204,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     })->where('command', implode('|', $allowedCommands));
 
     Route::get('/{path}', 'ContentsController@show')->where('path', '^(?!(elfinder|imagecache)\b)\b[a-z0-9-\/]+')->name('contents.show');
+
+    Route::get('/sitemap.{ext}', 'SitemapController@index')->where('ext', '^(xml|txt)$');
 });
 
 Route::get('/manifest.json', 'ManifestController@index');
