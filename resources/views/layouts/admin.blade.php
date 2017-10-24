@@ -35,7 +35,7 @@
                 ['title' => _i("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
                 ['title' => _i("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
                 ['title' => _i("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
-                ['title' => _i("Snippets"), 'icon' => 'link', 'route' => 'admin.snippets.index'],
+                ['title' => _i("Snippets"), 'icon' => 'puzzle-piece', 'route' => 'admin.snippets.index'],
                 //['title' => _i("Properties"), 'icon' => 'home', 'route' => 'admin.properties.index'],
                 //['title' => _i("Event templates"), 'icon' => 'calendar-o', 'route' => 'admin.event-templates.index'],
                 //['title' => _i("Email templates"), 'icon' => 'envelope-o', 'route' => 'admin.email-templates.index'],
