@@ -9,6 +9,15 @@ class UsersDataTable extends DataTable
     protected static $model = User::class;
     protected static $resourcePrefix = 'admin.users';
 
+    public function dataTable($query)
+    {
+        $dataTable = parent::dataTable($query);
+        $dataTable->editColumn('is_admin', function ($object) {
+            return $object->is_admin ? _i("Yes") : _i("No");
+        });
+        return $dataTable;
+    }
+
     /**
      * Get columns.
      *
