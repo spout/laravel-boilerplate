@@ -2,12 +2,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\DataTables\MenusDataTable;
-use App\Libraries\TreeCollection;
-use App\Models\Content;
 use App\Models\Menu;
 use App\Models\MenuItem;
-use App\Models\Post;
-use App\Models\Traits\AdjacencyListTrait;
 use Illuminate\Http\Request;
 
 class MenusController extends AdminController
