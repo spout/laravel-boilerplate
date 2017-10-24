@@ -12,7 +12,6 @@ class EmailsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'id', 'name' => 'id', 'title' => _i("ID"), 'searchable' => false],
             ['data' => 'property.name', 'name' => 'property.name', 'title' => _i("Property")],
             ['data' => 'email_type.title', 'name' => 'emailType.title', 'title' => _i("Type")],
             ['data' => 'to', 'name' => 'to', 'title' => _i("To")],

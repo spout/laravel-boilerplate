@@ -17,7 +17,6 @@ class UsersDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'id', 'name' => 'id', 'title' => _i("ID"), 'searchable' => false],
             ['data' => 'name', 'name' => 'name', 'title' => _i("Name")],
             ['data' => 'email', 'name' => 'email', 'title' => _i("Email")],
             ['data' => 'role', 'name' => 'role', 'title' => _i("Role")],

@@ -17,7 +17,6 @@ class CategoriesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'id', 'name' => 'id', 'title' => _i("ID"), 'searchable' => false],
             ['data' => 'title', 'name' => 'title', 'title' => _i("Title")],
         ];
     }
