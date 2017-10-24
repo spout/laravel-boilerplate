@@ -9,23 +9,18 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
 {
     protected static $actionColumnActions = ['show', 'edit', 'delete'];
 
-    /**
-     * Display ajax response.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function ajax()
+    public function dataTable($query)
     {
-        $ajax = datatables()
-            ->eloquent($this->query())
+        $dataTable = datatables($query)
             ->addColumn('action', function ($object) {
                 $resourcePrefix = static::$resourcePrefix;
                 $actions = static::$actionColumnActions;
                 return view('includes.datatables.action', compact('object', 'resourcePrefix', 'actions'));
-            });
+            })
             //->addColumn('bulk', function ($object) {
             //    return view('includes.datatables.bulk', compact('object'));
             //})
+            ;
 
         $model = static::$model;
         $traits = class_uses($model);
@@ -34,20 +29,20 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
                 /**
                  * Fix the TranslatableTrait::getAttribute not being called
                  */
-                $ajax->editColumn($column, function ($object) use ($column) {
+                $dataTable->editColumn($column, function ($object) use ($column) {
                     return $object->{$column};
                 });
 
                 /**
                  * Search on translated columns
                  */
-                $ajax->filterColumn($column, function ($query, $keyword) use ($column) {
+                $dataTable->filterColumn($column, function ($query, $keyword) use ($column) {
                     $query->where($column . '_' . LaravelLocalization::getCurrentLocale(), 'like', '%' . $keyword . '%');
                 });
             }
         }
 
-        return $ajax->make(true);
+        return $dataTable;
     }
 
     /**
@@ -72,7 +67,7 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
     {
         return $this->builder()
             ->columns($this->getColumns())
-            ->ajax('')
+            ->minifiedAjax()
             ->addAction(['width' => '300px'])
             //->addColumn(['data' => 'bulk', 'title' => '<input type="checkbox" data-check-all="true" data-target=".bulk-checkbox">', 'orderable' => false])
             ->parameters($this->getBuilderParameters())
