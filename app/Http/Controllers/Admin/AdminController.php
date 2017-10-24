@@ -16,6 +16,6 @@ abstract class AdminController extends Controller
     public function __construct()
     {
         $this->__crudConstruct();
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 }
