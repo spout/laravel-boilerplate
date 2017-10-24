@@ -10,14 +10,6 @@ class User extends Authenticatable
 {
     use Notifiable, CommonTrait;
 
-    const ROLE_ADMIN = 'admin';
-    const ROLE_MEMBER = 'member';
-
-    public static $roles = [
-        self::ROLE_ADMIN => self::ROLE_ADMIN,
-        self::ROLE_MEMBER => self::ROLE_MEMBER,
-    ];
-
     /**
      * The attributes that are mass assignable.
      *
@@ -27,7 +19,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        //'role',
+        'is_admin',
     ];
 
     /**
@@ -38,6 +30,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+    ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
     ];
 
     public function __toString()
