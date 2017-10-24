@@ -25,4 +25,15 @@ class ContentsDataTable extends DataTable
             //['data' => 'updated_at', 'name' => 'updated_at', 'title' => _i("Updated"), 'searchable' => false],
         ];
     }
+
+    public function dataTable($query)
+    {
+        $dataTable = parent::dataTable($query);
+        $dataTable->editColumn('title', function ($object) {
+            $ancestors = $object->ancestors;
+            $ancestors->push($object);
+            return $ancestors->implode('title', ' > ');
+        });
+        return $dataTable;
+    }
 }

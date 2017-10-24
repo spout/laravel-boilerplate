@@ -14,6 +14,8 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -31,18 +33,18 @@
             {{--@menu(['slug' => 'principal'])--}}
             @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
 
-            <ul class="nav navbar-nav navbar-right">
-                @if (Auth::check())
-                    <li class="navbar-text">{{ Auth::user()->name }}</li>
-                    <li>
-                        <a href="#" onclick="document.logout.submit();return false;"><i class="fa fa-sign-out"></i> {{ _i("Logout") }}</a>
-                        {{ Form::open(['route' => 'logout', 'method' => 'post', 'name' => 'logout']) }}
-                        {{ Form::close() }}
-                    </li>
-                @else
-                    <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> {{ _i("Login") }}</a></li>
-                @endif
-            </ul>
+            {{--<ul class="nav navbar-nav navbar-right">--}}
+                {{--@if (Auth::check())--}}
+                    {{--<li class="navbar-text">{{ Auth::user()->name }}</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#" onclick="document.logout.submit();return false;"><i class="fa fa-sign-out"></i> {{ _i("Logout") }}</a>--}}
+                        {{--{{ Form::open(['route' => 'logout', 'method' => 'post', 'name' => 'logout']) }}--}}
+                        {{--{{ Form::close() }}--}}
+                    {{--</li>--}}
+                {{--@else--}}
+                    {{--<li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> {{ _i("Login") }}</a></li>--}}
+                {{--@endif--}}
+            {{--</ul>--}}
         </div>
     </div>
 </nav>
