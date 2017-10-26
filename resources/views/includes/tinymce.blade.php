@@ -2,9 +2,10 @@
 <?php
 $lang = \App::getLocale();
 $langUpper = strtoupper($lang);
-$languagePath = "/js/tinymce/langs/{$lang}_{$langUpper}.js";
+$languageBasePath = '/js/tinymce/langs/';
+$languagePath = "{$languageBasePath}{$lang}_{$langUpper}.js";
 if (!file_exists(public_path($languagePath))) {
-    $languagePath = "/js/tinymce/langs/{$lang}.js";
+    $languagePath = "{$languageBasePath}{$lang}.js";
 }
 $languageUrl = asset($languagePath);
 ?>
