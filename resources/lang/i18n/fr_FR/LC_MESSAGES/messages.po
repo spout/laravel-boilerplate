@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
 "POT-Creation-Date: 2017-10-20 18:43+0200\n"
-"PO-Revision-Date: 2017-10-20 18:43+0200\n"
+"PO-Revision-Date: 2017-10-24 20:39+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -660,7 +660,7 @@ msgstr "Modifier contenu"
 
 #: ../storage/framework/messages/675ab1d0352419a79851bf3b708ac287b0dc8c46.php.php:3
 msgid "View"
-msgstr "Voir"
+msgstr "Afficher"
 
 #: ../storage/framework/messages/675ab1d0352419a79851bf3b708ac287b0dc8c46.php.php:6
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:36
