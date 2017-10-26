@@ -74,6 +74,7 @@
     @yield('content')
 </div>
 <script src="{{ asset('build/admin.js') }}"></script>
+@include('includes.js-i18n')
 @stack('scripts')
 </body>
 </html>
