@@ -65,11 +65,11 @@
         @snippet(['slug' => 'partners'])
         <hr>
         <div class="row">
-            <div class="col-sm-6">
-                @snippet(['slug' => 'footer-about'])
-            </div>
             <div class="col-sm-3">
                 @snippet(['slug' => 'footer-products'])
+            </div>
+            <div class="col-sm-6">
+                @snippet(['slug' => 'footer-about'])
             </div>
             <div class="col-sm-3">
                 @snippet(['slug' => 'footer-address'])
@@ -78,7 +78,8 @@
     </footer>
 </div>
 <script src="{{ asset('build/app.js') }}"></script>
-@include('includes.js-i18n')
+@include('includes.scripts.global')
+@include('includes.scripts.i18n')
 @stack('scripts')
 </body>
 </html>
