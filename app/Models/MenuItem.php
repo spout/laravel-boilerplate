@@ -64,9 +64,4 @@ class MenuItem extends Model
             return $modelClass::find($foreignKey);
         });
     }
-
-    public function getAbsoluteUrlAttribute()
-    {
-        return '#';
-    }
 }

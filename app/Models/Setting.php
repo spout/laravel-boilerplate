@@ -12,11 +12,6 @@ class Setting extends Model
         'value',
     ];
 
-    public function getAbsoluteUrlAttribute()
-    {
-        return '#';
-    }
-
     public function getValueToArrayAttribute()
     {
         /**

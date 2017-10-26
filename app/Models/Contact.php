@@ -13,9 +13,4 @@ class Contact extends Model
     {
         return $this->subject;
     }
-
-    public function getAbsoluteUrlAttribute()
-    {
-        return '#';
-    }
 }
