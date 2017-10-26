@@ -34,9 +34,11 @@
             {!! Form::select('menu_item_association', $associationList) !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup('menu_item_title', _i("Title")) !!}
-            {!! Form::text('menu_item_title') !!}
-            {!! Form::closeGroup() !!}
+            @foreach(Config::get('app.locales') as $lang => $locale)
+                {!! Form::openGroup("menu_item_title_{$lang}", _i("Title (%s)", $lang)) !!}
+                {!! Form::text("menu_item_title_{$lang}") !!}
+                {!! Form::closeGroup() !!}
+            @endforeach
 
             <p>
                 <a class="btn btn-link btn-xs" data-toggle="collapse" href="#menu-item-advanced">{{ _i("Advanced options") }}</a>
@@ -68,8 +70,17 @@
       $(function () {
         var menuId = '{{ $object->id }}';
         var $menuItemsTree = $('#menu-items-tree');
-        var fields = ['association', 'title', 'url', 'route', 'attributes'];
+        var fields = ['association', 'url', 'route', 'attributes'];
+        var i18nFields = ['title'];
         var nodeData = {};
+
+        for (let locale in window.laravel.config.app.locales) {
+          if (window.laravel.config.app.locales.hasOwnProperty(locale)) {
+            i18nFields.forEach(function (field) {
+              fields.push(field + '_' + locale);
+            });
+          }
+        }
 
         $menuItemsTree.jstree({
           'core': {
