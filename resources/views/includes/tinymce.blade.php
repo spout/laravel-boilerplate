@@ -1,6 +1,6 @@
 @push('scripts')
 <?php
-$lang = \App::getLocale();
+$lang = \LaravelLocalization::getCurrentLocale();
 $langUpper = strtoupper($lang);
 $languageBasePath = '/js/tinymce/langs/';
 $languagePath = "{$languageBasePath}{$lang}_{$langUpper}.js";
