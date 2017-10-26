@@ -70,8 +70,8 @@
       $(function () {
         var menuId = '{{ $object->id }}';
         var $menuItemsTree = $('#menu-items-tree');
-        var fields = ['association', 'url', 'route', 'attributes'];
-        var i18nFields = ['title'];
+        var fields = ['association', 'route', 'attributes'];
+        var i18nFields = ['title', 'url'];
         var nodeData = {};
 
         for (let locale in window.laravel.config.app.locales) {

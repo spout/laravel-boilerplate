@@ -15,6 +15,7 @@ class MenuItem extends Model
 
     public static $translatableColumns = [
         'title',
+        'url',
     ];
 
     protected static function boot()
