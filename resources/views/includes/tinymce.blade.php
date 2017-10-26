@@ -2,9 +2,13 @@
 <?php
 $lang = \App::getLocale();
 $langUpper = strtoupper($lang);
-$languageUrl = asset("/js/tinymce/langs/{$lang}_{$langUpper}.js");
+$languagePath = "/js/tinymce/langs/{$lang}_{$langUpper}.js";
+if (!file_exists(public_path($languagePath))) {
+    $languagePath = "/js/tinymce/langs/{$lang}.js";
+}
+$languageUrl = asset($languagePath);
 ?>
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
 <script>
     tinymce.init({
         selector: 'textarea.wysiwyg',
