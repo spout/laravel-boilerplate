@@ -17,8 +17,11 @@ class Setting extends Model
         return '#';
     }
 
-    public function getValueAsArrayAttribute()
+    public function getValueToArrayAttribute()
     {
+        /**
+         * I don't use built-in JSON casting because value form input is a raw JSON string.
+         */
         return json_decode($this->value, true);
     }
 }

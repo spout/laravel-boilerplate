@@ -59,8 +59,8 @@ if (!function_exists('setting')) {
         });
 
         if (empty($valueKey)) {
-            return $setting->value_as_array ?? $default;
+            return $setting->value_to_array ?? $default;
         }
-        return array_get($setting->value_as_array, $valueKey, $default);
+        return array_get($setting->value_to_array, $valueKey, $default);
     }
 }
