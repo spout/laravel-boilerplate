@@ -78,8 +78,7 @@
     </footer>
 </div>
 <script src="{{ asset('build/app.js') }}"></script>
-@include('includes.scripts.global')
-@include('includes.scripts.i18n')
+@include('includes.scripts')
 @stack('scripts')
 </body>
 </html>

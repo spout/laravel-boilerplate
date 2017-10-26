@@ -1,5 +1,13 @@
 @push('scripts')
     <script>
+      window.laravel = {
+        config: {
+          app: {
+            locales: {!! json_encode(Config::get('app.locales')) !!}
+          }
+        }
+      };
+
       jQuery.extend(jQuery.colorbox.settings, {
         current: "{{ _i("image {current} of {total}") }}",
         previous: "{{ _i("previous") }}",
