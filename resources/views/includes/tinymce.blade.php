@@ -2,7 +2,7 @@
 <?php
 $lang = \App::getLocale();
 $langUpper = strtoupper($lang);
-//$languageUrl = "/js/tinymce/langs/{$lang}_{$langUpper}.js";
+$languageUrl = asset("/js/tinymce/langs/{$lang}_{$langUpper}.js");
 ?>
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <script>
@@ -10,9 +10,9 @@ $langUpper = strtoupper($lang);
         selector: 'textarea.wysiwyg',
         content_css: '{{ asset('build/app.css') }}',
         height: "200",
-        <?php /*if($lang != 'en'): ?>
-        language_url: '<?php echo $languageUrl; ?>',
-        <?php endif;*/ ?>
+        @if ($lang !== 'en')
+        language_url: '{!! $languageUrl !!}',
+        @endif
         plugins: [
             'advlist autolink lists link image charmap print preview anchor',
             'searchreplace visualblocks code fullscreen',
