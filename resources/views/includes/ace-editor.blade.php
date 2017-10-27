@@ -1,5 +1,5 @@
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
 <script>
     $(function () {
         // https://gist.github.com/duncansmart/5267653
