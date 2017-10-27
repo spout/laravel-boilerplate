@@ -25,7 +25,8 @@ $languageUrl = asset($languagePath);
         ],
         toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         file_browser_callback: elFinderBrowser,
-        relative_urls: false
+        relative_urls: false,
+        entity_encoding : "raw"
     });
 
     function elFinderBrowser(field_name, url, type, win) {
