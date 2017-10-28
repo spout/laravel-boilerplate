@@ -1,8 +1,8 @@
 @include('includes.ace-editor')
 
 {!! Form::model($object, [
-    'route' => empty($object->key) ? ['admin.settings.store'] : ['admin.settings.update', $object->key],
-    'method' => empty($object->key) ? 'POST' : 'PUT'
+    'route' => empty($object->pk) ? ['admin.settings.store'] : ['admin.settings.update', $object->pk],
+    'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
 {!! Form::openGroup('key', _i('Key')) !!}

@@ -1,6 +1,6 @@
 {!! Form::model($object, [
-    'route' => empty($object->key) ? ['admin.contacts.store'] : ['admin.contacts.update', $object->key],
-    'method' => empty($object->key) ? 'POST' : 'PUT'
+    'route' => empty($object->pk) ? ['admin.contacts.store'] : ['admin.contacts.update', $object->pk],
+    'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
 {!! Form::openGroup('email', _i('Email')) !!}
