@@ -85,3 +85,7 @@
   text-align: center; }
   footer .partners img {
     height: 50px; }
+
+.form-group.required label:after {
+  content: '*';
+  color: #F4771D; }
