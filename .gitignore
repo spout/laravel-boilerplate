@@ -2,9 +2,8 @@
 /public/storage
 /vendor
 /.idea
-Homestead.json
-Homestead.yaml
-.env
+/.env
 /quickstart.php
 /calendar-php-quickstart.json
 /config/google-calendar/*
+/resources/assets/scss/_theme.scss
