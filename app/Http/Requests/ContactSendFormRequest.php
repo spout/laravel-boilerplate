@@ -24,8 +24,10 @@ class ContactSendFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required',
-            'subject' => 'required',
+            'lastname' => 'required',
+            'firstname' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
             'message' => 'required',
         ];
     }
@@ -33,8 +35,11 @@ class ContactSendFormRequest extends FormRequest
     public function messages()
     {
         return [
+            'lastname.required' => _i("The lastname is required."),
+            'firstname.required' => _i("The firstname is required."),
             'email.required' => _i("The email is required."),
-            'subject.required' => _i("The subject is required."),
+            'email.email' => _i("The email isn't valid."),
+            'phone.required' => _i("The phone is required."),
             'message.required' => _i("The message is required."),
         ];
     }

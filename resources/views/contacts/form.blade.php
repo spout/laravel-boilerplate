@@ -13,12 +13,12 @@
     <div class="row">
         <div class="col-sm-6">
             {!! Form::openGroup('lastname', _i('Lastname'), ['class' => 'required']) !!}
-            {!! Form::text('lastname') !!}
+            {!! Form::text('lastname', null, ['required' => 'required']) !!}
             {!! Form::closeGroup() !!}
         </div>
         <div class="col-sm-6">
             {!! Form::openGroup('firstname', _i('Firstname'), ['class' => 'required']) !!}
-            {!! Form::text('firstname') !!}
+            {!! Form::text('firstname', null, ['required' => 'required']) !!}
             {!! Form::closeGroup() !!}
         </div>
         <div class="col-sm-6">
@@ -33,12 +33,12 @@
         </div>
         <div class="col-sm-6">
             {!! Form::openGroup('email', _i('Email'), ['class' => 'required']) !!}
-            {!! Form::email('email') !!}
+            {!! Form::email('email', null, ['required' => 'required']) !!}
             {!! Form::closeGroup() !!}
         </div>
         <div class="col-sm-6">
             {!! Form::openGroup('phone', _i('Phone'), ['class' => 'required']) !!}
-            {!! Form::text('phone') !!}
+            {!! Form::text('phone', null, ['required' => 'required']) !!}
             {!! Form::closeGroup() !!}
         </div>
     </div>
@@ -47,8 +47,8 @@
     {{--{!! Form::text('subject') !!}--}}
     {{--{!! Form::closeGroup() !!}--}}
 
-    {!! Form::openGroup('message', _i('Message')) !!}
-    {!! Form::textarea('message') !!}
+    {!! Form::openGroup('message', _i('Message'), ['class' => 'required']) !!}
+    {!! Form::textarea('message', null, ['required' => 'required']) !!}
     {!! Form::closeGroup() !!}
 
     {!! Form::submit(_i('Send'), ['class' => 'btn btn-primary']) !!}
