@@ -25,6 +25,20 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('/{pk}-{slug}', 'BlogController@show')->name('blog.show');
     });
 
+    $allowedCommands = ['properties'];
+    Route::get('artisan/{command}', function ($command) {
+        $exitCode = Artisan::call($command);
+        return response()->json(compact('exitCode'));
+    })->where('command', implode('|', $allowedCommands));
+
+    Route::group(['prefix' => 'customers'], function () {
+        Route::get('/files', 'CustomersController@files')->name('customers.files');
+        Route::get('/after-sales-service', 'CustomersController@afterSalesService')->name('customers.after-sales-service');
+        Route::post('/after-sales-service', 'CustomersController@afterSalesServicePost')->name('customers.after-sales-service');
+    });
+
+    Route::get('sitemap.{ext}', 'SitemapController@index')->where('ext', '^(' . implode('|', array_keys(config('sitemap.types'))) . ')$')->name('sitemap');
+
     Route::group(['prefix' => 'pages'], function () {
         Route::get('{path}', 'PagesController@show')->where('path', '[a-z0-9-/]+')->name('pages.show');
     });
@@ -195,17 +209,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
                 'edit' => 'admin.emails.edit',
             ]
         ]);
+
+        Route::resource('after-sales-services', 'AfterSalesServicesController', [
+            'names' => [
+                'store' => 'admin.after-sales-services.store',
+                'index' => 'admin.after-sales-services.index',
+                'create' => 'admin.after-sales-services.create',
+                'destroy' => 'admin.after-sales-services.destroy',
+                'update' => 'admin.after-sales-services.update',
+                'show' => 'admin.after-sales-services.show',
+                'edit' => 'admin.after-sales-services.edit',
+            ]
+        ]);
     });
 
-    $allowedCommands = ['properties'];
-    Route::get('artisan/{command}', function ($command) {
-        $exitCode = Artisan::call($command);
-        return response()->json(compact('exitCode'));
-    })->where('command', implode('|', $allowedCommands));
-
     Route::get('/{path}', 'ContentsController@show')->where('path', '^(?!(elfinder|imagecache)\b)\b[a-z0-9-\/]+')->name('contents.show');
-
-    Route::get('/sitemap.{ext}', 'SitemapController@index')->where('ext', '^(' . implode('|', array_keys(config('sitemap.types'))) . ')$');
 });
 
 Route::get('/manifest.json', 'ManifestController@index');
