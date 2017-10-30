@@ -52,7 +52,7 @@ if (!function_exists('setting')) {
         $key = array_shift($keys);
         $valueKey = implode('.', $keys);
 
-        $cacheKey = "setting-$key";
+        $cacheKey = "setting-$key-$valueKey";
         $cacheMinutes = 60;
         $setting = Cache::remember($cacheKey, $cacheMinutes, function () use ($key) {
             return \App\Models\Setting::find($key);
