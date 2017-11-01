@@ -14,7 +14,6 @@ class AfterSalesServicesController extends AdminController
 
     public function export($pk, $format = 'xlsx')
     {
-        set_time_limit(60);
         $formats = [
             'xlsx' => 'Excel2007',
             'xls' => 'Excel5',
