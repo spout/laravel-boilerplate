@@ -33,9 +33,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
     Route::group(['prefix' => 'customers'], function () {
         Route::get('/files', 'CustomersController@files')->name('customers.files');
-        Route::get('/after-sales-service', 'CustomersController@afterSalesService')->name('customers.after-sales-service');
-        Route::post('/after-sales-service', 'CustomersController@afterSalesServicePost')->name('customers.after-sales-service');
     });
+
+    Route::resource('after-sales-services', 'AfterSalesServicesController', ['only' => [
+        'create', 'store'
+    ]]);
 
     Route::get('sitemap.{ext}', 'SitemapController@index')->where('ext', '^(' . implode('|', array_keys(config('sitemap.types'))) . ')$')->name('sitemap');
 
@@ -210,6 +212,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
+        Route::get('after-sales-services/export/{pk}/{format?}', 'AfterSalesServicesController@export')->name('admin.after-sales-services.export');
         Route::resource('after-sales-services', 'AfterSalesServicesController', [
             'names' => [
                 'store' => 'admin.after-sales-services.store',

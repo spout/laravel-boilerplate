@@ -4,5 +4,8 @@ namespace App\Models;
 class AfterSalesService extends Model
 {
     protected $guarded = [];
-    public $timestamps = false;
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
 }

@@ -89,3 +89,6 @@
 .form-group.required label:after {
   content: '*';
   color: #F4771D; }
+
+.form-group.required .radio label:after {
+  content: ''; }
