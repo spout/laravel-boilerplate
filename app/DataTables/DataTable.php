@@ -15,7 +15,11 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
             ->addColumn('action', function ($object) {
                 $resourcePrefix = static::$resourcePrefix;
                 $actions = static::$actionColumnActions;
-                return view('includes.datatables.action', compact('object', 'resourcePrefix', 'actions'));
+                $view = "{$resourcePrefix}.includes.datatables.action";
+                if (!view()->exists($view)) {
+                    $view = 'includes.datatables.action';
+                }
+                return view($view, compact('object', 'resourcePrefix', 'actions'));
             })
             //->addColumn('bulk', function ($object) {
             //    return view('includes.datatables.bulk', compact('object'));
