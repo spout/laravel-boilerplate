@@ -23,7 +23,8 @@
         "yajra/laravel-datatables-buttons": "3.*",
         "embed/embed": "^3.2",
         "webwizo/laravel-shortcodes": "1.0.*",
-        "dompdf/dompdf": "^0.8.1"
+        "dompdf/dompdf": "^0.8.1",
+        "phpoffice/phpspreadsheet": "dev-develop"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.7",

@@ -5,6 +5,8 @@ use App\DataTables\AfterSalesServicesDataTable;
 use App\Http\Requests\AfterSalesServiceFormRequest;
 use App\Models\AfterSalesService;
 use Carbon\Carbon;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Writer\Pdf\Dompdf;
 
 class AfterSalesServicesController extends AdminController
 {
@@ -14,18 +16,10 @@ class AfterSalesServicesController extends AdminController
 
     public function export($pk, $format = 'xlsx')
     {
-        $formats = [
-            'xlsx' => 'Excel2007',
-            'xls' => 'Excel5',
-            'odt' => 'OpenDocument',
-            'pdf' => 'PDF',
-        ];
         $filename = public_path("files/after-sales-services/$pk.$format");
-
         $afterSalesService = AfterSalesService::findOrFail($pk);
-        $phpExcelReader = \PHPExcel_IOFactory::load(public_path(setting('after-sales-services.template')));
-        $worksheet = $phpExcelReader->setActiveSheetIndex(0);
-
+        $spreadsheet = IOFactory::load(public_path(setting('after-sales-services.template')));
+        $worksheet = $spreadsheet->setActiveSheetIndex(0);
         $replace = [];
 
         foreach ($afterSalesService->toArray() as $key => $value) {
@@ -37,6 +31,7 @@ class AfterSalesServicesController extends AdminController
 
                 default:
                     $replace["[$key]"] = $value;
+                    break;
             }
         }
 
@@ -48,14 +43,12 @@ class AfterSalesServicesController extends AdminController
         }
 
         if ($format === 'pdf') {
-            /**
-             * https://github.com/PHPOffice/PHPExcel/issues/958#issuecomment-331838435
-             */
-            \PHPExcel_Settings::setPdfRenderer(\PHPExcel_Settings::PDF_RENDERER_DOMPDF, base_path());
+            IOFactory::registerWriter('Pdf', Dompdf::class);
         }
 
-        $phpExcelWriter = \PHPExcel_IOFactory::createWriter($phpExcelReader, $formats[$format]);
-        $phpExcelWriter->save($filename);
+        $spreadsheetWriter = IOFactory::createWriter($spreadsheet, studly_case($format));
+        $spreadsheetWriter->save($filename);
+
         return response()->download($filename)->deleteFileAfterSend(true);
     }
 }
