@@ -6,6 +6,7 @@ use App\Http\Requests\AfterSalesServiceFormRequest;
 use App\Models\AfterSalesService;
 use Carbon\Carbon;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
 use PhpOffice\PhpSpreadsheet\Writer\Pdf\Dompdf;
 
 class AfterSalesServicesController extends AdminController
@@ -20,8 +21,9 @@ class AfterSalesServicesController extends AdminController
         $afterSalesService = AfterSalesService::findOrFail($pk);
         $spreadsheet = IOFactory::load(public_path(setting('after-sales-services.template')));
         $worksheet = $spreadsheet->setActiveSheetIndex(0);
-        $replace = [];
+        $worksheet->setShowGridlines(false);
 
+        $replace = [];
         foreach ($afterSalesService->toArray() as $key => $value) {
             switch ($key) {
                 case 'created_at':
