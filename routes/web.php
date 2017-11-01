@@ -212,7 +212,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             ]
         ]);
 
-        Route::get('after-sales-services/export/{pk}/{format?}', 'AfterSalesServicesController@export')->name('admin.after-sales-services.export');
+        Route::get('after-sales-services/{pk}/export/{format?}', 'AfterSalesServicesController@export')->name('admin.after-sales-services.export');
         Route::resource('after-sales-services', 'AfterSalesServicesController', [
             'names' => [
                 'store' => 'admin.after-sales-services.store',

@@ -14,6 +14,7 @@ class AfterSalesServicesController extends AdminController
 
     public function export($pk, $format = 'xlsx')
     {
+        set_time_limit(60);
         $formats = [
             'xlsx' => 'Excel2007',
             'xls' => 'Excel5',
@@ -45,6 +46,13 @@ class AfterSalesServicesController extends AdminController
             $currentValue = $worksheet->getCell($coordinate)->getValue();
             $value = !empty($currentValue) ? $currentValue . ' ' . $value : $value;
             $worksheet->setCellValue($coordinate, $value);
+        }
+
+        if ($format === 'pdf') {
+            /**
+             * https://github.com/PHPOffice/PHPExcel/issues/958#issuecomment-331838435
+             */
+            \PHPExcel_Settings::setPdfRenderer(\PHPExcel_Settings::PDF_RENDERER_DOMPDF, base_path());
         }
 
         $phpExcelWriter = \PHPExcel_IOFactory::createWriter($phpExcelReader, $formats[$format]);

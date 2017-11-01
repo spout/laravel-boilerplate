@@ -10,7 +10,7 @@
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('value', _i('Value')) !!}
-{!! Form::textarea('value', null, ['data-editor' => 'json']) !!}
+{!! Form::textarea('value', null, ['data-editor' => 'json', 'rows' => 20]) !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}

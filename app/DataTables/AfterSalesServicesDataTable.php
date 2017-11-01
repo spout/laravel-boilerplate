@@ -8,6 +8,12 @@ class AfterSalesServicesDataTable extends DataTable
 {
     protected static $model = AfterSalesService::class;
     protected static $resourcePrefix = 'admin.after-sales-services';
+    protected static $actionColumnActions = [
+        //'show',
+        'export' => 'admin.after-sales-services.includes.datatables.actions.export',
+        'edit',
+        'delete'
+    ];
 
     /**
      * Get columns.
