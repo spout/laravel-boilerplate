@@ -17,6 +17,7 @@ class AfterSalesServicesDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            ['data' => 'order_number', 'name' => 'order_number', 'title' => _i("Order number")],
             ['data' => 'created_at', 'name' => 'created_at', 'title' => _i("Created"), 'searchable' => false],
             ['data' => 'updated_at', 'name' => 'updated_at', 'title' => _i("Updated"), 'searchable' => false],
         ];
