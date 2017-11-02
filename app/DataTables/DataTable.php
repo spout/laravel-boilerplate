@@ -48,9 +48,12 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
             }
         }
 
+        /**
+         * Fix the __toString not being called on dates
+         */
         foreach ($dates as $date) {
             $dataTable->editColumn($date, function ($object) use ($date) {
-                return $object->{$date}->format('d/m/Y H:i:s');
+                return $object->{$date}->__toString();
             });
         }
 
