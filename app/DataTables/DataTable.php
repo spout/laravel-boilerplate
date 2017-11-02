@@ -28,6 +28,8 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
 
         $model = static::$model;
         $traits = class_uses($model);
+        $dates = (new $model)->getDates();
+
         if ($traits && in_array(TranslatableTrait::class, $traits)) {
             foreach ($model::$translatableColumns as $column) {
                 /**
@@ -44,6 +46,12 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
                     $query->where($column . '_' . LaravelLocalization::getCurrentLocale(), 'like', '%' . $keyword . '%');
                 });
             }
+        }
+
+        foreach ($dates as $date) {
+            $dataTable->editColumn($date, function ($object) use ($date) {
+                return $object->{$date}->format('d/m/Y H:i:s');
+            });
         }
 
         return $dataTable;
