@@ -24,8 +24,10 @@ class AfterSalesServicesDataTable extends DataTable
     {
         return [
             ['data' => 'order_number', 'name' => 'order_number', 'title' => _i("Order number")],
+            ['data' => 'professional_customer_name', 'name' => 'professional_customer_name', 'title' => _i("Pro")],
+            ['data' => 'provider', 'name' => 'provider', 'title' => _i("Provider")],
+            ['data' => 'type', 'name' => 'type', 'title' => _i("Type")],
             ['data' => 'created_at', 'name' => 'created_at', 'title' => _i("Created"), 'searchable' => false],
-            ['data' => 'updated_at', 'name' => 'updated_at', 'title' => _i("Updated"), 'searchable' => false],
         ];
     }
 }
