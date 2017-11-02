@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App;
 use Carbon\Carbon;
 use Closure;
 use LaravelGettext;
@@ -22,7 +21,6 @@ class Locale
         $locale = LaravelLocalization::getCurrentLocale();
         $localeRegional = LaravelLocalization::getCurrentLocaleRegional();
 
-        App::setLocale($locale);
         LaravelGettext::setLocale($localeRegional);
         Carbon::setLocale($locale);
 
