@@ -40,7 +40,7 @@ class MenuItem extends Model
         return $value;
     }
 
-    public function getUrlAttribute($value)
+    public function getAssociatedUrlAttribute($value)
     {
         if (!empty($this->model_class) && !empty($this->foreign_key)) {
             $row = $this->findAssociatedModel($this->model_class, $this->foreign_key);
