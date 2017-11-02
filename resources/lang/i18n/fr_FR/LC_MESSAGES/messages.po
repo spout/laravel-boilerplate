@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
 "POT-Creation-Date: 2017-10-31 21:48+0100\n"
-"PO-Revision-Date: 2017-10-31 21:56+0100\n"
+"PO-Revision-Date: 2017-11-02 01:10+0100\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -761,11 +761,11 @@ msgstr "Créer propriété"
 
 #: ../storage/framework/messages/6343941fbbb59c09b851cb65757552ba47e0b386.php.php:1
 msgid "After-sales service"
-msgstr "Après-vente"
+msgstr "Service après-vente"
 
 #: ../storage/framework/messages/6343941fbbb59c09b851cb65757552ba47e0b386.php.php:4
 msgid "After-sales service form"
-msgstr "Formulaire service après-vente"
+msgstr "Formulaire de service après-vente"
 
 #: ../storage/framework/messages/6343941fbbb59c09b851cb65757552ba47e0b386.php.php:10
 msgid "Professional details"
