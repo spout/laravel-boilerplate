@@ -6,12 +6,7 @@ class Event extends Model
     public $incrementing = false;
 
     protected $guarded = [];
-    protected $dates = [
-        'start',
-        'end',
-        'created_at',
-        'updated_at',
-    ];
+    protected $dates = ['start', 'end', 'created_at', 'updated_at'];
 
     public function eventType()
     {

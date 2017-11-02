@@ -8,6 +8,7 @@ class Contact extends Model
         'subject',
         'message',
     ];
+    protected $dates = ['created_at', 'updated_at'];
 
     public function __toString()
     {
