@@ -24,6 +24,9 @@ class Content extends Model
 
     public function getAbsoluteUrlAttribute()
     {
+        if ($this->path === 'homepage') {
+            return route('homepage');
+        }
         return route('contents.show', ['path' => $this->path]);
     }
 
