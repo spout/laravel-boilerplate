@@ -65,4 +65,9 @@ class MenuItem extends Model
             return $modelClass::find($foreignKey);
         });
     }
+
+    public function getAttributesToArrayAttribute($value)
+    {
+        return json_decode($this->getAttribute('attributes'), true);
+    }
 }

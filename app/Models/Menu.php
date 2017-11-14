@@ -15,4 +15,9 @@ class Menu extends Model
     {
         return $this->hasMany(MenuItem::class)->orderBy('sort');
     }
+
+    public function getAttributesToArrayAttribute($value)
+    {
+        return json_decode($this->getAttribute('attributes'), true);
+    }
 }
