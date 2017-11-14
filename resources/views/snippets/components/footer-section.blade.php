@@ -1,2 +1,3 @@
-<h3>{{ $title }}</h3>
+<h4>{{ $title }}</h4>
+<hr>
 <div>{{ $slot }}</div>
