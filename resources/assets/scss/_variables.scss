@@ -1,0 +1,44 @@
+$icon-font-path: "~bootstrap/fonts/";
+$font-family-sans-serif: 'Open Sans', sans-serif;
+
+$theme-orange: #F3761D;
+
+$link-color: $theme-orange;
+
+$text-color: #666D73;
+
+$headings-color: #212B80;
+
+$font-size-h1: 42px;
+$font-size-h2: 36px;
+$font-size-h3: 26px;
+$font-size-h4: 20px;
+$font-size-h5: 18px;
+$font-size-h6: 18px;
+
+$navbar-height: 71px; // 75 - 4px
+$navbar-default-border: none;
+$navbar-default-bg: #F3F3F4;
+$navbar-default-toggle-icon-bar-bg: #FFF;
+$navbar-default-link-color: #FFF;
+
+$btn-font-weight: 600;
+$btn-primary-color: #fff;
+$btn-primary-bg: $theme-orange;
+$btn-primary-border: transparent;
+$btn-border-radius-base: 24px;
+
+$hr-border: $theme-orange;
+
+$breadcrumb-bg: transparent;
+$breadcrumb-separator: '▶';
+$breadcrumb-color: #A19F9F;
+
+$input-bg: transparent;
+$input-color: #212B80;
+$input-border-radius: 0;
+$input-border-radius-large: 0;
+$input-border-radius-small: 0;
+$input-color-placeholder: #9798C9;
+
+$grid-float-breakpoint: 1200px;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ App::getLocale() }}" class="{{ str_replace('.', ' ', Route::current()->getName()) }}" data-environment="{{ App::environment() }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,15 +18,13 @@
     <link rel="manifest" href="{{ asset('manifest.json') }}">
 </head>
 <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="hidden-xs">{{ _i("Menu") }}</span> <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
+            <a class="navbar-brand" href="{{ route('homepage') }}"><img src="{{ asset('img/logo.png') }}" alt="{{ config('app.name') }}"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -48,35 +46,40 @@
         </div>
     </div>
 </nav>
-<div class="container">
+{{--<div class="container">--}}
     @if (Route::current()->getName() !== 'homepage')
         @hasSection('breadcrumbs')
-            <ul class="breadcrumb">
-                <li><a href="{{ route('homepage') }}">{{ config('app.name') }}</a></li>
-                @yield('breadcrumbs')
-            </ul>
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="{{ route('homepage') }}">{{ config('app.name') }}</a></li>
+                    @yield('breadcrumbs')
+                </ul>
+            </div>
         @endif
     @endif
     @include('flash::message')
     @include('includes.validation-errors')
-    @yield('content')
+    <div id="content">
+        @yield('content')
+    </div>
     <footer>
-        <hr>
         @snippet(['slug' => 'partners'])
-        <hr>
-        <div class="row">
-            <div class="col-sm-3">
-                @snippet(['slug' => 'footer-products'])
-            </div>
-            <div class="col-sm-6">
-                @snippet(['slug' => 'footer-about'])
-            </div>
-            <div class="col-sm-3">
-                @snippet(['slug' => 'footer-address'])
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    @snippet(['slug' => 'footer-products'])
+                </div>
+                <div class="col-sm-6">
+                    @snippet(['slug' => 'footer-frame-type'])
+                </div>
+                <div class="col-sm-3">
+                    @snippet(['slug' => 'footer-address'])
+                </div>
             </div>
         </div>
+        @snippet(['slug' => 'footer-copyright'])
     </footer>
-</div>
+{{--</div>--}}
 <script src="{{ asset('build/app.js') }}"></script>
 @include('includes.scripts')
 @stack('scripts')
