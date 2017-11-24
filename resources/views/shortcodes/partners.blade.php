@@ -2,8 +2,7 @@
 $dataSlick = [
     'slidesToShow' => 5,
     'slidesToScroll' => 1,
-    //'centerMode' => true,
-    'autoplay' => false,
+    'autoplay' => true,
     'prevArrow' => '<button type="button" class="slick-prev"><i class="fa fa-long-arrow-left"></i></button>',
     'nextArrow' => '<button type="button" class="slick-next"><i class="fa fa-long-arrow-right"></i></button>',
     'responsive' => [
