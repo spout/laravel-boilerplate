@@ -5,6 +5,7 @@ require('bootstrap/dist/js/bootstrap.min.js')
 require('./global')
 require('jquery-colorbox/jquery.colorbox-min.js')
 require('slick-carousel')
+require('tilt.js')
 require('../scss/app.scss')
 
 $(function () {
