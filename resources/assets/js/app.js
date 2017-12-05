@@ -9,6 +9,8 @@ require('tilt.js')
 require('../scss/app.scss')
 
 $(function () {
+  let navbarHeight = 71
+
   $('a.lightbox').colorbox({
     opacity: 0.5,
     rel: 'gal'
@@ -23,7 +25,7 @@ $(function () {
   $('a[href^="#"]').on('click', function (e) {
     e.preventDefault()
     let scrollTo = $($(this).attr('href'))
-    $('html, body').animate({scrollTop: scrollTo.offset().top}, 'slow')
+    $('html, body').animate({scrollTop: scrollTo.offset().top - navbarHeight}, 'slow')
   })
 
   $('[data-slick]').slick()
