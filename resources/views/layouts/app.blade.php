@@ -24,7 +24,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="hidden-xs">{{ _i("Menu") }}</span> <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="{{ route('homepage') }}"><img src="{{ asset('img/logo.png') }}" alt="{{ config('app.name') }}"></a>
+            <a class="navbar-brand animated fadeInDown" href="{{ route('homepage') }}"><img src="{{ asset('img/logo.png') }}" alt="{{ config('app.name') }}"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
