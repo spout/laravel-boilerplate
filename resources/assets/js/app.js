@@ -1,11 +1,11 @@
 /* global $ */
 
 window.$ = window.jQuery = require('jquery')
-require('bootstrap/dist/js/bootstrap.min.js')
+require('bootstrap')
 require('./global')
 require('jquery-colorbox/jquery.colorbox-min.js')
 require('slick-carousel')
-require('tilt.js')
+// require('tilt.js')
 require('../scss/app.scss')
 
 $(function () {

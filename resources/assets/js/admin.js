@@ -1,6 +1,6 @@
 window.$ = window.jQuery = require('jquery')
 const $ = window.$
-require('bootstrap/dist/js/bootstrap.min.js')
+require('bootstrap')
 require('jquery-colorbox/jquery.colorbox-min.js')
 require('select2/dist/js/select2.min.js')
 require('jstree')
