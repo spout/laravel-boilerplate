@@ -1,7 +1,7 @@
 /* global require */
 /* global __dirname */
 
-require('webpack')
+const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
@@ -74,6 +74,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css'),
+    new webpack.ProvidePlugin({
+      // $: 'jquery',
+      // jQuery: 'jquery',
+      // 'window.$': 'jquery',
+      // 'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default']
+    })
   ]
 }

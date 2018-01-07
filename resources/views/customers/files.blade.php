@@ -5,7 +5,7 @@
 @section('content')
     <h1>{{ _i("Customer files") }}</h1>
 
-    <table class="table table-condensed table-striped">
+    <table class="table table-sm table-striped">
         <thead>
             <tr>
                 <th>{{ _i("Filename") }}</th>

@@ -12,6 +12,11 @@ class Setting extends Model
         'value',
     ];
 
+    public function __toString()
+    {
+        return $this->value;
+    }
+
     public function getValueToArrayAttribute()
     {
         /**

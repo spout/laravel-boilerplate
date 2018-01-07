@@ -5,7 +5,7 @@
 @section('content')
     @if (!empty($routes))
         <div class="table-responsive">
-            <table class="table table-bordered table-striped table-condensed">
+            <table class="table table-bordered table-striped table-sm">
                 <thead>
                 <tr>
                     {{--<th>{{ _i("Domain") }}</th>--}}

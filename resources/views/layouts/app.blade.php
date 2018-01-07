@@ -24,7 +24,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="hidden-xs">{{ _i("Menu") }}</span> <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand animated fadeInDown" href="{{ route('homepage') }}"><img src="{{ asset('img/logo.png') }}" alt="{{ config('app.name') }}"></a>
+            <a class="navbar-brand animated fadeInDown" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -62,23 +62,6 @@
     <div id="content">
         @yield('content')
     </div>
-    <footer>
-        @snippet(['slug' => 'partners'])
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    @snippet(['slug' => 'footer-products'])
-                </div>
-                <div class="col-sm-6">
-                    @snippet(['slug' => 'footer-frame-type'])
-                </div>
-                <div class="col-sm-3">
-                    @snippet(['slug' => 'footer-address'])
-                </div>
-            </div>
-        </div>
-        @snippet(['slug' => 'footer-copyright'])
-    </footer>
 {{--</div>--}}
 <script src="{{ asset('build/app.js') }}"></script>
 @include('includes.scripts')

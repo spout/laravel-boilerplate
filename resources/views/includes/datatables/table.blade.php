@@ -1,5 +1,5 @@
 {{--{!! Form::open(['route' => "$resourcePrefix.bulk"]) !!}--}}
-{!! $dataTable->table(['class' => 'table table-bordered table-condensed table-striped']) !!}
+{!! $dataTable->table(['class' => 'table table-sm table-bordered table-striped']) !!}
 {{--<div class="row">--}}
     {{--<div class="col-sm-4">--}}
         {{--<div class="input-group">--}}

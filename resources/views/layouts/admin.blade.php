@@ -16,17 +16,12 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                <span class="sr-only">{{ _i("Toggle navigation") }}</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">{{ _i("Administration") }}</a>
-        </div>
+        <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">{{ _i("Administration") }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <?php
@@ -47,18 +42,18 @@
                 ['title' => _i("Routes"), 'icon' => 'road', 'route' => 'admin.routes.index'],
             ];
             ?>
-            <ul class="nav navbar-nav">
+            <ul class="navbar-nav mr-auto">
                 @foreach($navs as $nav)
-                    <li>
-                        <a href="{{ route($nav['route']) }}"><i class="fa fa-{{ $nav['icon'] }} fa-fw"></i> {{ $nav['title'] }}</a>
+                    <li class="nav-item">
+                        <a href="{{ route($nav['route']) }}" class="nav-link"><i class="fa fa-{{ $nav['icon'] }} fa-fw"></i> {{ $nav['title'] }}</a>
                     </li>
                 @endforeach
             </ul>
             @if (Auth::check())
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="navbar-nav">
                     <li class="navbar-text">{{ Auth::user()->name }}</li>
-                    <li>
-                        <a href="#" onclick="document.logout.submit();return false;"><i class="fa fa-sign-out"></i> {{ _i("Logout") }}</a>
+                    <li class="nav-item">
+                        <a href="#" onclick="document.logout.submit();return false;" class="nav-link"><i class="fa fa-sign-out"></i> {{ _i("Logout") }}</a>
                         {{ Form::open(['route' => 'logout', 'method' => 'post', 'name' => 'logout']) }}
                         {{ Form::close() }}
                     </li>
