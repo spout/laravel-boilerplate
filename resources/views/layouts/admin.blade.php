@@ -16,7 +16,7 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">{{ _i("Administration") }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
@@ -45,7 +45,7 @@
             <ul class="navbar-nav mr-auto">
                 @foreach($navs as $nav)
                     <li class="nav-item">
-                        <a href="{{ route($nav['route']) }}" class="nav-link"><i class="fa fa-{{ $nav['icon'] }} fa-fw"></i> {{ $nav['title'] }}</a>
+                        <a href="{{ route($nav['route']) }}" class="nav-link">{{--<i class="fa fa-{{ $nav['icon'] }} fa-fw"></i> --}}{{ $nav['title'] }}</a>
                     </li>
                 @endforeach
             </ul>
