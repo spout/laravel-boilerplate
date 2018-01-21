@@ -195,6 +195,7 @@ return [
         Barryvdh\Elfinder\ElfinderServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Swap\Laravel\SwapServiceProvider::class,
     ],
 
     /*
@@ -249,6 +250,7 @@ return [
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Shortcode' => Webwizo\Shortcodes\Facades\Shortcode::class,
+        'Swap' => Swap\Laravel\Facades\Swap::class
     ],
 
 ];

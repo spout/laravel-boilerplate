@@ -14532,6 +14532,41 @@ namespace Barryvdh\Debugbar {
  
 }
 
+namespace Swap\Laravel\Facades { 
+
+    class Swap {
+        
+        /**
+         * Quotes a currency pair.
+         *
+         * @param string $currencyPair The currency pair like "EUR/USD"
+         * @param array $options An array of query options
+         * @return \Exchanger\ExchangeRate 
+         * @static 
+         */ 
+        public static function latest($currencyPair, $options = array())
+        {
+            return \Swap\Swap::latest($currencyPair, $options);
+        }
+        
+        /**
+         * Quotes a currency pair.
+         *
+         * @param string $currencyPair The currency pair like "EUR/USD"
+         * @param \DateTimeInterface $date An optional date for historical rates
+         * @param array $options An array of query options
+         * @return \Exchanger\ExchangeRate 
+         * @static 
+         */ 
+        public static function historical($currencyPair, $date, $options = array())
+        {
+            return \Swap\Swap::historical($currencyPair, $date, $options);
+        }
+         
+    }
+ 
+}
+
 namespace Laracasts\Flash { 
 
     class Flash {
@@ -17074,6 +17109,8 @@ namespace  {
     class Shortcode extends \Webwizo\Shortcodes\Facades\Shortcode {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
+
+    class Swap extends \Swap\Laravel\Facades\Swap {}
 
     class Flash extends \Laracasts\Flash\Flash {}
 
