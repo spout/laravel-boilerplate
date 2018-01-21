@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.28 on 2018-01-04.
+ * Generated for Laravel 5.5.32 on 2018-01-21.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -2179,6 +2179,17 @@ namespace Illuminate\Support\Facades {
         public static function setEchoFormat($format)
         {
             \Illuminate\View\Compilers\BladeCompiler::setEchoFormat($format);
+        }
+        
+        /**
+         * Set the echo format to double encode entities.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function doubleEncode()
+        {
+            \Illuminate\View\Compilers\BladeCompiler::doubleEncode();
         }
         
         /**
@@ -5707,7 +5718,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string|array $view
          * @param array $data
-         * @return \Illuminate\View\View 
+         * @return string 
          * @static 
          */ 
         public static function render($view, $data = array())
@@ -11094,6 +11105,17 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Get the default named parameters used by the URL generator.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getDefaultParameters()
+        {
+            return \Illuminate\Routing\UrlGenerator::getDefaultParameters();
+        }
+        
+        /**
          * Force the scheme for URLs.
          *
          * @param string $schema
@@ -13962,110 +13984,6 @@ namespace Webwizo\Shortcodes\Facades {
  
 }
 
-namespace Laracasts\Flash { 
-
-    class Flash {
-        
-        /**
-         * Flash an information message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function info($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::info($message);
-        }
-        
-        /**
-         * Flash a success message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function success($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::success($message);
-        }
-        
-        /**
-         * Flash an error message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function error($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::error($message);
-        }
-        
-        /**
-         * Flash a warning message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function warning($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::warning($message);
-        }
-        
-        /**
-         * Flash a general message.
-         *
-         * @param string|null $message
-         * @param string|null $level
-         * @return $this 
-         * @static 
-         */ 
-        public static function message($message = null, $level = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::message($message, $level);
-        }
-        
-        /**
-         * Flash an overlay modal.
-         *
-         * @param string|null $message
-         * @param string $title
-         * @return $this 
-         * @static 
-         */ 
-        public static function overlay($message = null, $title = 'Notice')
-        {
-            return \Laracasts\Flash\FlashNotifier::overlay($message, $title);
-        }
-        
-        /**
-         * Add an "important" flash to the session.
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function important()
-        {
-            return \Laracasts\Flash\FlashNotifier::important();
-        }
-        
-        /**
-         * Clear all registered messages.
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function clear()
-        {
-            return \Laracasts\Flash\FlashNotifier::clear();
-        }
-         
-    }
- 
-}
-
 namespace Barryvdh\Debugbar { 
 
     class Facade {
@@ -14608,6 +14526,110 @@ namespace Barryvdh\Debugbar {
         {
             //Method inherited from \DebugBar\DebugBar            
             return \Barryvdh\Debugbar\LaravelDebugbar::offsetUnset($key);
+        }
+         
+    }
+ 
+}
+
+namespace Laracasts\Flash { 
+
+    class Flash {
+        
+        /**
+         * Flash an information message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function info($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::info($message);
+        }
+        
+        /**
+         * Flash a success message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function success($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::success($message);
+        }
+        
+        /**
+         * Flash an error message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function error($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::error($message);
+        }
+        
+        /**
+         * Flash a warning message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function warning($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::warning($message);
+        }
+        
+        /**
+         * Flash a general message.
+         *
+         * @param string|null $message
+         * @param string|null $level
+         * @return $this 
+         * @static 
+         */ 
+        public static function message($message = null, $level = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::message($message, $level);
+        }
+        
+        /**
+         * Flash an overlay modal.
+         *
+         * @param string|null $message
+         * @param string $title
+         * @return $this 
+         * @static 
+         */ 
+        public static function overlay($message = null, $title = 'Notice')
+        {
+            return \Laracasts\Flash\FlashNotifier::overlay($message, $title);
+        }
+        
+        /**
+         * Add an "important" flash to the session.
+         *
+         * @return $this 
+         * @static 
+         */ 
+        public static function important()
+        {
+            return \Laracasts\Flash\FlashNotifier::important();
+        }
+        
+        /**
+         * Clear all registered messages.
+         *
+         * @return $this 
+         * @static 
+         */ 
+        public static function clear()
+        {
+            return \Laracasts\Flash\FlashNotifier::clear();
         }
          
     }
@@ -17051,9 +17073,9 @@ namespace  {
 
     class Shortcode extends \Webwizo\Shortcodes\Facades\Shortcode {}
 
-    class Flash extends \Laracasts\Flash\Flash {}
-
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
+
+    class Flash extends \Laracasts\Flash\Flash {}
 
     class Excel extends \Maatwebsite\Excel\Facades\Excel {}
 
