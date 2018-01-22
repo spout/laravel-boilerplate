@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Filters;
 
 use Intervention\Image\Image;

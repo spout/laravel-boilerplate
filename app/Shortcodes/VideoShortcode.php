@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Shortcodes;
 
 use Embed\Embed;

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Traits\Crud;
 
 use Illuminate\Http\Request;

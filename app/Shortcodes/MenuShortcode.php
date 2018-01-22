@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Shortcodes;
 
 use App\Providers\Directives\MenuDirective;

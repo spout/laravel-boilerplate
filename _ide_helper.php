@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.32 on 2018-01-21.
+ * Generated for Laravel 5.5.32 on 2018-01-22.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13984,6 +13984,41 @@ namespace Webwizo\Shortcodes\Facades {
  
 }
 
+namespace Swap\Laravel\Facades { 
+
+    class Swap {
+        
+        /**
+         * Quotes a currency pair.
+         *
+         * @param string $currencyPair The currency pair like "EUR/USD"
+         * @param array $options An array of query options
+         * @return \Exchanger\ExchangeRate 
+         * @static 
+         */ 
+        public static function latest($currencyPair, $options = array())
+        {
+            return \Swap\Swap::latest($currencyPair, $options);
+        }
+        
+        /**
+         * Quotes a currency pair.
+         *
+         * @param string $currencyPair The currency pair like "EUR/USD"
+         * @param \DateTimeInterface $date An optional date for historical rates
+         * @param array $options An array of query options
+         * @return \Exchanger\ExchangeRate 
+         * @static 
+         */ 
+        public static function historical($currencyPair, $date, $options = array())
+        {
+            return \Swap\Swap::historical($currencyPair, $date, $options);
+        }
+         
+    }
+ 
+}
+
 namespace Barryvdh\Debugbar { 
 
     class Facade {
@@ -14526,41 +14561,6 @@ namespace Barryvdh\Debugbar {
         {
             //Method inherited from \DebugBar\DebugBar            
             return \Barryvdh\Debugbar\LaravelDebugbar::offsetUnset($key);
-        }
-         
-    }
- 
-}
-
-namespace Swap\Laravel\Facades { 
-
-    class Swap {
-        
-        /**
-         * Quotes a currency pair.
-         *
-         * @param string $currencyPair The currency pair like "EUR/USD"
-         * @param array $options An array of query options
-         * @return \Exchanger\ExchangeRate 
-         * @static 
-         */ 
-        public static function latest($currencyPair, $options = array())
-        {
-            return \Swap\Swap::latest($currencyPair, $options);
-        }
-        
-        /**
-         * Quotes a currency pair.
-         *
-         * @param string $currencyPair The currency pair like "EUR/USD"
-         * @param \DateTimeInterface $date An optional date for historical rates
-         * @param array $options An array of query options
-         * @return \Exchanger\ExchangeRate 
-         * @static 
-         */ 
-        public static function historical($currencyPair, $date, $options = array())
-        {
-            return \Swap\Swap::historical($currencyPair, $date, $options);
         }
          
     }
@@ -17108,9 +17108,9 @@ namespace  {
 
     class Shortcode extends \Webwizo\Shortcodes\Facades\Shortcode {}
 
-    class Debugbar extends \Barryvdh\Debugbar\Facade {}
-
     class Swap extends \Swap\Laravel\Facades\Swap {}
+
+    class Debugbar extends \Barryvdh\Debugbar\Facade {}
 
     class Flash extends \Laracasts\Flash\Flash {}
 

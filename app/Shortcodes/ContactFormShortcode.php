@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Shortcodes;
 
 class ContactFormShortcode

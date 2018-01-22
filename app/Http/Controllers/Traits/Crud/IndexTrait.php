@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Traits\Crud;
 
 use Yajra\DataTables\DataTables;

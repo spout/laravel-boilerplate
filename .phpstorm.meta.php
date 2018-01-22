@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-01-21.
+    * Generated on 2018-01-22.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -48,6 +48,7 @@ namespace PHPSTORM_META {
         'xinax::gettext.update' => \Xinax\LaravelGettext\Commands\GettextUpdate::class,
         'swap.http_client' => \Http\Adapter\Guzzle6\Client::class,
         'swap.request_factory' => \Http\Message\MessageFactory\GuzzleMessageFactory::class,
+        'swap.cache_item_pool' => \Swap\Laravel\LaravelStoreCachePool::class,
         'swap.chain' => \Exchanger\Service\Chain::class,
         'swap.exchange_rate_provider' => \Exchanger\Exchanger::class,
         'swap' => \Swap\Swap::class,
@@ -210,6 +211,7 @@ namespace PHPSTORM_META {
         'xinax::gettext.update' => \Xinax\LaravelGettext\Commands\GettextUpdate::class,
         'swap.http_client' => \Http\Adapter\Guzzle6\Client::class,
         'swap.request_factory' => \Http\Message\MessageFactory\GuzzleMessageFactory::class,
+        'swap.cache_item_pool' => \Swap\Laravel\LaravelStoreCachePool::class,
         'swap.chain' => \Exchanger\Service\Chain::class,
         'swap.exchange_rate_provider' => \Exchanger\Exchanger::class,
         'swap' => \Swap\Swap::class,
@@ -372,6 +374,7 @@ namespace PHPSTORM_META {
         'xinax::gettext.update' => \Xinax\LaravelGettext\Commands\GettextUpdate::class,
         'swap.http_client' => \Http\Adapter\Guzzle6\Client::class,
         'swap.request_factory' => \Http\Message\MessageFactory\GuzzleMessageFactory::class,
+        'swap.cache_item_pool' => \Swap\Laravel\LaravelStoreCachePool::class,
         'swap.chain' => \Exchanger\Service\Chain::class,
         'swap.exchange_rate_provider' => \Exchanger\Exchanger::class,
         'swap' => \Swap\Swap::class,
@@ -534,6 +537,7 @@ namespace PHPSTORM_META {
         'xinax::gettext.update' => \Xinax\LaravelGettext\Commands\GettextUpdate::class,
         'swap.http_client' => \Http\Adapter\Guzzle6\Client::class,
         'swap.request_factory' => \Http\Message\MessageFactory\GuzzleMessageFactory::class,
+        'swap.cache_item_pool' => \Swap\Laravel\LaravelStoreCachePool::class,
         'swap.chain' => \Exchanger\Service\Chain::class,
         'swap.exchange_rate_provider' => \Exchanger\Exchanger::class,
         'swap' => \Swap\Swap::class,
@@ -696,6 +700,7 @@ namespace PHPSTORM_META {
         'xinax::gettext.update' => \Xinax\LaravelGettext\Commands\GettextUpdate::class,
         'swap.http_client' => \Http\Adapter\Guzzle6\Client::class,
         'swap.request_factory' => \Http\Message\MessageFactory\GuzzleMessageFactory::class,
+        'swap.cache_item_pool' => \Swap\Laravel\LaravelStoreCachePool::class,
         'swap.chain' => \Exchanger\Service\Chain::class,
         'swap.exchange_rate_provider' => \Exchanger\Exchanger::class,
         'swap' => \Swap\Swap::class,
@@ -858,6 +863,7 @@ namespace PHPSTORM_META {
         'xinax::gettext.update' => \Xinax\LaravelGettext\Commands\GettextUpdate::class,
         'swap.http_client' => \Http\Adapter\Guzzle6\Client::class,
         'swap.request_factory' => \Http\Message\MessageFactory\GuzzleMessageFactory::class,
+        'swap.cache_item_pool' => \Swap\Laravel\LaravelStoreCachePool::class,
         'swap.chain' => \Exchanger\Service\Chain::class,
         'swap.exchange_rate_provider' => \Exchanger\Exchanger::class,
         'swap' => \Swap\Swap::class,
@@ -1020,6 +1026,7 @@ namespace PHPSTORM_META {
         'xinax::gettext.update' => \Xinax\LaravelGettext\Commands\GettextUpdate::class,
         'swap.http_client' => \Http\Adapter\Guzzle6\Client::class,
         'swap.request_factory' => \Http\Message\MessageFactory\GuzzleMessageFactory::class,
+        'swap.cache_item_pool' => \Swap\Laravel\LaravelStoreCachePool::class,
         'swap.chain' => \Exchanger\Service\Chain::class,
         'swap.exchange_rate_provider' => \Exchanger\Exchanger::class,
         'swap' => \Swap\Swap::class,

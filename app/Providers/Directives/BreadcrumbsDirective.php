@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Providers\Directives;
 
 class BreadcrumbsDirective

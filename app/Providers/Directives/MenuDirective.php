@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Providers\Directives;
 
 use App\Models\Menu;

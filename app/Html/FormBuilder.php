@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Html;
 
 use Collective\Html\FormBuilder as CollectiveFormBuilder;
