@@ -1,5 +1,7 @@
 @extends('auth.layout')
 
+@section('title', _i("Login"))
+
 @section('content')
     <div class="card">
         <div class="card-header">{{ _i("Login") }}</div>
