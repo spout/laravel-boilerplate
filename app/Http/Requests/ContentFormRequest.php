@@ -9,7 +9,10 @@ class ContentFormRequest extends FormRequest
     protected $fields = [
         'title' => 'required',
         //'slug' => 'required',
-        'path' => 'required',
+        'path' => [
+            'required',
+            'regex:/[a-z0-9-\/]+/'
+        ],
     ];
 
     /**
@@ -44,26 +47,10 @@ class ContentFormRequest extends FormRequest
     public function messages()
     {
         $messages = [];
-        $locales = \Config::get('app.locales');
-
-        foreach ($this->fields as $field => $rule) {
-            foreach ($locales as $lang => $locale) {
-                switch ($field) {
-                    case 'title':
-                        $message = _i("The title (%s) field is required.", $lang);
-                        break;
-
-                    case 'path':
-                        $message = _i("The path (%s) field is required.", $lang);
-                        break;
-
-                    default:
-                        $message = _i("This field is required.");
-                        break;
-                }
-
-                $messages["{$field}_{$lang}.required"] = $message;
-            }
+        foreach (\Config::get('app.locales', []) as $lang => $locale) {
+            $messages["title_{$lang}.required"] = _i("The title (%s) field is required.", $lang);
+            $messages["path_{$lang}.required"] = _i("The path (%s) field is required.", $lang);
+            $messages["path_{$lang}.regex"] = _i("The slug must contain only alphanumeric characters and slashes.");
         }
 
         return $messages;
