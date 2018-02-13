@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Advert extends Model
+class Product extends Model
 {
     protected $dates = ['created_at', 'updated_at'];
     protected $guarded = [

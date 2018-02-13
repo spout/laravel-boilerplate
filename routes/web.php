@@ -71,11 +71,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::resource('events', 'EventsController', ['names' => route_resource_names('admin.events.{name}')]);
         Route::resource('currencies', 'CurrenciesController', ['names' => route_resource_names('admin.currencies.{name}')]);
         Route::resource('forms', 'FormsController', ['names' => route_resource_names('admin.forms.{name}')]);
+        Route::resource('offers', 'OffersController', ['names' => route_resource_names('admin.offers.{name}')]);
     });
 
     Route::group(['namespace' => 'Advertiser', 'prefix' => 'advertiser'], function () {
         Route::get('/', 'DashboardController@index')->name('advertiser.dashboard.index');
-        Route::get('adverts/{slug?}', 'AdvertsController@index')->name('advertiser.adverts.index');
+        Route::get('products/{slug?}', 'ProductsController@index')->name('advertiser.products.index');
     });
 
     Route::get('/{path}', 'ContentsController@show')->where('path', '^(?!(elfinder|imagecache)\b)\b[a-z0-9-\/]+')->name('contents.show');

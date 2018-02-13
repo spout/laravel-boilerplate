@@ -48,6 +48,7 @@
                 _i("Blog") => 'admin.blog',
                 _i("Galleries") => 'admin.galleries',
                 _i("Categories") => 'admin.categories',
+                _i("Offers") => 'admin.offers',
                 _i("Menus") => 'admin.menus',
                 _i("Users") => 'admin.users',
                 _i("Contacts") => 'admin.contacts',

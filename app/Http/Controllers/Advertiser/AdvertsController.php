@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Advertiser;
 
-use App\Models\Advert;
+use App\Models\Product;
 use App\Models\Module;
 
-class AdvertsController extends AdvertiserController
+class ProductsController extends AdvertiserController
 {
-    protected static $model = Advert::class;
+    protected static $model = Product::class;
 
     public function index($slug = null)
     {
         $modules = Module::all();
 
-        return view('advertiser.adverts.index', compact('modules', 'slug'));
+        return view('advertiser.products.index', compact('modules', 'slug'));
     }
 }

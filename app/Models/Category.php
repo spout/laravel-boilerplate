@@ -11,8 +11,8 @@ class Category extends Model
 
     public $timestamps = false;
 
-    public function adverts()
+    public function products()
     {
-        return $this->hasMany(Advert::class);
+        return $this->hasMany(Product::class);
     }
 }
