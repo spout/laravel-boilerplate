@@ -72,6 +72,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::resource('currencies', 'CurrenciesController', ['names' => route_resource_names('admin.currencies.{name}')]);
         Route::resource('forms', 'FormsController', ['names' => route_resource_names('admin.forms.{name}')]);
         Route::resource('offers', 'OffersController', ['names' => route_resource_names('admin.offers.{name}')]);
+        Route::resource('products', 'ProductsController', ['names' => route_resource_names('admin.products.{name}')]);
+        Route::resource('prices', 'PricesController', ['names' => route_resource_names('admin.prices.{name}')]);
+        Route::resource('redirections', 'RedirectionsController', ['names' => route_resource_names('admin.redirections.{name}')]);
     });
 
     Route::group(['namespace' => 'Advertiser', 'prefix' => 'advertiser'], function () {

@@ -39,23 +39,26 @@
 </nav>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-3 col-md-2">
             <?php
             $navs = [
+                _i("Categories") => 'admin.categories',
                 _i("Contents") => 'admin.contents',
-                _i("Snippets") => 'admin.snippets',
+                _i("Products") => 'admin.products',
+                _i("Offers") => 'admin.offers',
                 _i("Events") => 'admin.events',
+                _i("Snippets") => 'admin.snippets',
                 _i("Blog") => 'admin.blog',
                 _i("Galleries") => 'admin.galleries',
-                _i("Categories") => 'admin.categories',
-                _i("Offers") => 'admin.offers',
                 _i("Menus") => 'admin.menus',
                 _i("Users") => 'admin.users',
                 _i("Contacts") => 'admin.contacts',
                 _i("File manager") => 'admin.file-manager',
                 _i("Forms") => 'admin.forms',
                 _i("Currencies") => 'admin.currencies',
+                _i("Prices") => 'admin.prices',
                 _i("Settings") => 'admin.settings',
+                _i("Redirections") => 'admin.redirections',
                 _i("Routes") => 'admin.routes',
             ];
             ?>
@@ -67,7 +70,7 @@
                 @endforeach
             </ul>
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-9 col-md-10">
             @include('flash::message')
             @include('includes.validation-errors')
             @yield('content')
