@@ -26,7 +26,7 @@
             {!! Form::password('password_confirmation') !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::button(_i("Reset password"), ['class' => 'btn btn-primary']) !!}
+            {!! Form::button(_i("Reset password"), ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
 
             {!! Form::close() !!}
         </div>

@@ -3,8 +3,8 @@ $idPrefix = isset($idPrefix) ? $idPrefix : 'lang-';
 ?>
 <ul class="nav nav-tabs" role="tablist">
     @foreach(Config::get('app.locales') as $lang => $locale)
-    <li role="presentation" class="{{ $lang == \LaravelLocalization::getCurrentLocale() ? 'active' : '' }}">
-        <a href="#{{ $idPrefix . $lang }}" role="tab" data-toggle="tab">{{ $locale }}</a>
-    </li>
+        <li class="nav-item">
+            <a href="#{{ $idPrefix . $lang }}" class="nav-link{{ $lang == \LaravelLocalization::getCurrentLocale() ? ' active' : '' }}" data-toggle="tab"><img src="{{ asset("img/flags/{$lang}.gif") }}"> {{ $locale }}</a>
+        </li>
     @endforeach
 </ul>

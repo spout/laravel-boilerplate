@@ -68,7 +68,7 @@
     @push('scripts')
     <script>
       $(function () {
-        var menuId = '{{ $object->id }}';
+        var menuSlug = '{{ $object->slug }}';
         var $menuItemsTree = $('#menu-items-tree');
         var fields = ['association', 'route', 'attributes'];
         var i18nFields = ['title', 'url'];
@@ -87,7 +87,7 @@
             'check_callback': true,
             'multiple': false,
             'data': {
-              'url': '{{ route('admin.menus.tree-data', ['id' => $object->id]) }}',
+              'url': '{{ route('admin.menus.tree-data', ['pk' => $object->pk]) }}',
               'data': function (node) {
                 return {'id': node.id};
               }
@@ -135,10 +135,10 @@
               .trigger('change.select2');
           });
         }).on("rename_node.jstree move_node.jstree", function (e, data) {
-          var parentId = data.node.parent == '#' ? null : data.node.parent;
+          var parentId = data.node.parent === '#' ? null : data.node.parent;
           var sort = typeof data.position === 'undefined' ? null : data.position;
           var siblings = data.instance.get_node(data.node.parent).children;
-          var ajaxData = {id: data.node.id, menu_id: menuId, parent_id: parentId, title: data.node.text, sort: sort, siblings: siblings};
+          var ajaxData = {id: data.node.id, menu_slug: menuSlug, parent_id: parentId, title: data.node.text, sort: sort, siblings: siblings};
 
           $.post('{{ route('admin.menus.tree-save') }}', ajaxData)
             .done(function () {

@@ -5,6 +5,8 @@ namespace App\Models;
 class Menu extends Model
 {
     public $timestamps = false;
+    public $incrementing = false;
+    protected $primaryKey = 'slug';
 
     protected $fillable = [
         'title',

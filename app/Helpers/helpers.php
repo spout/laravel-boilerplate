@@ -1,50 +1,4 @@
 <?php
-if (!function_exists('templates_tags_replace')) {
-    /**
-     * @param \App\Models\Booking|\App\Models\Property $modelInstance
-     * @param $subject
-     * @param $html
-     *
-     * @return mixed
-     * @throws Exception
-     */
-    function templates_tags_replace($modelInstance, $subject, $html = false)
-    {
-        $search  = [];
-        $replace = [];
-        foreach (config('templates-tags') as $tag => $label) {
-            list($entity, $attribute) = explode('.', $tag);
-            $search[] = "[$tag]";
-
-            if ($attribute === 'custom_fields') {
-                $attribute = $html === true ? 'custom_fields_html' : 'custom_fields_text';
-            }
-
-            if ($modelInstance instanceof \App\Models\Booking) {
-                switch ($entity) {
-                    case 'booking':
-                        if (in_array($attribute, ['arrival_date', 'departure_date'])) {
-                            $replace[] = $modelInstance->{$attribute}->format('d/m/Y');
-                        } else {
-                            $replace[] = $modelInstance->{$attribute};
-                        }
-                        break;
-
-                    case 'property':
-                        $replace[] = $modelInstance->property[$attribute];
-                        break;
-                }
-            } elseif ($modelInstance instanceof \App\Models\Property) {
-                $replace[] = $modelInstance->{$attribute};
-            } else {
-                throw new Exception("Model instance must be Booking or Property");
-            }
-        }
-
-        return str_replace($search, $replace, $subject);
-    }
-}
-
 if (!function_exists('setting')) {
     function setting($key, $default = null)
     {
@@ -66,14 +20,35 @@ if (!function_exists('setting')) {
 }
 
 if (!function_exists('human_filesize')) {
-    function human_filesize($size, $precision = 2) {
-        $units = array('B','kB','MB','GB','TB','PB','EB','ZB','YB');
+    function human_filesize($size, $precision = 2)
+    {
+        $units = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
         $step = 1024;
         $i = 0;
         while (($size / $step) > 0.9) {
             $size = $size / $step;
             $i++;
         }
-        return round($size, $precision). ' ' . $units[$i];
+        return round($size, $precision) . ' ' . $units[$i];
+    }
+}
+
+if (!function_exists('route_resource_names')) {
+    /**
+     * @param $pattern
+     * @return array
+     * @throws Exception
+     */
+    function route_resource_names($pattern)
+    {
+        if (strpos($pattern, '{name}') === false) {
+            throw new \Exception("Missing {name} in pattern.");
+        }
+        $resources = ['store', 'index', 'create', 'destroy', 'update', 'show', 'edit'];
+        $names = [];
+        foreach ($resources as $resource) {
+            $names[$resource] = str_replace('{name}', $resource, $pattern);
+        }
+        return $names;
     }
 }

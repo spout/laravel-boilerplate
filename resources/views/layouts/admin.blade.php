@@ -23,33 +23,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-            <?php
-            $navs = [
-                ['title' => _i("Contents"), 'icon' => 'pencil', 'route' => 'admin.contents.index'],
-                ['title' => _i("Blog"), 'icon' => 'newspaper-o', 'route' => 'admin.blog.index'],
-                ['title' => _i("Categories"), 'icon' => 'folder', 'route' => 'admin.categories.index'],
-                ['title' => _i("Menus"), 'icon' => 'link', 'route' => 'admin.menus.index'],
-                ['title' => _i("Snippets"), 'icon' => 'puzzle-piece', 'route' => 'admin.snippets.index'],
-                //['title' => _i("Properties"), 'icon' => 'home', 'route' => 'admin.properties.index'],
-                //['title' => _i("Event templates"), 'icon' => 'calendar-o', 'route' => 'admin.event-templates.index'],
-                //['title' => _i("Email templates"), 'icon' => 'envelope-o', 'route' => 'admin.email-templates.index'],
-                //['title' => _i("Emails"), 'icon' => 'envelope', 'route' => 'admin.emails.index'],
-                ['title' => _i("Users"), 'icon' => 'users', 'route' => 'admin.users.index'],
-                ['title' => _i("Contacts"), 'icon' => 'envelope', 'route' => 'admin.contacts.index'],
-                ['title' => _i("File manager"), 'icon' => 'folder-o', 'route' => 'admin.file-manager.index'],
-                ['title' => _i("Settings"), 'icon' => 'cogs', 'route' => 'admin.settings.index'],
-                ['title' => _i("Routes"), 'icon' => 'road', 'route' => 'admin.routes.index'],
-            ];
-            ?>
-            <ul class="navbar-nav mr-auto">
-                @foreach($navs as $nav)
-                    <li class="nav-item">
-                        <a href="{{ route($nav['route']) }}" class="nav-link">{{--<i class="fa fa-{{ $nav['icon'] }} fa-fw"></i> --}}{{ $nav['title'] }}</a>
-                    </li>
-                @endforeach
-            </ul>
-            @if (Auth::check())
+        @if (Auth::check())
+            <div class="collapse navbar-collapse justify-content-end" id="navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="navbar-text">{{ Auth::user()->name }}</li>
                     <li class="nav-item">
@@ -58,15 +33,45 @@
                         {{ Form::close() }}
                     </li>
                 </ul>
-            @endif
-        </div>
+            </div>
+        @endif
     </div>
 </nav>
-
 <div class="container-fluid">
-    @include('flash::message')
-    @include('includes.validation-errors')
-    @yield('content')
+    <div class="row">
+        <div class="col-sm-2">
+            <?php
+            $navs = [
+                _i("Contents") => 'admin.contents',
+                _i("Snippets") => 'admin.snippets',
+                _i("Events") => 'admin.events',
+                _i("Blog") => 'admin.blog',
+                _i("Galleries") => 'admin.galleries',
+                _i("Categories") => 'admin.categories',
+                _i("Menus") => 'admin.menus',
+                _i("Users") => 'admin.users',
+                _i("Contacts") => 'admin.contacts',
+                _i("File manager") => 'admin.file-manager',
+                _i("Forms") => 'admin.forms',
+                _i("Currencies") => 'admin.currencies',
+                _i("Settings") => 'admin.settings',
+                _i("Routes") => 'admin.routes',
+            ];
+            ?>
+            <ul class="nav nav-pills flex-column">
+                @foreach($navs as $title => $route)
+                    <li class="nav-item">
+                        <a href="{{ route("$route.index") }}" class="nav-link{{ starts_with(Route::currentRouteName(), "$route.") ? ' active' : '' }}">{{ $title }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="col-sm-10">
+            @include('flash::message')
+            @include('includes.validation-errors')
+            @yield('content')
+        </div>
+    </div>
 </div>
 <script src="{{ asset('build/admin.js') }}"></script>
 @include('includes.scripts')

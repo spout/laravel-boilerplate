@@ -24,7 +24,7 @@
             {!! Form::password('password_confirmation') !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::button(_i("Register"), ['class' => 'btn btn-primary']) !!}
+            {!! Form::button(_i("Register"), ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
 
             {!! Form::close() !!}
         </div>

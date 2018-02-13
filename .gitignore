@@ -8,3 +8,4 @@
 /config/google-calendar/*
 /resources/assets/scss/_theme.scss
 /public/build/
+/routes/site.php

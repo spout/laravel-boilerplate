@@ -1,1 +1,0 @@
-<a href="mailto:{{ $booking->email }}">{{ $booking->email }}</a>

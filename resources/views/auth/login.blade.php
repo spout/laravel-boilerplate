@@ -20,7 +20,7 @@
             {!! Form::checkbox('remember') !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::button(_i("Login"), ['class' => 'btn btn-primary']) !!}
+            {!! Form::button(_i("Login"), ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
 
             <a class="btn btn-link" href="{{ route('password.request') }}">
                 {{ _i("Forgot your password?") }}

@@ -12,10 +12,10 @@ class MenusController extends AdminController
     protected static $model = Menu::class;
     protected static $dataTableClass = MenusDataTable::class;
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $pk)
     {
-        $response = parent::update($request, $id);
-        $menu = Menu::find($id);
+        $response = parent::update($request, $pk);
+        $menu = Menu::find($pk);
         foreach ($request->input('menuItems', []) as $item) {
             if (empty($item['id'])) {
                 $menu->menuItems()->create($item);
@@ -29,9 +29,9 @@ class MenusController extends AdminController
         return $response;
     }
 
-    public function treeData($id)
+    public function treeData($pk)
     {
-        $menu = Menu::find($id);
+        $menu = Menu::find($pk);
 
         $data = [];
         if ($menu->menuItems->isNotEmpty()) {

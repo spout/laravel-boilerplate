@@ -10,11 +10,6 @@ class Post extends Model
         'updated_at'
     ];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
     public function getAbsoluteUrlAttribute()
     {
         return route('blog.show', ['pk' => $this->pk, 'slug' => $this->slug]);

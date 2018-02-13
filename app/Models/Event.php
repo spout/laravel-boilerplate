@@ -2,20 +2,22 @@
 
 namespace App\Models;
 
+use App\Scopes\OrderScope;
+
 class Event extends Model
 {
-    public $incrementing = false;
-
     protected $guarded = [];
-    protected $dates = ['start', 'end', 'created_at', 'updated_at'];
+    protected $dates = ['date_start', 'date_end', 'created_at', 'updated_at'];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new OrderScope('date_start'));
+    }
 
     public function eventType()
     {
-        return $this->belongsTo(EventType::class, 'type', 'event_type');
-    }
-
-    public function booking()
-    {
-        return $this->belongsTo(Booking::class);
+        return $this->belongsTo(EventType::class);
     }
 }

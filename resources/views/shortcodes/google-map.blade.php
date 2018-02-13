@@ -1,0 +1,1 @@
+<div class="google-map"{!! Html::attributes($attributes) !!}></div>

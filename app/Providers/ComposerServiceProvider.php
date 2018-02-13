@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\ViewComposers\CurrentSiteComposer;
 use App\Http\ViewComposers\GlobalComposer;
 use App\Http\ViewComposers\MenuComposer;
 use App\Http\ViewComposers\SnippetComposer;
@@ -29,6 +30,7 @@ class ComposerServiceProvider extends ServiceProvider
             PropertyTypeComposer::class => ['admin.properties.includes.form'],
             EventTemplateComposer::class => ['admin.event-templates.includes.form'],
             SnippetComposer::class => ['admin.snippets.includes.form'],
+            CurrentSiteComposer::class => '*',
         ];
 
         foreach ($composers as $callback => $views) {

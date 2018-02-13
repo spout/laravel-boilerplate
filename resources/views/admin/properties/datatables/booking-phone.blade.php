@@ -1,1 +1,0 @@
-<a href="tel:{{ $booking->phone }}">{{ $booking->phone }}</a>

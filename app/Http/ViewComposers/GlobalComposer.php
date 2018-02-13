@@ -2,6 +2,7 @@
 
 namespace App\Http\ViewComposers;
 
+use App\Models\Currency;
 use App\Models\MenuItem;
 use Illuminate\View\View;
 
@@ -16,6 +17,9 @@ class GlobalComposer
                 ->get()
                 ->buildTree();
             $view->with(compact('menuPrincipal'));
+
+            $currencies = Currency::all();
+            $view->with(compact('currencies'));
         }
     }
 }

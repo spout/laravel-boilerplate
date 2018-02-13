@@ -1,5 +1,5 @@
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.0/ace.js"></script>
 <script>
     $(function () {
         // https://gist.github.com/duncansmart/5267653
@@ -26,7 +26,7 @@
             // copy back to textarea on form submit...
             textarea.closest('form').submit(function () {
                 textarea.val(editor.getSession().getValue());
-            })
+            });
         });
     });
 </script>

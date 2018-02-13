@@ -5,10 +5,15 @@
 @import "~jquery-colorbox/example1/colorbox.css";
 @import "~select2/dist/css/select2.min.css";
 @import "~jstree/dist/themes/default/style.css";
+@import "global";
 
 body {
   //padding-top: 70px;
   padding-bottom: 15px;
+}
+
+img {
+  vertical-align: baseline;
 }
 
 iframe.elfinder {

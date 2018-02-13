@@ -18,7 +18,6 @@ class Content extends Model
 
     public static $translatableColumns = [
         'title',
-        'slug',
         'path',
         'content',
     ];

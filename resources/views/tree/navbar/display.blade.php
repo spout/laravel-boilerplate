@@ -4,8 +4,8 @@
         @include('tree.navbar.recurse')
     </li>
 @else
-    <li>
-        <a href="{{ $node->associatedUrl }}"{!! Html::attributes($node->attributes_to_array) !!}>{{ $node->title }}</a>
+    <li class="nav-item">
+        <a href="{{ $node->associatedUrl }}"{!! Html::attributes(array_merge(['class' => 'nav-link'], $node->attributes_to_array ?? [])) !!}>{{ $node->title }}</a>
         @include('tree.navbar.recurse')
     </li>
 @endif

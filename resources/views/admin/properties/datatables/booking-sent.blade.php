@@ -1,1 +1,0 @@
-<span class="badge">{{ $booking->emails->count() }}</span>

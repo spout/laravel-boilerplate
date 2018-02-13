@@ -5,7 +5,7 @@
     $confirm = _i('Are you sure?');
     $onclick = "if (confirm('$confirm')) { document.$formName.submit(); } event.returnValue = false; return false;";
     ?>
-    <a href="#" onclick="{!! $onclick !!}" class="btn btn-danger"><i class="fa fa-trash"></i> {{ _i('Delete') }}</a>
+    <a href="#" onclick="{!! $onclick !!}" class="btn btn-danger btn-sm">{{ _i('Delete') }}</a>
     {{ Form::open(['route' => $route, 'method' => 'delete', 'name' => $formName]) }}
     {{ Form::close() }}
 @endif

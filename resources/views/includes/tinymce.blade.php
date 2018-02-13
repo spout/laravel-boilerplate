@@ -11,7 +11,7 @@ $languageUrl = asset($languagePath);
 ?>
 <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
 <script>
-    tinymce.init({
+    window.tinymceInitSettings = {
         selector: 'textarea.wysiwyg',
         content_css: '{{ asset('build/app.css') }}',
         height: "200",
@@ -28,7 +28,9 @@ $languageUrl = asset($languagePath);
         relative_urls: false,
         entity_encoding : "raw",
         forced_root_block: false
-    });
+    };
+
+    tinymce.init(window.tinymceInitSettings);
 
     function elFinderBrowser(field_name, url, type, win) {
         tinymce.activeEditor.windowManager.open({

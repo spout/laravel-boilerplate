@@ -18,35 +18,37 @@
     <link rel="manifest" href="{{ asset('manifest.json') }}">
 </head>
 <body>
-<nav class="navbar navbar-light navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                <span class="hidden-xs">{{ _i("Menu") }}</span> <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand animated fadeInDown" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-            {{--@menu(['slug' => 'principal'])--}}
-            @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
-
-            {{--<ul class="nav navbar-nav navbar-right">--}}
-                {{--@if (Auth::check())--}}
-                    {{--<li class="navbar-text">{{ Auth::user()->name }}</li>--}}
-                    {{--<li>--}}
-                        {{--<a href="#" onclick="document.logout.submit();return false;"><i class="fa fa-sign-out"></i> {{ _i("Logout") }}</a>--}}
-                        {{--{{ Form::open(['route' => 'logout', 'method' => 'post', 'name' => 'logout']) }}--}}
-                        {{--{{ Form::close() }}--}}
-                    {{--</li>--}}
-                {{--@else--}}
-                    {{--<li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> {{ _i("Login") }}</a></li>--}}
-                {{--@endif--}}
-            {{--</ul>--}}
-        </div>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
     </div>
 </nav>
-{{--<div class="container">--}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+        @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
+    </div>
+</nav>
+<div class="container-fluid">
     @if (Route::current()->getName() !== 'homepage')
         @hasSection('breadcrumbs')
             <div class="container">
@@ -62,7 +64,12 @@
     <div id="content">
         @yield('content')
     </div>
-{{--</div>--}}
+    <footer>
+        @menu(['slug' => 'footer'])
+        @snippet(['slug' => 'footer-copyright'])
+    </footer>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}"></script>
 <script src="{{ asset('build/app.js') }}"></script>
 @include('includes.scripts')
 @stack('scripts')

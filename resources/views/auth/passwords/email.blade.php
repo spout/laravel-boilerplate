@@ -18,7 +18,7 @@
             {!! Form::email('email') !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::button(_i("Send password reset link"), ['class' => 'btn btn-primary']) !!}
+            {!! Form::button(_i("Send password reset link"), ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
 
             {!! Form::close() !!}
         </div>
