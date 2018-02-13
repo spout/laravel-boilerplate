@@ -57,6 +57,7 @@
                 _i("Forms") => 'admin.forms',
                 _i("Currencies") => 'admin.currencies',
                 _i("Prices") => 'admin.prices',
+                _i("Sites") => 'admin.sites',
                 _i("Settings") => 'admin.settings',
                 _i("Redirections") => 'admin.redirections',
                 _i("Routes") => 'admin.routes',
