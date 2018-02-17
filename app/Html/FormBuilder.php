@@ -199,24 +199,26 @@ class FormBuilder extends CollectiveFormBuilder
     /**
      * Create a checkbox input field.
      *
-     * @param  string $name
-     * @param  mixed $value
-     * @param  bool $checked
-     * @param  array $options
-     *
-     * @return string
+     * @param string $name
+     * @param int $value
+     * @param null $label
+     * @param null $checked
+     * @param array $options
+     * @return \Illuminate\Support\HtmlString|string
      */
     public function checkbox(
         $name,
         $value = 1,
+        $label = null,
         $checked = null,
         $options = []
     ) {
-        $checkable = parent::checkbox($name, $value, $checked, $options);
+        $class = 'form-check-input';
+        $class .= empty($label) ? ' position-static' : '';
+        $id = "{$name}_{$value}";
+        $checkable = parent::checkbox($name, $value, $checked, array_merge(compact('class', 'id'), $options));
 
-        return array_key_exists('label', $options) ?
-            $this->wrapCheckable($options['label'], 'checkbox', $checkable) :
-            $checkable;
+        return $this->wrapCheckable($checkable, $id, $label);
     }
 
     /**
@@ -237,9 +239,12 @@ class FormBuilder extends CollectiveFormBuilder
         $checked = null,
         $options = []
     ) {
-        $checkable = parent::radio($name, $value, $checked, $options);
+        $class = 'form-check-input';
+        $class .= empty($label) ? ' position-static' : '';
+        $id = "{$name}_{$value}";
+        $checkable = parent::radio($name, $value, $checked, array_merge(compact('class', 'id'), $options));
 
-        return $this->wrapCheckable($label, 'radio', $checkable);
+        return $this->wrapCheckable($checkable, $id, $label);
     }
 
     /**
@@ -260,9 +265,12 @@ class FormBuilder extends CollectiveFormBuilder
         $checked = null,
         $options = []
     ) {
-        $checkable = parent::checkbox($name, $value, $checked, $options);
+        $class = 'form-check-input';
+        $class .= empty($label) ? ' position-static' : '';
+        $id = "{$name}_{$value}";
+        $checkable = parent::checkbox($name, $value, $checked, array_merge(compact('class', 'id'), $options));
 
-        return $this->wrapInlineCheckable($label, 'checkbox', $checkable);
+        return $this->wrapInlineCheckable($checkable, $id, $label);
     }
 
     /**
@@ -277,9 +285,12 @@ class FormBuilder extends CollectiveFormBuilder
      * @return string
      */
     public function inlineRadio($name, $value = null, $label = null, $checked = null, $options = []) {
-        $checkable = parent::radio($name, $value, $checked, $options);
+        $class = 'form-check-input';
+        $class .= empty($label) ? ' position-static' : '';
+        $id = "{$name}_{$value}";
+        $checkable = parent::radio($name, $value, $checked, array_merge(compact('class', 'id'), $options));
 
-        return $this->wrapInlineCheckable($label, 'radio', $checkable);
+        return $this->wrapInlineCheckable($checkable, $id, $label);
     }
 
     /**
@@ -396,29 +407,29 @@ class FormBuilder extends CollectiveFormBuilder
     /**
      * Wrap the given checkable in the necessary wrappers.
      *
-     * @param  mixed $label
-     * @param  string $type
-     * @param  string $checkable
-     *
+     * @param $checkable
+     * @param $for
+     * @param $label
      * @return string
      */
-    private function wrapCheckable($label, $type, $checkable)
+    private function wrapCheckable($checkable, $for, $label)
     {
-        return '<div class="' . $type . '"><label>' . $checkable . ' ' . $label . '</label></div>';
+        $checkable .= empty($label) ? '' : parent::label($for, $label, ['class' => 'form-check-label']);
+        return '<div class="form-check">' . $checkable . '</div>';
     }
 
     /**
      * Wrap the given checkable in the necessary inline wrappers.
      *
-     * @param  mixed $label
-     * @param  string $type
-     * @param  string $checkable
-     *
+     * @param $checkable
+     * @param $for
+     * @param $label
      * @return string
      */
-    private function wrapInlineCheckable($label, $type, $checkable)
+    private function wrapInlineCheckable($checkable, $for, $label)
     {
-        return '<div class="' . $type . '-inline">' . $checkable . ' ' . $label . '</div>';
+        $checkable .= empty($label) ? '' : parent::label($for, $label, ['class' => 'form-check-label']);
+        return '<div class="form-check form-check-inline">' . $checkable . '</div>';
     }
 
     /**
