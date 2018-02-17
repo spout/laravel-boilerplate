@@ -215,7 +215,7 @@ class FormBuilder extends CollectiveFormBuilder
     ) {
         $class = 'form-check-input';
         $class .= empty($label) ? ' position-static' : '';
-        $id = "{$name}_{$value}";
+        $id = str_slug("{$name}_{$value}");
         $checkable = parent::checkbox($name, $value, $checked, array_merge(compact('class', 'id'), $options));
 
         return $this->wrapCheckable($checkable, $id, $label);
@@ -241,7 +241,7 @@ class FormBuilder extends CollectiveFormBuilder
     ) {
         $class = 'form-check-input';
         $class .= empty($label) ? ' position-static' : '';
-        $id = "{$name}_{$value}";
+        $id = str_slug("{$name}_{$value}");
         $checkable = parent::radio($name, $value, $checked, array_merge(compact('class', 'id'), $options));
 
         return $this->wrapCheckable($checkable, $id, $label);
@@ -267,7 +267,7 @@ class FormBuilder extends CollectiveFormBuilder
     ) {
         $class = 'form-check-input';
         $class .= empty($label) ? ' position-static' : '';
-        $id = "{$name}_{$value}";
+        $id = str_slug("{$name}_{$value}");
         $checkable = parent::checkbox($name, $value, $checked, array_merge(compact('class', 'id'), $options));
 
         return $this->wrapInlineCheckable($checkable, $id, $label);
@@ -287,7 +287,7 @@ class FormBuilder extends CollectiveFormBuilder
     public function inlineRadio($name, $value = null, $label = null, $checked = null, $options = []) {
         $class = 'form-check-input';
         $class .= empty($label) ? ' position-static' : '';
-        $id = "{$name}_{$value}";
+        $id = str_slug("{$name}_{$value}");
         $checkable = parent::radio($name, $value, $checked, array_merge(compact('class', 'id'), $options));
 
         return $this->wrapInlineCheckable($checkable, $id, $label);
