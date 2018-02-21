@@ -137,7 +137,7 @@ class FormBuilder extends CollectiveFormBuilder
 
         // Call the parent select method so that Laravel can handle
         // the rest of the select set up.
-        return parent::select($name, $list, $selected, $selectAttributes, $optionsAttributes);
+        return parent::select($name, $list, $selected, $selectAttributes, $optionsAttributes, $optgroupsAttributes);
     }
 
     /**
