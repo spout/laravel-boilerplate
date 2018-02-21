@@ -128,10 +128,10 @@ class FormBuilder extends CollectiveFormBuilder
      * @param null $selected
      * @param array $selectAttributes
      * @param array $optionsAttributes
-     *
+     * @param array $optgroupsAttributes
      * @return \Illuminate\Support\HtmlString
      */
-    public function select($name, $list = [], $selected = null, array $selectAttributes = [], array $optionsAttributes = [])
+    public function select($name, $list = [], $selected = null, array $selectAttributes = [], array $optionsAttributes = [], $optgroupsAttributes = [])
     {
         $selectAttributes = $this->appendClassToOptions('form-control', $selectAttributes);
 
