@@ -1338,16 +1338,16 @@
         },
         {
             "name": "florianv/exchanger",
-            "version": "0.7.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/florianv/exchanger.git",
-                "reference": "e08ec452562c573bea886af925f2e184611f1dfc"
+                "reference": "14019c34906e7f5dbf55f802dc26b3aa0b9a1a69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/florianv/exchanger/zipball/e08ec452562c573bea886af925f2e184611f1dfc",
-                "reference": "e08ec452562c573bea886af925f2e184611f1dfc",
+                "url": "https://api.github.com/repos/florianv/exchanger/zipball/14019c34906e7f5dbf55f802dc26b3aa0b9a1a69",
+                "reference": "14019c34906e7f5dbf55f802dc26b3aa0b9a1a69",
                 "shasum": ""
             },
             "require": {
@@ -1371,7 +1371,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.3-dev"
+                    "dev-master": "1.0-dev"
                 }
             },
             "autoload": {
@@ -1399,25 +1399,25 @@
                 "exchange rates",
                 "money"
             ],
-            "time": "2017-10-02T06:28:31+00:00"
+            "time": "2018-02-11T09:52:43+00:00"
         },
         {
             "name": "florianv/laravel-swap",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/florianv/laravel-swap.git",
-                "reference": "3b0517d7618029eed372fa8a4b1aa8ff64dca2cf"
+                "reference": "68194acb5c1c7deddfe13d8fa1207844d6f36155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/florianv/laravel-swap/zipball/3b0517d7618029eed372fa8a4b1aa8ff64dca2cf",
-                "reference": "3b0517d7618029eed372fa8a4b1aa8ff64dca2cf",
+                "url": "https://api.github.com/repos/florianv/laravel-swap/zipball/68194acb5c1c7deddfe13d8fa1207844d6f36155",
+                "reference": "68194acb5c1c7deddfe13d8fa1207844d6f36155",
                 "shasum": ""
             },
             "require": {
                 "cache/adapter-common": "^0.3",
-                "florianv/swap": "^3.0",
+                "florianv/swap": "^3.3",
                 "php": "^5.5|^7.0",
                 "psr/cache": "^1.0"
             },
@@ -1468,24 +1468,24 @@
                 "lumen",
                 "money"
             ],
-            "time": "2017-12-05T11:34:51+00:00"
+            "time": "2018-02-19T12:18:01+00:00"
         },
         {
             "name": "florianv/swap",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/florianv/swap.git",
-                "reference": "71067ed45f5bb2dbcb1859d4be6d740407cd5471"
+                "reference": "57c8c553b2bbdd771a87fbf8e91857af228834d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/florianv/swap/zipball/71067ed45f5bb2dbcb1859d4be6d740407cd5471",
-                "reference": "71067ed45f5bb2dbcb1859d4be6d740407cd5471",
+                "url": "https://api.github.com/repos/florianv/swap/zipball/57c8c553b2bbdd771a87fbf8e91857af228834d1",
+                "reference": "57c8c553b2bbdd771a87fbf8e91857af228834d1",
                 "shasum": ""
             },
             "require": {
-                "florianv/exchanger": "~0.3",
+                "florianv/exchanger": "^1.0",
                 "php": "^5.5 || ^7.0"
             },
             "require-dev": {
@@ -1524,7 +1524,7 @@
                 "exchange rates",
                 "money"
             ],
-            "time": "2017-10-02T09:43:13+00:00"
+            "time": "2018-02-19T11:33:52+00:00"
         },
         {
             "name": "google/apiclient",
@@ -1587,16 +1587,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.45",
+            "version": "v0.47",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "35909fbc909bf9f9e0d36dd05b62f4b1d5ffe3ae"
+                "reference": "f4ab0ea8aff4659cf67e3f733b3ab441c30baf5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/35909fbc909bf9f9e0d36dd05b62f4b1d5ffe3ae",
-                "reference": "35909fbc909bf9f9e0d36dd05b62f4b1d5ffe3ae",
+                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/f4ab0ea8aff4659cf67e3f733b3ab441c30baf5d",
+                "reference": "f4ab0ea8aff4659cf67e3f733b3ab441c30baf5d",
                 "shasum": ""
             },
             "require": {
@@ -1620,7 +1620,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-02-03T00:23:12+00:00"
+            "time": "2018-02-17T00:23:05+00:00"
         },
         {
             "name": "google/auth",
@@ -2221,16 +2221,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.5.1",
+            "version": "v5.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "2f6dc39ab3655724a615fe8a652d8b7f04fc9ac6"
+                "reference": "b79edc7acf574144c9811277286b4cafee8a07cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/2f6dc39ab3655724a615fe8a652d8b7f04fc9ac6",
-                "reference": "2f6dc39ab3655724a615fe8a652d8b7f04fc9ac6",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/b79edc7acf574144c9811277286b4cafee8a07cc",
+                "reference": "b79edc7acf574144c9811277286b4cafee8a07cc",
                 "shasum": ""
             },
             "require": {
@@ -2248,6 +2248,7 @@
             },
             "type": "library",
             "extra": {
+                "branch-alias": [],
                 "laravel": {
                     "providers": [
                         "Collective\\Html\\HtmlServiceProvider"
@@ -2281,8 +2282,8 @@
                 }
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
-            "homepage": "http://laravelcollective.com",
-            "time": "2017-08-31T14:46:03+00:00"
+            "homepage": "https://laravelcollective.com",
+            "time": "2018-02-12T14:19:55+00:00"
         },
         {
             "name": "league/flysystem",
@@ -2557,20 +2558,20 @@
         },
         {
             "name": "mcamara/laravel-localization",
-            "version": "v1.3.4",
+            "version": "v1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mcamara/laravel-localization.git",
-                "reference": "fc2188a82611507f85f2219664b0d789f3d38212"
+                "reference": "5fb98b9687613cfccc01469aee6f4a725be98ede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/fc2188a82611507f85f2219664b0d789f3d38212",
-                "reference": "fc2188a82611507f85f2219664b0d789f3d38212",
+                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/5fb98b9687613cfccc01469aee6f4a725be98ede",
+                "reference": "5fb98b9687613cfccc01469aee6f4a725be98ede",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.2||~5.3||~5.4||~5.5",
+                "laravel/framework": "~5.2||~5.3||~5.4||~5.5||~5.6",
                 "php": ">=7.0.0"
             },
             "require-dev": {
@@ -2615,7 +2616,7 @@
                 "localization",
                 "php"
             ],
-            "time": "2018-01-23T15:10:21+00:00"
+            "time": "2018-02-19T09:28:24+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3466,16 +3467,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.9",
+            "version": "2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "c9a3fe35e20eb6eeaca716d6a23cde03f52d1558"
+                "reference": "d305b780829ea4252ed9400b3f5937c2c99b51d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c9a3fe35e20eb6eeaca716d6a23cde03f52d1558",
-                "reference": "c9a3fe35e20eb6eeaca716d6a23cde03f52d1558",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/d305b780829ea4252ed9400b3f5937c2c99b51d4",
+                "reference": "d305b780829ea4252ed9400b3f5937c2c99b51d4",
                 "shasum": ""
             },
             "require": {
@@ -3483,7 +3484,7 @@
             },
             "require-dev": {
                 "phing/phing": "~2.7",
-                "phpunit/phpunit": "~4.0",
+                "phpunit/phpunit": "^4.8.35|^5.7|^6.0",
                 "sami/sami": "~2.0",
                 "squizlabs/php_codesniffer": "~2.0"
             },
@@ -3554,7 +3555,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2017-11-29T06:38:08+00:00"
+            "time": "2018-02-19T04:29:13+00:00"
         },
         {
             "name": "psr/cache",
@@ -5377,16 +5378,16 @@
         },
         {
             "name": "yajra/laravel-datatables-buttons",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-buttons.git",
-                "reference": "5a6f9da44e63ae1e45f805cb2b976614317b918a"
+                "reference": "cdf7df773461900791491b1855397b099230b1f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-buttons/zipball/5a6f9da44e63ae1e45f805cb2b976614317b918a",
-                "reference": "5a6f9da44e63ae1e45f805cb2b976614317b918a",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-buttons/zipball/cdf7df773461900791491b1855397b099230b1f8",
+                "reference": "cdf7df773461900791491b1855397b099230b1f8",
                 "shasum": ""
             },
             "require": {
@@ -5437,20 +5438,20 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2018-02-11T14:23:44+00:00"
+            "time": "2018-02-21T07:00:03+00:00"
         },
         {
             "name": "yajra/laravel-datatables-html",
-            "version": "v3.6.0",
+            "version": "v3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-html.git",
-                "reference": "5d542aea073c4ba0e0b6a363fd22fb9d8a0b9379"
+                "reference": "acb427643c78cb7748c80b63cfbe9b19eb4fe098"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/5d542aea073c4ba0e0b6a363fd22fb9d8a0b9379",
-                "reference": "5d542aea073c4ba0e0b6a363fd22fb9d8a0b9379",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/acb427643c78cb7748c80b63cfbe9b19eb4fe098",
+                "reference": "acb427643c78cb7748c80b63cfbe9b19eb4fe098",
                 "shasum": ""
             },
             "require": {
@@ -5496,20 +5497,20 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2018-02-11T14:27:55+00:00"
+            "time": "2018-02-21T06:49:00+00:00"
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v8.4.0",
+            "version": "v8.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "222dae7b74166dd45f46918aea46ac7f4b89c449"
+                "reference": "cb052ed2608c266b1f942e1f845b8275696cd798"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/222dae7b74166dd45f46918aea46ac7f4b89c449",
-                "reference": "222dae7b74166dd45f46918aea46ac7f4b89c449",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/cb052ed2608c266b1f942e1f845b8275696cd798",
+                "reference": "cb052ed2608c266b1f942e1f845b8275696cd798",
                 "shasum": ""
             },
             "require": {
@@ -5566,7 +5567,7 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2018-02-11T14:16:35+00:00"
+            "time": "2018-02-16T08:22:10+00:00"
         }
     ],
     "packages-dev": [
@@ -6085,16 +6086,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.7.3",
+            "version": "1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "e4ed002c67da8eceb0eb8ddb8b3847bb53c5c2bf"
+                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/e4ed002c67da8eceb0eb8ddb8b3847bb53c5c2bf",
-                "reference": "e4ed002c67da8eceb0eb8ddb8b3847bb53c5c2bf",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dfd6be44111a7c41c2e884a336cc4f461b3b2401",
+                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401",
                 "shasum": ""
             },
             "require": {
@@ -6106,7 +6107,7 @@
             },
             "require-dev": {
                 "phpspec/phpspec": "^2.5|^3.2",
-                "phpunit/phpunit": "^4.8.35 || ^5.7"
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5"
             },
             "type": "library",
             "extra": {
@@ -6144,7 +6145,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-11-24T13:59:53+00:00"
+            "time": "2018-02-19T10:16:54+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

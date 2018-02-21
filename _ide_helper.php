@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.34 on 2018-02-11 18:43:28.
+ * Generated for Laravel 5.5.34 on 2018-02-21 19:58:54.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -12280,12 +12280,13 @@ namespace Collective\Html {
          * @param null $selected
          * @param array $selectAttributes
          * @param array $optionsAttributes
+         * @param array $optgroupsAttributes
          * @return \Illuminate\Support\HtmlString 
          * @static 
          */ 
-        public static function select($name, $list = array(), $selected = null, $selectAttributes = array(), $optionsAttributes = array())
+        public static function select($name, $list = array(), $selected = null, $selectAttributes = array(), $optionsAttributes = array(), $optgroupsAttributes = array())
         {
-            return \App\Html\FormBuilder::select($name, $list, $selected, $selectAttributes, $optionsAttributes);
+            return \App\Html\FormBuilder::select($name, $list, $selected, $selectAttributes, $optionsAttributes, $optgroupsAttributes);
         }
         
         /**
@@ -12322,15 +12323,16 @@ namespace Collective\Html {
          * Create a checkbox input field.
          *
          * @param string $name
-         * @param mixed $value
-         * @param bool $checked
+         * @param int $value
+         * @param null $label
+         * @param null $checked
          * @param array $options
-         * @return string 
+         * @return \Illuminate\Support\HtmlString|string 
          * @static 
          */ 
-        public static function checkbox($name, $value = 1, $checked = null, $options = array())
+        public static function checkbox($name, $value = 1, $label = null, $checked = null, $options = array())
         {
-            return \App\Html\FormBuilder::checkbox($name, $value, $checked, $options);
+            return \App\Html\FormBuilder::checkbox($name, $value, $label, $checked, $options);
         }
         
         /**
@@ -12460,6 +12462,18 @@ namespace Collective\Html {
         {
             //Method inherited from \Collective\Html\FormBuilder            
             \App\Html\FormBuilder::setModel($model);
+        }
+        
+        /**
+         * Get the current model instance on the form builder.
+         *
+         * @return mixed $model
+         * @static 
+         */ 
+        public static function getModel()
+        {
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \App\Html\FormBuilder::getModel();
         }
         
         /**
@@ -12752,13 +12766,14 @@ namespace Collective\Html {
          * @param string $value
          * @param string $selected
          * @param array $attributes
+         * @param array $optgroupAttributes
          * @return \Illuminate\Support\HtmlString 
          * @static 
          */ 
-        public static function getSelectOption($display, $value, $selected, $attributes = array())
+        public static function getSelectOption($display, $value, $selected, $attributes = array(), $optgroupAttributes = array())
         {
             //Method inherited from \Collective\Html\FormBuilder            
-            return \App\Html\FormBuilder::getSelectOption($display, $value, $selected, $attributes);
+            return \App\Html\FormBuilder::getSelectOption($display, $value, $selected, $attributes, $optgroupAttributes);
         }
         
         /**
