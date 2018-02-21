@@ -42,6 +42,7 @@
         <div class="col-sm-3 col-md-2">
             <?php
             $navs = [
+                _i("Sites") => 'admin.sites',
                 _i("Categories") => 'admin.categories',
                 _i("Contents") => 'admin.contents',
                 _i("Products") => 'admin.products',
@@ -52,14 +53,13 @@
                 _i("Galleries") => 'admin.galleries',
                 _i("Menus") => 'admin.menus',
                 _i("Users") => 'admin.users',
+                _i("Forms") => 'admin.forms',
                 _i("Contacts") => 'admin.contacts',
                 _i("File manager") => 'admin.file-manager',
-                _i("Forms") => 'admin.forms',
                 _i("Currencies") => 'admin.currencies',
                 _i("Prices") => 'admin.prices',
-                _i("Sites") => 'admin.sites',
-                _i("Settings") => 'admin.settings',
                 _i("Redirections") => 'admin.redirections',
+                _i("Settings") => 'admin.settings',
                 _i("Routes") => 'admin.routes',
             ];
             ?>

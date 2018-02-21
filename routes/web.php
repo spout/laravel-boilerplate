@@ -70,6 +70,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::resource('galleries', 'GalleriesController', ['names' => route_resource_names('admin.galleries.{name}')]);
         Route::resource('events', 'EventsController', ['names' => route_resource_names('admin.events.{name}')]);
         Route::resource('currencies', 'CurrenciesController', ['names' => route_resource_names('admin.currencies.{name}')]);
+        Route::group(['prefix' => 'forms'], function () {
+            Route::post('preview', 'FormsController@preview')->name('admin.forms.preview');
+        });
         Route::resource('forms', 'FormsController', ['names' => route_resource_names('admin.forms.{name}')]);
         Route::resource('offers', 'OffersController', ['names' => route_resource_names('admin.offers.{name}')]);
         Route::resource('products', 'ProductsController', ['names' => route_resource_names('admin.products.{name}')]);
