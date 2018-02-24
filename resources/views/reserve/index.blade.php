@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
-@section('title', _i("Search"))
+@section('title', _i("Reserve"))
 
 @section('content')
-    {!! Form::open(['route' => 'search.index', 'class' => 'form-inline']) !!}
+    {!! Form::open(['route' => 'reserve.index' /*, 'class' => 'form-inline'*/]) !!}
 
-    {!! Form::openGroup('location', _i("Location")) !!}
-    {!! Form::select('location', []) !!}
+    {!! Form::openGroup('category_id', _i("Category")) !!}
+    {!! Form::select('category_id', $categoryList) !!}
+    {!! Form::closeGroup() !!}
+
+    {!! Form::openGroup('business_id', _i("Business")) !!}
+    {!! Form::select('business_id', []) !!}
     {!! Form::closeGroup() !!}
 
     {!! Form::openGroup('arrival_date', _i("Arrival date")) !!}

@@ -2,16 +2,17 @@
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
+if (php_sapi_name() !== 'cli') {
+    $redirections = Cache::remember('redirections', 60, function () {
+        return \App\Models\Redirection::all();
+    });
+
+    foreach ($redirections as $redirection) {
+        Route::domain($redirection->domain)->group(function () use ($redirection) {
+            Route::redirect($redirection->url, $redirection->destination, 301);
+        });
+    }
+}
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect']], function () {
     //Route::get('/', 'PagesController@show')->name('homepage');
@@ -39,8 +40,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('{path}', 'PagesController@show')->where('path', '[a-z0-9-/]+')->name('pages.show');
     });
 
-    Route::group(['prefix' => 'search'], function () {
-        Route::match(['get', 'post'], '/', 'SearchController@index')->name('search.index');
+    Route::group(['prefix' => 'map'], function () {
+        Route::match(['get', 'post'], '/', 'MapController@index')->name('map.index');
+        Route::match(['get', 'post'], 'markers', 'MapController@markers')->name('map.markers');
+    });
+
+    Route::group(['prefix' => 'reserve'], function () {
+        Route::match(['get', 'post'], '/', 'ReserveController@index')->name('reserve.index');
     });
 
     Route::group(['prefix' => 'favorites'], function () {
@@ -53,7 +59,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('/', 'DashboardController@index')->name('admin.dashboard.index');
         Route::get('/file-manager', 'FileManagerController@index')->name('admin.file-manager.index');
         Route::get('/routes', 'RoutesController@index')->name('admin.routes.index');
-        //Route::post('contents/bulk', 'ContentsController@bulk')->name('admin.contents.bulk');
         Route::resource('contents', 'ContentsController', ['names' => route_resource_names('admin.contents.{name}')]);
         Route::resource('contacts', 'ContactsController', ['names' => route_resource_names('admin.contacts.{name}')]);
         Route::resource('blog', 'BlogController', ['names' => route_resource_names('admin.blog.{name}')]);
@@ -90,15 +95,3 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 });
 
 Route::get('/manifest.json', 'ManifestController@index');
-
-if (php_sapi_name() !== 'cli') {
-    $redirections = Cache::remember('redirections', 60, function () {
-        return \App\Models\Redirection::all();
-    });
-
-    foreach ($redirections as $redirection) {
-        Route::domain($redirection->domain)->group(function () use ($redirection) {
-            Route::redirect($redirection->url, $redirection->destination, 301);
-        });
-    }
-}

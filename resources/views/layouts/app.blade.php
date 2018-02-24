@@ -10,11 +10,6 @@
     @stack('styles')
     <link href="{{ asset('build/app.css') }}" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
     <link rel="manifest" href="{{ asset('manifest.json') }}">
 </head>
 <body>
@@ -28,7 +23,7 @@
         @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
     </div>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+{{--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02">
         <span class="navbar-toggler-icon"></span>
@@ -47,7 +42,7 @@
     <div class="collapse navbar-collapse" id="navbarColor03">
         @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
     </div>
-</nav>
+</nav>--}}
 <div class="container-fluid">
     @if (Route::current()->getName() !== 'homepage')
         @hasSection('breadcrumbs')
