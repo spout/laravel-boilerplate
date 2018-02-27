@@ -8,6 +8,7 @@ class TreeDirective
     {
         $defaultParams = [
             'view' => 'tree.display',
+            'level' => 0,
             'tag' => 'ul',
             'attributes' => [],
             'extraData' => [],
@@ -22,12 +23,12 @@ class TreeDirective
                 $data = compact('params');
                 $tag = $params['tag'];
                 $attributes = empty($params['attributes']) ? '' : ' ' . \Html::attributes($params['attributes']);
-                echo "<{$tag}{$attributes}>";
+                echo empty($tag) ? '' : "<{$tag}{$attributes}>";
                 foreach ($tree as $node) {
                     $data['node'] = $node;
                     echo view($params['view'], $data);
                 }
-                echo "</{$tag}>";
+                echo empty($tag) ? '' : "</{$tag}>";
             }
         }
     }

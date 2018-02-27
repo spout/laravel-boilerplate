@@ -1,3 +1,5 @@
 @if ($node->subtree->isNotEmpty())
-    @tree(['tree' => $node->subtree, 'params' => array_merge($params, ['attributes' => ['class' => 'dropdown-menu']])])
+    <div class="dropdown-menu">
+        @tree(['tree' => $node->subtree, 'params' => $params])
+    </div>
 @endif
