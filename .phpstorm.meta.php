@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-02-23 15:48:08.
+    * Generated on 2018-02-27 16:34:31.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -42,7 +42,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.elfinder.publish' => \Barryvdh\Elfinder\Console\PublishCommand::class,
-        'Adapters/AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
+        'Xinax\LaravelGettext\Adapters\AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
         'Xinax\LaravelGettext\Config\Models\Config' => \Xinax\LaravelGettext\Config\Models\Config::class,
         'Xinax\LaravelGettext\LaravelGettext' => \Xinax\LaravelGettext\LaravelGettext::class,
         'xinax::gettext.create' => \Xinax\LaravelGettext\Commands\GettextCreate::class,
@@ -201,7 +201,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.elfinder.publish' => \Barryvdh\Elfinder\Console\PublishCommand::class,
-        'Adapters/AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
+        'Xinax\LaravelGettext\Adapters\AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
         'Xinax\LaravelGettext\Config\Models\Config' => \Xinax\LaravelGettext\Config\Models\Config::class,
         'Xinax\LaravelGettext\LaravelGettext' => \Xinax\LaravelGettext\LaravelGettext::class,
         'xinax::gettext.create' => \Xinax\LaravelGettext\Commands\GettextCreate::class,
@@ -360,7 +360,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.elfinder.publish' => \Barryvdh\Elfinder\Console\PublishCommand::class,
-        'Adapters/AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
+        'Xinax\LaravelGettext\Adapters\AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
         'Xinax\LaravelGettext\Config\Models\Config' => \Xinax\LaravelGettext\Config\Models\Config::class,
         'Xinax\LaravelGettext\LaravelGettext' => \Xinax\LaravelGettext\LaravelGettext::class,
         'xinax::gettext.create' => \Xinax\LaravelGettext\Commands\GettextCreate::class,
@@ -519,7 +519,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.elfinder.publish' => \Barryvdh\Elfinder\Console\PublishCommand::class,
-        'Adapters/AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
+        'Xinax\LaravelGettext\Adapters\AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
         'Xinax\LaravelGettext\Config\Models\Config' => \Xinax\LaravelGettext\Config\Models\Config::class,
         'Xinax\LaravelGettext\LaravelGettext' => \Xinax\LaravelGettext\LaravelGettext::class,
         'xinax::gettext.create' => \Xinax\LaravelGettext\Commands\GettextCreate::class,
@@ -678,7 +678,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.elfinder.publish' => \Barryvdh\Elfinder\Console\PublishCommand::class,
-        'Adapters/AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
+        'Xinax\LaravelGettext\Adapters\AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
         'Xinax\LaravelGettext\Config\Models\Config' => \Xinax\LaravelGettext\Config\Models\Config::class,
         'Xinax\LaravelGettext\LaravelGettext' => \Xinax\LaravelGettext\LaravelGettext::class,
         'xinax::gettext.create' => \Xinax\LaravelGettext\Commands\GettextCreate::class,
@@ -837,7 +837,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.elfinder.publish' => \Barryvdh\Elfinder\Console\PublishCommand::class,
-        'Adapters/AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
+        'Xinax\LaravelGettext\Adapters\AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
         'Xinax\LaravelGettext\Config\Models\Config' => \Xinax\LaravelGettext\Config\Models\Config::class,
         'Xinax\LaravelGettext\LaravelGettext' => \Xinax\LaravelGettext\LaravelGettext::class,
         'xinax::gettext.create' => \Xinax\LaravelGettext\Commands\GettextCreate::class,
@@ -996,7 +996,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.elfinder.publish' => \Barryvdh\Elfinder\Console\PublishCommand::class,
-        'Adapters/AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
+        'Xinax\LaravelGettext\Adapters\AdapterInterface' => \Xinax\LaravelGettext\Adapters\LaravelAdapter::class,
         'Xinax\LaravelGettext\Config\Models\Config' => \Xinax\LaravelGettext\Config\Models\Config::class,
         'Xinax\LaravelGettext\LaravelGettext' => \Xinax\LaravelGettext\LaravelGettext::class,
         'xinax::gettext.create' => \Xinax\LaravelGettext\Commands\GettextCreate::class,

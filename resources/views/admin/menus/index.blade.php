@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', _i("Posts"))
+@section('title', _i("Menus"))
 
 @section('content')
     @include('includes.admin.create-button', ['url' => route('admin.menus.create')])

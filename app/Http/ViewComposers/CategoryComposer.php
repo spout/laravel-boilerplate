@@ -9,6 +9,6 @@ class CategoryComposer
 {
     public function compose(View $view)
     {
-        $view->with('categoryList', Category::all()->pluck('title', 'id')->prepend('-', ''));
+        $view->with('categoryList', Category::all()->pluck('title_plural', 'id')->prepend('-', ''));
     }
 }

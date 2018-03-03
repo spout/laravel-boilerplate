@@ -91,7 +91,8 @@
               'data': function (node) {
                 return {'id': node.id};
               }
-            }
+            },
+            'force_text': true
           },
           'contextmenu': {
             'items': function (n) {
@@ -107,12 +108,10 @@
             }
           },
           'sort': function (a, b) {
-            var a1 = this.get_node(a);
-            var b1 = this.get_node(b);
-            if (a1.sort == b1.sort) {
-              return (a1.sort > b1.sort) ? 1 : -1;
-            } else {
-              return (a1.sort > b1.sort) ? 1 : -1;
+            var nodeA = this.get_node(a);
+            var nodeB = this.get_node(b);
+            if (nodeA.data && nodeB.data) {
+                return nodeA.data.sort > nodeB.data.sort ? 1 : -1;
             }
           },
           "types": {
@@ -136,8 +135,12 @@
           });
         }).on("rename_node.jstree move_node.jstree", function (e, data) {
           var parentId = data.node.parent === '#' ? null : data.node.parent;
-          var sort = typeof data.position === 'undefined' ? null : data.position;
-          var siblings = data.instance.get_node(data.node.parent).children;
+          var parent = data.instance.get_node(data.node.parent);
+          var sort = typeof data.position === 'undefined' ? parent.children.length : data.position; // Default at end
+          var siblings = parent.children; // Not updated siblings
+          siblings.splice(data.old_position, 1); // Manually update siblings
+          siblings.splice(data.position, 0, data.node.id);
+
           var ajaxData = {id: data.node.id, menu_slug: menuSlug, parent_id: parentId, title: data.node.text, sort: sort, siblings: siblings};
 
           $.post('{{ route('admin.menus.tree-save') }}', ajaxData)

@@ -16,4 +16,9 @@ class Currency extends Model
 
         static::addGlobalScope(new ActiveScope());
     }
+
+    public function __toString()
+    {
+        return $this->pk;
+    }
 }

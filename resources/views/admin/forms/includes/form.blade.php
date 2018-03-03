@@ -1,18 +1,19 @@
 {!! Form::model($object, [
     'route' => empty($object->pk) ? ['admin.forms.store'] : ['admin.forms.update', $object->pk],
-    'method' => empty($object->pk) ? 'POST' : 'PUT'
+    'method' => empty($object->pk) ? 'POST' : 'PUT',
+    'novalidate' => true
 ]) !!}
 
 {!! Form::openGroup("title", _i('Title')) !!}
 {!! Form::text("title") !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup("email", _i('Email to')) !!}
-{!! Form::email("email") !!}
-{!! Form::closeGroup() !!}
-
 {!! Form::openGroup("submit", _i('Submit button label')) !!}
 {!! Form::text("submit", $object->submit ?? _i("Send")) !!}
+{!! Form::closeGroup() !!}
+
+{!! Form::openGroup("email", _i('Email to')) !!}
+{!! Form::email("email") !!}
 {!! Form::closeGroup() !!}
 
 <?php
@@ -35,8 +36,12 @@ $types = [
     'checkboxes' => _i("Checkboxes"),
     //'selectRange' => _i("Range"),
     //'password' => _i("Password"),
+    'html' => _i("HTML"),
+    'newsletter' => _i("Newsletter"),
 ];
 ?>
+
+{!! Form::hidden('fields', null, ['id' => 'fields']) !!}
 
 <fieldset id="add-field">
     <legend>{{ _i("Add field") }}</legend>
@@ -55,45 +60,56 @@ $types = [
     <script>
         $(function () {
             const previewUrl = '{{ route('admin.forms.preview') }}';
-            let fields = [];
+            let $preview = $('#preview');
+            let $fields = $('#fields');
+            let fields = $fields.val().length ? JSON.parse($fields.val()) : [];
+
+            if (fields.length) {
+                previewForm();
+            }
 
             function previewForm () {
                 $.post(previewUrl, {fields: fields, submit: $('#submit').val()}).done(function (data) {
-                    $('#preview').html(data);
+                    $preview.html(data);
+
+                    Sortable.create(document.querySelector('#preview .card-body'), {
+                        handle: '.sortable-handle',
+                        draggable: '.draggable',
+                        animation: 150,
+                        onEnd: function () {
+                            updateSort();
+                        }
+                    });
                 });
             }
 
+            function updateFields () {
+                $fields.val(JSON.stringify(fields));
+            }
+
+            function updateSort () {
+                $preview.find('input.sort').each(function (index) {
+                    $(this).val(index);
+                });
+            }
+
+            $preview.on('input', 'input, select', function () {
+                fields[$(this).data('key')][$(this).data('attribute')] = $(this).val();
+                updateFields();
+            });
+
             $('#add-field button').click(function () {
                 fields.push({type: $(this).data('type'), label: $(this).text()});
+                updateFields();
                 previewForm();
             });
 
-            $('#submit').change(function () {
+            $preview.on('click', 'button[data-delete]', function () {
+                fields.splice($(this).data('delete'), 1);
+                updateFields();
+                updateSort();
                 previewForm();
             });
-
-            /*let ajaxData = {
-                fields: [
-                    {type: 'text', label: 'Text'},
-                    {type: 'textarea', label: 'Textarea'},
-                    {type: 'number', label: 'Number'},
-                    {type: 'tel', label: 'Tel'},
-                    {type: 'email', label: 'Email'},
-                    {type: 'url', label: 'URL'},
-                    {type: 'date', label: 'Date'},
-                    {type: 'time', label: 'Time'},
-                    {type: 'datetime', label: 'Datetime'},
-                    {type: 'datetimeLocal', label: 'Datetime local'},
-                    {type: 'color', label: 'Color'},
-                    {type: 'select', label: 'Select', list: ['foo', 'bar', 'baz']},
-                    {type: 'radio', label: 'Radio'},
-                    {type: 'checkbox', label: 'Checkbox label'},
-                    {type: 'radios', label: 'Radio multiple', list: ['foo', 'bar', 'baz']},
-                    {type: 'checkboxes', label: 'Checkbox multiple', list: ['foo', 'bar', 'baz']},
-                    {type: 'selectRange', label: 'Select range', begin: 1, end: 10},
-                    {type: 'password', label: 'Password'},
-                ]
-            };*/
         });
     </script>
 @endpush

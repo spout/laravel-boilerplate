@@ -4,15 +4,22 @@ namespace App\Models;
 
 class Category extends Model
 {
-    protected $fillable = [
-        'title',
-        'parent_id',
-    ];
+    protected $guarded = [];
 
     public $timestamps = false;
 
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+
+    public function site()
+    {
+        return $this->belongsTo(Site::class);
+    }
+
+    public function __toString()
+    {
+        return $this->title_plural;
     }
 }

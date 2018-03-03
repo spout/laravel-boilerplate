@@ -11,4 +11,14 @@ class Site extends Model
         'domain',
         'name',
     ];
+
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+    public function __toString()
+    {
+        return $this->slug;
+    }
 }

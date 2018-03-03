@@ -7,6 +7,7 @@
         'columns' => [
             'id' => _i("Id"),
             'title' => _i("Title"),
+            'shortcode' => _i("Shortcode"),
         ]
     ])
 @endsection

@@ -14,7 +14,10 @@ class CategoryFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title_singular' => 'required',
+            'slug_singular' => 'required',
+            'title_plural' => 'required',
+            'slug_plural' => 'required',
         ];
     }
 }

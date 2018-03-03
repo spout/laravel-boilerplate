@@ -9,6 +9,9 @@
 
     @stack('styles')
     <link href="{{ asset('build/app.css') }}" rel="stylesheet">
+    @if (file_exists(public_path('css/custom.css')))
+        <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    @endif
 
     <link rel="manifest" href="{{ asset('manifest.json') }}">
 </head>
