@@ -26,7 +26,7 @@
 
             if ($type === 'html') {
                 echo Form::openGroup("fields[{$key}][html]", _i("HTML"));
-                echo Form::textarea("fields[{$key}][html]", $field['html'] ?? null, ['rows' => 3]);
+                echo Form::textarea("fields[{$key}][html]", $field['html'] ?? null, ['class' => 'wysiwyg', 'rows' => 3]);
                 echo Form::closeGroup();
             } else {
                 echo '<div class="form-group">';

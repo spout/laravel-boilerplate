@@ -1,3 +1,5 @@
+@include('includes.tinymce')
+
 {!! Form::model($object, [
     'route' => empty($object->pk) ? ['admin.forms.store'] : ['admin.forms.update', $object->pk],
     'method' => empty($object->pk) ? 'POST' : 'PUT',
@@ -69,6 +71,8 @@ $types = [
             }
 
             function previewForm () {
+                tinymce.remove(window.tinymceInitSettings.selector);
+
                 $.post(previewUrl, {fields: fields, submit: $('#submit').val()}).done(function (data) {
                     $preview.html(data);
 
@@ -76,10 +80,16 @@ $types = [
                         handle: '.sortable-handle',
                         draggable: '.draggable',
                         animation: 150,
+                        onChoose: function () {
+                            tinymce.remove(window.tinymceInitSettings.selector);
+                        },
                         onEnd: function () {
+                            tinymce.init(window.tinymceInitSettings);
                             updateSort();
                         }
                     });
+
+                    tinymce.init(window.tinymceInitSettings);
                 });
             }
 
