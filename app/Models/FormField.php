@@ -9,7 +9,6 @@ class FormField extends Model
     protected $guarded = [];
     public $timestamps = false;
     protected $casts = [
-        'options' => 'array',
         'list' => 'array',
     ];
 
@@ -23,5 +22,10 @@ class FormField extends Model
     public function form()
     {
         return $this->belongsTo(Form::class);
+    }
+
+    public function getNameAttribute()
+    {
+        return $field['label'] ?? "field-{$this->form_id}-{$this->pk}";
     }
 }

@@ -23,7 +23,8 @@ class FormObserver
                 'form_id' => $form->id,
                 'type' => $field['type'],
                 'label' => $field['label'] ?? null,
-                'options' => $field['options'] ?? null,
+                'required' => $field['required'] ?? null,
+                'list' => array_filter($field['list'] ?? []),
                 'html' => $field['html'] ?? null,
                 'sort' => $field['sort'],
             ]);

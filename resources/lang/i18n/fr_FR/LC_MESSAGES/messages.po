@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-03-03 15:53+0100\n"
-"PO-Revision-Date: 2018-03-03 15:54+0100\n"
+"POT-Creation-Date: 2018-03-07 20:30+0100\n"
+"PO-Revision-Date: 2018-03-07 20:30+0100\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -19,28 +19,28 @@ msgstr ""
 "X-Poedit-SearchPath-3: DataTables\n"
 "X-Poedit-SearchPath-4: ../storage/framework/messages\n"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:21
+#: ../resources/views/admin/forms/includes/form.blade.php:23
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:31
 msgid "Text"
 msgstr "Texte"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:22
+#: ../resources/views/admin/forms/includes/form.blade.php:24
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:32
 msgid "Paragraph"
 msgstr "Paragraphe"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:23
+#: ../resources/views/admin/forms/includes/form.blade.php:25
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:33
 msgid "Number"
 msgstr "Nombre"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:24
+#: ../resources/views/admin/forms/includes/form.blade.php:26
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:46
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:34
 msgid "Phone"
 msgstr "Téléphone"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:25
+#: ../resources/views/admin/forms/includes/form.blade.php:27
 #: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:10
 #: ../storage/framework/messages/18c3204dc2831907564eaed2cb74deee58396549.php.php:6
 #: ../storage/framework/messages/1e36747e33aef3a4214332ad962d242e1b658818.php.php:17
@@ -57,7 +57,7 @@ msgstr "Téléphone"
 msgid "Email"
 msgstr "Email"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:26
+#: ../resources/views/admin/forms/includes/form.blade.php:28
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:14
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:63
 #: ../storage/framework/messages/84e76532fcec3846bc6d3490c8b76cb1f65f0161.php.php:8
@@ -67,49 +67,53 @@ msgstr "Email"
 msgid "URL"
 msgstr "URL"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:27
+#: ../resources/views/admin/forms/includes/form.blade.php:29
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:37
 msgid "Date"
 msgstr "Date"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:28
+#: ../resources/views/admin/forms/includes/form.blade.php:30
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:38
 msgid "Time"
 msgstr "Heure"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:30
+#: ../resources/views/admin/forms/includes/form.blade.php:32
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:40
 msgid "Datetime"
 msgstr "Date et heure"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:31
+#: ../resources/views/admin/forms/includes/form.blade.php:33
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:41
 msgid "Color"
 msgstr "Couleur"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:32
+#: ../resources/views/admin/forms/includes/form.blade.php:34
+msgid "File"
+msgstr "Fichier"
+
+#: ../resources/views/admin/forms/includes/form.blade.php:35
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:42
 msgid "Dropdown list"
 msgstr "Liste déroulante"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:35
+#: ../resources/views/admin/forms/includes/form.blade.php:38
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:45
 msgid "Multiple choices"
 msgstr "Choix multiple"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:36
+#: ../resources/views/admin/forms/includes/form.blade.php:39
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:46
 msgid "Checkboxes"
 msgstr "Cases à cocher"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:39
+#: ../resources/views/admin/forms/includes/form.blade.php:42
 #: ../resources/views/admin/forms/preview.blade.php:28
 #: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:28
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:49
 msgid "HTML"
 msgstr "HTML"
 
-#: ../resources/views/admin/forms/includes/form.blade.php:40
+#: ../resources/views/admin/forms/includes/form.blade.php:43
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:50
 msgid "Newsletter"
 msgstr "Newsletter"
@@ -119,16 +123,16 @@ msgstr "Newsletter"
 msgid "required"
 msgstr "requis"
 
-#: ../resources/views/admin/forms/preview.blade.php:58
-#: ../resources/views/admin/forms/preview.blade.php:78
+#: ../resources/views/admin/forms/preview.blade.php:62
+#: ../resources/views/admin/forms/preview.blade.php:83
 #: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:58
 #: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:78
 #, php-format
 msgid "Option %d"
 msgstr "Option %d"
 
-#: ../resources/views/admin/forms/preview.blade.php:61
-#: ../resources/views/admin/forms/preview.blade.php:82
+#: ../resources/views/admin/forms/preview.blade.php:66
+#: ../resources/views/admin/forms/preview.blade.php:88
 #: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:61
 #: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:82
 msgid "Add option"
@@ -1200,6 +1204,11 @@ msgstr ""
 msgid "Create user"
 msgstr "Créer utilisateur"
 
+#: Http/Controllers/FormsController.php:21
+#, php-format
+msgid "The field %s is required."
+msgstr "Le champ %s est requis."
+
 #~ msgid "Location"
 #~ msgstr "Lieu"
 
@@ -1222,9 +1231,6 @@ msgstr "Créer utilisateur"
 
 #~ msgid "Customer files"
 #~ msgstr "Fichiers client"
-
-#~ msgid "Filename"
-#~ msgstr "Nom du fichier"
 
 #~ msgid "Size"
 #~ msgstr "Taille"
@@ -1344,9 +1350,6 @@ msgstr "Créer utilisateur"
 
 #~ msgid "Expired"
 #~ msgstr "Expiré"
-
-#~ msgid "The to field is required."
-#~ msgstr "Le champ vers est requis."
 
 #~ msgid "The subject is required."
 #~ msgstr "Le sujet est requis."

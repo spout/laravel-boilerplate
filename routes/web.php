@@ -49,6 +49,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::match(['get', 'post'], '/', 'ReserveController@index')->name('reserve.index');
     });
 
+    Route::group(['prefix' => 'forms'], function () {
+        Route::post('/', 'FormsController@store')->name('forms.store');
+    });
+
     Route::group(['prefix' => 'favorites'], function () {
         Route::get('/', 'FavoritesController@index')->name('favorites.index');
         Route::post('store', 'FavoritesController@store')->name('favorites.store');

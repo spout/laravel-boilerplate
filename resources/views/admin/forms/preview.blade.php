@@ -10,7 +10,7 @@
             $type = $field['type'];
             $label = $field['label'] ?? null;
             $value = $field['value'] ?? null;
-            $options = $field['options'] ?? [];
+            $options = [];
 
             if (!empty($defaultOptions[$type])) {
                 $options = array_merge($defaultOptions[$type], $options);
@@ -26,13 +26,13 @@
 
             if ($type === 'html') {
                 echo Form::openGroup("fields[{$key}][html]", _i("HTML"));
-                echo Form::textarea("fields[{$key}][html]", $field['html'] ?? null, ['class' => 'wysiwyg', 'rows' => 3]);
+                echo Form::textarea("fields[{$key}][html]", $field['html'] ?? null, ['class' => 'wysiwyg', 'rows' => 3, 'style' => 'height: 100px']);
                 echo Form::closeGroup();
             } else {
                 echo '<div class="form-group">';
                 echo '<div class="form-inline">';
                 echo Form::text("fields[{$key}][label]", $label, ['class' => 'form-control-sm mb-1', 'data-key' => $key, 'data-attribute' => 'label']);
-                echo Form::checkbox("fields[{$key}][options][required]", 1, _i("required"), $field['options']['required'] ?? null, ['class' => 'mx-1']);
+                echo Form::checkbox("fields[{$key}][required]", 1, _i("required"), $field['required'] ?? null, ['class' => 'mx-1']);
                 echo '</div>';
 
                 switch ($type) {
@@ -50,15 +50,20 @@
                         echo Form::{$type}("fields[{$key}][value]", $value, $options);
                         break;
 
+                    case 'file':
+                        echo Form::file($key, $options);
+                        break;
+
                     case 'password':
                         echo Form::password($key, $options);
                         break;
 
                     case 'select':
-                        $list = $field['list'] ?? [_i("Option %d", 1), ''];
+                        $list = $field['list'] ?? [_i("Option %d", 1)];
+                        $list[] = '';
                         foreach ($list as $value => $label) {
                             echo '<div class="form-inline ml-3">';
-                            echo Form::text("fields[{$key}][value]", $label, ['placeholder' => _i("Add option"), 'class' => 'form-control-sm mb-1']);
+                            echo Form::text("fields[{$key}][list][]", $label, ['placeholder' => _i("Add option"), 'class' => 'form-control-sm mb-1']);
                             echo '</div>';
                         }
                         break;
@@ -75,10 +80,11 @@
                     case 'radios':
                     case 'checkboxes':
                         $types = ['radios' => 'radio', 'checkboxes' => 'checkbox'];
-                        $list = $field['list'] ?? [_i("Option %d", 1), ''];
+                        $list = $field['list'] ?? [_i("Option %d", 1)];
+                        $list[] = '';
                         foreach ($list as $value => $label) {
                             echo '<div class="form-inline">';
-                            echo Form::{$types[$type]}("{$key}[]", $value, null, null, $options);
+                            echo Form::{$types[$type]}("fields[{$key}][{$type}][]", $value, null, null, $options);
                             echo Form::text("fields[{$key}][list][]", $label, ['placeholder' => _i("Add option"), 'class' => 'form-control-sm mb-1']);
                             echo '</div>';
                         }

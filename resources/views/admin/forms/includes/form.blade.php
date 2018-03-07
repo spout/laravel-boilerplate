@@ -31,6 +31,7 @@ $types = [
     //'datetime' => _i("Datetime"),
     'datetimeLocal' => _i("Datetime"),
     'color' => _i("Color"),
+    'file' => _i("File"),
     'select' => _i("Dropdown list"),
     //'radio' => _i("Radio"),
     //'checkbox' => _i("Checkbox"),
