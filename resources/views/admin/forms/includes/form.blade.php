@@ -71,11 +71,26 @@ $types = [
                 previewForm();
             }
 
+            $(document).on('input', '.fields-list input[type="text"]', function() {
+                $(this).closest('.fields-list').next('.fields-list').removeClass('d-none');
+            });
+
             function previewForm () {
                 tinymce.remove(window.tinymceInitSettings.selector);
 
                 $.post(previewUrl, {fields: fields, submit: $('#submit').val()}).done(function (data) {
                     $preview.html(data);
+                    tinymce.init(window.tinymceInitSettings);
+
+                    $('.fields-list input[type="text"]').each(function () {
+                        if ($(this).val().length) {
+                            $(this)
+                                .closest('.fields-list')
+                                .removeClass('d-none')
+                                .next('.fields-list')
+                                .removeClass('d-none');
+                        }
+                    });
 
                     Sortable.create(document.querySelector('#preview .card-body'), {
                         handle: '.sortable-handle',
@@ -89,8 +104,6 @@ $types = [
                             updateSort();
                         }
                     });
-
-                    tinymce.init(window.tinymceInitSettings);
                 });
             }
 
@@ -104,7 +117,7 @@ $types = [
                 });
             }
 
-            $preview.on('input', 'input, select', function () {
+            $preview.on('input', 'input[data-key][data-attribute], select[data-key][data-attribute]', function () {
                 fields[$(this).data('key')][$(this).data('attribute')] = $(this).val();
                 updateFields();
             });

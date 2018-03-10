@@ -59,10 +59,9 @@
                         break;
 
                     case 'select':
-                        $list = $field['list'] ?? [_i("Option %d", 1)];
-                        $list[] = '';
+                        $list = array_merge($field['list'] ?? [], array_fill(0, 20, ''));
                         foreach ($list as $value => $label) {
-                            echo '<div class="form-inline ml-3">';
+                            echo '<div class="form-inline ml-3 d-none fields-list">';
                             echo Form::text("fields[{$key}][list][]", $label, ['placeholder' => _i("Add option"), 'class' => 'form-control-sm mb-1']);
                             echo '</div>';
                         }
@@ -80,10 +79,9 @@
                     case 'radios':
                     case 'checkboxes':
                         $types = ['radios' => 'radio', 'checkboxes' => 'checkbox'];
-                        $list = $field['list'] ?? [_i("Option %d", 1)];
-                        $list[] = '';
+                        $list = array_merge($field['list'] ?? [], array_fill(0, 20, ''));
                         foreach ($list as $value => $label) {
-                            echo '<div class="form-inline">';
+                            echo '<div class="form-inline d-none fields-list">';
                             echo Form::{$types[$type]}("fields[{$key}][{$type}][]", $value, null, null, $options);
                             echo Form::text("fields[{$key}][list][]", $label, ['placeholder' => _i("Add option"), 'class' => 'form-control-sm mb-1']);
                             echo '</div>';

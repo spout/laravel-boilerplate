@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\FormSend;
 use App\Models\Form;
 use App\Models\FormData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FormsController extends Controller
 {
@@ -24,11 +26,16 @@ class FormsController extends Controller
 
         $request->validate($rules, $messages);
 
-        $data = [
+        $data = $request->except('form_id', '_token');
+        $formData = [
             'form_id' => $request->input('form_id'),
-            'data' => $request->except('form_id', '_token'),
+            'data' => $data,
         ];
 
-        FormData::create($data);
+        FormData::create($formData);
+        Mail::send(new FormSend($form, $data));
+
+        flash(_i("The message was send successfully!"), 'success');
+        return redirect()->back();
     }
 }

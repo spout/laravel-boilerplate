@@ -14,4 +14,9 @@ class FormData extends Model
     {
         return $this->belongsTo(Form::class);
     }
+
+    public function __toString()
+    {
+        return json_encode($this->data, JSON_PRETTY_PRINT);
+    }
 }
