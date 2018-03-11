@@ -15,7 +15,7 @@ class FormSend extends Mailable
     public $form;
     public $data;
 
-    public function __construct(Form $form, array $data)
+    public function __construct($form, $data)
     {
         $this->form = $form;
         $this->data = $data;
@@ -30,7 +30,7 @@ class FormSend extends Mailable
     {
         // TODO
         return $this
-            ->from('spoutnik@gmail.com')
+            ->from(config('mail.from.address'), config('mail.from.name'))
             ->to('spoutnik@gmail.com')
             ->subject(_i("Contact"))
             ->view('emails.forms.send');
