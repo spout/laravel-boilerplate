@@ -1,7 +1,7 @@
 <?php
 return [
     'selector' => 'textarea.wysiwyg',
-    'content_css' => asset('build/app.css'),
+    'content_css' => '/build/app.css', // asset() helper don't work in config file (UrlGenerator error)
     //'height' => 500,
     //'language_url' => $languageUrl,
     'menubar' => true,
