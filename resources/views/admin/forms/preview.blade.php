@@ -33,8 +33,10 @@
 
                 case 'newsletter':
                     $label = _i("Subscribe to newsletter?");
+                    echo '<div class="form-group">';
                     echo Form::hidden("fields[{$key}][label]", $label);
                     echo Form::checkbox("fields[{$key}][value]", 1, $label, true);
+                    echo '</div>';
                     break;
 
                 default:
