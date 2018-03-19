@@ -61,6 +61,11 @@
                             echo Form::{$type}("fields[{$key}][value]", $value, $options);
                             break;
 
+                        case 'firstname':
+                        case 'lastname':
+                            echo Form::text("fields[{$key}][value]", $value, $options);
+                            break;
+
                         case 'file':
                             echo Form::file($key, $options);
                             break;

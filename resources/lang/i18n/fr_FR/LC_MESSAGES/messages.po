@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-03-07 20:30+0100\n"
-"PO-Revision-Date: 2018-03-07 20:30+0100\n"
+"POT-Creation-Date: 2018-03-11 19:22+0100\n"
+"PO-Revision-Date: 2018-03-11 19:22+0100\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -20,23 +20,23 @@ msgstr ""
 "X-Poedit-SearchPath-4: ../storage/framework/messages\n"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:23
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:31
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:33
 msgid "Text"
 msgstr "Texte"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:24
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:32
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:34
 msgid "Paragraph"
 msgstr "Paragraphe"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:25
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:33
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:35
 msgid "Number"
 msgstr "Nombre"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:26
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:46
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:34
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:36
 msgid "Phone"
 msgstr "Téléphone"
 
@@ -52,7 +52,7 @@ msgstr "Téléphone"
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:17
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:14
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:7
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:35
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:37
 #: DataTables/ContactsDataTable.php:21 DataTables/UsersDataTable.php:30
 msgid "Email"
 msgstr "Email"
@@ -62,79 +62,79 @@ msgstr "Email"
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:63
 #: ../storage/framework/messages/84e76532fcec3846bc6d3490c8b76cb1f65f0161.php.php:8
 #: ../storage/framework/messages/b2528904818ffc7be09d6422adeda6962710aba5.php.php:21
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:36
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:38
 #: DataTables/RedirectionsDataTable.php:21
 msgid "URL"
 msgstr "URL"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:29
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:37
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:39
 msgid "Date"
 msgstr "Date"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:30
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:38
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:40
 msgid "Time"
 msgstr "Heure"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:32
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:40
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:42
 msgid "Datetime"
 msgstr "Date et heure"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:33
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:41
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:43
 msgid "Color"
 msgstr "Couleur"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:34
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:44
 msgid "File"
 msgstr "Fichier"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:35
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:42
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:45
 msgid "Dropdown list"
 msgstr "Liste déroulante"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:38
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:45
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:48
 msgid "Multiple choices"
 msgstr "Choix multiple"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:39
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:46
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:49
 msgid "Checkboxes"
 msgstr "Cases à cocher"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:42
-#: ../resources/views/admin/forms/preview.blade.php:28
-#: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:28
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:49
+#: ../resources/views/admin/forms/preview.blade.php:29
+#: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:29
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:52
 msgid "HTML"
 msgstr "HTML"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:43
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:50
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:53
 msgid "Newsletter"
 msgstr "Newsletter"
 
 #: ../resources/views/admin/forms/preview.blade.php:35
+#: ../resources/views/shortcodes/form.blade.php:65
+#: ../storage/framework/messages/45f0c3582ecb071b05aff9b1492d6a426e851b14.php.php:65
 #: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:35
+msgid "Subscribe to newsletter?"
+msgstr "Inscription à la newsletter ?"
+
+#: ../resources/views/admin/forms/preview.blade.php:46
+#: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:46
 msgid "required"
 msgstr "requis"
 
-#: ../resources/views/admin/forms/preview.blade.php:62
-#: ../resources/views/admin/forms/preview.blade.php:83
-#: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:58
-#: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:78
-#, php-format
-msgid "Option %d"
-msgstr "Option %d"
-
-#: ../resources/views/admin/forms/preview.blade.php:66
-#: ../resources/views/admin/forms/preview.blade.php:88
-#: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:61
-#: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:82
+#: ../resources/views/admin/forms/preview.blade.php:76
+#: ../resources/views/admin/forms/preview.blade.php:97
+#: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:76
+#: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:97
 msgid "Add option"
 msgstr "Ajouter une option"
 
@@ -233,7 +233,7 @@ msgstr "Contacts"
 #: ../resources/views/layouts/admin.blade.php:54
 #: ../storage/framework/messages/51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:56
 #: ../storage/framework/messages/6fd5370312ee7c6aaacf4548646da04901794fc1.php.php:1
-#: ../storage/framework/messages/8ff6c2f30398e7a5a894897c0dad326c90ffa6e4.php.php:38
+#: ../storage/framework/messages/8ff6c2f30398e7a5a894897c0dad326c90ffa6e4.php.php:26
 msgid "File manager"
 msgstr "Gestionnaire de fichiers"
 
@@ -260,6 +260,13 @@ msgstr "Paramètres"
 #: ../storage/framework/messages/51d88e34e5c713f31fd60fe60449fc05a49391c3.php.php:60
 msgid "Routes"
 msgstr "Routes"
+
+#: ../resources/views/shortcodes/form.blade.php:65
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:16
+#: ../storage/framework/messages/45f0c3582ecb071b05aff9b1492d6a426e851b14.php.php:65
+#: DataTables/UsersDataTable.php:16
+msgid "Yes"
+msgstr "Oui"
 
 #: ../storage/framework/messages/025d95b1fb26eea61d8d21072a8f2e2671e9a84d.php.php:1
 msgid "Create offer"
@@ -310,7 +317,7 @@ msgstr "Symbole"
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:35
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:28
 #: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:45
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:66
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:69
 #: ../storage/framework/messages/f3edb04f7563f7941ba53c37db501cce1d1322b8.php.php:14
 msgid "Save"
 msgstr "Enregistrer"
@@ -338,7 +345,7 @@ msgstr "Créer contact"
 #: ../storage/framework/messages/db755fd010145b5022f112ae6b0f735c2075bb00.php.php:7
 #: ../storage/framework/messages/e06194c0eebcbcf67a77187188e11d09c2217aa8.php.php:7
 #: ../storage/framework/messages/e1134f8b8817396b3c820c4325043d41c5500cbc.php.php:20
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:8
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:10
 #: ../storage/framework/messages/ec3fb2840dd9d8a988853fadf537dc5db62163b6.php.php:7
 #: ../storage/framework/messages/f5b67833453d03963b27d62c0d9e411fca6e3476.php.php:20
 #: ../storage/framework/messages/fda7962579b3e46aa55af776c194a9b8e40eabb6.php.php:20
@@ -589,7 +596,7 @@ msgid "Function"
 msgstr "Fonction"
 
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:66
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:17
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:19
 msgid "Send"
 msgstr "Envoyer"
 
@@ -764,11 +771,6 @@ msgstr "Message envoyé avec succès."
 #: ../storage/framework/messages/404a937eb7f138eb19caf435fb2ced34528e0ad3.php.php:1
 msgid "Update site"
 msgstr "Modifier site"
-
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:16
-#: DataTables/UsersDataTable.php:16
-msgid "Yes"
-msgstr "Oui"
 
 #: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:16
 #: DataTables/UsersDataTable.php:16
@@ -1159,15 +1161,15 @@ msgstr "Créer post"
 msgid "Advertiser dashboard"
 msgstr "Panneau de contrôle annonceur"
 
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:15
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:17
 msgid "Submit button label"
 msgstr "Libellé bouton soumettre"
 
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:22
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:24
 msgid "Email to"
 msgstr "Email vers"
 
-#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:58
+#: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:61
 msgid "Add field"
 msgstr "Ajouter un champ"
 
@@ -1187,6 +1189,17 @@ msgstr "Modifier menu"
 msgid "Edit snippet"
 msgstr "Modifier fragment"
 
+#: ../storage/framework/messages/ebd8518d6386b78c5eb9a1f2d26034a1dac38e57.php.php:28
+#: Http/Controllers/FormsController.php:28
+#, php-format
+msgid "The field %s is required."
+msgstr "Le champ %s est requis."
+
+#: ../storage/framework/messages/ebd8518d6386b78c5eb9a1f2d26034a1dac38e57.php.php:66
+#: Http/Controllers/FormsController.php:66
+msgid "The message was sent successfully!"
+msgstr "Le message envoyé avec succès !"
+
 #: ../storage/framework/messages/f273966196f4201639f32b3c8abfba011b278f54.php.php:52
 #: Http/Requests/ContentFormRequest.php:52
 #, php-format
@@ -1204,10 +1217,8 @@ msgstr ""
 msgid "Create user"
 msgstr "Créer utilisateur"
 
-#: Http/Controllers/FormsController.php:21
-#, php-format
-msgid "The field %s is required."
-msgstr "Le champ %s est requis."
+#~ msgid "Option %d"
+#~ msgstr "Option %d"
 
 #~ msgid "Location"
 #~ msgstr "Lieu"

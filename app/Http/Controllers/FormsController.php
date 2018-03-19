@@ -63,7 +63,7 @@ class FormsController extends Controller
             Newsletter::create(compact('email'));
         }
 
-        flash(_i("The message was send successfully!"), 'success');
+        flash(_i("The message was sent successfully!"), 'success');
         return redirect()->back();
     }
 }

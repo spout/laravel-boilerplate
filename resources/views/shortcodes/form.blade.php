@@ -3,6 +3,14 @@ echo Form::open(['files' => true, 'novalidate' => true, 'route' => 'forms.store'
 
 echo Form::hidden('form_id', $form->id);
 
+if (Auth::check()) {
+    $user = Auth::user();
+    $defaultValues = [
+        'email' => $user->email,
+        'firstname' => $user->firstname,
+        'lastname' => $user->lastname,
+    ];
+}
 $labels = [];
 foreach ($form->fields as $field) {
     $name = $field->name;
@@ -11,6 +19,10 @@ foreach ($form->fields as $field) {
     $value = $field->value ?? null;
     $options = [];
 
+    if (array_key_exists($type, $defaultValues) && empty($value)) {
+        $value = $defaultValues[$type];
+    }
+
     switch ($type) {
         case 'html':
             echo '<div class="form-field-html">' . $field->html . '</div>';
@@ -18,7 +30,8 @@ foreach ($form->fields as $field) {
 
         default:
             $labels[$name] = $label;
-            echo Form::openGroup($name, $label);
+
+            echo Form::openGroup($name, $type === 'newsletter' ? null : $label);
 
             switch ($type) {
                 case 'text':
@@ -33,6 +46,11 @@ foreach ($form->fields as $field) {
                 case 'datetimeLocal':
                 case 'color':
                     echo Form::{$type}($name, $value, $options);
+                    break;
+
+                case 'firstname':
+                case 'lastname':
+                    echo Form::text($name, $value, $options);
                     break;
 
                 case 'file':

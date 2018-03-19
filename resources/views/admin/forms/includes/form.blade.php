@@ -14,9 +14,16 @@
 {!! Form::text("submit", $object->submit ?? _i("Send")) !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup("email", _i('Email to')) !!}
-{!! Form::email("email") !!}
-{!! Form::closeGroup() !!}
+<fieldset>
+    <legend>{{ _i("Email") }}</legend>
+    {!! Form::openGroup("subject", _i('Subject')) !!}
+    {!! Form::text("subject") !!}
+    {!! Form::closeGroup() !!}
+
+    {!! Form::openGroup("email", _i('Email to')) !!}
+    {!! Form::email("email") !!}
+    {!! Form::closeGroup() !!}
+</fieldset>
 
 <?php
 $types = [
@@ -25,6 +32,8 @@ $types = [
     'number' => _i("Number"),
     'tel' => _i("Phone"),
     'email' => _i("Email"),
+    'firstname' => _i("Firstname"),
+    'lastname' => _i("Lastname"),
     'url' => _i("URL"),
     'date' => _i("Date"),
     'time' => _i("Time"),
@@ -44,7 +53,8 @@ $types = [
 ];
 ?>
 
-{!! Form::hidden('fields', null, ['id' => 'fields']) !!}
+{{--{!! Form::hidden('fields', null, ['id' => 'fields']) !!}--}} {{-- htmlspecialchars bug when form validation fails --}}
+<input type="hidden" name="fields" value="{{ json_encode($object->fields) }}" id="fields">
 
 <fieldset id="add-field">
     <legend>{{ _i("Add field") }}</legend>

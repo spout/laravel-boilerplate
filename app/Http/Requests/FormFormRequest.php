@@ -25,6 +25,17 @@ class FormFormRequest extends FormRequest
     {
         return [
             'title' => 'required',
+            'subject' => 'required',
+            'submit' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => _i("The title field is required."),
+            'subject.required' => _i("The subject field is required."),
+            'submit.required' => _i("The submit field is required."),
         ];
     }
 }
