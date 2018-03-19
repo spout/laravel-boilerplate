@@ -27,4 +27,11 @@ class PriceFormRequest extends FormRequest
             'product_id' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'product_id.required' => _i("The product is required"),
+        ];
+    }
 }

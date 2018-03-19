@@ -29,4 +29,13 @@ class PostFormRequest extends FormRequest
             'category_id' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => _i("The title is required"),
+            'content.required' => _i("The content is required"),
+            'category_id.required' => _i("The category is required"),
+        ];
+    }
 }

@@ -29,4 +29,13 @@ class CurrencyFormRequest extends FormRequest
             'symbol' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'code.required' => _i("The code is required"),
+            'name.required' => _i("The name is required"),
+            'symbol.required' => _i("The symbol is required"),
+        ];
+    }
 }

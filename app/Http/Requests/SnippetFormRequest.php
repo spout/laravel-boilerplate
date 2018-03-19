@@ -49,11 +49,11 @@ class SnippetFormRequest extends FormRequest
             foreach ($locales as $lang => $locale) {
                 switch ($field) {
                     case 'title':
-                        $message = _i("The title (%s) field is required.", $lang);
+                        $message = _i("The title (%s) is required.", $lang);
                         break;
 
                     case 'content':
-                        $message = _i("The content (%s) field is required.", $lang);
+                        $message = _i("The content (%s) is required.", $lang);
                         break;
 
                     default:

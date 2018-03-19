@@ -29,4 +29,13 @@ class SiteFormRequest extends FormRequest
             'name' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'slug.required' => _i("The slug is required"),
+            'domain.required' => _i("The domain is required"),
+            'name.required' => _i("The name is required"),
+        ];
+    }
 }

@@ -29,4 +29,13 @@ class EventFormRequest extends FormRequest
             'date_end' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => _i("The title is required"),
+            'date_start.required' => _i("The start date is required"),
+            'date_end.required' => _i("The end date is required"),
+        ];
+    }
 }

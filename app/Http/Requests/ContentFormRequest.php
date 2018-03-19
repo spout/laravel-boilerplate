@@ -48,8 +48,8 @@ class ContentFormRequest extends FormRequest
     {
         $messages = [];
         foreach (\Config::get('app.locales', []) as $lang => $locale) {
-            $messages["title_{$lang}.required"] = _i("The title (%s) field is required.", $lang);
-            $messages["path_{$lang}.required"] = _i("The path (%s) field is required.", $lang);
+            $messages["title_{$lang}.required"] = _i("The title (%s) is required.", $lang);
+            $messages["path_{$lang}.required"] = _i("The path (%s) is required.", $lang);
             $messages["path_{$lang}.regex"] = _i("The slug must contain only alphanumeric characters and slashes.");
         }
 

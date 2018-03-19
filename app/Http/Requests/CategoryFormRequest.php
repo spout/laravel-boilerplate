@@ -20,4 +20,14 @@ class CategoryFormRequest extends FormRequest
             'slug_plural' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title_singular.required' => _i("The title singular is required."),
+            'slug_singular.required' => _i("The slug singular is required."),
+            'title_plural.required' => _i("The title plural is required."),
+            'slug_plural.required' => _i("The slug plural is required."),
+        ];
+    }
 }

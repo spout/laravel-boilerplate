@@ -27,4 +27,11 @@ class ProductFormRequest extends FormRequest
             'title' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => _i("The title is required"),
+        ];
+    }
 }
