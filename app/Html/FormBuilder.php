@@ -115,6 +115,10 @@ class FormBuilder extends CollectiveFormBuilder
             }
         }
 
+        if ($this->hasErrors($name)) {
+            $options = $this->appendClassToOptions('is-invalid', $options);
+        }
+
         // Call the parent input method so that Laravel can handle
         // the rest of the input set up.
         return parent::input($type, $name, $value, $options);
@@ -134,6 +138,10 @@ class FormBuilder extends CollectiveFormBuilder
     public function select($name, $list = [], $selected = null, array $selectAttributes = [], array $optionsAttributes = [], array $optgroupsAttributes = [])
     {
         $selectAttributes = $this->appendClassToOptions('form-control', $selectAttributes);
+
+        if ($this->hasErrors($name)) {
+            $selectAttributes = $this->appendClassToOptions('is-invalid', $selectAttributes);
+        }
 
         // Call the parent select method so that Laravel can handle
         // the rest of the select set up.
