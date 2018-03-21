@@ -33,9 +33,9 @@ class RedirectionFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'domain.required' => _i("The domain is required"),
-            'url.required' => _i("The URL is required"),
-            'destination.required' => _i("The destination is required"),
+            'domain.required' => _i("The domain is required."),
+            'url.required' => _i("The URL is required."),
+            'destination.required' => _i("The destination is required."),
         ];
     }
 }

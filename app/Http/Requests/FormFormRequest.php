@@ -35,7 +35,7 @@ class FormFormRequest extends FormRequest
         return [
             'title.required' => _i("The title is required."),
             'subject.required' => _i("The subject is required."),
-            'submit.required' => _i("The submit is required."),
+            'submit.required' => _i("The submit button label is required."),
         ];
     }
 }

@@ -60,7 +60,6 @@
     @include('flash::message')
     @include('includes.validation-errors')
     <div id="content">
-        [form id="1"]
         @yield('content')
     </div>
     <footer>

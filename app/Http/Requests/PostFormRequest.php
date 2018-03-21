@@ -33,9 +33,9 @@ class PostFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => _i("The title is required"),
-            'content.required' => _i("The content is required"),
-            'category_id.required' => _i("The category is required"),
+            'title.required' => _i("The title is required."),
+            'content.required' => _i("The content is required."),
+            'category_id.required' => _i("The category is required."),
         ];
     }
 }

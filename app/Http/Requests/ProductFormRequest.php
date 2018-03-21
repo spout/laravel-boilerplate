@@ -31,7 +31,7 @@ class ProductFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => _i("The title is required"),
+            'title.required' => _i("The title is required."),
         ];
     }
 }

@@ -38,6 +38,10 @@
                 {!! Form::openGroup("menu_item_title_{$lang}", _i("Title (%s)", $lang)) !!}
                 {!! Form::text("menu_item_title_{$lang}") !!}
                 {!! Form::closeGroup() !!}
+
+                {!! Form::openGroup("menu_item_content_{$lang}", _i("Content (%s)", $lang)) !!}
+                {!! Form::textarea("menu_item_content_{$lang}") !!}
+                {!! Form::closeGroup() !!}
             @endforeach
 
             <p>

@@ -31,7 +31,7 @@ class PriceFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'product_id.required' => _i("The product is required"),
+            'product_id.required' => _i("The product is required."),
         ];
     }
 }
