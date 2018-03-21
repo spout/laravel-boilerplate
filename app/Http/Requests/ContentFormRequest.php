@@ -11,7 +11,7 @@ class ContentFormRequest extends FormRequest
         //'slug' => 'required',
         'path' => [
             'required',
-            'regex:/[a-z0-9-\/]+/'
+            'regex:/^[a-z0-9-\/]+$/'
         ],
     ];
 
@@ -50,7 +50,7 @@ class ContentFormRequest extends FormRequest
         foreach (\Config::get('app.locales', []) as $lang => $locale) {
             $messages["title_{$lang}.required"] = _i("The title (%s) is required.", $lang);
             $messages["path_{$lang}.required"] = _i("The path (%s) is required.", $lang);
-            $messages["path_{$lang}.regex"] = _i("The slug must contain only alphanumeric characters and slashes.");
+            $messages["path_{$lang}.regex"] = _i("The slug (%s) must contain only alphanumeric characters and slashes.", $lang);
         }
 
         return $messages;
