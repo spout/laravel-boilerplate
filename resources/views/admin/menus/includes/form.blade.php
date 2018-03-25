@@ -35,22 +35,25 @@
             {!! Form::closeGroup() !!}
 
             @foreach(Config::get('app.locales') as $lang => $locale)
-                {!! Form::openGroup("menu_item_title_{$lang}", _i("Title (%s)", $lang)) !!}
-                {!! Form::text("menu_item_title_{$lang}") !!}
-                {!! Form::closeGroup() !!}
+                <fieldset>
+                    <legend>{{ $locale }}</legend>
 
-                {!! Form::openGroup("menu_item_content_{$lang}", _i("Content (%s)", $lang)) !!}
-                {!! Form::textarea("menu_item_content_{$lang}") !!}
-                {!! Form::closeGroup() !!}
+                    {!! Form::openGroup("menu_item_title_{$lang}", _i("Title (%s)", $lang)) !!}
+                    {!! Form::text("menu_item_title_{$lang}") !!}
+                    {!! Form::closeGroup() !!}
+
+                    {!! Form::openGroup("menu_item_url_{$lang}", _i("URL (%s)", $lang)) !!}
+                    {!! Form::text("menu_item_url_{$lang}") !!}
+                    {!! Form::closeGroup() !!}
+
+                    {!! Form::openGroup("menu_item_content_{$lang}", _i("Content (%s)", $lang)) !!}
+                    {!! Form::textarea("menu_item_content_{$lang}") !!}
+                    {!! Form::closeGroup() !!}
+                </fieldset>
             @endforeach
 
-            <p>
-                <a class="btn btn-link btn-xs" data-toggle="collapse" href="#menu-item-advanced">{{ _i("Advanced options") }}</a>
-            </p>
-            <div class="collapse" id="menu-item-advanced">
-                {!! Form::openGroup('menu_item_url', _i("URL")) !!}
-                {!! Form::text('menu_item_url') !!}
-                {!! Form::closeGroup() !!}
+            <fieldset>
+                <legend>{{ _i("Advanced options") }}</legend>
 
                 {!! Form::openGroup('menu_item_route', _i("Route")) !!}
                 {!! Form::textarea('menu_item_route', null, ['rows' => 1]) !!}
@@ -59,7 +62,7 @@
                 {!! Form::openGroup('menu_item_attributes', _i("Attributes")) !!}
                 {!! Form::textarea('menu_item_attributes', null, ['rows' => 1]) !!}
                 {!! Form::closeGroup() !!}
-            </div>
+            </fieldset>
         </div>
     </div>
 @endif
@@ -75,7 +78,7 @@
         var menuSlug = '{{ $object->slug }}';
         var $menuItemsTree = $('#menu-items-tree');
         var fields = ['association', 'route', 'attributes'];
-        var i18nFields = ['title', 'url'];
+        var i18nFields = ['title', 'url', 'content'];
         var nodeData = {};
 
         for (let locale in window.laravel.config.app.locales) {
@@ -145,7 +148,14 @@
           siblings.splice(data.old_position, 1); // Manually update siblings
           siblings.splice(data.position, 0, data.node.id);
 
-          var ajaxData = {id: data.node.id, menu_slug: menuSlug, parent_id: parentId, title: data.node.text, sort: sort, siblings: siblings};
+          var ajaxData = {
+              id: data.node.id,
+              menu_slug: menuSlug,
+              parent_id: parentId,
+              title: data.node.text,
+              sort: sort,
+              siblings: siblings
+          };
 
           $.post('{{ route('admin.menus.tree-save') }}', ajaxData)
             .done(function () {
