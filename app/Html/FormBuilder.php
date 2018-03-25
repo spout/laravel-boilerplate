@@ -314,6 +314,10 @@ class FormBuilder extends CollectiveFormBuilder
     {
         $options = $this->appendClassToOptions('form-control', $options);
 
+        if ($this->hasErrors($name)) {
+            $options = $this->appendClassToOptions('is-invalid', $options);
+        }
+
         return parent::textarea($name, $value, $options);
     }
 
