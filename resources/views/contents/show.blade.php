@@ -6,10 +6,10 @@
     @parent
     @if ($content->ancestors->count())
         @foreach ($content->ancestors as $ancestor)
-            <li><a href="{{ $ancestor->absoluteUrl }}">{{ $ancestor->title }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ $ancestor->absoluteUrl }}">{{ $ancestor->title }}</a></li>
         @endforeach
     @endif
-    <li class="active">{{ $content->title }}</li>
+    <li class="breadcrumb-item active">{{ $content->title }}</li>
 @endsection
 
 @section('content')

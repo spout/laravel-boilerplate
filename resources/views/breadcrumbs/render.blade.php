@@ -2,9 +2,9 @@
     <ul class="breadcrumb">
         @foreach ($breadcrumbs as $breadcrumb)
             @if ($loop->last)
-                <li class="active">{{ $breadcrumb['title'] }}</li>
+                <li class="breadcrumb-item active">{{ $breadcrumb['title'] }}</li>
             @else
-                <li><a href="{{ !empty($breadcrumb['route']) ? route($breadcrumb['route']) : $breadcrumb['url'] }}">{{ $breadcrumb['title'] }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ !empty($breadcrumb['route']) ? route($breadcrumb['route']) : $breadcrumb['url'] }}">{{ $breadcrumb['title'] }}</a></li>
             @endif
         @endforeach
     </ul>

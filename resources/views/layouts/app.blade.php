@@ -51,7 +51,7 @@
         @hasSection('breadcrumbs')
             <div class="container">
                 <ul class="breadcrumb">
-                    <li><a href="{{ route('homepage') }}">{{ config('app.name') }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('homepage') }}">{{ config('app.name') }}</a></li>
                     @yield('breadcrumbs')
                 </ul>
             </div>
