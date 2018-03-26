@@ -2,7 +2,6 @@
 
 namespace App\Models\Traits;
 
-use Config;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 trait TranslatableTrait
@@ -10,20 +9,59 @@ trait TranslatableTrait
     protected static $locale;
     protected static $localeSuffix;
     protected static $localeFallback;
+    protected static $localeFallbackSuffix;
 
     public static function bootTranslatableTrait()
     {
         static::$locale = LaravelLocalization::getCurrentLocale();
         static::$localeSuffix = '_' . static::$locale;
-        static::$localeFallback = Config::get('app.fallback_locale');
+        static::$localeFallback = config('app.fallback_locale');
+        static::$localeFallbackSuffix = '_' . static::$localeFallback;
+
+        static::retrieved(function ($model) {
+            /** @var \Illuminate\Database\Eloquent\Model $model */
+            foreach (static::$translatableColumns as $column) {
+                $model->append($column);
+
+                foreach (config('app.locales') as $lang => $locale) {
+                    $model->append("{$column}_{$lang}");
+                }
+            }
+        });
+    }
+
+    public function __call($method, $parameters)
+    {
+        foreach (static::$translatableColumns as $column) {
+            if ($method === camel_case("get_{$column}_attribute")) {
+                return $this->getAttribute($column);
+            }
+
+            foreach (config('app.locales') as $lang => $locale) {
+                if ($method === camel_case("get_{$column}_{$lang}_attribute")) {
+                    return $this->getAttribute("{$column}_{$lang}");
+                }
+            }
+        }
+
+        return parent::__call($method, $parameters);
     }
 
     public function getAttribute($key)
     {
-        if (!ends_with($key, static::$localeSuffix) && in_array($key, static::$translatableColumns)) {
-            $attribute = parent::getAttribute($key . static::$localeSuffix);
+        if (in_array($key, static::$translatableColumns)) {
+            // current locale
+            if (!ends_with($key, static::$localeSuffix)) {
+                $attribute = parent::getAttribute($key . static::$localeSuffix);
+            }
+
+            // fallback locale
+            if (empty($attribute)) {
+                $attribute = parent::getAttribute($key . static::$localeFallbackSuffix);
+            }
         }
 
+        // default attribute
         if (empty($attribute)) {
             $attribute = parent::getAttribute($key);
         }
