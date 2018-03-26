@@ -51,9 +51,7 @@ trait TranslatableTrait
     {
         if (in_array($key, static::$translatableColumns)) {
             // current locale
-            if (!ends_with($key, static::$localeSuffix)) {
-                $attribute = parent::getAttribute($key . static::$localeSuffix);
-            }
+            $attribute = parent::getAttribute($key . static::$localeSuffix);
 
             // fallback locale
             if (empty($attribute)) {
