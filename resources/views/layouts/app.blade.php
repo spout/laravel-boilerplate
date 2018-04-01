@@ -57,8 +57,10 @@
             </div>
         @endif
     @endif
-    @include('flash::message')
-    @include('includes.validation-errors')
+    <div class="container">
+        @include('flash::message')
+        @include('includes.validation-errors')
+    </div>
     <div id="content">
         @yield('content')
     </div>

@@ -20,17 +20,29 @@
     @endforeach
 </div>
 
-{!! Form::openGroup('directory', _i('Directory')) !!}
-<div class="input-group">
-    {!! Form::text('directory') !!}
-    <div class="input-group-append">
-        <div class="input-group-text">
-            <a href="#" class="popup_selector" data-inputid="directory">{{ _i("Select directory") }}</a>
-        </div>
-    </div>
+<div class="form-group">
+    <a href="#" class="popup_selector btn btn-primary" data-inputid="photos" data-options-callback="elFinderOptionsCallback">{{ _i("Select photos") }}</a>
 </div>
-{!! Form::closeGroup() !!}
 
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}
+
+@push('scripts')
+    <script>
+        function elFinderOptionsCallback() {
+            return {
+                commandsOptions: {
+                    getfile: {
+                        folders: false,
+                        multiple: true
+                    }
+                },
+                getFileCallback: function (files) {
+                    console.log(files);
+                    parent.jQuery.colorbox.close();
+                }
+            }
+        }
+    </script>
+@endpush
