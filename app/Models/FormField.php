@@ -2,14 +2,21 @@
 
 namespace App\Models;
 
+use App\Models\Traits\TranslatableTrait;
 use App\Scopes\OrderScope;
 
 class FormField extends Model
 {
-    protected $guarded = [];
+    use TranslatableTrait;
+
     public $timestamps = false;
+    protected $guarded = [];
     protected $casts = [
         'list' => 'array',
+    ];
+
+    public static $translatableColumns = [
+        'label'
     ];
 
     protected static function boot()

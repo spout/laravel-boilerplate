@@ -19,7 +19,7 @@ class FormObserver
 
         // Create all fields
         foreach (request()->input('fields', []) as $k => $field) {
-            FormField::create([
+            $attributes = [
                 'form_id' => $form->id,
                 'type' => $field['type'],
                 'label' => $field['label'] ?? null,
@@ -27,7 +27,15 @@ class FormObserver
                 'list' => array_filter($field['list'] ?? []),
                 'html' => $field['html'] ?? null,
                 'sort' => $field['sort'],
-            ]);
+            ];
+
+            foreach (FormField::$translatableColumns as $column) {
+                foreach (config('app.locales') as $lang => $locale) {
+                    $attributes["{$column}_{$lang}"] = $field["{$column}_{$lang}"] ?? null;
+                }
+            }
+
+            FormField::create($attributes);
         }
     }
 }

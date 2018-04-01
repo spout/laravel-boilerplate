@@ -119,6 +119,7 @@ $types = [
 
             function updateFields () {
                 $fields.val(JSON.stringify(fields));
+                console.log(fields);
             }
 
             function updateSort () {

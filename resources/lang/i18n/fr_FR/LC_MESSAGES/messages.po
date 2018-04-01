@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
 "POT-Creation-Date: 2018-03-21 17:47+0100\n"
-"PO-Revision-Date: 2018-03-21 17:48+0100\n"
+"PO-Revision-Date: 2018-04-01 11:36+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -1309,7 +1309,7 @@ msgstr "Le champ %s est requis."
 #: ../storage/framework/messages/ebd8518d6386b78c5eb9a1f2d26034a1dac38e57.php.php:66
 #: Http/Controllers/FormsController.php:66
 msgid "The message was sent successfully!"
-msgstr "Le message envoyé avec succès !"
+msgstr "Le message a été envoyé avec succès !"
 
 #: ../storage/framework/messages/edc5b9e38f30793e8112fe499c71b86c3bf014e0.php.php:36
 #: Http/Requests/SiteFormRequest.php:36

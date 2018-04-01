@@ -41,8 +41,13 @@
 
                 default:
                     echo '<div class="form-group">';
+
                     echo '<div class="form-inline">';
-                    echo Form::text("fields[{$key}][label]", $label, ['class' => 'form-control-sm mb-1', 'data-key' => $key, 'data-attribute' => 'label']);
+                    //echo Form::text("fields[{$key}][label]", $label, ['class' => 'form-control-sm mb-1', 'data-key' => $key, 'data-attribute' => 'label']);
+                    foreach (config('app.locales') as $lang => $locale) {
+                        echo '<label class="pb-1">' . $locale . '</label>';
+                        echo Form::text("fields[{$key}][label_{$lang}]", $field["label_{$lang}"] ?? $label, ['class' => 'form-control-sm mb-1 mx-1', 'data-key' => $key, 'data-attribute' => "label_{$lang}"]);
+                    }
                     echo Form::checkbox("fields[{$key}][required]", 1, _i("required"), $field['required'] ?? null, ['class' => 'mx-1']);
                     echo '</div>';
 
