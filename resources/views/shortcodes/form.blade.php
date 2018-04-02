@@ -3,6 +3,7 @@ echo Form::open(['files' => true, 'novalidate' => true, 'route' => 'forms.store'
 
 echo Form::hidden('form_id', $form->id);
 
+$defaultValues = [];
 if (Auth::check()) {
     $user = Auth::user();
     $defaultValues = [
