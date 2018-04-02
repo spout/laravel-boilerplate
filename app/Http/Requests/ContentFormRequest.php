@@ -33,7 +33,7 @@ class ContentFormRequest extends FormRequest
     public function rules()
     {
         $rules = [];
-        $locales = \Config::get('app.locales');
+        $locales = config('app.locales');
 
         foreach ($this->fields as $field => $rule) {
             foreach ($locales as $lang => $locale) {
@@ -47,7 +47,7 @@ class ContentFormRequest extends FormRequest
     public function messages()
     {
         $messages = [];
-        foreach (\Config::get('app.locales', []) as $lang => $locale) {
+        foreach (config('app.locales', []) as $lang => $locale) {
             $messages["title_{$lang}.required"] = _i("The title (%s) is required.", $lang);
             $messages["path_{$lang}.required"] = _i("The path (%s) is required.", $lang);
             $messages["path_{$lang}.regex"] = _i("The slug (%s) must contain only alphanumeric characters and slashes.", $lang);

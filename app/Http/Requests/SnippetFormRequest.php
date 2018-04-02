@@ -29,7 +29,7 @@ class SnippetFormRequest extends FormRequest
     public function rules()
     {
         $rules = [];
-        $locales = \Config::get('app.locales');
+        $locales = config('app.locales');
 
         foreach ($this->fields as $field => $rule) {
             foreach ($locales as $lang => $locale) {
@@ -43,7 +43,7 @@ class SnippetFormRequest extends FormRequest
     public function messages()
     {
         $messages = [];
-        $locales = \Config::get('app.locales');
+        $locales = config('app.locales');
 
         foreach ($this->fields as $field => $rule) {
             foreach ($locales as $lang => $locale) {
