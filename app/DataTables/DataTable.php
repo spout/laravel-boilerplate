@@ -7,7 +7,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 abstract class DataTable extends \Yajra\DataTables\Services\DataTable
 {
-    protected static $actionColumnActions = ['show', 'edit', 'delete'];
+    protected static $actionColumnActions = ['edit', 'delete'];
 
     public function dataTable($query)
     {
