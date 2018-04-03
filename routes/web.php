@@ -98,6 +98,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/{path}', 'ContentsController@show')->where('path', '^(?!(elfinder|imagecache)\b)\b[a-z0-9-\/]+')->name('contents.show');
 });
 
-Route::get('elfinder/popup-custom/{input_id}', ['as' => 'elfinder.popup-custom', 'uses' => 'ElfinderController@showPopup']);
+Route::group(['prefix' => 'elfinder'], function () {
+    Route::get('/',  ['as' => 'elfinder.index', 'uses' =>'ElfinderController@showIndex']);
+    Route::get('popup-custom/{input_id}', ['as' => 'elfinder.popup-custom', 'uses' => 'ElfinderController@showPopup']);
+});
 
 Route::get('/manifest.json', 'ManifestController@index');

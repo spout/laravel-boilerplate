@@ -88,8 +88,8 @@ return array(
     | See https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options-2.1#root-options
     |
     */
-    'root_options' => array(
-
-    ),
+    'root_options' => [
+        'tmbSize' => 100
+    ],
 
 );

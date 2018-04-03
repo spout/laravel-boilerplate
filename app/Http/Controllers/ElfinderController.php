@@ -11,4 +11,11 @@ class ElfinderController extends \Barryvdh\Elfinder\ElfinderController
             ->with($this->getViewVars())
             ->with(compact('input_id'));
     }
+
+    public function showIndex()
+    {
+        return $this->app['view']
+            ->make('elfinder.elfinder')
+            ->with($this->getViewVars());
+    }
 }
