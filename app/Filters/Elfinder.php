@@ -9,6 +9,6 @@ class Elfinder implements FilterInterface
 {
     public function applyFilter(Image $image)
     {
-        return $image->fit(100, 100);
+        return $image->fit(200, 200);
     }
 }

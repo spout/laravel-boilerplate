@@ -89,7 +89,7 @@ return array(
     |
     */
     'root_options' => [
-        'tmbSize' => 100
+        'tmbSize' => 200
     ],
 
 );

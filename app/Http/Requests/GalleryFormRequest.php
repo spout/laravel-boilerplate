@@ -6,6 +6,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class GalleryFormRequest extends FormRequest
 {
+    protected $rules = [
+        //'title' => 'required',
+    ];
+
     public function authorize()
     {
         return true;
@@ -13,15 +17,25 @@ class GalleryFormRequest extends FormRequest
 
     public function rules()
     {
-        return [
-            'title' => 'required',
-        ];
+        $rules = [];
+        $locales = config('app.locales');
+
+        foreach ($this->rules as $field => $rule) {
+            foreach ($locales as $lang => $locale) {
+                $rules["{$field}_{$lang}"] = $rule;
+            }
+        }
+
+        return $rules;
     }
 
     public function messages()
     {
-        return [
-            'title.required' => _i("The title is required."),
-        ];
+        $messages = [];
+        foreach (config('app.locales', []) as $lang => $locale) {
+            $messages["title_{$lang}.required"] = _i("The title (%s) is required.", $lang);
+        }
+
+        return $messages;
     }
 }
