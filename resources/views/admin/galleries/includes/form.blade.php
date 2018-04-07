@@ -25,7 +25,6 @@
 </div>
 
 <?php
-$titleOptions = ['style' => 'width: 210px; margin-bottom: 5px;', 'placeholder' => _i("Title")];
 $captionOptions = ['style' => 'width: 210px; height: 75px;', 'placeholder' => _i("Caption")];
 ?>
 
@@ -34,7 +33,6 @@ $captionOptions = ['style' => 'width: 210px; height: 75px;', 'placeholder' => _i
         <div class="photo draggable p-2 text-center position-relative" style="cursor: move;">
             <img src="{{ asset($photo['tmb']) }}" alt="" class="img-thumbnail">
             <button type="button" class="btn btn-danger btn-sm delete position-absolute" style="top: 15px; right: 15px;"><i class="fa fa-trash"></i></button>
-            {!! Form::text("photos[$k][title]", $photo['title'], $titleOptions) !!}
             {!! Form::textarea("photos[$k][caption]", $photo['caption'], $captionOptions) !!}
             {!! Form::hidden("photos[$k][path]", $photo['path']) !!}
             {!! Form::hidden("photos[$k][tmb]", $photo['tmb']) !!}
@@ -86,7 +84,6 @@ $captionOptions = ['style' => 'width: 210px; height: 75px;', 'placeholder' => _i
                         photos += '<div class="photo draggable p-2 text-center position-relative" style="cursor: move;">';
                         photos += '<img src="' + file.tmb + '" alt="" class="img-thumbnail">';
                         photos += '<button type="button" class="btn btn-danger btn-sm delete position-absolute" style="top: 15px; right: 15px;"><i class="fa fa-trash"></i></button>';
-                        photos += '<input type="text" name="photos[' + photosIndex + '][title]" class="form-control" {!! Html::attributes($titleOptions) !!}>';
                         photos += '<textarea name="photos[' + photosIndex + '][caption]" class="form-control" {!! Html::attributes($captionOptions) !!}></textarea>';
                         photos += '<input type="hidden" name="photos[' + photosIndex + '][path]" value="' + file.path + '">';
                         photos += '<input type="hidden" name="photos[' + photosIndex + '][tmb]" value="' + file.tmb + '">';

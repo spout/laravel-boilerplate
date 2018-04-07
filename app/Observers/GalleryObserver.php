@@ -22,7 +22,6 @@ class GalleryObserver
             Photo::create([
                 'gallery_id' => $gallery->id,
                 'path' => $photo['path'],
-                'title' => $photo['title'],
                 'caption' => $photo['caption'],
                 'sort' => $photo['sort'],
             ]);

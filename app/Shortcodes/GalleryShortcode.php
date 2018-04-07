@@ -2,13 +2,11 @@
 
 namespace App\Shortcodes;
 
+use App\Models\Gallery;
+
 class GalleryShortcode
 {
     public static $config = [
-        'columns' => [
-            'total' => 12,
-            'default' => 4,
-        ],
         'template' => [
             'default' => 'large'
         ],
@@ -16,13 +14,15 @@ class GalleryShortcode
 
     public function register($shortcode, $content, $compiler, $name, $viewData)
     {
-        $items = glob(public_path($shortcode->directory) . '/*.{jpg,png,gif}', GLOB_BRACE);
-        $totalColumns = static::$config['columns']['total'];
-        $columns = $shortcode->columns ?? static::$config['columns']['default'];
-        if ($totalColumns % $columns) {
-            $columns = static::$config['columns']['default'];
+        if (!is_null($shortcode->id)) {
+            $gallery = Gallery::find($shortcode->id);
+        } elseif (!is_null($shortcode->slug)) {
+            $gallery = Gallery::where('slug', $shortcode->slug)->first();
+        } else {
+            $gallery = null;
         }
+
         $template = $shortcode->template ?? static::$config['template']['default'];
-        return view('shortcodes.gallery', compact('shortcode', 'items', 'totalColumns', 'columns', 'template'));
+        return view('shortcodes.gallery', compact('shortcode', 'gallery', 'template'));
     }
 }

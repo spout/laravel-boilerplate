@@ -6,6 +6,8 @@ require('./global');
 require('jquery-colorbox/jquery.colorbox-min.js');
 require('slick-carousel');
 // require('tilt.js');
+require('lightgallery');
+require('lg-thumbnail');
 require('../scss/app.scss');
 
 $(function () {
@@ -16,7 +18,12 @@ $(function () {
     $('a.lightbox').colorbox({
         opacity: 0.5,
         rel: 'gal'
-    })
+    });
+
+    $('.lightgallery').lightGallery({
+        subHtmlSelectorRelative: true,
+        download: false
+    });
 
     $('[data-edit-target]').on('mouseover', function () {
         $($(this).data('edit-target')).addClass('edit-highlight');

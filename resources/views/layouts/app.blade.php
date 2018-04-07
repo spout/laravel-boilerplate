@@ -62,6 +62,8 @@
         @include('includes.validation-errors')
     </div>
     <div id="content">
+        [gallery id="1"]
+
         @yield('content')
     </div>
     <footer>
