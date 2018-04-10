@@ -62,9 +62,8 @@
         @include('includes.validation-errors')
     </div>
     <div id="content">
-        [gallery id="1"]
-
         @yield('content')
+        {{--@include('includes.shortcodes')--}}
     </div>
     <footer>
         @menu(['slug' => 'footer'])
