@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.39 on 2018-03-11 16:49:06.
+ * Generated for Laravel 5.5.40 on 2018-04-07 11:00:10.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -13667,14 +13667,13 @@ namespace Mcamara\LaravelLocalization\Facades {
         /**
          * Return an array of all supported Locales.
          *
-         * @param boolean $excludeCurrent
          * @throws SupportedLocalesNotDefined
          * @return array 
          * @static 
          */ 
-        public static function getSupportedLocales($excludeCurrent = false)
+        public static function getSupportedLocales()
         {
-            return \Mcamara\LaravelLocalization\LaravelLocalization::getSupportedLocales($excludeCurrent);
+            return \Mcamara\LaravelLocalization\LaravelLocalization::getSupportedLocales();
         }
         
         /**
