@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\ViewComposers\AdminComposer;
 use App\Http\ViewComposers\CurrentSiteComposer;
 use App\Http\ViewComposers\GlobalComposer;
 use App\Http\ViewComposers\MenuComposer;
@@ -24,6 +25,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         $composers = [
             GlobalComposer::class => ['layouts.app'],
+            AdminComposer::class => ['layouts.admin'],
             MenuComposer::class => ['admin.menus.includes.form'],
             CategoryComposer::class => ['admin.blog.includes.form', 'admin.categories.includes.form'],
             ContentComposer::class => ['admin.contents.includes.form'],
