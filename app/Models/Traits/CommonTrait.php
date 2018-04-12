@@ -14,6 +14,16 @@ trait CommonTrait
         return with(new static)->getTable();
     }
 
+    public static function verboseName()
+    {
+        return class_basename(static::class);
+    }
+
+    public static function verboseNamePlural()
+    {
+        return str_plural(static::verboseName());
+    }
+
     /**
      * Common primaryKey accessor
      *
