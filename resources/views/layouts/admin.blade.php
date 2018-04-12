@@ -47,6 +47,7 @@
                 _i("Snippets") => 'admin.snippets',
                 _i("Blog") => 'admin.blog',
                 _i("Galleries") => 'admin.galleries',
+                _i("Accordions") => 'admin.accordions',
                 _i("Menus") => 'admin.menus',
                 _i("Users") => 'admin.users',
                 _i("Forms") => 'admin.forms',

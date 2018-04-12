@@ -28,8 +28,11 @@ for($i = 0; $i < 5; $i++) {
 
 <div id="items">
     @foreach($items as $k => $item)
-        <div class="card mb-3 draggable" style="cursor: move;">
+        <div class="card mb-3 draggable">
             <div class="card-header">
+                <div class="sortable-handle pull-right" style="cursor: move;">
+                    <i class="fa fa-arrows"></i>
+                </div>
                 <div class="row">
                     @foreach(config('app.locales') as $lang => $locale)
                         <div class="col">
@@ -66,6 +69,7 @@ for($i = 0; $i < 5; $i++) {
             var $items = $('#items');
 
             Sortable.create($items.get(0), {
+                handle: '.sortable-handle',
                 draggable: '.draggable',
                 animation: 150,
                 onEnd: function () {

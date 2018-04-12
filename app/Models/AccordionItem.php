@@ -10,7 +10,7 @@ class AccordionItem extends Model
 
     protected $guarded = [];
     public $timestamps = false;
-    public static $translatableColumns = ['title'];
+    public static $translatableColumns = ['title', 'content'];
 
     public function accordion()
     {
