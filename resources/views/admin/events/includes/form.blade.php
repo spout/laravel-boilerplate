@@ -18,20 +18,39 @@
             {!! Form::text("title_$lang") !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup("path_$lang", _i('Path (%s)', $lang)) !!}
-            {!! Form::text("path_$lang") !!}
-            @if (!empty($object->{"path_$lang"}))
-                <a href="{{ LaravelLocalization::getLocalizedURL($lang, route('contents.show', ['path' => $object->{"path_$lang"}])) }}" target="_blank">
-                    {{ LaravelLocalization::getLocalizedURL($lang, route('contents.show', ['path' => $object->{"path_$lang"}])) }}
-                </a>
-            @endif
-            {!! Form::closeGroup() !!}
-
-            {!! Form::openGroup("content_$lang", _i('Content (%s)', $lang)) !!}
-            {!! Form::textarea("content_$lang", null, ['class' => 'wysiwyg']) !!}
+            {!! Form::openGroup("description_$lang", _i('Description (%s)', $lang)) !!}
+            {!! Form::textarea("description_$lang", null, ['class' => 'wysiwyg']) !!}
             {!! Form::closeGroup() !!}
         </div>
     @endforeach
+
+    <div class="row">
+        <div class="col">
+            {!! Form::openGroup('date_start', _i("Start date")) !!}
+            {!! Form::date('date_start') !!}
+            {!! Form::closeGroup() !!}
+        </div>
+        <div class="col">
+            {!! Form::openGroup('date_end', _i("End date")) !!}
+            {!! Form::date('date_end') !!}
+            {!! Form::closeGroup() !!}
+        </div>
+    </div>
+
+    {!! Form::openGroup('address', _i("Address")) !!}
+    {!! Form::text('address') !!}
+    {!! Form::closeGroup() !!}
+
+    {!! Form::hidden('lat') !!}
+    {!! Form::hidden('lng') !!}
+
+    {!! Form::openGroup('country', _i("Country")) !!}
+    {!! Form::select('country') !!}
+    {!! Form::closeGroup() !!}
+
+    {!! Form::openGroup('city', _i("City")) !!}
+    {!! Form::text('city') !!}
+    {!! Form::closeGroup() !!}
 </div>
 
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
