@@ -10,6 +10,16 @@ class FormData extends Model
         'data' => 'array',
     ];
 
+    public static function verboseName()
+    {
+        return _i("form data");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("form datas");
+    }
+
     public function form()
     {
         return $this->belongsTo(Form::class);

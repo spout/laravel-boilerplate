@@ -17,4 +17,14 @@ class Snippet extends Model
         'title',
         'content',
     ];
+
+    public static function verboseName()
+    {
+        return _i("snippet");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("snippets");
+    }
 }

@@ -20,6 +20,16 @@ class MenuItem extends Model
         'content',
     ];
 
+    public static function verboseName()
+    {
+        return _i("menu item");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("menu items");
+    }
+
     protected static function boot()
     {
         parent::boot();

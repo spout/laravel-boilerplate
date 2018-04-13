@@ -10,6 +10,16 @@ class Price extends Model
         'updated_at'
     ];
 
+    public static function verboseName()
+    {
+        return _i("price");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("prices");
+    }
+
     public function product()
     {
         return $this->belongsTo(Product::class);

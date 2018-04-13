@@ -9,6 +9,16 @@ class Event extends Model
     protected $guarded = [];
     protected $dates = ['date_start', 'date_end', 'created_at', 'updated_at'];
 
+    public static function verboseName()
+    {
+        return _i("event");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("events");
+    }
+
     protected static function boot()
     {
         parent::boot();

@@ -12,6 +12,16 @@ class AccordionItem extends Model
     public $timestamps = false;
     public static $translatableColumns = ['title', 'content'];
 
+    public static function verboseName()
+    {
+        return _i("accordion item");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("accordion items");
+    }
+
     public function accordion()
     {
         return $this->belongsTo(Accordion::class);

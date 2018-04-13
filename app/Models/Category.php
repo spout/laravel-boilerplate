@@ -5,8 +5,17 @@ namespace App\Models;
 class Category extends Model
 {
     protected $guarded = [];
-
     public $timestamps = false;
+
+    public static function verboseName()
+    {
+        return _i("category");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("categories");
+    }
 
     public function products()
     {

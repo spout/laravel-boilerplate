@@ -14,6 +14,16 @@ class Menu extends Model
         'attributes',
     ];
 
+    public static function verboseName()
+    {
+        return _i("menu");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("menus");
+    }
+
     public function menuItems()
     {
         return $this->hasMany(MenuItem::class)->orderBy('sort');

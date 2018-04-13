@@ -11,6 +11,16 @@ class Redirection extends Model
         'destination',
     ];
 
+    public static function verboseName()
+    {
+        return _i("redirection");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("redirections");
+    }
+
     public function __toString()
     {
         return "{$this->domain}{$this->url} => {$this->destination}";

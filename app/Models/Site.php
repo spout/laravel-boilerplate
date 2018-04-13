@@ -12,6 +12,16 @@ class Site extends Model
         'name',
     ];
 
+    public static function verboseName()
+    {
+        return _i("site");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("sites");
+    }
+
     public function categories()
     {
         return $this->hasMany(Category::class);

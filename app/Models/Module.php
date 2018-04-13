@@ -12,6 +12,16 @@ class Module extends Model
     public static $translatableColumns = ['title'];
     protected $primaryKey = 'slug';
 
+    public static function verboseName()
+    {
+        return _i("module");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("modules");
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

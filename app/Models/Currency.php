@@ -10,6 +10,16 @@ class Currency extends Model
     public $incrementing = false;
     protected $primaryKey = 'code';
 
+    public static function verboseName()
+    {
+        return _i("currency");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("currencies");
+    }
+
     protected static function boot()
     {
         parent::boot();

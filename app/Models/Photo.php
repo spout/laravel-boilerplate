@@ -13,6 +13,16 @@ class Photo extends Model
         'tmb',
     ];
 
+    public static function verboseName()
+    {
+        return _i("photo");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("photos");
+    }
+
     protected static function boot()
     {
         parent::boot();

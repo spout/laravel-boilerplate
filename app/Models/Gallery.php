@@ -8,6 +8,16 @@ class Gallery extends Model
 
     protected $guarded = [];
 
+    public static function verboseName()
+    {
+        return _i("gallery");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("galleries");
+    }
+
     public function __toString()
     {
         return _i("Gallery %d", $this->pk);

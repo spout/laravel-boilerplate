@@ -9,6 +9,16 @@ class EventType extends Model
     public $timestamps = false;
     protected $guarded = [];
 
+    public static function verboseName()
+    {
+        return _i("event type");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("event types");
+    }
+
     protected static function boot()
     {
         parent::boot();

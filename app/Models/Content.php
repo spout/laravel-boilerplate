@@ -22,6 +22,16 @@ class Content extends Model
         'content',
     ];
 
+    public static function verboseName()
+    {
+        return _i("content");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("contents");
+    }
+
     public function getAbsoluteUrlAttribute()
     {
         if ($this->path === 'homepage') {

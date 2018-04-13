@@ -19,6 +19,16 @@ class FormField extends Model
         'label'
     ];
 
+    public static function verboseName()
+    {
+        return _i("form field");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("form fields");
+    }
+
     protected static function boot()
     {
         parent::boot();

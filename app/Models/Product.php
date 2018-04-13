@@ -10,6 +10,16 @@ class Product extends Model
         'updated_at'
     ];
 
+    public static function verboseName()
+    {
+        return _i("product");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("products");
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

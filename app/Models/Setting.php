@@ -13,6 +13,16 @@ class Setting extends Model
         'value',
     ];
 
+    public static function verboseName()
+    {
+        return _i("setting");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("settings");
+    }
+
     public function __toString()
     {
         return $this->value;

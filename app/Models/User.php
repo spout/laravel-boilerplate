@@ -35,6 +35,16 @@ class User extends Authenticatable
 
     protected $dates = ['created_at', 'updated_at'];
 
+    public static function verboseName()
+    {
+        return _i("user");
+    }
+
+    public static function verboseNamePlural()
+    {
+        return _i("users");
+    }
+
     public function __toString()
     {
         return $this->name;
