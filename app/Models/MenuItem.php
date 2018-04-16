@@ -42,11 +42,15 @@ class MenuItem extends Model
         return $this->belongsTo(Menu::class);
     }
 
+    public function menuItemable()
+    {
+        return $this->morphTo();
+    }
+
     public function getTitleAttribute($value)
     {
-        if (empty($value) && !empty($this->model_class) && !empty($this->foreign_key)) {
-            $row = $this->findAssociatedModel($this->model_class, $this->foreign_key);
-            return $row->__toString();
+        if (empty($value) && !empty($this->menu_itemable_type) && !empty($this->menu_itemable_id)) {
+            return $this->menuItemable->__toString();
         }
 
         return $value;
@@ -54,28 +58,16 @@ class MenuItem extends Model
 
     public function getAssociatedUrlAttribute($value)
     {
-        if (!empty($this->model_class) && !empty($this->foreign_key)) {
-            $row = $this->findAssociatedModel($this->model_class, $this->foreign_key);
-            if (!empty($row)) {
-                $value = $row->absoluteUrl;
+        if (!empty($this->menu_itemable_type) && !empty($this->menu_itemable_id)) {
+            if (!empty($this->menuItemable)) {
+                return $this->menuItemable->absoluteUrl;
             }
         } elseif (!empty($this->route)) {
             $route = json_decode($this->route, true);
-            $value = route($route['name'], empty($route['parameters']) ? [] : $route['parameters']);
+            return route($route['name'], empty($route['parameters']) ? [] : $route['parameters']);
         }
 
         return $value;
-    }
-
-    public function findAssociatedModel($modelClass, $foreignKey)
-    {
-        $cacheKey = __CLASS__ . $modelClass . $foreignKey;
-        $cacheMinutes = 60;
-        $modelClass = $this->model_class;
-        $foreignKey = $this->foreign_key;
-        return \Cache::remember($cacheKey, $cacheMinutes, function () use ($modelClass, $foreignKey) {
-            return $modelClass::find($foreignKey);
-        });
     }
 
     public function getAttributesToArrayAttribute($value)

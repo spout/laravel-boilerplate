@@ -68,7 +68,7 @@ class MenusController extends AdminController
             $menuItem = new MenuItem;
         }
 
-        $menuItem->fill($request->except(['id', 'siblings']));
+        $menuItem->fill($request->except(['id', 'siblings', 'menu_itemable']));
         $saved = $menuItem->save();
 
         if ($saved) {

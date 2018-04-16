@@ -137,7 +137,7 @@
           nodeData = data.node.data;
           fields.forEach(function (field) {
             $('#menu_item_' + field)
-              .val(field === 'association' ? nodeData.model_class + '.' + nodeData.foreign_key : nodeData[field])
+              .val(field === 'association' ? nodeData.menu_itemable_type + '.' + nodeData.menu_itemable_id : nodeData[field])
               .trigger('change.select2');
           });
         }).on("rename_node.jstree move_node.jstree", function (e, data) {
@@ -216,9 +216,9 @@
               let val = $(this).val();
               if (field === 'association') {
                 if (val) {
-                  [nodeData.model_class, nodeData.foreign_key] = val.split('.');
+                  [nodeData.menu_itemable_type, nodeData.menu_itemable_id] = val.split('.');
                 } else {
-                  [nodeData.model_class, nodeData.foreign_key] = [null, null];
+                  [nodeData.menu_itemable_type, nodeData.menu_itemable_id] = [null, null];
                 }
               } else {
                 nodeData[field] = val;
