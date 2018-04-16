@@ -20,8 +20,8 @@ class Price extends Model
         return _i("prices");
     }
 
-    public function product()
+    public function priceable()
     {
-        return $this->belongsTo(Product::class);
+        return $this->morphTo();
     }
 }
