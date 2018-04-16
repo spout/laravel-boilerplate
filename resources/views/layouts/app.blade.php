@@ -63,8 +63,6 @@
     </div>
     <div id="content">
         @yield('content')
-        [accordion id="1"]
-        {{--@include('includes.shortcodes')--}}
     </div>
     <footer>
         @menu(['slug' => 'footer'])
