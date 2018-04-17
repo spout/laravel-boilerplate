@@ -11,9 +11,10 @@ class Country extends Model
     use TranslatableTrait;
 
     public $timestamps = false;
+    public $incrementing = false;
+    public static $translatableColumns = ['name'];
     protected $primaryKey = 'code';
     protected $guarded = [];
-    public static $translatableColumns = ['name'];
 
     public static function verboseName()
     {

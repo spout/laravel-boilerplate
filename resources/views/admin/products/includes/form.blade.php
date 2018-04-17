@@ -7,6 +7,10 @@
 {!! Form::text('title') !!}
 {!! Form::closeGroup() !!}
 
+{!! Form::openGroup('country', _i('Country')) !!}
+{!! Form::select('country', $countryList) !!}
+{!! Form::closeGroup() !!}
+
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}
