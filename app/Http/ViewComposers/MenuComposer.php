@@ -12,12 +12,13 @@ class MenuComposer
     public function compose(View $view)
     {
         $models = [
-            Content::class => _i("Content"),
-            Post::class => _i("Post"),
+            Content::class,
+            Post::class,
         ];
 
         $associationList = ['' => '-'];
-        foreach ($models as $model => $label) {
+        foreach ($models as $model) {
+            $label = ucfirst($model::verboseName());
             if (in_array(AdjacencyListTrait::class, class_uses($model))) {
                 $tree = $model::all()->buildTree();
                 $associationList[$label] = $model::getTreeList($tree, function ($node) use ($model) {
