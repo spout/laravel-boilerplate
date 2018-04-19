@@ -34,4 +34,9 @@ class Country extends Model
 
         static::addGlobalScope(new OrderScope("name_{$locale}"));
     }
+
+    public function getFlagAttribute()
+    {
+        return asset('img/flags/' . strtolower($this->code) . '.gif');
+    }
 }
