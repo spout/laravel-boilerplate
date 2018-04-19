@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\ViewComposers\AddressBookableListComposer;
 use App\Http\ViewComposers\AdminComposer;
 use App\Http\ViewComposers\CategoryComposer;
 use App\Http\ViewComposers\ContentComposer;
@@ -31,6 +32,7 @@ class ComposerServiceProvider extends ServiceProvider
             ContentComposer::class => ['admin.contents.includes.form'],
             SnippetComposer::class => ['admin.snippets.includes.form'],
             CountryListComposer::class => ['admin.products.includes.form', 'admin.events.includes.form', 'admin.address-books.includes.form'],
+            AddressBookableListComposer::class => ['admin.address-books.includes.form'],
         ];
 
         foreach ($composers as $callback => $views) {

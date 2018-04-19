@@ -17,7 +17,7 @@ class AddressBooksDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => '__toString', 'name' => '__toString', 'title' => _i("Title")],
+            ['data' => 'id', 'name' => 'id', 'title' => _i("Id")],
         ];
     }
 }

@@ -3,6 +3,10 @@
     'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
+{!! Form::openGroup('address_bookable', _i('Association')) !!}
+{!! Form::select('address_bookable', $addressBookableList, $object->pk ? get_class($object->addressBookable) . '.' . $object->pk : null) !!}
+{!! Form::closeGroup() !!}
+
 {!! Form::openGroup('company', _i('Company')) !!}
 {!! Form::text('company') !!}
 {!! Form::closeGroup() !!}
