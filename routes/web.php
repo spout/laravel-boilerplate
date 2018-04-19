@@ -89,6 +89,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::resource('redirections', 'RedirectionsController', ['names' => route_resource_names('admin.redirections.{name}')]);
         Route::resource('sites', 'SitesController', ['names' => route_resource_names('admin.sites.{name}')]);
         Route::resource('accordions', 'AccordionsController', ['names' => route_resource_names('admin.accordions.{name}')]);
+        Route::resource('address-books', 'AddressBooksController', ['names' => route_resource_names('admin.address-books.{name}')]);
     });
 
     Route::group(['namespace' => 'Advertiser', 'prefix' => 'advertiser'], function () {

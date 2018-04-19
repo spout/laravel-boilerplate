@@ -30,7 +30,7 @@ class ComposerServiceProvider extends ServiceProvider
             CategoryComposer::class => ['admin.products.includes.form', 'admin.categories.includes.form'],
             ContentComposer::class => ['admin.contents.includes.form'],
             SnippetComposer::class => ['admin.snippets.includes.form'],
-            CountryListComposer::class => ['admin.products.includes.form', 'admin.events.includes.form'],
+            CountryListComposer::class => ['admin.products.includes.form', 'admin.events.includes.form', 'admin.address-books.includes.form'],
         ];
 
         foreach ($composers as $callback => $views) {

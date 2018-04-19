@@ -13,6 +13,7 @@ class AdminComposer
             _i("Categories") => 'admin.categories',
             _i("Contents") => 'admin.contents',
             _i("Products") => 'admin.products',
+            _i("Address books") => 'admin.address-books',
             _i("Prices") => 'admin.prices',
             _i("Offers") => 'admin.offers',
             _i("Events") => 'admin.events',
