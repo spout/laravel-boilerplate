@@ -76,6 +76,7 @@ return [
         '../resources/views',
         //'Console/Commands',
         'DataTables',
+        'Models',
     ],
 
     /**
