@@ -8,8 +8,11 @@ class AddressBookObserver
 {
     public function saving(AddressBook $addressBook)
     {
-        list($addressBook->address_bookable_type, $addressBook->address_bookable_id) = explode('.', $addressBook->address_bookable);
+        $addressBookable = request()->input('address_bookable');
+        if (empty($addressBookable)) {
+            return false;
+        }
 
-        unset($addressBook->address_bookable);
+        list($addressBook->address_bookable_type, $addressBook->address_bookable_id) = explode('.', $addressBookable);
     }
 }

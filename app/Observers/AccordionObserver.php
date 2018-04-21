@@ -7,11 +7,6 @@ use App\Models\AccordionItem;
 
 class AccordionObserver
 {
-    public function saving(Accordion $accordion)
-    {
-        unset($accordion->items);
-    }
-
     public function saved(Accordion $accordion)
     {
         // Delete all associated items

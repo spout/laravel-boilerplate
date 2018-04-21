@@ -6,7 +6,7 @@ class Gallery extends Model
 {
     public $timestamps = false;
 
-    protected $guarded = [];
+    protected $guarded = ['photos'];
 
     public static function verboseName()
     {

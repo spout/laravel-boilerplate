@@ -8,7 +8,7 @@ class Accordion extends Model
 {
     use TranslatableTrait;
 
-    protected $guarded = [];
+    protected $guarded = ['items'];
     public $timestamps = false;
     public static $translatableColumns = ['title'];
 

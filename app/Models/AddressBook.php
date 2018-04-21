@@ -4,7 +4,7 @@ namespace App\Models;
 
 class AddressBook extends Model
 {
-    protected $guarded = ['location'];
+    protected $guarded = ['location', 'address_bookable'];
     public $timestamps = false;
 
     public static function verboseName()

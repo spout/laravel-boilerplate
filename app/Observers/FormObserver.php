@@ -7,11 +7,6 @@ use App\Models\FormField;
 
 class FormObserver
 {
-    public function saving(Form $form)
-    {
-        unset($form->fields);
-    }
-
     public function saved(Form $form)
     {
         // Delete all associated fields

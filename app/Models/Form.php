@@ -4,7 +4,7 @@ namespace App\Models;
 
 class Form extends Model
 {
-    protected $guarded = [];
+    protected $guarded = ['fields'];
 
     public static function verboseName()
     {

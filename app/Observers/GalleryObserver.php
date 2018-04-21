@@ -7,11 +7,6 @@ use App\Models\Photo;
 
 class GalleryObserver
 {
-    public function saving(Gallery $gallery)
-    {
-        unset($gallery->photos);
-    }
-
     public function saved(Gallery $gallery)
     {
         // Delete all associated photos
