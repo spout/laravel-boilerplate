@@ -1,3 +1,5 @@
+@include('includes.google-place-autocomplete', ['domId' => 'location'])
+
 {!! Form::model($object, [
     'route' => empty($object->pk) ? ['admin.address-books.store'] : ['admin.address-books.update', $object->pk],
     'method' => empty($object->pk) ? 'POST' : 'PUT'
@@ -45,6 +47,12 @@
         {!! Form::closeGroup() !!}
     </div>
 </div>
+
+{!! Form::openGroup('location', _i('Location')) !!}
+{!! Form::text('location') !!}
+{!! Form::closeGroup() !!}
+
+<div id="map-canvas" style="width: 100%; height: 300px;"></div>
 
 {!! Form::openGroup('country', _i('Country')) !!}
 {!! Form::select('country', $countryList) !!}
