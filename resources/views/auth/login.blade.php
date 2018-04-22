@@ -31,7 +31,7 @@
                     {!! Form::close() !!}
                 </div>
                 <div class="col">
-                    @include('auth.includes.providers', ['verb' => _i("Login")])
+                    @include('auth.includes.providers', ['action' => 'login'])
                 </div>
             </div>
         </div>

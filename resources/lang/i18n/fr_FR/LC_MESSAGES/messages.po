@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-04-22 16:44+0200\n"
-"PO-Revision-Date: 2018-04-22 16:44+0200\n"
+"POT-Creation-Date: 2018-04-22 16:54+0200\n"
+"PO-Revision-Date: 2018-04-22 16:55+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -162,6 +162,18 @@ msgstr "Ajouter une option"
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:35
 msgid "Caption"
 msgstr "Légende"
+
+#: ../resources/views/auth/includes/providers.blade.php:2
+#: ../storage/framework/messages/cafe498eebdd2f6a6e4192b6705af5daf62dd9d2.php.php:2
+#, php-format
+msgid "Register with %s"
+msgstr "Inscription avec %s"
+
+#: ../resources/views/auth/includes/providers.blade.php:2
+#: ../storage/framework/messages/cafe498eebdd2f6a6e4192b6705af5daf62dd9d2.php.php:2
+#, php-format
+msgid "Login with %s"
+msgstr "Connexion avec %s"
 
 #: ../resources/views/includes/admin/create-button.blade.php:11
 #: ../storage/framework/messages/19c47d05eb1ae87f6449fdcd4849ecb3a9b1d075.php.php:11
@@ -413,7 +425,6 @@ msgstr "Ajouté dans vos favoris."
 #: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:1
 #: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:5
 #: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:33
-#: ../storage/framework/messages/0931c9f83538852bc93267e50708e14353830c46.php.php:45
 msgid "Login"
 msgstr "Connexion"
 
@@ -1214,7 +1225,6 @@ msgstr "Ce champ est requis."
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:1
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:5
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:40
-#: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:47
 msgid "Register"
 msgstr "Inscription"
 
@@ -1528,11 +1538,6 @@ msgstr "modules"
 #: ../storage/framework/messages/cab460da10a361df480428a4243ab907b71ded9c.php.php:1
 msgid "Update gallery"
 msgstr "Modifier galerie"
-
-#: ../storage/framework/messages/cafe498eebdd2f6a6e4192b6705af5daf62dd9d2.php.php:10
-#, php-format
-msgid "%s with %s"
-msgstr "%s avec %s"
 
 #: ../storage/framework/messages/cd28c6744d838a44dbd05e473cbb835d7ef9a826.php.php:36
 #: ../storage/framework/messages/edc5b9e38f30793e8112fe499c71b86c3bf014e0.php.php:37

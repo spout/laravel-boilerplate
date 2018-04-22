@@ -38,6 +38,10 @@ return [
     /**
      * Socialite providers
      */
+    'providers' => [
+        'facebook' => "Facebook",
+        'linkedin' => "LinkedIn",
+    ],
 
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
