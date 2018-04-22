@@ -20,7 +20,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
     Auth::routes();
     Route::group(['prefix' => 'login'], function () {
-        Route::get('{provider}', 'Auth\LoginController@redirectToProvider');
+        Route::get('{provider}', 'Auth\LoginController@redirectToProvider')->name('socialite.login');
         Route::get('{provider}/callback', 'Auth\LoginController@handleProviderCallback');
     });
 
