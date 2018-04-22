@@ -11,9 +11,11 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
 
     public function dataTable($query)
     {
+        $controllerClass = get_class(request()->route()->getController());
+
         $dataTable = datatables($query)
-            ->addColumn('action', function ($object) {
-                $resourcePrefix = static::$resourcePrefix;
+            ->addColumn('action', function ($object) use ($controllerClass) {
+                $resourcePrefix = $controllerClass::$resourcePrefix;
                 $actions = static::$actionColumnActions;
                 $view = "{$resourcePrefix}.includes.datatables.action";
                 if (!view()->exists($view)) {
@@ -26,7 +28,7 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
             //})
             ;
 
-        $model = static::$model;
+        $model = $controllerClass::$model;
         $traits = class_uses($model);
         $dates = (new $model)->getDates();
 
@@ -67,7 +69,8 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
      */
     public function query()
     {
-        $model = static::$model;
+        $controllerClass = get_class(request()->route()->getController());
+        $model = $controllerClass::$model;
         $query = $model::query();
 
         return $this->applyScopes($query);
@@ -98,7 +101,9 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
      */
     protected function filename()
     {
-        return strtolower(static::$model);
+        $controllerClass = get_class(request()->route()->getController());
+        $model = $controllerClass::$model;
+        return strtolower($model);
     }
 
     /**

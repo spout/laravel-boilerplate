@@ -2,18 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\Offer;
-
 class OffersDataTable extends DataTable
 {
-    protected static $model = Offer::class;
-    protected static $resourcePrefix = 'admin.offers';
-
-    /**
-     * Get columns.
-     *
-     * @return array
-     */
     protected function getColumns()
     {
         return [

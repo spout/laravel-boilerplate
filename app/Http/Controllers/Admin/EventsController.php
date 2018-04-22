@@ -11,4 +11,5 @@ class EventsController extends AdminController
     public static $model = Event::class;
     public static $requestClass = EventFormRequest::class;
     public static $dataTableClass = EventsDataTable::class;
+    public static $resourcePrefix = 'admin.events';
 }

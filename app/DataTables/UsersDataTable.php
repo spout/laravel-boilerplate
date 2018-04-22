@@ -2,13 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\User;
-
 class UsersDataTable extends DataTable
 {
-    protected static $model = User::class;
-    protected static $resourcePrefix = 'admin.users';
-
     public function dataTable($query)
     {
         $dataTable = parent::dataTable($query);
@@ -18,11 +13,6 @@ class UsersDataTable extends DataTable
         return $dataTable;
     }
 
-    /**
-     * Get columns.
-     *
-     * @return array
-     */
     protected function getColumns()
     {
         return [

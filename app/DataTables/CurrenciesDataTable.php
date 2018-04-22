@@ -2,18 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\Currency;
-
 class CurrenciesDataTable extends DataTable
 {
-    protected static $model = Currency::class;
-    protected static $resourcePrefix = 'admin.currencies';
-
-    /**
-     * Get columns.
-     *
-     * @return array
-     */
     protected function getColumns()
     {
         return [

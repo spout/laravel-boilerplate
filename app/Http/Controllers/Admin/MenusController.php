@@ -11,6 +11,7 @@ class MenusController extends AdminController
 {
     public static $model = Menu::class;
     public static $dataTableClass = MenusDataTable::class;
+    public static $resourcePrefix = 'admin.menus';
 
     public function update(Request $request, $pk)
     {

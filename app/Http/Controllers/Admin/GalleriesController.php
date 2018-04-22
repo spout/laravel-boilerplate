@@ -11,4 +11,5 @@ class GalleriesController extends AdminController
     public static $model = Gallery::class;
     public static $requestClass = GalleryFormRequest::class;
     public static $dataTableClass = GalleriesDataTable::class;
+    public static $resourcePrefix = 'admin.galleries';
 }

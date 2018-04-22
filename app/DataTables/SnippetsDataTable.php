@@ -2,18 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\Snippet;
-
 class SnippetsDataTable extends DataTable
 {
-    protected static $model = Snippet::class;
-    protected static $resourcePrefix = 'admin.snippets';
-
-    /**
-     * Get columns.
-     *
-     * @return array
-     */
     protected function getColumns()
     {
         return [

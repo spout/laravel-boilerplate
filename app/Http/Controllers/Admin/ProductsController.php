@@ -11,4 +11,5 @@ class ProductsController extends AdminController
     public static $model = Product::class;
     public static $requestClass = ProductFormRequest::class;
     public static $dataTableClass = ProductsDataTable::class;
+    public static $resourcePrefix = 'admin.products';
 }

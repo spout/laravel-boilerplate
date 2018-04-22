@@ -11,4 +11,5 @@ class SitesController extends AdminController
     public static $model = Site::class;
     public static $requestClass = SiteFormRequest::class;
     public static $dataTableClass = SitesDataTable::class;
+    public static $resourcePrefix = 'admin.sites';
 }

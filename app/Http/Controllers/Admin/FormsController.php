@@ -12,6 +12,7 @@ class FormsController extends AdminController
     public static $model = Form::class;
     public static $requestClass = FormFormRequest::class;
     public static $dataTableClass = FormsDataTable::class;
+    public static $resourcePrefix = 'admin.forms';
 
     public function preview(Request $request)
     {

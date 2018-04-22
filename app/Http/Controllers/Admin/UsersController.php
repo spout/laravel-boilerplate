@@ -9,4 +9,5 @@ class UsersController extends AdminController
 {
     public static $model = User::class;
     public static $dataTableClass = UsersDataTable::class;
+    public static $resourcePrefix = 'admin.users';
 }

@@ -11,4 +11,5 @@ class ContentsController extends AdminController
     public static $model = Content::class;
     public static $requestClass = ContentFormRequest::class;
     public static $dataTableClass = ContentsDataTable::class;
+    public static $resourcePrefix = 'admin.contents';
 }

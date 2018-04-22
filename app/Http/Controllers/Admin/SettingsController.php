@@ -9,4 +9,5 @@ class SettingsController extends AdminController
 {
     public static $model = Setting::class;
     public static $dataTableClass = SettingsDataTable::class;
+    public static $resourcePrefix = 'admin.settings';
 }

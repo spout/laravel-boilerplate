@@ -11,4 +11,5 @@ class CategoriesController extends AdminController
     public static $model = Category::class;
     public static $requestClass = CategoryFormRequest::class;
     public static $dataTableClass = CategoriesDataTable::class;
+    public static $resourcePrefix = 'admin.categories';
 }

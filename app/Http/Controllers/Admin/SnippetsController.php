@@ -11,4 +11,5 @@ class SnippetsController extends AdminController
     public static $model = Snippet::class;
     public static $requestClass = SnippetFormRequest::class;
     public static $dataTableClass = SnippetsDataTable::class;
+    public static $resourcePrefix = 'admin.snippets';
 }

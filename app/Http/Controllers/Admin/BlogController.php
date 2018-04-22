@@ -11,4 +11,5 @@ class BlogController extends AdminController
     public static $model = Post::class;
     public static $requestClass = PostFormRequest::class;
     public static $dataTableClass = BlogDataTable::class;
+    public static $resourcePrefix = 'admin.blog';
 }

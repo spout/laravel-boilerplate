@@ -11,4 +11,5 @@ class AddressBooksController extends AdminController
     public static $model = AddressBook::class;
     public static $requestClass = AddressBookFormRequest::class;
     public static $dataTableClass = AddressBooksDataTable::class;
+    public static $resourcePrefix = 'admin.address-books';
 }

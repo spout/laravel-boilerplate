@@ -11,4 +11,5 @@ class RedirectionsController extends AdminController
     public static $model = Redirection::class;
     public static $requestClass = RedirectionFormRequest::class;
     public static $dataTableClass = RedirectionsDataTable::class;
+    public static $resourcePrefix = 'admin.redirections';
 }

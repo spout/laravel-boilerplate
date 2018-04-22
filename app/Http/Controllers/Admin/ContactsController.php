@@ -9,4 +9,5 @@ class ContactsController extends AdminController
 {
     public static $model = Contact::class;
     public static $dataTableClass = ContactsDataTable::class;
+    public static $resourcePrefix = 'admin.contacts';
 }

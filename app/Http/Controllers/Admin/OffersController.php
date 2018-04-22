@@ -11,4 +11,5 @@ class OffersController extends AdminController
     public static $model = Offer::class;
     public static $requestClass = OfferFormRequest::class;
     public static $dataTableClass = OffersDataTable::class;
+    public static $resourcePrefix = 'admin.offers';
 }

@@ -11,4 +11,5 @@ class PricesController extends AdminController
     public static $model = Price::class;
     public static $requestClass = PriceFormRequest::class;
     public static $dataTableClass = PricesDataTable::class;
+    public static $resourcePrefix = 'admin.prices';
 }

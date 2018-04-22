@@ -2,18 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\Event;
-
 class EventsDataTable extends DataTable
 {
-    protected static $model = Event::class;
-    protected static $resourcePrefix = 'admin.events';
-
-    /**
-     * Get columns.
-     *
-     * @return array
-     */
     protected function getColumns()
     {
         return [

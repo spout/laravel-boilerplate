@@ -2,18 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\Content;
-
 class ContentsDataTable extends DataTable
 {
-    protected static $model = Content::class;
-    protected static $resourcePrefix = 'admin.contents';
-
-    /**
-     * Get columns.
-     *
-     * @return array
-     */
     protected function getColumns()
     {
         return [

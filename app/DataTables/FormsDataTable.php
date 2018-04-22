@@ -2,13 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\Form;
-
 class FormsDataTable extends DataTable
 {
-    protected static $model = Form::class;
-    protected static $resourcePrefix = 'admin.forms';
-
     public function dataTable($query)
     {
         $dataTable = parent::dataTable($query);
@@ -18,11 +13,6 @@ class FormsDataTable extends DataTable
         return $dataTable;
     }
 
-    /**
-     * Get columns.
-     *
-     * @return array
-     */
     protected function getColumns()
     {
         return [
