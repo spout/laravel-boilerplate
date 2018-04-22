@@ -3,6 +3,6 @@
 @section('title', _i("Redirections"))
 
 @section('content')
-    @include('includes.admin.create-button', ['url' => route('admin.redirections.create')])
+    @include('includes.admin.create-button')
     @include('includes.datatables.table')
 @endsection

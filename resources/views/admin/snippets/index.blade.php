@@ -3,6 +3,6 @@
 @section('title', _i("Snippets"))
 
 @section('content')
-    @include('includes.admin.create-button', ['url' => route('admin.snippets.create')])
+    @include('includes.admin.create-button')
     @include('includes.datatables.table')
 @endsection
