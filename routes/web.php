@@ -19,6 +19,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/', 'ContentsController@show')->name('homepage');
 
     Auth::routes();
+    Route::group(['prefix' => 'login'], function () {
+        Route::get('{provider}', 'Auth\LoginController@redirectToProvider');
+        Route::get('{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+    });
 
     Route::get('contact', 'ContactsController@form')->name('contacts.form');
     Route::post('contact', 'ContactsController@send')->name('contacts.send');

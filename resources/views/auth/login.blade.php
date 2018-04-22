@@ -16,8 +16,8 @@
             {!! Form::password('password') !!}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup('remember', _i("Remember me")) !!}
-            {!! Form::checkbox('remember') !!}
+            {!! Form::openGroup('remember') !!}
+            {!! Form::checkbox('remember', 1, _i("Remember me")) !!}
             {!! Form::closeGroup() !!}
 
             {!! Form::button(_i("Login"), ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
