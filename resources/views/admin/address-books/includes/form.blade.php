@@ -1,5 +1,3 @@
-@include('includes.google-place-autocomplete', ['domId' => 'location'])
-
 {!! Form::model($object, [
     'route' => empty($object->pk) ? ['admin.address-books.store'] : ['admin.address-books.update', $object->pk],
     'method' => empty($object->pk) ? 'POST' : 'PUT'
@@ -48,11 +46,20 @@
     </div>
 </div>
 
-{!! Form::openGroup('location', _i('Location')) !!}
-{!! Form::text('location') !!}
-{!! Form::closeGroup() !!}
+@include('includes.google-place-autocomplete', ['domId' => 'location'])
 
-<div id="map-canvas" style="width: 100%; height: 300px;"></div>
+<div class="row">
+    <div class="col">
+        {!! Form::openGroup('lat', _i('Latitude')) !!}
+        {!! Form::number('lat', null, ['step' => 'any']) !!}
+        {!! Form::closeGroup() !!}
+    </div>
+    <div class="col">
+        {!! Form::openGroup('lng', _i('Longitude')) !!}
+        {!! Form::number('lng', null, ['step' => 'any']) !!}
+        {!! Form::closeGroup() !!}
+    </div>
+</div>
 
 {!! Form::openGroup('country', _i('Country')) !!}
 {!! Form::select('country', $countryList) !!}
@@ -74,19 +81,6 @@
 {!! Form::openGroup('address', _i('Address')) !!}
 {!! Form::text('address') !!}
 {!! Form::closeGroup() !!}
-
-<div class="row">
-    <div class="col">
-        {!! Form::openGroup('lat', _i('Latitude')) !!}
-        {!! Form::number('lat', null, ['step' => 'any']) !!}
-        {!! Form::closeGroup() !!}
-    </div>
-    <div class="col">
-        {!! Form::openGroup('lng', _i('Longitude')) !!}
-        {!! Form::number('lng', null, ['step' => 'any']) !!}
-        {!! Form::closeGroup() !!}
-    </div>
-</div>
 
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
