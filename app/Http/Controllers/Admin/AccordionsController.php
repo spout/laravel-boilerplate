@@ -8,7 +8,7 @@ use App\Models\Accordion;
 
 class AccordionsController extends AdminController
 {
-    protected static $model = Accordion::class;
-    protected static $requestClass = AccordionFormRequest::class;
-    protected static $dataTableClass = AccordionsDataTable::class;
+    public static $model = Accordion::class;
+    public static $requestClass = AccordionFormRequest::class;
+    public static $dataTableClass = AccordionsDataTable::class;
 }

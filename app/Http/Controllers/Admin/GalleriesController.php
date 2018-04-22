@@ -8,7 +8,7 @@ use App\Models\Gallery;
 
 class GalleriesController extends AdminController
 {
-    protected static $model = Gallery::class;
-    protected static $requestClass = GalleryFormRequest::class;
-    protected static $dataTableClass = GalleriesDataTable::class;
+    public static $model = Gallery::class;
+    public static $requestClass = GalleryFormRequest::class;
+    public static $dataTableClass = GalleriesDataTable::class;
 }

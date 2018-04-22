@@ -8,7 +8,7 @@ use App\Models\Product;
 
 class ProductsController extends AdminController
 {
-    protected static $model = Product::class;
-    protected static $requestClass = ProductFormRequest::class;
-    protected static $dataTableClass = ProductsDataTable::class;
+    public static $model = Product::class;
+    public static $requestClass = ProductFormRequest::class;
+    public static $dataTableClass = ProductsDataTable::class;
 }

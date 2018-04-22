@@ -8,7 +8,7 @@ use App\Models\Snippet;
 
 class SnippetsController extends AdminController
 {
-    protected static $model = Snippet::class;
-    protected static $requestClass = SnippetFormRequest::class;
-    protected static $dataTableClass = SnippetsDataTable::class;
+    public static $model = Snippet::class;
+    public static $requestClass = SnippetFormRequest::class;
+    public static $dataTableClass = SnippetsDataTable::class;
 }

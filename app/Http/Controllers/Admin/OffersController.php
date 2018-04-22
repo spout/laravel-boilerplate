@@ -8,7 +8,7 @@ use App\Models\Offer;
 
 class OffersController extends AdminController
 {
-    protected static $model = Offer::class;
-    protected static $requestClass = OfferFormRequest::class;
-    protected static $dataTableClass = OffersDataTable::class;
+    public static $model = Offer::class;
+    public static $requestClass = OfferFormRequest::class;
+    public static $dataTableClass = OffersDataTable::class;
 }

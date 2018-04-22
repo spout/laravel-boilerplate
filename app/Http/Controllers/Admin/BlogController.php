@@ -8,7 +8,7 @@ use App\Models\Post;
 
 class BlogController extends AdminController
 {
-    protected static $model = Post::class;
-    protected static $requestClass = PostFormRequest::class;
-    protected static $dataTableClass = BlogDataTable::class;
+    public static $model = Post::class;
+    public static $requestClass = PostFormRequest::class;
+    public static $dataTableClass = BlogDataTable::class;
 }

@@ -8,7 +8,7 @@ use App\Models\AddressBook;
 
 class AddressBooksController extends AdminController
 {
-    protected static $model = AddressBook::class;
-    protected static $requestClass = AddressBookFormRequest::class;
-    protected static $dataTableClass = AddressBooksDataTable::class;
+    public static $model = AddressBook::class;
+    public static $requestClass = AddressBookFormRequest::class;
+    public static $dataTableClass = AddressBooksDataTable::class;
 }

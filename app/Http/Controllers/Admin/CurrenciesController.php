@@ -8,7 +8,7 @@ use App\Models\Currency;
 
 class CurrenciesController extends AdminController
 {
-    protected static $model = Currency::class;
-    protected static $requestClass = CurrencyFormRequest::class;
-    protected static $dataTableClass = CurrenciesDataTable::class;
+    public static $model = Currency::class;
+    public static $requestClass = CurrencyFormRequest::class;
+    public static $dataTableClass = CurrenciesDataTable::class;
 }

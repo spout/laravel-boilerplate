@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class FormsController extends AdminController
 {
-    protected static $model = Form::class;
-    protected static $requestClass = FormFormRequest::class;
-    protected static $dataTableClass = FormsDataTable::class;
+    public static $model = Form::class;
+    public static $requestClass = FormFormRequest::class;
+    public static $dataTableClass = FormsDataTable::class;
 
     public function preview(Request $request)
     {

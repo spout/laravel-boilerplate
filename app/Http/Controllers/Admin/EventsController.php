@@ -8,7 +8,7 @@ use App\Models\Event;
 
 class EventsController extends AdminController
 {
-    protected static $model = Event::class;
-    protected static $requestClass = EventFormRequest::class;
-    protected static $dataTableClass = EventsDataTable::class;
+    public static $model = Event::class;
+    public static $requestClass = EventFormRequest::class;
+    public static $dataTableClass = EventsDataTable::class;
 }

@@ -8,7 +8,7 @@ use App\Models\Redirection;
 
 class RedirectionsController extends AdminController
 {
-    protected static $model = Redirection::class;
-    protected static $requestClass = RedirectionFormRequest::class;
-    protected static $dataTableClass = RedirectionsDataTable::class;
+    public static $model = Redirection::class;
+    public static $requestClass = RedirectionFormRequest::class;
+    public static $dataTableClass = RedirectionsDataTable::class;
 }

@@ -7,6 +7,6 @@ use App\Models\Setting;
 
 class SettingsController extends AdminController
 {
-    protected static $model = Setting::class;
-    protected static $dataTableClass = SettingsDataTable::class;
+    public static $model = Setting::class;
+    public static $dataTableClass = SettingsDataTable::class;
 }

@@ -7,6 +7,6 @@ use App\Models\User;
 
 class UsersController extends AdminController
 {
-    protected static $model = User::class;
-    protected static $dataTableClass = UsersDataTable::class;
+    public static $model = User::class;
+    public static $dataTableClass = UsersDataTable::class;
 }

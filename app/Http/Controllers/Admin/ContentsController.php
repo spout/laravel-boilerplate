@@ -8,7 +8,7 @@ use App\Models\Content;
 
 class ContentsController extends AdminController
 {
-    protected static $model = Content::class;
-    protected static $requestClass = ContentFormRequest::class;
-    protected static $dataTableClass = ContentsDataTable::class;
+    public static $model = Content::class;
+    public static $requestClass = ContentFormRequest::class;
+    public static $dataTableClass = ContentsDataTable::class;
 }

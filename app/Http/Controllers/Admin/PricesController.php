@@ -8,7 +8,7 @@ use App\Models\Price;
 
 class PricesController extends AdminController
 {
-    protected static $model = Price::class;
-    protected static $requestClass = PriceFormRequest::class;
-    protected static $dataTableClass = PricesDataTable::class;
+    public static $model = Price::class;
+    public static $requestClass = PriceFormRequest::class;
+    public static $dataTableClass = PricesDataTable::class;
 }

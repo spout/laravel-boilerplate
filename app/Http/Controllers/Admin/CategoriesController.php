@@ -8,7 +8,7 @@ use App\Models\Category;
 
 class CategoriesController extends AdminController
 {
-    protected static $model = Category::class;
-    protected static $requestClass = CategoryFormRequest::class;
-    protected static $dataTableClass = CategoriesDataTable::class;
+    public static $model = Category::class;
+    public static $requestClass = CategoryFormRequest::class;
+    public static $dataTableClass = CategoriesDataTable::class;
 }

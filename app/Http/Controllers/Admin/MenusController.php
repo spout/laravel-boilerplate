@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 
 class MenusController extends AdminController
 {
-    protected static $model = Menu::class;
-    protected static $dataTableClass = MenusDataTable::class;
+    public static $model = Menu::class;
+    public static $dataTableClass = MenusDataTable::class;
 
     public function update(Request $request, $pk)
     {

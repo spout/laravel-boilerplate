@@ -8,7 +8,7 @@ use App\Models\Site;
 
 class SitesController extends AdminController
 {
-    protected static $model = Site::class;
-    protected static $requestClass = SiteFormRequest::class;
-    protected static $dataTableClass = SitesDataTable::class;
+    public static $model = Site::class;
+    public static $requestClass = SiteFormRequest::class;
+    public static $dataTableClass = SitesDataTable::class;
 }

@@ -7,6 +7,6 @@ use App\Models\Contact;
 
 class ContactsController extends AdminController
 {
-    protected static $model = Contact::class;
-    protected static $dataTableClass = ContactsDataTable::class;
+    public static $model = Contact::class;
+    public static $dataTableClass = ContactsDataTable::class;
 }
