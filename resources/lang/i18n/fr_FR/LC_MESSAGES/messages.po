@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-04-22 12:47+0000\n"
-"PO-Revision-Date: 2018-04-22 12:47+0000\n"
+"POT-Creation-Date: 2018-04-22 15:19+0200\n"
+"PO-Revision-Date: 2018-04-22 15:20+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-KeywordsList: _;__;_i;_s;gettext;_n:1,2;ngettext:1,2;dgettext:2\n"
 "X-Poedit-Basepath: ../../../../../app\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SearchPath-2: ../resources/views\n"
 "X-Poedit-SearchPath-3: DataTables\n"
 "X-Poedit-SearchPath-4: Models\n"
-"X-Poedit-SearchPath-5: ../storage/framework/messages/\n"
+"X-Poedit-SearchPath-5: ../storage/framework/messages\n"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:30
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:43
@@ -47,41 +47,41 @@ msgstr "Téléphone"
 #: ../storage/framework/messages/1e36747e33aef3a4214332ad962d242e1b658818.php.php:17
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:38
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:40
-#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:21
+#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:11
 #: ../storage/framework/messages/3350ae1af9d67844882c49e4e30cf3cbbcae3361.php.php:17
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:31
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:21
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:17
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:14
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:7
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:25
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:47
-#: DataTables/ContactsDataTable.php:21 DataTables/UsersDataTable.php:31
+#: DataTables/ContactsDataTable.php:11 DataTables/UsersDataTable.php:21
 msgid "Email"
 msgstr "Email"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:35
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:14
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:23
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:29
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:19
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:48
-#: DataTables/UsersDataTable.php:29
+#: DataTables/UsersDataTable.php:19
 msgid "Firstname"
 msgstr "Prénom"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:36
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:6
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:31
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:30
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:20
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:49
-#: DataTables/UsersDataTable.php:30
+#: DataTables/UsersDataTable.php:20
 msgid "Lastname"
 msgstr "Nom"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:37
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:14
-#: ../storage/framework/messages/b2528904818ffc7be09d6422adeda6962710aba5.php.php:21
+#: ../storage/framework/messages/b2528904818ffc7be09d6422adeda6962710aba5.php.php:11
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:50
-#: DataTables/RedirectionsDataTable.php:21
+#: DataTables/RedirectionsDataTable.php:11
 msgid "URL"
 msgstr "URL"
 
@@ -163,6 +163,12 @@ msgstr "Ajouter une option"
 msgid "Caption"
 msgstr "Légende"
 
+#: ../resources/views/includes/admin/create-button.blade.php:11
+#: ../storage/framework/messages/19c47d05eb1ae87f6449fdcd4849ecb3a9b1d075.php.php:11
+#, php-format
+msgid "Add %s"
+msgstr "Ajouter %s"
+
 #: ../resources/views/includes/datatables/actions/delete.blade.php:5
 #: ../storage/framework/messages/5f110a3f33c312367417430c4271d5945c8634b3.php.php:5
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:196
@@ -195,7 +201,7 @@ msgid "Google map"
 msgstr "Carte Google"
 
 #: ../resources/views/includes/shortcodes.blade.php:27
-#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:100
+#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:121
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:56
 #: ../storage/framework/messages/ec8d282044d59ecdf429fb525133cf456f51cc25.php.php:27
 msgid "Address"
@@ -214,16 +220,16 @@ msgstr "Fragment"
 #: ../resources/views/includes/shortcodes.blade.php:38
 #: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:7
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:9
-#: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:21
-#: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:20
-#: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:20
+#: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:11
+#: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:10
+#: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:10
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:16
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:17
 #: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:12
 #: ../storage/framework/messages/ec8d282044d59ecdf429fb525133cf456f51cc25.php.php:38
-#: ../storage/framework/messages/fda7962579b3e46aa55af776c194a9b8e40eabb6.php.php:21
-#: DataTables/BlogDataTable.php:21 DataTables/MenusDataTable.php:21
-#: DataTables/SitesDataTable.php:20 DataTables/SnippetsDataTable.php:20
+#: ../storage/framework/messages/fda7962579b3e46aa55af776c194a9b8e40eabb6.php.php:11
+#: DataTables/BlogDataTable.php:11 DataTables/MenusDataTable.php:11
+#: DataTables/SitesDataTable.php:10 DataTables/SnippetsDataTable.php:10
 msgid "Slug"
 msgstr "Identifiant"
 
@@ -250,9 +256,9 @@ msgid "Video URL"
 msgstr "URL vidéo"
 
 #: ../resources/views/shortcodes/form.blade.php:84
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:16
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:11
 #: ../storage/framework/messages/45f0c3582ecb071b05aff9b1492d6a426e851b14.php.php:84
-#: DataTables/UsersDataTable.php:16
+#: DataTables/UsersDataTable.php:11
 msgid "Yes"
 msgstr "Oui"
 
@@ -281,32 +287,32 @@ msgid "Create offer"
 msgstr "Créer offre"
 
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:7
-#: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:20
-#: DataTables/CurrenciesDataTable.php:20
+#: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:10
+#: DataTables/CurrenciesDataTable.php:10
 msgid "Code"
 msgstr "Code"
 
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:14
 #: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:21
 #: ../storage/framework/messages/4591d5ed419498488d93d12478568f052e133fe0.php.php:12
-#: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:22
+#: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:12
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:10
-#: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:21
+#: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:11
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:7
-#: DataTables/CurrenciesDataTable.php:21 DataTables/SitesDataTable.php:22
+#: DataTables/CurrenciesDataTable.php:11 DataTables/SitesDataTable.php:12
 msgid "Name"
 msgstr "Nom"
 
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:21
-#: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:22
-#: DataTables/CurrenciesDataTable.php:22
+#: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:12
+#: DataTables/CurrenciesDataTable.php:12
 msgid "Symbol"
 msgstr "Symbole"
 
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:28
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:28
 #: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:28
-#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:126
+#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:128
 #: ../storage/framework/messages/27967d8d314a2ab4d750d5b751fc1f3efc61e8ee.php.php:51
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:63
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:55
@@ -343,59 +349,59 @@ msgstr "accordéon"
 msgid "accordions"
 msgstr "accordéons"
 
-#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:20
-#: ../storage/framework/messages/0d14570f60a8992af9c3833c5e49fb679a477d5e.php.php:20
-#: ../storage/framework/messages/1e79524cf2129069330a9f43f71bca9c405fb33a.php.php:29
-#: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:20
+#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:10
+#: ../storage/framework/messages/0d14570f60a8992af9c3833c5e49fb679a477d5e.php.php:10
+#: ../storage/framework/messages/1e79524cf2129069330a9f43f71bca9c405fb33a.php.php:19
+#: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:10
 #: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:7
-#: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:21
-#: ../storage/framework/messages/7723684dc6bcff37449bae1b492f81d9acdb2362.php.php:20
+#: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:11
+#: ../storage/framework/messages/7723684dc6bcff37449bae1b492f81d9acdb2362.php.php:10
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:9
-#: ../storage/framework/messages/7e967a1a6960d8201159427a9f7deaf2104f0a52.php.php:20
+#: ../storage/framework/messages/7e967a1a6960d8201159427a9f7deaf2104f0a52.php.php:10
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:10
-#: ../storage/framework/messages/e1134f8b8817396b3c820c4325043d41c5500cbc.php.php:20
+#: ../storage/framework/messages/e1134f8b8817396b3c820c4325043d41c5500cbc.php.php:10
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:10
-#: ../storage/framework/messages/f5b67833453d03963b27d62c0d9e411fca6e3476.php.php:29
-#: ../storage/framework/messages/fda7962579b3e46aa55af776c194a9b8e40eabb6.php.php:20
-#: DataTables/AccordionsDataTable.php:20 DataTables/BlogDataTable.php:20
-#: DataTables/ContentsDataTable.php:20 DataTables/EventsDataTable.php:20
-#: DataTables/FormsDataTable.php:29 DataTables/GalleriesDataTable.php:29
-#: DataTables/MenusDataTable.php:20 DataTables/OffersDataTable.php:20
-#: DataTables/ProductsDataTable.php:20 DataTables/SnippetsDataTable.php:21
+#: ../storage/framework/messages/f5b67833453d03963b27d62c0d9e411fca6e3476.php.php:19
+#: ../storage/framework/messages/fda7962579b3e46aa55af776c194a9b8e40eabb6.php.php:10
+#: DataTables/AccordionsDataTable.php:10 DataTables/BlogDataTable.php:10
+#: DataTables/ContentsDataTable.php:10 DataTables/EventsDataTable.php:10
+#: DataTables/FormsDataTable.php:19 DataTables/GalleriesDataTable.php:19
+#: DataTables/MenusDataTable.php:10 DataTables/OffersDataTable.php:10
+#: DataTables/ProductsDataTable.php:10 DataTables/SnippetsDataTable.php:11
 msgid "Title"
 msgstr "Titre"
 
-#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:21
+#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:11
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:39
-#: DataTables/EventsDataTable.php:21
+#: DataTables/EventsDataTable.php:11
 msgid "Start date"
 msgstr "Date de début"
 
-#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:22
+#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:12
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:47
-#: DataTables/EventsDataTable.php:22
+#: DataTables/EventsDataTable.php:12
 msgid "End date"
 msgstr "Date de fin"
 
-#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:23
-#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:23
-#: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:22
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:33
-#: ../storage/framework/messages/7e967a1a6960d8201159427a9f7deaf2104f0a52.php.php:21
-#: DataTables/BlogDataTable.php:22 DataTables/ContactsDataTable.php:23
-#: DataTables/EventsDataTable.php:23 DataTables/OffersDataTable.php:21
-#: DataTables/UsersDataTable.php:33
+#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:13
+#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:13
+#: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:12
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:23
+#: ../storage/framework/messages/7e967a1a6960d8201159427a9f7deaf2104f0a52.php.php:11
+#: DataTables/BlogDataTable.php:12 DataTables/ContactsDataTable.php:13
+#: DataTables/EventsDataTable.php:13 DataTables/OffersDataTable.php:11
+#: DataTables/UsersDataTable.php:23
 msgid "Created"
 msgstr "Créé"
 
-#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:24
-#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:24
-#: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:23
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:34
-#: ../storage/framework/messages/7e967a1a6960d8201159427a9f7deaf2104f0a52.php.php:22
-#: DataTables/BlogDataTable.php:23 DataTables/ContactsDataTable.php:24
-#: DataTables/EventsDataTable.php:24 DataTables/OffersDataTable.php:22
-#: DataTables/UsersDataTable.php:34
+#: ../storage/framework/messages/06066eeeee77bfb9f42f8fbec76d293b6cebd5da.php.php:14
+#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:14
+#: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:13
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:24
+#: ../storage/framework/messages/7e967a1a6960d8201159427a9f7deaf2104f0a52.php.php:12
+#: DataTables/BlogDataTable.php:13 DataTables/ContactsDataTable.php:14
+#: DataTables/EventsDataTable.php:14 DataTables/OffersDataTable.php:12
+#: DataTables/UsersDataTable.php:24
 msgid "Updated"
 msgstr "Modifié"
 
@@ -427,15 +433,15 @@ msgstr "Mot de passe perdu ?"
 
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:7
 #: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:14
-#: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:21
-#: ../storage/framework/messages/b2528904818ffc7be09d6422adeda6962710aba5.php.php:20
-#: DataTables/RedirectionsDataTable.php:20 DataTables/SitesDataTable.php:21
+#: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:11
+#: ../storage/framework/messages/b2528904818ffc7be09d6422adeda6962710aba5.php.php:10
+#: DataTables/RedirectionsDataTable.php:10 DataTables/SitesDataTable.php:11
 msgid "Domain"
 msgstr "Domaine"
 
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:21
-#: ../storage/framework/messages/b2528904818ffc7be09d6422adeda6962710aba5.php.php:22
-#: DataTables/RedirectionsDataTable.php:22
+#: ../storage/framework/messages/b2528904818ffc7be09d6422adeda6962710aba5.php.php:12
+#: DataTables/RedirectionsDataTable.php:12
 msgid "Destination"
 msgstr "Destination"
 
@@ -527,12 +533,6 @@ msgstr "Tarifs"
 msgid "Update currency"
 msgstr "Modifier devise"
 
-#: ../storage/framework/messages/19c47d05eb1ae87f6449fdcd4849ecb3a9b1d075.php.php:2
-#: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:35
-#: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:137
-msgid "Create"
-msgstr "Créer"
-
 #: ../storage/framework/messages/1a4afca865e15394eec80a940453dc129b47788c.php.php:1
 msgid "Update address book"
 msgstr "Modifier carnet d'adresses"
@@ -572,9 +572,9 @@ msgstr "Réinitialisation du mot de passe"
 msgid "Confirm password"
 msgstr "Confirmer le mot de passe"
 
-#: ../storage/framework/messages/1e79524cf2129069330a9f43f71bca9c405fb33a.php.php:30
-#: ../storage/framework/messages/f5b67833453d03963b27d62c0d9e411fca6e3476.php.php:30
-#: DataTables/FormsDataTable.php:30 DataTables/GalleriesDataTable.php:30
+#: ../storage/framework/messages/1e79524cf2129069330a9f43f71bca9c405fb33a.php.php:20
+#: ../storage/framework/messages/f5b67833453d03963b27d62c0d9e411fca6e3476.php.php:20
+#: DataTables/FormsDataTable.php:20 DataTables/GalleriesDataTable.php:20
 msgid "Shortcode"
 msgstr "Shortcode"
 
@@ -611,8 +611,8 @@ msgstr "Le titre est requis."
 
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:22
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:14
-#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:20
-#: DataTables/ContactsDataTable.php:20
+#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:10
+#: DataTables/ContactsDataTable.php:10
 msgid "Company"
 msgstr "Société"
 
@@ -630,6 +630,10 @@ msgstr "Message"
 msgid "Send"
 msgstr "Envoyer"
 
+#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:7
+msgid "Association"
+msgstr "Association"
+
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:57
 msgid "Mobile"
 msgstr "Mobile"
@@ -638,28 +642,28 @@ msgstr "Mobile"
 msgid "Fax"
 msgstr "Fax"
 
-#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:74
+#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:78
+msgid "Latitude"
+msgstr "Latitude"
+
+#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:86
+msgid "Longitude"
+msgstr "Longitude"
+
+#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:95
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:68
 #: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:14
 msgid "Country"
 msgstr "Pays"
 
-#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:83
+#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:104
 msgid "Postcode"
 msgstr "Code postal"
 
-#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:91
+#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:112
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:75
 msgid "City"
 msgstr "Ville"
-
-#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:109
-msgid "Latitude"
-msgstr "Latitude"
-
-#: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:117
-msgid "Longitude"
-msgstr "Longitude"
 
 #: ../storage/framework/messages/27967d8d314a2ab4d750d5b751fc1f3efc61e8ee.php.php:12
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:12
@@ -723,9 +727,9 @@ msgstr "Catégories"
 msgid "Update offer"
 msgstr "Modifier offre"
 
-#: ../storage/framework/messages/2ce53f66ef4ab2b014cc9a976c8430a2e13dbae5.php.php:20
+#: ../storage/framework/messages/2ce53f66ef4ab2b014cc9a976c8430a2e13dbae5.php.php:10
 #: ../storage/framework/messages/666bb58ff86b365a974109c02c497e015fe06cdd.php.php:9
-#: DataTables/SettingsDataTable.php:20
+#: DataTables/SettingsDataTable.php:10
 msgid "Key"
 msgstr "Clé"
 
@@ -739,10 +743,10 @@ msgstr "evénement"
 msgid "events"
 msgstr "événements"
 
-#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:22
+#: ../storage/framework/messages/2e2813d565726a251d79ecba123361e4bca73b0e.php.php:12
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:14
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:26
-#: DataTables/ContactsDataTable.php:22
+#: DataTables/ContactsDataTable.php:12
 msgid "Subject"
 msgstr "Sujet"
 
@@ -790,26 +794,26 @@ msgid "Parent"
 msgstr "Parent"
 
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:14
-#: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:22
-#: DataTables/CategoriesDataTable.php:22
+#: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:12
+#: DataTables/CategoriesDataTable.php:12
 msgid "Title singular"
 msgstr "Titre singulier"
 
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:21
-#: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:23
-#: DataTables/CategoriesDataTable.php:23
+#: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:13
+#: DataTables/CategoriesDataTable.php:13
 msgid "Slug singular"
 msgstr "Identifiant singulier"
 
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:28
-#: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:20
-#: DataTables/CategoriesDataTable.php:20
+#: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:10
+#: DataTables/CategoriesDataTable.php:10
 msgid "Title plural"
 msgstr "Titre pluriel"
 
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:35
-#: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:21
-#: DataTables/CategoriesDataTable.php:21
+#: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:11
+#: DataTables/CategoriesDataTable.php:11
 msgid "Slug plural"
 msgstr "Identifiant pluriel"
 
@@ -893,14 +897,14 @@ msgstr "Message envoyé avec succès."
 msgid "Update site"
 msgstr "Modifier site"
 
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:16
-#: DataTables/UsersDataTable.php:16
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:11
+#: DataTables/UsersDataTable.php:11
 msgid "No"
 msgstr "Non"
 
-#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:32
+#: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:22
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:28
-#: DataTables/UsersDataTable.php:32
+#: DataTables/UsersDataTable.php:22
 msgid "Admin?"
 msgstr "Admin ?"
 
@@ -1092,9 +1096,9 @@ msgstr "Valeur"
 msgid "Create redirection"
 msgstr "Créer redirection"
 
-#: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:22
+#: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:12
 #: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:19
-#: DataTables/SnippetsDataTable.php:22
+#: DataTables/SnippetsDataTable.php:12
 msgid "Component"
 msgstr "Composant"
 
@@ -1124,8 +1128,8 @@ msgstr "Modifier tarif"
 msgid "File manager"
 msgstr "Gestionnaire de fichiers"
 
-#: ../storage/framework/messages/715f93d65836174042eb12312d341978e9fb582d.php.php:20
-#: DataTables/AddressBooksDataTable.php:20
+#: ../storage/framework/messages/715f93d65836174042eb12312d341978e9fb582d.php.php:10
+#: DataTables/AddressBooksDataTable.php:10
 msgid "Id"
 msgstr "Id"
 
@@ -1144,6 +1148,11 @@ msgstr "utilisateurs"
 #: ../storage/framework/messages/ec8d282044d59ecdf429fb525133cf456f51cc25.php.php:64
 msgid "Attributes"
 msgstr "Attributs"
+
+#: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:35
+#: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:137
+msgid "Create"
+msgstr "Créer"
 
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:36
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:140
@@ -1225,83 +1234,83 @@ msgstr "Carnets d'adresses"
 msgid "Update form"
 msgstr "Modifier formulaire"
 
-#: ../storage/framework/messages/881fc74fe44711267d616e8b8070b4c90f297c1c.php.php:50
-#: Http/Controllers/Admin/MenusController.php:50
+#: ../storage/framework/messages/881fc74fe44711267d616e8b8070b4c90f297c1c.php.php:51
+#: Http/Controllers/Admin/MenusController.php:51
 msgid "Default"
 msgstr "Défaut"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:112
-#: DataTables/DataTable.php:112
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:117
+#: DataTables/DataTable.php:117
 msgid "No data available in table"
 msgstr "Pas de donnée disponible dans la table"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:113
-#: DataTables/DataTable.php:113
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:118
+#: DataTables/DataTable.php:118
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:114
-#: DataTables/DataTable.php:114
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:119
+#: DataTables/DataTable.php:119
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Affichage de l'élément 0 à 0 sur 0 élément"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:115
-#: DataTables/DataTable.php:115
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:120
+#: DataTables/DataTable.php:120
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(filtré de _MAX_ éléments au total)"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:117
-#: DataTables/DataTable.php:117
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:122
+#: DataTables/DataTable.php:122
 msgid "Show _MENU_ entries"
 msgstr "Afficher _MENU_ éléments"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:118
-#: DataTables/DataTable.php:118
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:123
+#: DataTables/DataTable.php:123
 msgid "Loading..."
 msgstr "Chargement..."
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:119
-#: DataTables/DataTable.php:119
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:124
+#: DataTables/DataTable.php:124
 msgid "Processing..."
 msgstr "Chargement en cours..."
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:121
-#: DataTables/DataTable.php:121
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:126
+#: DataTables/DataTable.php:126
 msgid "No matching records found"
 msgstr "Aucun élément à afficher"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:123
-#: DataTables/DataTable.php:123
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:128
+#: DataTables/DataTable.php:128
 msgid "First"
 msgstr "Premier"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:124
-#: DataTables/DataTable.php:124
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:129
+#: DataTables/DataTable.php:129
 msgid "Last"
 msgstr "Dernier"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:125
-#: DataTables/DataTable.php:125
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:130
+#: DataTables/DataTable.php:130
 msgid "Next"
 msgstr "Suivant"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:126
-#: DataTables/DataTable.php:126
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:131
+#: DataTables/DataTable.php:131
 msgid "Previous"
 msgstr "Précédent"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:129
-#: DataTables/DataTable.php:129
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:134
+#: DataTables/DataTable.php:134
 msgid ": activate to sort column ascending"
 msgstr ": activer pour trier la colonne par ordre croissant"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:130
-#: DataTables/DataTable.php:130
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:135
+#: DataTables/DataTable.php:135
 msgid ": activate to sort column descending"
 msgstr ": activer pour trier la colonne par ordre décroissant"
 
-#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:132
-#: DataTables/DataTable.php:132
+#: ../storage/framework/messages/8a0712fbd84489e5ca608418a12b94ceb2166d4f.php.php:137
+#: DataTables/DataTable.php:137
 msgid "Quick search..."
 msgstr "Recherche rapide..."
 
@@ -1577,8 +1586,8 @@ msgstr "Le sujet est requis."
 msgid "The submit button label is required."
 msgstr "Le libellé du bouton de soumission est requis."
 
-#: ../storage/framework/messages/e1134f8b8817396b3c820c4325043d41c5500cbc.php.php:21
-#: DataTables/ContentsDataTable.php:21
+#: ../storage/framework/messages/e1134f8b8817396b3c820c4325043d41c5500cbc.php.php:11
+#: DataTables/ContentsDataTable.php:11
 msgid "Path"
 msgstr "Chemin"
 

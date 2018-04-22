@@ -90,7 +90,8 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
             //->addColumn(['data' => 'bulk', 'title' => '<input type="checkbox" data-check-all="true" data-target=".bulk-checkbox">', 'orderable' => false])
             ->parameters($this->getBuilderParameters())
             ->parameters([
-                'language' => static::getLanguage()
+                'language' => static::getLanguage(),
+                'pageLength' => 50,
             ]);
     }
 
