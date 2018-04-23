@@ -5,17 +5,11 @@
     'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
-@include('includes.form-locales-tabs')
-
-<div class="tab-content">
-    @foreach(config('app.locales') as $lang => $locale)
-        <div role="tabpanel" class="tab-pane{{ $lang == \LaravelLocalization::getCurrentLocale() ? ' active' : '' }}" id="lang-{{ $lang }}">
-            {!! Form::openGroup("title_$lang", _i('Title (%s)', $lang)) !!}
-            {!! Form::text("title_$lang") !!}
-            {!! Form::closeGroup() !!}
-        </div>
-    @endforeach
-</div>
+@foreach(config('app.locales') as $lang => $locale)
+    {!! Form::openGroup("title_$lang", _i('Title (%s)', $lang)) !!}
+    {!! Form::text("title_$lang") !!}
+    {!! Form::closeGroup() !!}
+@endforeach
 
 <?php
 $items = $object->accordionItems;
@@ -26,25 +20,22 @@ for($i = 0; $i < 5; $i++) {
 }
 ?>
 
-<div id="items">
-    @foreach($items as $k => $item)
-        <div class="card mb-3 draggable">
-            <div class="card-header">
-                <div class="sortable-handle pull-right" style="cursor: move;">
-                    <i class="fa fa-arrows"></i>
-                </div>
-                <div class="row">
+<fieldset>
+    <legend>{{ _i("Accordion items") }}</legend>
+    <div id="items">
+        @foreach($items as $k => $item)
+            <div class="card mb-3 draggable">
+                <div class="card-header">
+                    <div class="sortable-handle pull-right" style="cursor: move;">
+                        <i class="fa fa-arrows"></i>
+                    </div>
                     @foreach(config('app.locales') as $lang => $locale)
-                        <div class="col">
-                            {!! Form::openGroup("items[$k][title_$lang]", _i('Title (%s)', $lang)) !!}
-                            {!! Form::text("items[$k][title_$lang]", $item["title_$lang"] ?? null) !!}
-                            {!! Form::closeGroup() !!}
-                        </div>
+                        {!! Form::openGroup("items[$k][title_$lang]", _i('Title (%s)', $lang)) !!}
+                        {!! Form::text("items[$k][title_$lang]", $item["title_$lang"] ?? null) !!}
+                        {!! Form::closeGroup() !!}
                     @endforeach
                 </div>
-            </div>
-            <div class="card-body">
-                <div class="row">
+                <div class="card-body p-1">
                     @foreach(config('app.locales') as $lang => $locale)
                         <div class="col">
                             {!! Form::openGroup("items[$k][content_$lang]", _i('Content (%s)', $lang)) !!}
@@ -55,9 +46,9 @@ for($i = 0; $i < 5; $i++) {
                     {!! Form::hidden("items[$k][sort]", $item['sort'], ['class' => 'sort']) !!}
                 </div>
             </div>
-        </div>
-    @endforeach
-</div>
+        @endforeach
+    </div>
+</fieldset>
 
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
