@@ -40,11 +40,15 @@
         {!! Form::closeGroup() !!}
     </div>
     <div class="col">
-        {!! Form::openGroup('fax', _i('Fax')) !!}
-        {!! Form::tel('fax') !!}
+        {!! Form::openGroup('mobile_2', _i('Mobile 2')) !!}
+        {!! Form::tel('mobile_2') !!}
         {!! Form::closeGroup() !!}
     </div>
 </div>
+
+{!! Form::openGroup('url', _i('URL')) !!}
+{!! Form::url('url') !!}
+{!! Form::closeGroup() !!}
 
 @include('includes.google-place-autocomplete', ['domId' => 'location'])
 
