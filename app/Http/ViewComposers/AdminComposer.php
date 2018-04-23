@@ -10,8 +10,8 @@ class AdminComposer
     {
         $adminMenu = [
             _i("Sites") => 'admin.sites',
-            _i("Categories") => 'admin.categories',
             _i("Contents") => 'admin.contents',
+            _i("Categories") => 'admin.categories',
             _i("Products") => 'admin.products',
             _i("Address books") => 'admin.address-books',
             _i("Prices") => 'admin.prices',
@@ -24,7 +24,7 @@ class AdminComposer
             _i("Menus") => 'admin.menus',
             _i("Users") => 'admin.users',
             _i("Forms") => 'admin.forms',
-            _i("Contacts") => 'admin.contacts',
+            //_i("Contacts") => 'admin.contacts',
             _i("File manager") => 'admin.file-manager',
             _i("Currencies") => 'admin.currencies',
             _i("Redirections") => 'admin.redirections',
