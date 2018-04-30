@@ -1,7 +1,8 @@
 <?php
 echo Form::open(['files' => true, 'novalidate' => true, 'route' => 'forms.store']);
-
 echo Form::hidden('form_id', $form->id);
+
+$humanFieldName = md5('human');
 
 $defaultValues = [];
 if (Auth::check()) {
@@ -91,6 +92,16 @@ foreach ($form->fields as $field) {
 }
 
 echo Form::hidden('labels', json_encode($labels));
+echo Form::hidden($humanFieldName);
 
 echo Form::submit($form->submit, ['class' => 'btn btn-primary']);
 echo Form::close();
+?>
+
+@push('scripts')
+    <script>
+        $(function () {
+            $('input[name="{{ $humanFieldName }}"]').val(1);
+        });
+    </script>
+@endpush

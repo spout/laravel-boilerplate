@@ -49,6 +49,13 @@ class FormsController extends Controller
             }
         }
 
+        $rules[md5('human')] = function($attribute, $value, $fail) {
+            if (empty($value)) {
+                return $fail(_i("You don't look like a human. Contact us if you think it's a mistake."));
+            }
+            return true;
+        };
+
         $request->validate($rules, $messages);
 
         $formData = [
