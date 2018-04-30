@@ -92,6 +92,9 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         Route::resource('sites', 'SitesController', ['names' => route_resource_names('admin.sites.{name}')]);
         Route::resource('accordions', 'AccordionsController', ['names' => route_resource_names('admin.accordions.{name}')]);
         Route::resource('address-books', 'AddressBooksController', ['names' => route_resource_names('admin.address-books.{name}')]);
+        Route::group(['prefix' => 'newsletters'], function () {
+            Route::get('export', 'NewslettersController@export')->name('admin.newsletters.export');
+        });
         Route::resource('newsletters', 'NewslettersController', ['names' => route_resource_names('admin.newsletters.{name}')]);
     });
 
