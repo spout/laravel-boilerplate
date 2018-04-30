@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Traits\Crud;
 
+use League\Csv\CannotInsertRecord;
 use League\Csv\Writer;
 
 trait ExportTrait
@@ -14,12 +15,8 @@ trait ExportTrait
 
         try {
             $csv->insertOne(\Schema::getColumnListing($table));
-
-            $rows = $model::all();
-            foreach ($rows as $row) {
-                $csv->insertOne($row->toArray());
-            }
-        } catch (\Exception $e) {
+            $csv->insertAll($model::all()->toArray());
+        } catch (CannotInsertRecord $e) {
             die($e->getMessage());
         }
 
