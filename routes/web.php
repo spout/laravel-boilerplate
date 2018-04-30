@@ -99,8 +99,22 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         Route::get('products/{slug?}', 'ProductsController@index')->name('advertiser.products.index');
     });
 
-    Route::get('/{category_slug_plural}', 'ProductsController@index')->name('products.index');
-    Route::get('/{category_slug_singular}/{slug}', 'ProductsController@show')->name('products.show');
+    $categories = Cache::remember('categories', 60, function () {
+        return \App\Models\Category::all();
+    });
+
+    $slugsPlural = [];
+    $slugsSingular = [];
+    foreach ($categories as $category) {
+        $slugsPlural[] = $category->slug_plural;
+        $slugsSingular[] = $category->slug_singular;
+    }
+
+    $categorySlugPluralWhere = '^(' . implode('|', $slugsPlural) . ')$';
+    $categorySlugSingularWhere = '^(' . implode('|', $slugsSingular) . ')$';
+
+    Route::get('/{category_slug_plural}', 'ProductsController@index')->where('category_slug_plural', $categorySlugPluralWhere)->name('products.index');
+    Route::get('/{category_slug_singular}/{slug}', 'ProductsController@show')->where('category_slug_singular', $categorySlugSingularWhere)->name('products.show');
 
     Route::get('/{path}', 'ContentsController@show')->where('path', '^(?!(elfinder|imagecache)\b)\b[a-z0-9-\/]+')->name('contents.show');
 });
