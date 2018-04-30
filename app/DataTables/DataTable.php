@@ -3,7 +3,6 @@
 namespace App\DataTables;
 
 use App\Models\Traits\TranslatableTrait;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 abstract class DataTable extends \Yajra\DataTables\Services\DataTable
 {
@@ -45,7 +44,7 @@ abstract class DataTable extends \Yajra\DataTables\Services\DataTable
                  * Search on translated columns
                  */
                 $dataTable->filterColumn($column, function ($query, $keyword) use ($column) {
-                    $query->where($column . '_' . LaravelLocalization::getCurrentLocale(), 'like', '%' . $keyword . '%');
+                    $query->where($column . '_' . \LaravelLocalization::getCurrentLocale(), 'like', '%' . $keyword . '%');
                 });
             }
         }

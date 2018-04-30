@@ -60,7 +60,7 @@ class MenuItem extends Model
     {
         if (!empty($this->menu_itemable_type) && !empty($this->menu_itemable_id)) {
             if (!empty($this->menuItemable)) {
-                return $this->menuItemable->absoluteUrl;
+                return $this->menuItemable->absolute_url;
             }
         } elseif (!empty($this->route)) {
             $route = json_decode($this->route, true);

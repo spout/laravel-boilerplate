@@ -6,9 +6,19 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class AccordionFormRequest extends FormRequest
 {
-    protected $fields = [
-        //'title' => 'required',
-    ];
+    public function fields()
+    {
+        return [
+            //'title' => [
+            //    'rule' => 'required',
+            //    'message' => _i("The title (%s) is required."),
+            //],
+            //'slug' => [
+            //    'rule' => 'required',
+            //    'message' => _i("The slug (%s) is required."),
+            //],
+        ];
+    }
 
     /**
      * Determine if the user is authorized to make this request.
@@ -28,11 +38,10 @@ class AccordionFormRequest extends FormRequest
     public function rules()
     {
         $rules = [];
-        $locales = config('app.locales');
 
-        foreach ($this->fields as $field => $rule) {
-            foreach ($locales as $lang => $locale) {
-                $rules["{$field}_{$lang}"] = $rule;
+        foreach ($this->fields() as $field => $params) {
+            foreach (config('app.locales') as $lang => $locale) {
+                $rules["{$field}_{$lang}"] = $params['rule'];
             }
         }
 
@@ -42,8 +51,11 @@ class AccordionFormRequest extends FormRequest
     public function messages()
     {
         $messages = [];
-        foreach (config('app.locales', []) as $lang => $locale) {
-            $messages["title_{$lang}.required"] = _i("The title (%s) is required.", $lang);
+
+        foreach ($this->fields() as $field => $params) {
+            foreach (config('app.locales') as $lang => $locale) {
+                $messages["{$field}_{$lang}.{$params['rule']}"] = sprintf($params['message'], $lang);
+            }
         }
 
         return $messages;

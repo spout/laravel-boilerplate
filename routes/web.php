@@ -1,7 +1,5 @@
 <?php
 
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-
 if (php_sapi_name() !== 'cli') {
     $redirections = Cache::remember('redirections', 60, function () {
         return \App\Models\Redirection::all();
@@ -14,7 +12,7 @@ if (php_sapi_name() !== 'cli') {
     }
 }
 
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect']], function () {
+Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect']], function () {
     //Route::get('/', 'PagesController@show')->name('homepage');
     Route::get('/', 'ContentsController@show')->name('homepage');
 
@@ -100,6 +98,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('/', 'DashboardController@index')->name('advertiser.dashboard.index');
         Route::get('products/{slug?}', 'ProductsController@index')->name('advertiser.products.index');
     });
+
+    Route::get('/{category_slug_plural}', 'ProductsController@index')->name('products.index');
+    Route::get('/{category_slug_singular}/{slug}', 'ProductsController@show')->name('products.show');
 
     Route::get('/{path}', 'ContentsController@show')->where('path', '^(?!(elfinder|imagecache)\b)\b[a-z0-9-\/]+')->name('contents.show');
 });

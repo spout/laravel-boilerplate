@@ -181,6 +181,7 @@ return [
         App\Providers\ObserverServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
+        App\Providers\BladeServiceProvider::class,
         Webwizo\Shortcodes\ShortcodesServiceProvider::class, // Must be before App\Providers\ShortcodesServiceProvider
         App\Providers\ShortcodesServiceProvider::class,
 

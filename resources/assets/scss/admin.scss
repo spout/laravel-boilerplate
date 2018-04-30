@@ -33,3 +33,19 @@ table.dataTable {
 .sortable-ghost {
   opacity: .6;
 }
+
+fieldset {
+
+}
+
+fieldset {
+  border: 1px solid $border-color;
+  padding: $spacer;
+  margin-bottom: $spacer;
+
+  legend {
+    width: auto;
+    padding: 0 10px;
+    margin-bottom: 0;
+  }
+}

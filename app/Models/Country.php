@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\Traits\TranslatableTrait;
 use App\Scopes\OrderScope;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class Country extends Model
 {
@@ -30,7 +29,7 @@ class Country extends Model
     {
         parent::boot();
 
-        $locale = LaravelLocalization::getCurrentLocale();
+        $locale = \LaravelLocalization::getCurrentLocale();
 
         static::addGlobalScope(new OrderScope("name_{$locale}"));
     }

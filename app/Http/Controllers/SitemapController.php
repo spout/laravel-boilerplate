@@ -10,7 +10,7 @@ class SitemapController extends Controller
         foreach (config('sitemap.models', []) as $model) {
             $rows = $model::all();
             foreach ($rows as $row) {
-                $urls[] = $row->absoluteUrl;
+                $urls[] = $row->absolute_url;
             }
         }
 

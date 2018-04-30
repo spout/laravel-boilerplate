@@ -16,7 +16,7 @@ class BlogController extends Controller
     {
         $post = Post::findOrFail($pk);
         if ($slug != $post->slug) {
-            return redirect($post->absoluteUrl);
+            return redirect($post->absolute_url);
         }
         return view('blog.show', compact('post'));
     }

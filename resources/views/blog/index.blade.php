@@ -8,7 +8,7 @@
             @foreach($posts as $post)
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="{{ $post->absoluteUrl }}">{{ $post->title }}</a>
+                        <a href="{{ $post->absolute_url }}">{{ $post->title }}</a>
                     </div>
                     <div class="panel-body">
                         {!! $post->content !!}

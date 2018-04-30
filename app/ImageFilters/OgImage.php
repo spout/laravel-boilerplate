@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filters;
+namespace App\ImageFilters;
 
 use Intervention\Image\Image;
 use Intervention\Image\Filters\FilterInterface;
 
-class Carousel implements FilterInterface
+class OgImage implements FilterInterface
 {
     public function applyFilter(Image $image)
     {
-        return $image->fit(1140, 380);
+        return $image->fit(600, 315);
     }
 }

@@ -14,9 +14,10 @@
     @endif
 
     <link rel="manifest" href="{{ asset('manifest.json') }}">
+    @stack('head')
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
     <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01">
         <span class="navbar-toggler-icon"></span>
@@ -47,16 +48,7 @@
     </div>
 </nav>--}}
 <div class="container-fluid">
-    @if (Route::current()->getName() !== 'homepage')
-        @hasSection('breadcrumbs')
-            <div class="container">
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('homepage') }}">{{ config('app.name') }}</a></li>
-                    @yield('breadcrumbs')
-                </ul>
-            </div>
-        @endif
-    @endif
+    @renderBreadcrumbs()
     <div class="container">
         @include('flash::message')
         @include('includes.validation-errors')

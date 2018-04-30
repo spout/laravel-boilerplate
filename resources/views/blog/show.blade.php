@@ -4,7 +4,7 @@
 
 @section('breadcrumbs')
     @parent
-    <li><a href="{{ $post->absoluteUrl }}">{{ $post->title }}</a></li>
+    <li><a href="{{ $post->absolute_url }}">{{ $post->title }}</a></li>
 @endsection
 
 @section('content')

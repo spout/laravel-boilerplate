@@ -56,8 +56,9 @@ return array(
         'small' => 'Intervention\Image\Templates\Small',
         'medium' => 'Intervention\Image\Templates\Medium',
         'large' => 'Intervention\Image\Templates\Large',
-        'carousel' => 'App\Filters\Carousel',
-        'elfinder' => 'App\Filters\Elfinder',
+        'carousel' => 'App\ImageFilters\Carousel',
+        'elfinder' => 'App\ImageFilters\Elfinder',
+        'og-image' => 'App\ImageFilters\OgImage',
     ),
 
     /*
