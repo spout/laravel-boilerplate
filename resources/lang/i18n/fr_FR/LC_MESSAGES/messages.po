@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-04-30 13:04+0200\n"
-"PO-Revision-Date: 2018-04-30 13:05+0200\n"
+"POT-Creation-Date: 2018-04-30 18:10+0200\n"
+"PO-Revision-Date: 2018-04-30 18:11+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -51,11 +51,14 @@ msgstr "Téléphone"
 #: ../storage/framework/messages/3350ae1af9d67844882c49e4e30cf3cbbcae3361.php.php:17
 #: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:21
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:19
+#: ../storage/framework/messages/857f9323051aeba86d6b07dec09f8a991f9894c1.php.php:10
+#: ../storage/framework/messages/8dc7ec129a77ea1f3bd6a833e6f754846ff1e051.php.php:7
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:14
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:7
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:25
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:47
-#: DataTables/ContactsDataTable.php:11 DataTables/UsersDataTable.php:21
+#: DataTables/ContactsDataTable.php:11 DataTables/NewslettersDataTable.php:10
+#: DataTables/UsersDataTable.php:21
 msgid "Email"
 msgstr "Email"
 
@@ -63,8 +66,10 @@ msgstr "Email"
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:14
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:23
 #: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:19
+#: ../storage/framework/messages/857f9323051aeba86d6b07dec09f8a991f9894c1.php.php:11
+#: ../storage/framework/messages/8dc7ec129a77ea1f3bd6a833e6f754846ff1e051.php.php:14
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:48
-#: DataTables/UsersDataTable.php:19
+#: DataTables/NewslettersDataTable.php:11 DataTables/UsersDataTable.php:19
 msgid "Firstname"
 msgstr "Prénom"
 
@@ -72,8 +77,10 @@ msgstr "Prénom"
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:6
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:31
 #: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:20
+#: ../storage/framework/messages/857f9323051aeba86d6b07dec09f8a991f9894c1.php.php:12
+#: ../storage/framework/messages/8dc7ec129a77ea1f3bd6a833e6f754846ff1e051.php.php:21
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:49
-#: DataTables/UsersDataTable.php:20
+#: DataTables/NewslettersDataTable.php:12 DataTables/UsersDataTable.php:20
 msgid "Lastname"
 msgstr "Nom"
 
@@ -141,8 +148,8 @@ msgid "Newsletter"
 msgstr "Newsletter"
 
 #: ../resources/views/admin/forms/preview.blade.php:35
-#: ../resources/views/shortcodes/form.blade.php:84
-#: ../storage/framework/messages/45f0c3582ecb071b05aff9b1492d6a426e851b14.php.php:84
+#: ../resources/views/shortcodes/form.blade.php:85
+#: ../storage/framework/messages/45f0c3582ecb071b05aff9b1492d6a426e851b14.php.php:85
 #: ../storage/framework/messages/9b10ef3191e1f325bda1d53e49da3e862410019a.php.php:35
 msgid "Subscribe to newsletter?"
 msgstr "Inscription à la newsletter ?"
@@ -269,9 +276,9 @@ msgstr "Rapport d'aspect : %s"
 msgid "Video URL"
 msgstr "URL vidéo"
 
-#: ../resources/views/shortcodes/form.blade.php:84
+#: ../resources/views/shortcodes/form.blade.php:85
 #: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:11
-#: ../storage/framework/messages/45f0c3582ecb071b05aff9b1492d6a426e851b14.php.php:84
+#: ../storage/framework/messages/45f0c3582ecb071b05aff9b1492d6a426e851b14.php.php:85
 #: DataTables/UsersDataTable.php:11
 msgid "Yes"
 msgstr "Oui"
@@ -335,6 +342,7 @@ msgstr "Symbole"
 #: ../storage/framework/messages/666bb58ff86b365a974109c02c497e015fe06cdd.php.php:23
 #: ../storage/framework/messages/6e94feaea2393cdd0ad236dae735aedf0085f88c.php.php:57
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:98
+#: ../storage/framework/messages/8dc7ec129a77ea1f3bd6a833e6f754846ff1e051.php.php:28
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:57
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:35
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:28
@@ -368,7 +376,7 @@ msgstr "accordéons"
 #: ../storage/framework/messages/1e79524cf2129069330a9f43f71bca9c405fb33a.php.php:19
 #: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:10
 #: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:11
-#: ../storage/framework/messages/7723684dc6bcff37449bae1b492f81d9acdb2362.php.php:10
+#: ../storage/framework/messages/7723684dc6bcff37449bae1b492f81d9acdb2362.php.php:14
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:9
 #: ../storage/framework/messages/7e967a1a6960d8201159427a9f7deaf2104f0a52.php.php:10
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:10
@@ -380,7 +388,7 @@ msgstr "accordéons"
 #: DataTables/ContentsDataTable.php:10 DataTables/EventsDataTable.php:10
 #: DataTables/FormsDataTable.php:19 DataTables/GalleriesDataTable.php:19
 #: DataTables/MenusDataTable.php:10 DataTables/OffersDataTable.php:10
-#: DataTables/ProductsDataTable.php:10 DataTables/SnippetsDataTable.php:11
+#: DataTables/ProductsDataTable.php:14 DataTables/SnippetsDataTable.php:11
 msgid "Title"
 msgstr "Titre"
 
@@ -444,6 +452,10 @@ msgstr "Se souvenir"
 msgid "Forgot your password?"
 msgstr "Mot de passe perdu ?"
 
+#: ../storage/framework/messages/097a80f136e41924075cfd4c31f03e9e582060e4.php.php:1
+msgid "Newsletters"
+msgstr "Newsletters"
+
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:7
 #: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:14
 #: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:11
@@ -479,7 +491,9 @@ msgid "The firstname is required."
 msgstr "Le prénom est requis."
 
 #: ../storage/framework/messages/0b541214eabea38412c2eb06471142311adac6f9.php.php:40
+#: ../storage/framework/messages/eca6b4238d28029d79254a4b8455f3502a1b2e6a.php.php:24
 #: Http/Requests/ContactSendFormRequest.php:40
+#: Http/Requests/NewsletterFormRequest.php:24
 msgid "The email is required."
 msgstr "L'email est requis."
 
@@ -551,11 +565,9 @@ msgid "Update address book"
 msgstr "Modifier carnet d'adresses"
 
 #: ../storage/framework/messages/1ade8cebfb6771139e8a5c416a0806b8d6750f4e.php.php:36
-#: ../storage/framework/messages/20b27d7af8f4aa6e8ae9ef71b5d0a5d8bbb7e3ee.php.php:46
 #: ../storage/framework/messages/23cf636ac835705e13d7ed424e1cc7a72b7e44d7.php.php:14
 #: ../storage/framework/messages/79c1abdbef1c72e22ccea6fea212feeb612a2534.php.php:52
 #: ../storage/framework/messages/f273966196f4201639f32b3c8abfba011b278f54.php.php:51
-#: Http/Requests/AccordionFormRequest.php:46
 #: Http/Requests/ContentFormRequest.php:51
 #: Http/Requests/GalleryFormRequest.php:36
 #: Http/Requests/ProductFormRequest.php:14
@@ -610,7 +622,9 @@ msgstr "Carte"
 #: ../storage/framework/messages/208cfed5d91795a7ae68510ae86a5bb1dbc4c447.php.php:4
 #: ../storage/framework/messages/4acbf5f65169909e7fa0b5df5f4d079b72b55f47.php.php:7
 #: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:10
+#: ../storage/framework/messages/7723684dc6bcff37449bae1b492f81d9acdb2362.php.php:15
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:24
+#: DataTables/ProductsDataTable.php:15
 msgid "Category"
 msgstr "Catégorie"
 
@@ -619,6 +633,15 @@ msgstr "Catégorie"
 #, php-format
 msgid "The slug (%s) is required."
 msgstr "L'identifiant (%s) est requis."
+
+#: ../storage/framework/messages/23cf636ac835705e13d7ed424e1cc7a72b7e44d7.php.php:56
+#: Http/Requests/ProductFormRequest.php:56
+msgid "The featured image is required."
+msgstr "L'image à la une est requise."
+
+#: ../storage/framework/messages/25c4a7dc608ff9c70bd470bdea1b1c991cc1543b.php.php:1
+msgid "Create newsletter"
+msgstr "Créér newsletter"
 
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:22
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:14
@@ -770,6 +793,10 @@ msgstr "Sujet"
 #: ../storage/framework/messages/3021c1a6b739b43f7a3a03d096c177bf8b4d44ae.php.php:1
 msgid "Update product"
 msgstr "Modifier produit"
+
+#: ../storage/framework/messages/310a2ced2dc8938a63aeed48f8d6cd17a4d7bdc7.php.php:1
+msgid "Update newsletter"
+msgstr "Modifier newsletter"
 
 #: ../storage/framework/messages/31616f9276881e1d8101f10066c0239230690a49.php.php:12
 #: ../storage/framework/messages/e0d3ad10d4a26a1882f2a0498b41ad2bb25814e6.php.php:12
@@ -1694,8 +1721,15 @@ msgstr "Modifier fragment"
 msgid "The field %s is required."
 msgstr "Le champ %s est requis."
 
-#: ../storage/framework/messages/ebd8518d6386b78c5eb9a1f2d26034a1dac38e57.php.php:66
-#: Http/Controllers/FormsController.php:66
+#: ../storage/framework/messages/ebd8518d6386b78c5eb9a1f2d26034a1dac38e57.php.php:54
+#: Http/Controllers/FormsController.php:54
+msgid "You don't look like a human. Contact us if you think it's a mistake."
+msgstr ""
+"Vous ne semblez pas être un humain. Contactez-nous si vous pensez qu'il "
+"s'agit d'une erreur."
+
+#: ../storage/framework/messages/ebd8518d6386b78c5eb9a1f2d26034a1dac38e57.php.php:73
+#: Http/Controllers/FormsController.php:73
 msgid "The message was sent successfully!"
 msgstr "Le message a été envoyé avec succès !"
 
