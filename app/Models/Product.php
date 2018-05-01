@@ -19,6 +19,7 @@ class Product extends Model
         'slug',
         'content',
     ];
+    protected $appends = ['absolute_url', 'marker_icon'];
 
     public static function verboseName()
     {
@@ -57,5 +58,10 @@ class Product extends Model
         }
 
         return route('imagecache', ['template' => 'large', 'filename' => $this->featured_image]);
+    }
+
+    public function getMarkerIconAttribute()
+    {
+        return $this->category->marker_icon;
     }
 }

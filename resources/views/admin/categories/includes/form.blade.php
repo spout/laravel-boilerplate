@@ -35,6 +35,10 @@
 {!! Form::textarea('description') !!}
 {!! Form::closeGroup() !!}
 
+{!! Form::openGroup('marker_icon', _i('Marker icon URL')) !!}
+{!! Form::url('marker_icon') !!}
+{!! Form::closeGroup() !!}
+
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}
