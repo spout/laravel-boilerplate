@@ -3,15 +3,13 @@
 @section('title', _i("Map"))
 
 @section('content')
-    @foreach($categories as $category)
-        <?php
-        $id = "category-{$category->id}";
-        ?>
-        <div class="custom-control custom-checkbox custom-control-inline">
-            <input type="checkbox" name="category_id[]" class="custom-control-input" id="{{ $id }}" value="{{ $category->id }}" checked>
-            <label class="custom-control-label" for="{{ $id }}">{{ $category->title_plural }} <img src="{{ $category->marker_icon_url }}" alt=""></label>
-        </div>
-    @endforeach
+    <div class="btn-group-toggle" data-toggle="buttons">
+        @foreach($categories as $category)
+            <label class="btn btn-secondary active">
+                <input type="checkbox" name="category_id[]" autocomplete="off" value="{{ $category->id }}" checked> {{ $category->title_plural }} <img src="{{ $category->marker_icon_url }}" alt="">
+            </label>
+        @endforeach
+    </div>
 
     <div id="map_canvas" style="width: 100%; height: 500px;" class="mt-3"></div>
 @endsection
@@ -61,12 +59,12 @@
                 position: latLng,
                 map: map,
                 animation: google.maps.Animation.DROP,
-                icon: item.marker_icon || 'https://maps.google.com/mapfiles/ms/micons/red-dot.png'
+                icon: item.marker_icon_url
             });
 
             let content = '';
             content += '<div class="infowindow-content">';
-            content += '<p><img src="/flags/{0}.gif" alt="">&nbsp;<a href="{1}">{2}</a></p>'.format(item.country.toLowerCase(), item.absolute_url, item.title);
+            content += '<p><a href="{absolute_url}">{title}</a></p>'.format(item);
             content += '</div>';
 
             google.maps.event.addListener(marker, 'click', function () {

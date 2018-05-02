@@ -19,7 +19,7 @@ class Product extends Model
         'slug',
         'content',
     ];
-    protected $appends = ['absolute_url', 'marker_icon'];
+    protected $appends = ['absolute_url', 'marker_icon_url'];
 
     public static function verboseName()
     {
@@ -60,8 +60,8 @@ class Product extends Model
         return route('imagecache', ['template' => 'large', 'filename' => $this->featured_image]);
     }
 
-    public function getMarkerIconAttribute()
+    public function getMarkerIconUrlAttribute()
     {
-        return $this->category->marker_icon;
+        return $this->category->marker_icon_url;
     }
 }
