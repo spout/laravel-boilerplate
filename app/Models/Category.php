@@ -49,4 +49,15 @@ class Category extends Model
     {
         return route('products.index', ['category_slug_plural' => $this->slug_plural]);
     }
+
+    public function getMarkerIconUrlAttribute()
+    {
+        $url = $this->marker_icon;
+
+        if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+            $url = asset($url);
+        }
+
+        return $url;
+    }
 }

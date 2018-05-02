@@ -8,7 +8,7 @@ class CategoriesDataTable extends DataTable
     {
         $dataTable = parent::dataTable($query);
         $dataTable->editColumn('marker_icon', function ($object) {
-            return '<img src="' . $object->marker_icon . '" alt="">';
+            return '<img src="' . $object->marker_icon_url . '" alt="">';
         });
         $dataTable->rawColumns(['action', 'marker_icon']);
         return $dataTable;

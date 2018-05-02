@@ -9,7 +9,7 @@
         ?>
         <div class="custom-control custom-checkbox custom-control-inline">
             <input type="checkbox" name="category_id[]" class="custom-control-input" id="{{ $id }}" value="{{ $category->id }}" checked>
-            <label class="custom-control-label" for="{{ $id }}">{{ $category->title_plural }} <img src="{{ $category->marker_icon }}" alt=""></label>
+            <label class="custom-control-label" for="{{ $id }}">{{ $category->title_plural }} <img src="{{ $category->marker_icon_url }}" alt=""></label>
         </div>
     @endforeach
 
