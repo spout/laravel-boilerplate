@@ -21,6 +21,7 @@
     <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01">
         <span class="navbar-toggler-icon"></span>
+        {{ _i("Menu") }}
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor01">
