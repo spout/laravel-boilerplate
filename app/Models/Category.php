@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Traits\TranslatableTrait;
+use App\Scopes\OrderScope;
 
 class Category extends Model
 {
@@ -19,6 +20,15 @@ class Category extends Model
         'h1',
         'meta_description'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        $locale = \LaravelLocalization::getCurrentLocale();
+
+        static::addGlobalScope(new OrderScope("title_plural_{$locale}"));
+    }
 
     public static function verboseName()
     {
