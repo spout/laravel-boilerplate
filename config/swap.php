@@ -20,9 +20,7 @@ return [
     |
     | * cache_ttl: The cache ttl in seconds.
     */
-    'options' => [
-        'cache_ttl' => 3600
-    ],
+    'options' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -34,8 +32,12 @@ return [
     |
     | Here is the config spec for each service:
     |
-    | * "central_bank_of_czech_republic", "central_bank_of_republic_turkey", "european_central_bank", "fixer"
-    |   "google", "national_bank_of_romania", "webservicex", "yahoo", "russian_central_bank" can be enabled with "true" as value.
+    | * "central_bank_of_czech_republic", "central_bank_of_republic_turkey", "european_central_bank", "google",
+    |   "national_bank_of_romania", "webservicex", "russian_central_bank", "cryptonator" can be enabled with "true" as value.
+    |
+    | * 'fixer' => [
+    |       'access_key' => 'secret', // Your app id
+    |   ]
     |
     | * 'currency_layer' => [
     |       'access_key' => 'secret', // Your app id
@@ -51,10 +53,17 @@ return [
     |       'token' => 'secret', // The API token
     |   ]
     |
+    | * 'currency_data_feed' => [
+    |       'api_key' => 'secret', // The API token
+    |   ]
+    |
+    | * 'forge' => [
+    |       'api_key' => 'secret', // The API token
+    |   ]
+    |
     */
-
     'services' => [
-        'fixer' => true,
+        'fixer' => ['access_key' => env('SWAP_FIXER_ACCESS_KEY')],
     ],
 
     /*
@@ -66,7 +75,7 @@ return [
     |
     | 'cache' => 'file'
     */
-    'cache' => 'file',
+    'cache' => null,
 
     /*
     |--------------------------------------------------------------------------
