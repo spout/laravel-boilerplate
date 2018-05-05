@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.40 on 2018-04-30 17:37:58.
+ * Generated for Laravel 5.5.40 on 2018-05-05 16:13:30.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -13998,41 +13998,6 @@ namespace Webwizo\Shortcodes\Facades {
  
 }
 
-namespace Swap\Laravel\Facades { 
-
-    class Swap {
-        
-        /**
-         * Quotes a currency pair.
-         *
-         * @param string $currencyPair The currency pair like "EUR/USD"
-         * @param array $options An array of query options
-         * @return \Exchanger\ExchangeRate 
-         * @static 
-         */ 
-        public static function latest($currencyPair, $options = array())
-        {
-            return \Swap\Swap::latest($currencyPair, $options);
-        }
-        
-        /**
-         * Quotes a currency pair.
-         *
-         * @param string $currencyPair The currency pair like "EUR/USD"
-         * @param \DateTimeInterface $date An optional date for historical rates
-         * @param array $options An array of query options
-         * @return \Exchanger\ExchangeRate 
-         * @static 
-         */ 
-        public static function historical($currencyPair, $date, $options = array())
-        {
-            return \Swap\Swap::historical($currencyPair, $date, $options);
-        }
-         
-    }
- 
-}
-
 namespace Barryvdh\Debugbar { 
 
     class Facade {
@@ -17243,8 +17208,6 @@ namespace  {
     class Image extends \Intervention\Image\Facades\Image {}
 
     class Shortcode extends \Webwizo\Shortcodes\Facades\Shortcode {}
-
-    class Swap extends \Swap\Laravel\Facades\Swap {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
 
