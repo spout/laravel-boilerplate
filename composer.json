@@ -30,7 +30,8 @@
         "php-http/guzzle6-adapter": "^1.1",
         "umpirsky/country-list": "^2.0",
         "laravel/socialite": "^3.0",
-        "league/csv": "^9.0"
+        "league/csv": "^9.0",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.7",
