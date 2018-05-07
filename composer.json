@@ -31,7 +31,8 @@
         "umpirsky/country-list": "^2.0",
         "laravel/socialite": "^3.0",
         "league/csv": "^9.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "spatie/laravel-responsecache": "^4.4"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.7",

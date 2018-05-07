@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-05-07 17:14:40.
+    * Generated on 2018-05-07 18:08:42.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -73,6 +73,9 @@ namespace PHPSTORM_META {
         'shortcode.compiler' => \Webwizo\Shortcodes\Compilers\ShortcodeCompiler::class,
         'shortcode' => \Webwizo\Shortcodes\Shortcode::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
+        'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
+        'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
+        'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
@@ -233,6 +236,9 @@ namespace PHPSTORM_META {
         'shortcode.compiler' => \Webwizo\Shortcodes\Compilers\ShortcodeCompiler::class,
         'shortcode' => \Webwizo\Shortcodes\Shortcode::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
+        'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
+        'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
+        'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
@@ -393,6 +399,9 @@ namespace PHPSTORM_META {
         'shortcode.compiler' => \Webwizo\Shortcodes\Compilers\ShortcodeCompiler::class,
         'shortcode' => \Webwizo\Shortcodes\Shortcode::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
+        'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
+        'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
+        'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
@@ -553,6 +562,9 @@ namespace PHPSTORM_META {
         'shortcode.compiler' => \Webwizo\Shortcodes\Compilers\ShortcodeCompiler::class,
         'shortcode' => \Webwizo\Shortcodes\Shortcode::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
+        'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
+        'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
+        'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
@@ -713,6 +725,9 @@ namespace PHPSTORM_META {
         'shortcode.compiler' => \Webwizo\Shortcodes\Compilers\ShortcodeCompiler::class,
         'shortcode' => \Webwizo\Shortcodes\Shortcode::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
+        'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
+        'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
+        'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
@@ -873,6 +888,9 @@ namespace PHPSTORM_META {
         'shortcode.compiler' => \Webwizo\Shortcodes\Compilers\ShortcodeCompiler::class,
         'shortcode' => \Webwizo\Shortcodes\Shortcode::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
+        'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
+        'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
+        'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
@@ -1033,6 +1051,9 @@ namespace PHPSTORM_META {
         'shortcode.compiler' => \Webwizo\Shortcodes\Compilers\ShortcodeCompiler::class,
         'shortcode' => \Webwizo\Shortcodes\Shortcode::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
+        'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
+        'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
+        'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,

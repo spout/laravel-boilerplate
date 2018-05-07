@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.40 on 2018-05-07 17:14:38.
+ * Generated for Laravel 5.5.40 on 2018-05-07 18:08:40.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -14997,6 +14997,96 @@ namespace Maatwebsite\Excel\Facades {
  
 }
 
+namespace Spatie\ResponseCache\Facades { 
+
+    class ResponseCache {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function enabled($request)
+        {
+            return \Spatie\ResponseCache\ResponseCache::enabled($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function shouldCache($request, $response)
+        {
+            return \Spatie\ResponseCache\ResponseCache::shouldCache($request, $response);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function cacheResponse($request, $response, $lifetimeInMinutes = null)
+        {
+            return \Spatie\ResponseCache\ResponseCache::cacheResponse($request, $response, $lifetimeInMinutes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function hasBeenCached($request)
+        {
+            return \Spatie\ResponseCache\ResponseCache::hasBeenCached($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getCachedResponseFor($request)
+        {
+            return \Spatie\ResponseCache\ResponseCache::getCachedResponseFor($request);
+        }
+        
+        /**
+         * 
+         *
+         * @deprecated Use the new clear method, this is just an alias.
+         * @static 
+         */ 
+        public static function flush()
+        {
+            return \Spatie\ResponseCache\ResponseCache::flush();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function clear()
+        {
+            return \Spatie\ResponseCache\ResponseCache::clear();
+        }
+        
+        /**
+         * 
+         *
+         * @param string|array $uris
+         * @static 
+         */ 
+        public static function forget($uris)
+        {
+            return \Spatie\ResponseCache\ResponseCache::forget($uris);
+        }
+         
+    }
+ 
+}
+
 namespace Xinax\LaravelGettext\Facades { 
 
     class LaravelGettext {
@@ -17332,6 +17422,8 @@ namespace  {
     class Socialite extends \Laravel\Socialite\Facades\Socialite {}
 
     class Excel extends \Maatwebsite\Excel\Facades\Excel {}
+
+    class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
 
     class LaravelGettext extends \Xinax\LaravelGettext\Facades\LaravelGettext {}
  
