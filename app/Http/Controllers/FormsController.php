@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\FormSend;
 use App\Models\Form;
 use App\Models\FormData;
-use App\Models\Newsletter;
+use App\Models\NewsletterEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -67,7 +67,7 @@ class FormsController extends Controller
         Mail::send(new FormSend($form, $data));
 
         if (!empty($email) && !empty($newsletter)) {
-            Newsletter::create(compact('email'));
+            NewsletterEmail::create(compact('email'));
         }
 
         flash(_i("The message was sent successfully!"), 'success');

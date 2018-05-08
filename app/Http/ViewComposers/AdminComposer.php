@@ -27,7 +27,7 @@ class AdminComposer
             //_i("Contacts") => 'admin.contacts',
             _i("File manager") => 'admin.file-manager',
             _i("Currencies") => 'admin.currencies',
-            _i("Newsletters") => 'admin.newsletters',
+            _i("Newsletter emails") => 'admin.newsletter-emails',
             _i("Redirections") => 'admin.redirections',
             _i("Settings") => 'admin.settings',
             _i("Routes") => 'admin.routes',

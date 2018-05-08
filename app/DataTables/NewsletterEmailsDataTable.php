@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-class NewslettersDataTable extends DataTable
+class NewsletterEmailsDataTable extends DataTable
 {
     protected function getColumns()
     {

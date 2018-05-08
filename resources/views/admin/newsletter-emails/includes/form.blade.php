@@ -1,5 +1,5 @@
 {!! Form::model($object, [
-    'route' => empty($object->pk) ? ['admin.newsletters.store'] : ['admin.newsletters.update', $object->pk],
+    'route' => empty($object->pk) ? ['admin.newsletter-emails.store'] : ['admin.newsletter-emails.update', $object->pk],
     'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', _i("Newsletters"))
+@section('title', _i("Newsletter emails"))
 
 @section('content')
     @include('includes.admin.create-button')

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NewsletterFormRequest extends FormRequest
+class NewsletterEmailFormRequest extends FormRequest
 {
     public function authorize()
     {
