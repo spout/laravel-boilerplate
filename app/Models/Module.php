@@ -22,8 +22,8 @@ class Module extends Model
         return _i("modules");
     }
 
-    public function category()
+    public function templates()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Template::class)->using(ModuleTemplate::class);
     }
 }

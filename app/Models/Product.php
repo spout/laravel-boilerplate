@@ -31,6 +31,11 @@ class Product extends Model
         return _i("products");
     }
 
+    public function template()
+    {
+        return $this->belongsTo(Template::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

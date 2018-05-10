@@ -17,4 +17,10 @@
     <div>
         {!! $product->content !!}
     </div>
+
+    <ul>
+        @foreach($product->category->modules as $module)
+            <li>{{ $module->slug }}</li>
+        @endforeach
+    </ul>
 @endsection

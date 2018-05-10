@@ -9,7 +9,7 @@ class Category extends Model
 {
     use TranslatableTrait;
 
-    protected $guarded = [];
+    protected $guarded = ['modules'];
     public $timestamps = false;
     public static $translatableColumns = [
         'title_singular',

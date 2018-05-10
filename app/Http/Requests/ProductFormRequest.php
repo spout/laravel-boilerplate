@@ -38,6 +38,7 @@ class ProductFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
+            'template' => 'required',
             'featured_image' => 'required',
         ];
 
@@ -53,6 +54,7 @@ class ProductFormRequest extends FormRequest
     public function messages()
     {
         $messages = [
+            'template.required' => _i("The template is required."),
             'featured_image.required' => _i("The featured image is required."),
         ];
 

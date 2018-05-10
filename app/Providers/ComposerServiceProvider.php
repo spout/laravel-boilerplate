@@ -10,7 +10,10 @@ use App\Http\ViewComposers\CountryListComposer;
 use App\Http\ViewComposers\CurrentSiteComposer;
 use App\Http\ViewComposers\GlobalComposer;
 use App\Http\ViewComposers\MenuComposer;
+use App\Http\ViewComposers\ModuleListComposer;
 use App\Http\ViewComposers\SnippetComposer;
+use App\Http\ViewComposers\TemplateFileListComposer;
+use App\Http\ViewComposers\TemplateListComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,6 +36,9 @@ class ComposerServiceProvider extends ServiceProvider
             SnippetComposer::class => ['admin.snippets.includes.form'],
             CountryListComposer::class => ['admin.products.includes.form', 'admin.events.includes.form', 'admin.address-books.includes.form'],
             AddressBookableListComposer::class => ['admin.address-books.includes.form'],
+            ModuleListComposer::class => ['admin.templates.includes.form'],
+            TemplateFileListComposer::class => ['admin.templates.includes.form'],
+            TemplateListComposer::class => ['admin.products.includes.form'],
         ];
 
         foreach ($composers as $callback => $views) {

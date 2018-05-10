@@ -96,6 +96,7 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
             Route::get('export', 'NewsletterEmailsController@export')->name('admin.newsletter-emails.export');
         });
         Route::resource('newsletter-emails', 'NewsletterEmailsController', ['names' => route_resource_names('admin.newsletter-emails.{name}')]);
+        Route::resource('templates', 'TemplatesController', ['names' => route_resource_names('admin.templates.{name}')]);
     });
 
     Route::group(['namespace' => 'Advertiser', 'prefix' => 'advertiser'], function () {

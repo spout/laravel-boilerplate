@@ -13,6 +13,7 @@ class AdminComposer
             _i("Contents") => 'admin.contents',
             _i("Snippets") => 'admin.snippets',
             _i("Categories") => 'admin.categories',
+            _i("Templates") => 'admin.templates',
             _i("Products") => 'admin.products',
             _i("Events") => 'admin.events',
             _i("Address books") => 'admin.address-books',

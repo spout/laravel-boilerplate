@@ -10,6 +10,10 @@
 {!! Form::select('category_id', $categoryList) !!}
 {!! Form::closeGroup() !!}
 
+{!! Form::openGroup('template', _i('Template')) !!}
+{!! Form::select('template', $templateList) !!}
+{!! Form::closeGroup() !!}
+
 {!! Form::openGroup('featured_image', _i('Featured image')) !!}
 <div class="input-group">
     {!! Form::text('featured_image') !!}
