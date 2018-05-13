@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class ModuleTemplate extends Pivot
+class Placeholder extends Pivot
 {
     public $timestamps = false;
+    protected $table = 'placeholders';
 }

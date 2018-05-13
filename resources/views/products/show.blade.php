@@ -18,9 +18,9 @@
         {!! $product->content !!}
     </div>
 
-    <ul>
-        @foreach($product->category->modules as $module)
-            <li>{{ $module->slug }}</li>
-        @endforeach
-    </ul>
+    <?php
+    foreach ($product->template->modules as $module) {
+        dump($module->pivot->toArray());
+    }
+    ?>
 @endsection

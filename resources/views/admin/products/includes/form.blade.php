@@ -1,6 +1,8 @@
 @include('includes.tinymce')
 @include('includes.elfinder-standalonepopup')
 
+@include('admin.products.includes.form-nav-tabs')
+
 {!! Form::model($object, [
     'route' => empty($object->pk) ? ['admin.products.store'] : ['admin.products.update', $object->pk],
     'method' => empty($object->pk) ? 'POST' : 'PUT'
@@ -10,8 +12,8 @@
 {!! Form::select('category_id', $categoryList) !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('template', _i('Template')) !!}
-{!! Form::select('template', $templateList) !!}
+{!! Form::openGroup('template_slug', _i('Template')) !!}
+{!! Form::select('template_slug', $templateList) !!}
 {!! Form::closeGroup() !!}
 
 {!! Form::openGroup('featured_image', _i('Featured image')) !!}
@@ -41,9 +43,9 @@
             {{--@endif--}}
             {!! Form::closeGroup() !!}
 
-            {!! Form::openGroup("content_$lang", _i('Content (%s)', $lang)) !!}
-            {!! Form::textarea("content_$lang", null, ['class' => 'wysiwyg']) !!}
-            {!! Form::closeGroup() !!}
+            {{--{!! Form::openGroup("content_$lang", _i('Content (%s)', $lang)) !!}--}}
+            {{--{!! Form::textarea("content_$lang", null, ['class' => 'wysiwyg']) !!}--}}
+            {{--{!! Form::closeGroup() !!}--}}
 
             <fieldset>
                 <legend>{{ _i("SEO") }}</legend>

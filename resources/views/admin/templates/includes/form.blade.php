@@ -9,10 +9,6 @@
 {!! Form::text('slug') !!}
 {!! Form::closeGroup() !!}
 
-{!! Form::openGroup('title', _i('Title')) !!}
-{!! Form::text('title') !!}
-{!! Form::closeGroup() !!}
-
 {!! Form::openGroup('template', _i('Template')) !!}
 {!! Form::textarea('template', null, ['data-editor' => 'html', 'rows' => 20]) !!}
 {!! Form::closeGroup() !!}
@@ -22,60 +18,51 @@
 {!! Form::closeGroup() !!}
 
 <fieldset>
-    <legend>{{ _i("Modules") }}</legend>
+    <legend>{{ _i("Placeholders") }}</legend>
 
     <?php
-    $modules = $object->modules;
-    for ($i = 0; $i < 5; $i++) {
-        $modules->push(new \App\Models\Module());
+    $templateSlug = $object->slug;
+    $placeholders = [];
+
+    foreach ($object->placeholders as $placeholder) {
+        $module = $object->modules->first(function ($value, $key) use ($placeholder) {
+            return $value->pivot->placeholder === $placeholder;
+        });
+
+        if (empty($module)) {
+            $placeholders[] = new \App\Models\Placeholder(['placeholder' => $placeholder]);
+
+        } else {
+            $placeholders[] = $module->pivot;
+        }
     }
     ?>
 
-    <div id="modules">
-        @foreach($modules as $k => $module)
-            <div class="form-group draggable">
-                <div class="float-left mr-1">
-                    <div class="sortable-handle" style="cursor: move;">
-                        <i class="fa fa-arrows"></i>
-                    </div>
+    @foreach($placeholders as $k => $placeholder)
+        {!! Form::hidden("placeholders[{$k}][id]", $placeholder->id) !!}
+        {!! Form::hidden("placeholders[{$k}][placeholder]", $placeholder->placeholder) !!}
+
+        <fieldset class="py-0">
+            <legend>{{ $placeholder->placeholder }}</legend>
+            <div class="row">
+                <div class="col">
+                    {!! Form::openGroup("placeholders[{$k}][module_slug]", _i("Module")) !!}
+                    {!! Form::select("placeholders[{$k}][module_slug]", $moduleList, $placeholder->module_slug) !!}
+                    {!! Form::closeGroup() !!}
                 </div>
-                <div class="row float-left w-75">
-                    <div class="col-4">
-                        {!! Form::select("modules[{$k}][module_slug]", $moduleList, $module->slug) !!}
-                        {!! Form::hidden("modules[{$k}][sort]", $k, ['class' => 'sort']) !!}
+                @foreach(config('app.locales') as $lang => $locale)
+                    <div class="col">
+                        {!! Form::openGroup("placeholders[{$k}][title_{$lang}]", _i("Title (%s)", $lang)) !!}
+                        {!! Form::text("placeholders[{$k}][title_{$lang}]") !!}
+                        {!! Form::closeGroup() !!}
                     </div>
-                    <div class="col-4">
-                        {!! Form::text("modules[{$k}][slug]", '', ['placeholder' => _i("Slug")]) !!}
-                    </div>
-                    <div class="col-4">
-                        {!! Form::text("modules[{$k}][title]", '', ['placeholder' => _i("Title")]) !!}
-                    </div>
-                </div>
-                <div class="clearfix"></div>
+                @endforeach
             </div>
-        @endforeach
-    </div>
+        </fieldset>
+    @endforeach
+
 </fieldset>
 
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}
-
-@push('scripts')
-    <script>
-        $(function () {
-            var $modules = $('#modules');
-
-            Sortable.create($modules.get(0), {
-                handle: '.sortable-handle',
-                draggable: '.draggable',
-                animation: 150,
-                onEnd: function () {
-                    $modules.find('input.sort').each(function (index) {
-                        $(this).val(index);
-                    });
-                }
-            });
-        });
-    </script>
-@endpush

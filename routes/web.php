@@ -87,6 +87,9 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         Route::resource('forms', 'FormsController', ['names' => route_resource_names('admin.forms.{name}')]);
         Route::resource('offers', 'OffersController', ['names' => route_resource_names('admin.offers.{name}')]);
         Route::resource('products', 'ProductsController', ['names' => route_resource_names('admin.products.{name}')]);
+        Route::group(['prefix' => 'products'], function () {
+            Route::get('{pk}/edit-module/{placeholderId}', 'ProductsController@editModule')->name('admin.products.edit-module');
+        });
         Route::resource('prices', 'PricesController', ['names' => route_resource_names('admin.prices.{name}')]);
         Route::resource('redirections', 'RedirectionsController', ['names' => route_resource_names('admin.redirections.{name}')]);
         Route::resource('sites', 'SitesController', ['names' => route_resource_names('admin.sites.{name}')]);
@@ -97,6 +100,9 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         });
         Route::resource('newsletter-emails', 'NewsletterEmailsController', ['names' => route_resource_names('admin.newsletter-emails.{name}')]);
         Route::resource('templates', 'TemplatesController', ['names' => route_resource_names('admin.templates.{name}')]);
+        Route::group(['prefix' => 'templates'], function () {
+            Route::get('duplicate/{pk}', 'TemplatesController@duplicate')->name('admin.templates.duplicate');
+        });
     });
 
     Route::group(['namespace' => 'Advertiser', 'prefix' => 'advertiser'], function () {

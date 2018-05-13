@@ -24,6 +24,6 @@ class Module extends Model
 
     public function templates()
     {
-        return $this->belongsToMany(Template::class)->using(ModuleTemplate::class);
+        return $this->belongsToMany(Template::class, 'placeholders')->using(Placeholder::class);
     }
 }

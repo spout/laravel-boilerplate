@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-05-08 19:22+0200\n"
-"PO-Revision-Date: 2018-05-08 19:25+0200\n"
+"POT-Creation-Date: 2018-05-13 14:19+0200\n"
+"PO-Revision-Date: 2018-05-13 14:20+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -225,7 +225,7 @@ msgstr "Carte Google"
 #: ../resources/views/includes/shortcodes.blade.php:27
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:128
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:56
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:131
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:137
 #: ../storage/framework/messages/ec8d282044d59ecdf429fb525133cf456f51cc25.php.php:27
 msgid "Address"
 msgstr "Adresse"
@@ -245,14 +245,17 @@ msgstr "Fragment"
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:9
 #: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:11
 #: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:10
+#: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:9
 #: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:10
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:16
+#: ../storage/framework/messages/a653bfd4c0536d7a7f4dd21b8f5048936eb2892b.php.php:12
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:17
 #: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:12
 #: ../storage/framework/messages/ec8d282044d59ecdf429fb525133cf456f51cc25.php.php:38
 #: ../storage/framework/messages/fda7962579b3e46aa55af776c194a9b8e40eabb6.php.php:11
 #: DataTables/BlogDataTable.php:11 DataTables/MenusDataTable.php:11
 #: DataTables/SitesDataTable.php:10 DataTables/SnippetsDataTable.php:10
+#: DataTables/TemplatesDataTable.php:12
 msgid "Slug"
 msgstr "Identifiant"
 
@@ -339,10 +342,12 @@ msgstr "Symbole"
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:78
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:55
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:83
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:139
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:145
 #: ../storage/framework/messages/666bb58ff86b365a974109c02c497e015fe06cdd.php.php:23
 #: ../storage/framework/messages/6e94feaea2393cdd0ad236dae735aedf0085f88c.php.php:57
+#: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:84
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:98
+#: ../storage/framework/messages/8ecd2d6587efc8cca8eb90b0ee82fc8cc6c8cd4d.php.php:12
 #: ../storage/framework/messages/9caccb274a856db1f8eda067b8ebb3a805791a9d.php.php:28
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:57
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:49
@@ -553,6 +558,30 @@ msgstr "éléments d'accordéon"
 msgid "Prices"
 msgstr "Tarifs"
 
+#: ../storage/framework/messages/10e25c1299edcb7f038258c523aa66cc3cf4fa73.php.php:40
+#: ../storage/framework/messages/edc5b9e38f30793e8112fe499c71b86c3bf014e0.php.php:36
+#: Http/Requests/SiteFormRequest.php:36
+#: Http/Requests/TemplateFormRequest.php:40
+msgid "The slug is required."
+msgstr "L'identifiant est requis."
+
+#: ../storage/framework/messages/10e25c1299edcb7f038258c523aa66cc3cf4fa73.php.php:41
+#: Http/Requests/TemplateFormRequest.php:41
+msgid "The template is required if template file isn't filled."
+msgstr "Le gabarit est requis si le fichier de gabarit n'est pas rempli."
+
+#: ../storage/framework/messages/10e25c1299edcb7f038258c523aa66cc3cf4fa73.php.php:42
+#: Http/Requests/TemplateFormRequest.php:42
+msgid "The template file is required if template isn't filled."
+msgstr "Le fichier de gabarit est requis si le gabarit n'est pas rempli."
+
+#: ../storage/framework/messages/14e8aedaf2efe0e3c438124fdbb531c59ca46e5c.php.php:31
+#: ../storage/framework/messages/33ecb2455953ef6b9d8ebda0643e30d532fe177c.php.php:37
+#: Http/Controllers/Admin/ProductsController.php:31
+#: Http/Controllers/Traits/Crud/UpdateTrait.php:37
+msgid "Record was updated successfully!"
+msgstr "Enregistrement modifié avec succès !"
+
 #: ../storage/framework/messages/168cfcbbbce0bfe93a020cffaeca968fda1b5df3.php.php:1
 msgid "Update currency"
 msgstr "Modifier devise"
@@ -602,6 +631,10 @@ msgstr "Confirmer le mot de passe"
 msgid "Shortcode"
 msgstr "Shortcode"
 
+#: ../storage/framework/messages/1eab80870898e8232697568f743bbbd1956857fb.php.php:1
+msgid "Templates"
+msgstr "Gabarits"
+
 #: ../storage/framework/messages/1ebf3dcbc7d1cc42d0af1c13a9bb9188cd91d7cf.php.php:16
 #: Models/Contact.php:16
 msgid "contact"
@@ -616,6 +649,10 @@ msgstr "contacts"
 msgid "Map"
 msgstr "Carte"
 
+#: ../storage/framework/messages/21e8bac5f527cec8d1a047895b7508fa93a4b088.php.php:1
+msgid "Update template"
+msgstr "Modifier gabarit"
+
 #: ../storage/framework/messages/23454fe612fd7dfb087898ebb03551798be5cdf1.php.php:1
 msgid "Create newsletter email"
 msgstr "Créer email newsletter"
@@ -626,10 +663,24 @@ msgstr "Créer email newsletter"
 msgid "The slug (%s) is required."
 msgstr "L'identifiant (%s) est requis."
 
-#: ../storage/framework/messages/23cf636ac835705e13d7ed424e1cc7a72b7e44d7.php.php:56
-#: Http/Requests/ProductFormRequest.php:56
+#: ../storage/framework/messages/23cf636ac835705e13d7ed424e1cc7a72b7e44d7.php.php:57
+#: Http/Requests/ProductFormRequest.php:57
+msgid "The template is required."
+msgstr "Le gabarit est requis."
+
+#: ../storage/framework/messages/23cf636ac835705e13d7ed424e1cc7a72b7e44d7.php.php:58
+#: Http/Requests/ProductFormRequest.php:58
 msgid "The featured image is required."
 msgstr "L'image à la une est requise."
+
+#: ../storage/framework/messages/24a09cbf704db7e6793dc4fcead89009a20aafe2.php.php:23
+#: Http/Controllers/Admin/TemplatesController.php:23
+msgid "Template successfully duplicated!"
+msgstr "Gabarit dupliqué avec succès !"
+
+#: ../storage/framework/messages/2605f730f0633c5d3e6f1faf789bbe36337bf3cd.php.php:24
+msgid "Menu"
+msgstr "Menu"
 
 #: ../storage/framework/messages/264e78d5000f783504f172c6c439df2ebffc4a7b.php.php:22
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:14
@@ -666,29 +717,29 @@ msgid "Mobile 2"
 msgstr "Mobile 2"
 
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:85
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:88
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:94
 msgid "Latitude"
 msgstr "Latitude"
 
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:93
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:96
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:102
 msgid "Longitude"
 msgstr "Longitude"
 
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:102
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:68
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:105
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:111
 msgid "Country"
 msgstr "Pays"
 
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:111
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:114
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:120
 msgid "Postcode"
 msgstr "Code postal"
 
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:119
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:75
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:122
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:128
 msgid "City"
 msgstr "Ville"
 
@@ -700,8 +751,9 @@ msgstr "Type"
 #: ../storage/framework/messages/27967d8d314a2ab4d750d5b751fc1f3efc61e8ee.php.php:21
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:20
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:21
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:34
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:43
 #: ../storage/framework/messages/6e94feaea2393cdd0ad236dae735aedf0085f88c.php.php:27
+#: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:70
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:54
 #: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:28
 #: ../storage/framework/messages/f8f93c9dbc0bd23a08ece07d8e9e1c0479ee5640.php.php:10
@@ -717,7 +769,6 @@ msgid "Path (%s)"
 msgstr "Chemin (%s)"
 
 #: ../storage/framework/messages/27967d8d314a2ab4d750d5b751fc1f3efc61e8ee.php.php:41
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:53
 #: ../storage/framework/messages/6e94feaea2393cdd0ad236dae735aedf0085f88c.php.php:47
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:68
 #: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:35
@@ -791,11 +842,6 @@ msgstr "Ajouter carnet d'adresses"
 msgid "Send password reset link"
 msgstr "Envoyer le lien de réinitialisation du mot de passe"
 
-#: ../storage/framework/messages/33ecb2455953ef6b9d8ebda0643e30d532fe177c.php.php:37
-#: Http/Controllers/Traits/Crud/UpdateTrait.php:37
-msgid "Record was updated successfully!"
-msgstr "Enregistrement modifié avec succès !"
-
 #: ../storage/framework/messages/367c72ad022eca791ba6e33a77d1dc6ba45f79ba.php.php:36
 #: ../storage/framework/messages/3a9f5f773e1d3c85feccfdd4962fed2f5740799c.php.php:34
 #: ../storage/framework/messages/da39fa03cbae5a182e8fbb9f2b61bdd9a04529d4.php.php:36
@@ -855,13 +901,13 @@ msgid "Slug plural (%s)"
 msgstr "Identifiant pluriel (%s)"
 
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:61
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:63
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:69
 #, php-format
 msgid "H1 (%s)"
 msgstr "H1 (%s)"
 
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:68
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:70
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:76
 #, php-format
 msgid "Meta description (%s)"
 msgstr "Meta description (%s)"
@@ -878,6 +924,16 @@ msgstr "Créer devise"
 #: ../storage/framework/messages/eae3e34cc419fd9ad5aa05c61affc0f2bb48ad2c.php.php:1
 msgid "Products"
 msgstr "Produits"
+
+#: ../storage/framework/messages/3d64edf8385147a703cc468456886ae8341c00d7.php.php:14
+#: Models/Template.php:14
+msgid "template"
+msgstr "gabarit"
+
+#: ../storage/framework/messages/3d64edf8385147a703cc468456886ae8341c00d7.php.php:19
+#: Models/Template.php:19
+msgid "templates"
+msgstr "gabarits"
 
 #: ../storage/framework/messages/3df3c00953e7eb8d2b15a41ff216bab6a6414308.php.php:13
 msgid "image {current} of {total}"
@@ -999,7 +1055,7 @@ msgid "Reserve"
 msgstr "Réservez"
 
 #: ../storage/framework/messages/4acbf5f65169909e7fa0b5df5f4d079b72b55f47.php.php:7
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:10
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:12
 #: ../storage/framework/messages/7723684dc6bcff37449bae1b492f81d9acdb2362.php.php:15
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:24
 #: DataTables/ProductsDataTable.php:15
@@ -1074,26 +1130,33 @@ msgstr "Enregistrement supprimé avec succès !"
 msgid "Update category"
 msgstr "Modifier catégorie"
 
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:17
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:19
+#: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:16
+#: ../storage/framework/messages/7723684dc6bcff37449bae1b492f81d9acdb2362.php.php:16
+#: DataTables/ProductsDataTable.php:16
+msgid "Template"
+msgstr "Gabarit"
+
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:26
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:38
 msgid "Featured image"
 msgstr "Image à la une"
 
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:23
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:32
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:44
 msgid "Select image"
 msgstr "Choisir image"
 
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:41
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:50
 #, php-format
 msgid "Slug (%s)"
 msgstr "Identifiant (%s)"
 
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:61
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:67
 msgid "SEO"
 msgstr "SEO"
 
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:82
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:88
 msgid "Location"
 msgstr "Lieu"
 
@@ -1216,6 +1279,20 @@ msgstr "Modifier tarif"
 msgid "File manager"
 msgstr "Gestionnaire de fichiers"
 
+#: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:23
+#: ../storage/framework/messages/a653bfd4c0536d7a7f4dd21b8f5048936eb2892b.php.php:13
+#: DataTables/TemplatesDataTable.php:13
+msgid "Template file"
+msgstr "Fichier de gabarit"
+
+#: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:31
+msgid "Placeholders"
+msgstr "Espaces réservés"
+
+#: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:61
+msgid "Module"
+msgstr "Module"
+
 #: ../storage/framework/messages/715f93d65836174042eb12312d341978e9fb582d.php.php:10
 #: DataTables/AddressBooksDataTable.php:10
 msgid "Id"
@@ -1287,6 +1364,10 @@ msgstr "Couper"
 msgid "Paste"
 msgstr "Coller"
 
+#: ../storage/framework/messages/78fbd44d99ae650aedc29cd64338e3958ec3177f.php.php:1
+msgid "Create template"
+msgstr "Créer gabarit"
+
 #: ../storage/framework/messages/79c1abdbef1c72e22ccea6fea212feeb612a2534.php.php:56
 #: Http/Requests/SnippetFormRequest.php:56
 #, php-format
@@ -1317,6 +1398,10 @@ msgstr "formulaires"
 #: ../storage/framework/messages/7d918d31b8525b7921b824e59b13b529ba746e49.php.php:1
 msgid "Address books"
 msgstr "Carnets d'adresses"
+
+#: ../storage/framework/messages/7dcce318618608b22d582ac075c3662c94f7d66b.php.php:3
+msgid "General"
+msgstr "Général"
 
 #: ../storage/framework/messages/87591b1064231920f778f19caee96e31f801afa9.php.php:1
 msgid "Update form"
@@ -1416,6 +1501,10 @@ msgstr "tarifs"
 msgid "Create gallery"
 msgstr "Créer galerie"
 
+#: ../storage/framework/messages/8ecd2d6587efc8cca8eb90b0ee82fc8cc6c8cd4d.php.php:1
+msgid "Update module"
+msgstr "Modifier module"
+
 #: ../storage/framework/messages/90ae5a6dd517f1e3afb3a2c0616363119fc6a4f2.php.php:36
 #: Http/Requests/CurrencyFormRequest.php:36
 msgid "The code is required."
@@ -1483,6 +1572,10 @@ msgstr "Fragments"
 msgid "Form preview"
 msgstr "Aperçu du formulaire"
 
+#: ../storage/framework/messages/9b74e1f44d6e870bf45efd8ed927df4a6e801c97.php.php:2
+msgid "Duplicate"
+msgstr "Dupliquer"
+
 #: ../storage/framework/messages/9d53f220df289905ab75cd8971e03e2fecccec5e.php.php:3
 msgid "Please correct the errors below:"
 msgstr "Veuillez corriger les erreurs ci-dessous :"
@@ -1514,10 +1607,6 @@ msgstr "favoris"
 #: Models/Favorite.php:17
 msgid "favorites"
 msgstr "favoris"
-
-#: ../storage/framework/messages/a7e649ba49171e4c2e67191505af4fd67d26948c.php.php:24
-msgid "Menu"
-msgstr "Menu"
 
 #: ../storage/framework/messages/aa0702459018b73f0b1f9983887e8cc02bc9ad5e.php.php:20
 #: Http/Requests/CategoryFormRequest.php:20
@@ -1766,11 +1855,6 @@ msgstr ""
 msgid "The message was sent successfully!"
 msgstr "Le message a été envoyé avec succès !"
 
-#: ../storage/framework/messages/edc5b9e38f30793e8112fe499c71b86c3bf014e0.php.php:36
-#: Http/Requests/SiteFormRequest.php:36
-msgid "The slug is required."
-msgstr "L'identifiant est requis."
-
 #: ../storage/framework/messages/f273966196f4201639f32b3c8abfba011b278f54.php.php:52
 #: Http/Requests/ContentFormRequest.php:52
 #, php-format
@@ -1810,6 +1894,9 @@ msgstr "fragment"
 #: Models/Snippet.php:28
 msgid "snippets"
 msgstr "fragments"
+
+#~ msgid "No placeholder found."
+#~ msgstr "Aucun espace réservé trouvé."
 
 #~ msgid "Newsletters"
 #~ msgstr "Newsletters"
@@ -1911,9 +1998,6 @@ msgstr "fragments"
 
 #~ msgid "ID"
 #~ msgstr "ID"
-
-#~ msgid "Template"
-#~ msgstr "Gabarit"
 
 #~ msgid "Same day"
 #~ msgstr "Même jour"
@@ -2025,17 +2109,11 @@ msgstr "fragments"
 #~ msgid "Toggle navigation"
 #~ msgstr "Basculer navigation"
 
-#~ msgid "Create email template"
-#~ msgstr "Créer gabarit email"
-
 #~ msgid "Emails"
 #~ msgstr "Emails"
 
 #~ msgid "Email templates"
 #~ msgstr "Gabarits email"
-
-#~ msgid "Update email template"
-#~ msgstr "Modifier gabarit email"
 
 #~ msgid "Bookings"
 #~ msgstr "Réservations"
