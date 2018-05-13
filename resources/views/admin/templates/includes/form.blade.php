@@ -31,7 +31,6 @@
 
         if (empty($module)) {
             $placeholders[] = new \App\Models\Placeholder(['placeholder' => $placeholder]);
-
         } else {
             $placeholders[] = $module->pivot;
         }
@@ -53,7 +52,7 @@
                 @foreach(config('app.locales') as $lang => $locale)
                     <div class="col">
                         {!! Form::openGroup("placeholders[{$k}][title_{$lang}]", _i("Title (%s)", $lang)) !!}
-                        {!! Form::text("placeholders[{$k}][title_{$lang}]") !!}
+                        {!! Form::text("placeholders[{$k}][title_{$lang}]", $placeholder->{"title_{$lang}"}) !!}
                         {!! Form::closeGroup() !!}
                     </div>
                 @endforeach

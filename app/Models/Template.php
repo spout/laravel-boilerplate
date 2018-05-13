@@ -26,7 +26,16 @@ class Template extends Model
 
     public function modules()
     {
-        return $this->belongsToMany(Module::class, 'placeholders')->using(Placeholder::class)->withPivot('id', 'placeholder');
+        $withPivot = ['id', 'placeholder'];
+        foreach (config('app.locales') as $lang => $locale) {
+            foreach (Placeholder::$translatableColumns as $column) {
+                $withPivot[] = "{$column}_{$lang}";
+            }
+        }
+
+        return $this->belongsToMany(Module::class, 'placeholders')
+            ->using(Placeholder::class)
+            ->withPivot($withPivot);
     }
 
     public function getTemplateContentAttribute()
