@@ -10,7 +10,6 @@ class TemplatesDataTable extends DataTable
     {
         return [
             ['data' => 'slug', 'name' => 'slug', 'title' => _i("Slug")],
-            ['data' => 'template_file', 'name' => 'view', 'title' => _i("Template file")],
         ];
     }
 }
