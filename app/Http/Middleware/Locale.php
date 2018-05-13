@@ -13,8 +13,8 @@ class Locale
      * @param $request
      * @param Closure $next
      * @param null $guard
-     *
-     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\RedirectResponse|mixed|\Symfony\Component\HttpFoundation\Response
+     * @return mixed
+     * @throws \Exception
      */
     public function handle($request, Closure $next, $guard = null)
     {
