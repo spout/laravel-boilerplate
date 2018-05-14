@@ -15,6 +15,7 @@ class TemplateObserver
                     'template_slug' => $template->slug,
                     'module_slug' => $placeholder['module_slug'],
                     'placeholder' => $placeholder['placeholder'],
+                    'order' => $placeholder['order'],
                 ];
 
                 foreach (config('app.locales') as $lang => $locale) {

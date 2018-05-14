@@ -26,7 +26,7 @@ class Template extends Model
 
     public function modules()
     {
-        $withPivot = ['id', 'placeholder'];
+        $withPivot = ['id', 'placeholder', 'order'];
         foreach (config('app.locales') as $lang => $locale) {
             foreach (Placeholder::$translatableColumns as $column) {
                 $withPivot[] = "{$column}_{$lang}";
@@ -35,7 +35,8 @@ class Template extends Model
 
         return $this->belongsToMany(Module::class, 'placeholders')
             ->using(Placeholder::class)
-            ->withPivot($withPivot);
+            ->withPivot($withPivot)
+            ->orderBy('order');
     }
 
     public function getTemplateContentAttribute()
