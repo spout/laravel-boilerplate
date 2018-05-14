@@ -103,6 +103,7 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         Route::group(['prefix' => 'templates'], function () {
             Route::get('duplicate/{pk}', 'TemplatesController@duplicate')->name('admin.templates.duplicate');
         });
+        Route::resource('bookings', 'BookingsController', ['names' => route_resource_names('admin.bookings.{name}')]);
     });
 
     Route::group(['namespace' => 'Advertiser', 'prefix' => 'advertiser'], function () {

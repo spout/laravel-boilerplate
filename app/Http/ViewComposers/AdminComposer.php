@@ -26,6 +26,7 @@ class AdminComposer
             _i("Users") => 'admin.users',
             _i("Forms") => 'admin.forms',
             //_i("Contacts") => 'admin.contacts',
+            _i("Bookings") => 'admin.bookings',
             _i("File manager") => 'admin.file-manager',
             _i("Currencies") => 'admin.currencies',
             _i("Newsletter emails") => 'admin.newsletter-emails',
