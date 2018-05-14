@@ -36,11 +36,9 @@
 
             {!! Form::openGroup("slug_$lang", _i('Slug (%s)', $lang)) !!}
             {!! Form::text("slug_$lang") !!}
-            {{--@if (!empty($object->{"slug_$lang"}))--}}
-                {{--<a href="{{ LaravelLocalization::getLocalizedURL($lang, route('contents.show', ['path' => $object->{"path_$lang"}])) }}" target="_blank">--}}
-                    {{--{{ LaravelLocalization::getLocalizedURL($lang, route('contents.show', ['path' => $object->{"path_$lang"}])) }}--}}
-                {{--</a>--}}
-            {{--@endif--}}
+            @if (!empty($object->{"slug_$lang"}))
+                <a href="{{ $object->getAbsoluteLocalizedUrl($lang) }}" target="_blank">{{ $object->getAbsoluteLocalizedUrl($lang) }}</a>
+            @endif
             {!! Form::closeGroup() !!}
 
             {{--{!! Form::openGroup("content_$lang", _i('Content (%s)', $lang)) !!}--}}

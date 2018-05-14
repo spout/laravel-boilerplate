@@ -33,4 +33,9 @@ trait CommonTrait
     {
         return '#';
     }
+
+    public function getAbsoluteLocalizedUrl($lang)
+    {
+        return \LaravelLocalization::getLocalizedURL($lang, $this->absolute_url);
+    }
 }

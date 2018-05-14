@@ -27,9 +27,7 @@
             {!! Form::openGroup("path_$lang", _i('Path (%s)', $lang)) !!}
             {!! Form::text("path_$lang") !!}
             @if (!empty($object->{"path_$lang"}))
-                <a href="{{ LaravelLocalization::getLocalizedURL($lang, route('contents.show', ['path' => $object->{"path_$lang"}])) }}" target="_blank">
-                    {{ LaravelLocalization::getLocalizedURL($lang, route('contents.show', ['path' => $object->{"path_$lang"}])) }}
-                </a>
+                <a href="{{ $object->getAbsoluteLocalizedUrl($lang) }}" target="_blank">{{ $object->getAbsoluteLocalizedUrl($lang) }}</a>
             @endif
             {!! Form::closeGroup() !!}
 
