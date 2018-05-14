@@ -9,7 +9,7 @@ class TemplateListComposer
 {
     public function compose(View $view)
     {
-        $templateList = Template::all()->pluck('title', 'slug')->prepend('-', '');
+        $templateList = Template::all()->pluck('slug', 'slug')->prepend('-', '');
         $view->with(compact('templateList'));
     }
 }
