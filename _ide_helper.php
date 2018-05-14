@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.40 on 2018-05-08 16:49:38.
+ * Generated for Laravel 5.5.40 on 2018-05-14 16:54:55.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -13587,6 +13587,18 @@ namespace Yajra\DataTables\Facades {
         public static function collection($collection)
         {
             return \Yajra\DataTables\DataTables::collection($collection);
+        }
+        
+        /**
+         * DataTables using Collection.
+         *
+         * @param \Illuminate\Http\Resources\Json\AnonymousResourceCollection|array $collection
+         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\ApiResourceDataTable 
+         * @static 
+         */ 
+        public static function resource($resource)
+        {
+            return \Yajra\DataTables\DataTables::resource($resource);
         }
         
         /**
