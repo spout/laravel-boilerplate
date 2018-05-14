@@ -1,9 +1,10 @@
 @push('scripts')
 <?php
 $lang = \LaravelLocalization::getCurrentLocale();
+$langRegional = \LaravelLocalization::getCurrentLocaleRegional();
 $langUpper = strtoupper($lang);
 $languageBasePath = '/js/tinymce/langs/';
-$languagePath = "{$languageBasePath}{$lang}_{$langUpper}.js";
+$languagePath = "{$languageBasePath}{$langRegional}.js";
 if (!file_exists(public_path($languagePath))) {
     $languagePath = "{$languageBasePath}{$lang}.js";
 }
