@@ -51,7 +51,7 @@ class Template extends Model
 
     public function getPlaceholdersAttribute()
     {
-        if (preg_match_all('/\[placeholder slug="([a-zA-Z0-9-_]+)"\]/', $this->template_content, $matches)) {
+        if (preg_match_all('/{{ ([a-zA-Z0-9-_]+) }}/', $this->template_content, $matches)) {
             return $matches[1];
         }
 
