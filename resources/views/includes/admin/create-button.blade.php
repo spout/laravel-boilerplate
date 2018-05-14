@@ -8,7 +8,7 @@ if (empty($url)) {
 
 if (empty($label)) {
     $model = $controllerClass::$model;
-    $label = _i("Add %s", $model::verboseName());
+    $label = _i("Create %s", $model::verboseName());
 }
 ?>
 <p>
