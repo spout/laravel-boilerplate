@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-05-14 21:23+0200\n"
-"PO-Revision-Date: 2018-05-14 21:23+0200\n"
+"POT-Creation-Date: 2018-05-14 21:26+0200\n"
+"PO-Revision-Date: 2018-05-14 21:26+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -190,8 +190,8 @@ msgstr "Connexion avec %s"
 #: ../resources/views/includes/admin/create-button.blade.php:11
 #: ../storage/framework/messages/19c47d05eb1ae87f6449fdcd4849ecb3a9b1d075.php.php:11
 #, php-format
-msgid "Add %s"
-msgstr "Ajouter %s"
+msgid "Create %s"
+msgstr "Créer %s"
 
 #: ../resources/views/includes/datatables/actions/delete.blade.php:5
 #: ../storage/framework/messages/5f110a3f33c312367417430c4271d5945c8634b3.php.php:5
@@ -1937,6 +1937,9 @@ msgstr "fragment"
 #: Models/Snippet.php:28
 msgid "snippets"
 msgstr "fragments"
+
+#~ msgid "Add %s"
+#~ msgstr "Ajouter %s"
 
 #~ msgid "No placeholder found."
 #~ msgstr "Aucun espace réservé trouvé."
