@@ -1341,16 +1341,16 @@
         },
         {
             "name": "florianv/exchanger",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/florianv/exchanger.git",
-                "reference": "dad2fb36ade670e020623b20f2d0c1fa7e6891b9"
+                "reference": "b0d3a834e8d8e8764c71e6c7013cd92e5d4084e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/florianv/exchanger/zipball/dad2fb36ade670e020623b20f2d0c1fa7e6891b9",
-                "reference": "dad2fb36ade670e020623b20f2d0c1fa7e6891b9",
+                "url": "https://api.github.com/repos/florianv/exchanger/zipball/b0d3a834e8d8e8764c71e6c7013cd92e5d4084e4",
+                "reference": "b0d3a834e8d8e8764c71e6c7013cd92e5d4084e4",
                 "shasum": ""
             },
             "require": {
@@ -1374,7 +1374,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.x-dev"
                 }
             },
             "autoload": {
@@ -1402,7 +1402,7 @@
                 "exchange rates",
                 "money"
             ],
-            "time": "2018-04-24T15:09:08+00:00"
+            "time": "2018-05-14T07:24:12+00:00"
         },
         {
             "name": "florianv/laravel-swap",
@@ -5852,16 +5852,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v8.5.1",
+            "version": "v8.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "6a44c00800135b3c52742cc7dac3655b2f903f18"
+                "reference": "b2d9df3df9315bc1a5d08ac2b88a1e2a15e5ddcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/6a44c00800135b3c52742cc7dac3655b2f903f18",
-                "reference": "6a44c00800135b3c52742cc7dac3655b2f903f18",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/b2d9df3df9315bc1a5d08ac2b88a1e2a15e5ddcb",
+                "reference": "b2d9df3df9315bc1a5d08ac2b88a1e2a15e5ddcb",
                 "shasum": ""
             },
             "require": {
@@ -5919,7 +5919,7 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2018-05-12T03:37:37+00:00"
+            "time": "2018-05-15T09:21:17+00:00"
         }
     ],
     "packages-dev": [
