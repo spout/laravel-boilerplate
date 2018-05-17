@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\ProductsDataTable;
 use App\Http\Requests\ProductFormRequest;
+use App\Models\Model;
+use App\Models\Placeholder;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductsController extends AdminController
 {
@@ -18,17 +19,26 @@ class ProductsController extends AdminController
     {
         $model = static::$model;
         $object = $model::findOrFail($pk);
+        $placeholder = Placeholder::find($placeholderId);
 
-        return view("{$this->viewPath()}.edit-module", compact('object', 'placeholderId'));
-    }
+        $moduleConfig = config("modules.{$placeholder->module_slug}");
 
-    public function updateModule(Request $request, $pk)
-    {
-        $model = static::$model;
-        $object = $model::find($pk);
-        $input = $request->all();
-        $object->update($input);
-        flash(_i("Record was updated successfully!"), 'success');
-        return redirect()->route("{$this->viewPath()}.edit-module", [$object->pk]);
+        /** @var Model $moduleModel */
+        $moduleModel = $moduleConfig['model'];
+        /** @var \Illuminate\Foundation\Http\FormRequest $moduleFormRequest */
+        $moduleFormRequest = $moduleConfig['formRequest'];
+
+        $moduleModelInstance = $moduleModel::firstOrNew(['product_id' => $object->pk, 'placeholder_id' => $placeholderId]);
+
+        if (!request()->isMethod('get')) {
+            app($moduleFormRequest);
+
+            $moduleModelInstance->fill(request()->all());
+            $moduleModelInstance->save();
+
+            flash(_i("Module was updated successfully!"), 'success');
+        }
+
+        return view("{$this->viewPath()}.edit-module", compact('object', 'placeholder', 'moduleModelInstance'));
     }
 }

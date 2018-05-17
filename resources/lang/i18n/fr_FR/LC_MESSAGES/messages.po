@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-05-14 21:26+0200\n"
-"PO-Revision-Date: 2018-05-14 21:26+0200\n"
+"POT-Creation-Date: 2018-05-17 18:46+0200\n"
+"PO-Revision-Date: 2018-05-17 18:47+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -90,10 +90,12 @@ msgstr "Nom"
 
 #: ../resources/views/admin/forms/includes/form.blade.php:37
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:14
+#: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:7
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:74
+#: ../storage/framework/messages/6831747e642e8b20208bd695e3d5f499194e6d38.php.php:11
 #: ../storage/framework/messages/b2528904818ffc7be09d6422adeda6962710aba5.php.php:11
 #: ../storage/framework/messages/e2fd07d62a56da4acea1e8611d3bff6bfb319b04.php.php:50
-#: DataTables/RedirectionsDataTable.php:11
+#: DataTables/RedirectionsDataTable.php:11 DataTables/VideosDataTable.php:11
 msgid "URL"
 msgstr "URL"
 
@@ -243,16 +245,16 @@ msgid "Snippet"
 msgstr "Fragment"
 
 #: ../resources/views/includes/shortcodes.blade.php:38
-#: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:7
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:9
 #: ../storage/framework/messages/3accfed7c8294cce099037ab842be368493713a8.php.php:11
+#: ../storage/framework/messages/49c12012f2dc78b6cd66a86e0340fd699caf7872.php.php:7
 #: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:10
 #: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:9
 #: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:10
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:16
 #: ../storage/framework/messages/a653bfd4c0536d7a7f4dd21b8f5048936eb2892b.php.php:12
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:17
-#: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:12
+#: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:9
 #: ../storage/framework/messages/ec8d282044d59ecdf429fb525133cf456f51cc25.php.php:38
 #: ../storage/framework/messages/fda7962579b3e46aa55af776c194a9b8e40eabb6.php.php:11
 #: DataTables/BlogDataTable.php:11 DataTables/MenusDataTable.php:11
@@ -321,8 +323,8 @@ msgid "Code"
 msgstr "Code"
 
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:14
-#: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:21
 #: ../storage/framework/messages/4591d5ed419498488d93d12478568f052e133fe0.php.php:12
+#: ../storage/framework/messages/49c12012f2dc78b6cd66a86e0340fd699caf7872.php.php:21
 #: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:12
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:12
 #: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:11
@@ -338,18 +340,19 @@ msgstr "Symbole"
 
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:28
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:28
-#: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:28
+#: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:14
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:135
 #: ../storage/framework/messages/27967d8d314a2ab4d750d5b751fc1f3efc61e8ee.php.php:9
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:78
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:55
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:83
+#: ../storage/framework/messages/49c12012f2dc78b6cd66a86e0340fd699caf7872.php.php:28
 #: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:146
 #: ../storage/framework/messages/666bb58ff86b365a974109c02c497e015fe06cdd.php.php:23
 #: ../storage/framework/messages/6e94feaea2393cdd0ad236dae735aedf0085f88c.php.php:54
 #: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:85
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:98
-#: ../storage/framework/messages/8ecd2d6587efc8cca8eb90b0ee82fc8cc6c8cd4d.php.php:12
+#: ../storage/framework/messages/8ecd2d6587efc8cca8eb90b0ee82fc8cc6c8cd4d.php.php:16
 #: ../storage/framework/messages/9caccb274a856db1f8eda067b8ebb3a805791a9d.php.php:28
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:57
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:49
@@ -464,7 +467,7 @@ msgid "Forgot your password?"
 msgstr "Mot de passe perdu ?"
 
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:7
-#: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:14
+#: ../storage/framework/messages/49c12012f2dc78b6cd66a86e0340fd699caf7872.php.php:14
 #: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:11
 #: ../storage/framework/messages/b2528904818ffc7be09d6422adeda6962710aba5.php.php:10
 #: DataTables/RedirectionsDataTable.php:10 DataTables/SitesDataTable.php:11
@@ -596,12 +599,10 @@ msgstr "Le gabarit est requis si le fichier de gabarit n'est pas rempli."
 msgid "The template file is required if template isn't filled."
 msgstr "Le fichier de gabarit est requis si le gabarit n'est pas rempli."
 
-#: ../storage/framework/messages/14e8aedaf2efe0e3c438124fdbb531c59ca46e5c.php.php:31
-#: ../storage/framework/messages/33ecb2455953ef6b9d8ebda0643e30d532fe177c.php.php:37
-#: Http/Controllers/Admin/ProductsController.php:31
-#: Http/Controllers/Traits/Crud/UpdateTrait.php:37
-msgid "Record was updated successfully!"
-msgstr "Enregistrement modifié avec succès !"
+#: ../storage/framework/messages/14e8aedaf2efe0e3c438124fdbb531c59ca46e5c.php.php:26
+#: Http/Controllers/Admin/ProductsController.php:26
+msgid "Module was updated successfully!"
+msgstr "Module modifié avec succès !"
 
 #: ../storage/framework/messages/168cfcbbbce0bfe93a020cffaeca968fda1b5df3.php.php:1
 msgid "Update currency"
@@ -613,12 +614,12 @@ msgstr "Modifier carnet d'adresses"
 
 #: ../storage/framework/messages/1ade8cebfb6771139e8a5c416a0806b8d6750f4e.php.php:36
 #: ../storage/framework/messages/23cf636ac835705e13d7ed424e1cc7a72b7e44d7.php.php:24
-#: ../storage/framework/messages/79c1abdbef1c72e22ccea6fea212feeb612a2534.php.php:52
+#: ../storage/framework/messages/79c1abdbef1c72e22ccea6fea212feeb612a2534.php.php:54
 #: ../storage/framework/messages/f273966196f4201639f32b3c8abfba011b278f54.php.php:51
 #: Http/Requests/ContentFormRequest.php:51
 #: Http/Requests/GalleryFormRequest.php:36
 #: Http/Requests/ProductFormRequest.php:24
-#: Http/Requests/SnippetFormRequest.php:52
+#: Http/Requests/SnippetFormRequest.php:54
 #, php-format
 msgid "The title (%s) is required."
 msgstr "Le titre (%s) est requis."
@@ -665,6 +666,10 @@ msgstr "contact"
 #: Models/Contact.php:21
 msgid "contacts"
 msgstr "contacts"
+
+#: ../storage/framework/messages/207a5f069e45f3f7b827b4f000f8129e9ce26e94.php.php:1
+msgid "Sites"
+msgstr "Sites"
 
 #: ../storage/framework/messages/208cfed5d91795a7ae68510ae86a5bb1dbc4c447.php.php:1
 msgid "Map"
@@ -830,6 +835,11 @@ msgstr "Ajouter carnet d'adresses"
 msgid "Send password reset link"
 msgstr "Envoyer le lien de réinitialisation du mot de passe"
 
+#: ../storage/framework/messages/33ecb2455953ef6b9d8ebda0643e30d532fe177c.php.php:37
+#: Http/Controllers/Traits/Crud/UpdateTrait.php:37
+msgid "Record was updated successfully!"
+msgstr "Enregistrement modifié avec succès !"
+
 #: ../storage/framework/messages/367c72ad022eca791ba6e33a77d1dc6ba45f79ba.php.php:36
 #: ../storage/framework/messages/3a9f5f773e1d3c85feccfdd4962fed2f5740799c.php.php:34
 #: ../storage/framework/messages/da39fa03cbae5a182e8fbb9f2b61bdd9a04529d4.php.php:36
@@ -978,8 +988,8 @@ msgid "Message was sent successfully."
 msgstr "Message envoyé avec succès."
 
 #: ../storage/framework/messages/404a937eb7f138eb19caf435fb2ced34528e0ad3.php.php:1
-msgid "Update site"
-msgstr "Modifier site"
+msgid "Update video"
+msgstr "Modifier vidéo"
 
 #: ../storage/framework/messages/435d7616868b600488c9e48130cb9394d69b3a1f.php.php:11
 #: DataTables/UsersDataTable.php:11
@@ -1095,6 +1105,16 @@ msgstr "Enfants"
 msgid "Search"
 msgstr "Recherche"
 
+#: ../storage/framework/messages/4ba28edca5ab14a89c9a119b2f6f7b6cc332bd37.php.php:11
+#: Models/Video.php:11
+msgid "video"
+msgstr "vidéo"
+
+#: ../storage/framework/messages/4ba28edca5ab14a89c9a119b2f6f7b6cc332bd37.php.php:16
+#: Models/Video.php:16
+msgid "videos"
+msgstr "vidéos"
+
 #: ../storage/framework/messages/4e69d0e6b85b727fcfb14f049bb2ba6a2af18d24.php.php:1
 #: ../storage/framework/messages/4f175ddc96d2a727d9e4cd223d161a4d6d7445e6.php.php:3
 msgid "Blog"
@@ -1127,8 +1147,8 @@ msgid "categories"
 msgstr "catégories"
 
 #: ../storage/framework/messages/58fcf8665d2835e3880b14eae06eab0e424f6feb.php.php:1
-msgid "Sites"
-msgstr "Sites"
+msgid "Videos"
+msgstr "Vidéos"
 
 #: ../storage/framework/messages/59d6d5f72328be0087346b8ed7d0c82f3ffe7df8.php.php:18
 #: Http/Controllers/Traits/Crud/DeleteTrait.php:18
@@ -1250,8 +1270,8 @@ msgid "Gallery %d"
 msgstr "Galerie %d"
 
 #: ../storage/framework/messages/65b73ed0738869d78275bd2da6d56d1ba0085a46.php.php:1
-msgid "Create site"
-msgstr "Créer site"
+msgid "Create video"
+msgstr "Créer vidéo"
 
 #: ../storage/framework/messages/661d7efbc357b3bbf8dde3cd3020ee16d67797c1.php.php:1
 msgid "Update content"
@@ -1266,10 +1286,16 @@ msgid "Create redirection"
 msgstr "Créer redirection"
 
 #: ../storage/framework/messages/677d83049aa9d7742161f1b4b8ea00a295043d5f.php.php:12
-#: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:19
+#: ../storage/framework/messages/de42693b40581c0b2891b6a6b3e0ed8eeb4bc22a.php.php:16
 #: DataTables/SnippetsDataTable.php:12
 msgid "Component"
 msgstr "Composant"
+
+#: ../storage/framework/messages/6831747e642e8b20208bd695e3d5f499194e6d38.php.php:10
+#: ../storage/framework/messages/715f93d65836174042eb12312d341978e9fb582d.php.php:10
+#: DataTables/AddressBooksDataTable.php:10 DataTables/VideosDataTable.php:10
+msgid "Id"
+msgstr "Id"
 
 #: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:1
 #: ../storage/framework/messages/69cab2799649f9e21a915a9ee3ca4e228255b2e7.php.php:5
@@ -1313,11 +1339,6 @@ msgstr "Espaces réservés"
 #: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:62
 msgid "Module"
 msgstr "Module"
-
-#: ../storage/framework/messages/715f93d65836174042eb12312d341978e9fb582d.php.php:10
-#: DataTables/AddressBooksDataTable.php:10
-msgid "Id"
-msgstr "Id"
 
 #: ../storage/framework/messages/7437ac2014f862b15bcedf03bc1307c94c2a5b55.php.php:42
 #: Models/User.php:42
@@ -1389,14 +1410,14 @@ msgstr "Coller"
 msgid "Create template"
 msgstr "Créer gabarit"
 
-#: ../storage/framework/messages/79c1abdbef1c72e22ccea6fea212feeb612a2534.php.php:56
-#: Http/Requests/SnippetFormRequest.php:56
+#: ../storage/framework/messages/79c1abdbef1c72e22ccea6fea212feeb612a2534.php.php:58
+#: Http/Requests/SnippetFormRequest.php:58
 #, php-format
 msgid "The content (%s) is required."
 msgstr "Le contenu (%s) est requis."
 
-#: ../storage/framework/messages/79c1abdbef1c72e22ccea6fea212feeb612a2534.php.php:60
-#: Http/Requests/SnippetFormRequest.php:60
+#: ../storage/framework/messages/79c1abdbef1c72e22ccea6fea212feeb612a2534.php.php:62
+#: Http/Requests/SnippetFormRequest.php:62
 msgid "This field is required."
 msgstr "Ce champ est requis."
 
@@ -1420,7 +1441,7 @@ msgstr "formulaires"
 msgid "Address books"
 msgstr "Carnets d'adresses"
 
-#: ../storage/framework/messages/7dcce318618608b22d582ac075c3662c94f7d66b.php.php:3
+#: ../storage/framework/messages/7dcce318618608b22d582ac075c3662c94f7d66b.php.php:4
 msgid "General"
 msgstr "Général"
 
@@ -1585,6 +1606,10 @@ msgstr "champ de formulaire"
 msgid "form fields"
 msgstr "champs de formulaire"
 
+#: ../storage/framework/messages/9a73e8f737b0fd691f3c9a1a4fc152c7b5aaba20.php.php:1
+msgid "Update site"
+msgstr "Modifier site"
+
 #: ../storage/framework/messages/9ad5aa3fea39bb7939c0d996d1b08965cdbc0861.php.php:1
 msgid "Snippets"
 msgstr "Fragments"
@@ -1743,6 +1768,10 @@ msgstr "modules"
 msgid "Update newsletter email"
 msgstr "Modifier email newsletter"
 
+#: ../storage/framework/messages/ca016040bef980d36f5ad5b480343d94214182f4.php.php:1
+msgid "Create site"
+msgstr "Créer site"
+
 #: ../storage/framework/messages/cab460da10a361df480428a4243ab907b71ded9c.php.php:1
 msgid "Update gallery"
 msgstr "Modifier galerie"
@@ -1755,7 +1784,9 @@ msgid "The domain is required."
 msgstr "Le domaine est requis."
 
 #: ../storage/framework/messages/cd28c6744d838a44dbd05e473cbb835d7ef9a826.php.php:37
+#: ../storage/framework/messages/f313f5b2962cc00c49ebeeb2f646f81cae471a19.php.php:37
 #: Http/Requests/RedirectionFormRequest.php:37
+#: Http/Requests/VideoFormRequest.php:37
 msgid "The URL is required."
 msgstr "L'URL est requise."
 
@@ -1915,6 +1946,11 @@ msgid "The slug (%s) must contain only alphanumeric characters and slashes."
 msgstr ""
 "L'identifiant (%s) doit contenir uniquement des caractères alphanumériques "
 "et des slashes."
+
+#: ../storage/framework/messages/f313f5b2962cc00c49ebeeb2f646f81cae471a19.php.php:38
+#: Http/Requests/VideoFormRequest.php:38
+msgid "The URL is invalid."
+msgstr "L'URL est invalide."
 
 #: ../storage/framework/messages/f51aff405c72479c91639cfe54e081978c5d5111.php.php:1
 msgid "Create user"

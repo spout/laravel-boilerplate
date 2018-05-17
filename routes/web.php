@@ -88,7 +88,7 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         Route::resource('offers', 'OffersController', ['names' => route_resource_names('admin.offers.{name}')]);
         Route::resource('products', 'ProductsController', ['names' => route_resource_names('admin.products.{name}')]);
         Route::group(['prefix' => 'products'], function () {
-            Route::get('{pk}/edit-module/{placeholderId}', 'ProductsController@editModule')->name('admin.products.edit-module');
+            Route::match(['get', 'put'], '{pk}/edit-module/{placeholderId}', 'ProductsController@editModule')->name('admin.products.edit-module');
         });
         Route::resource('prices', 'PricesController', ['names' => route_resource_names('admin.prices.{name}')]);
         Route::resource('redirections', 'RedirectionsController', ['names' => route_resource_names('admin.redirections.{name}')]);
@@ -104,6 +104,7 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
             Route::get('duplicate/{pk}', 'TemplatesController@duplicate')->name('admin.templates.duplicate');
         });
         Route::resource('bookings', 'BookingsController', ['names' => route_resource_names('admin.bookings.{name}')]);
+        Route::resource('videos', 'VideosController', ['names' => route_resource_names('admin.videos.{name}')]);
     });
 
     Route::group(['namespace' => 'Advertiser', 'prefix' => 'advertiser'], function () {
