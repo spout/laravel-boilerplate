@@ -28,7 +28,9 @@ class SnippetFormRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = [];
+        $rules = [
+            'slug' => 'required',
+        ];
         $locales = config('app.locales');
 
         foreach ($this->fields as $field => $rule) {
