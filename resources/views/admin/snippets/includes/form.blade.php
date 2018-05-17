@@ -5,17 +5,17 @@
     'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
+{!! Form::openGroup('slug', _i('Slug')) !!}
+{!! Form::text('slug') !!}
+{!! Form::closeGroup() !!}
+
+{!! Form::openGroup("component", _i('Component')) !!}
+{!! Form::select("component", $componentList) !!}
+{!! Form::closeGroup() !!}
+
 @include('includes.form-locales-tabs')
 
 <div class="tab-content">
-    {!! Form::openGroup('slug', _i('Slug')) !!}
-    {!! Form::text('slug') !!}
-    {!! Form::closeGroup() !!}
-
-    {!! Form::openGroup("component", _i('Component')) !!}
-    {!! Form::select("component", $componentList) !!}
-    {!! Form::closeGroup() !!}
-
     @foreach(Config::get('app.locales') as $lang => $locale)
         <div role="tabpanel" class="tab-pane{{ $lang == \LaravelLocalization::getCurrentLocale() ? ' active' : '' }}" id="lang-{{ $lang }}">
             {!! Form::openGroup("title_$lang", _i('Title (%s)', $lang)) !!}
