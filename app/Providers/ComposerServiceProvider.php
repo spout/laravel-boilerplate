@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Http\ViewComposers\AddressBookableListComposer;
 use App\Http\ViewComposers\AdminComposer;
+use App\Http\ViewComposers\AmenitiesComposer;
 use App\Http\ViewComposers\CategoryComposer;
 use App\Http\ViewComposers\ContentComposer;
 use App\Http\ViewComposers\CountryListComposer;
@@ -31,7 +32,11 @@ class ComposerServiceProvider extends ServiceProvider
             GlobalComposer::class => ['layouts.app'],
             AdminComposer::class => ['layouts.admin'],
             MenuComposer::class => ['admin.menus.includes.form'],
-            CategoryComposer::class => ['admin.products.includes.form', 'admin.categories.includes.form'],
+            CategoryComposer::class => [
+                'admin.products.includes.form',
+                'admin.categories.includes.form',
+                'admin.amenities.includes.form',
+            ],
             ContentComposer::class => ['admin.contents.includes.form'],
             SnippetComposer::class => ['admin.snippets.includes.form'],
             CountryListComposer::class => [
@@ -44,6 +49,7 @@ class ComposerServiceProvider extends ServiceProvider
             ModuleListComposer::class => ['admin.templates.includes.form'],
             TemplateFileListComposer::class => ['admin.templates.includes.form'],
             TemplateListComposer::class => ['admin.products.includes.form'],
+            AmenitiesComposer::class => ['includes.modules.forms.amenities'],
         ];
 
         foreach ($composers as $callback => $views) {

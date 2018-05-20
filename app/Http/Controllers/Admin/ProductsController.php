@@ -24,17 +24,33 @@ class ProductsController extends AdminController
         $module = Module::find($placeholder->module_slug);
         $moduleModel = $module->model_class;
 
-        $moduleModelInstance = $moduleModel::firstOrNew(['product_id' => $object->pk, 'placeholder_id' => $placeholderId]);
+        $attributes = ['product_id' => $object->pk, 'placeholder_id' => $placeholderId];
+
+        $moduleModelInstance = $moduleModel::firstOrNew($attributes);
+        $moduleModelInstances = $moduleModel::where($attributes)->get();
 
         if (!request()->isMethod('get')) {
             app($module->form_request_class);
 
-            $moduleModelInstance->fill(request()->all());
-            $moduleModelInstance->save();
+            switch ($placeholder->module_slug) {
+                case 'amenities':
+                    $moduleModel::where($attributes)->delete();
+
+                    foreach (request()->input('amenities', []) as $amenityId) {
+                        $attributes['amenity_id'] = $amenityId;
+                        $moduleModel::create($attributes);
+                    }
+                    break;
+
+                default:
+                    $moduleModelInstance->fill(request()->all());
+                    $moduleModelInstance->save();
+                    break;
+            }
 
             flash(_i("Module was updated successfully!"), 'success');
         }
 
-        return view("{$this->viewPath()}.edit-module", compact('object', 'placeholder', 'moduleModelInstance'));
+        return view("{$this->viewPath()}.edit-module", compact('object', 'placeholder', 'moduleModelInstance', 'moduleModelInstances'));
     }
 }

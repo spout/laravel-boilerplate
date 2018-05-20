@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
 "POT-Creation-Date: 2018-05-20 22:05+0200\n"
-"PO-Revision-Date: 2018-05-20 22:06+0200\n"
+"PO-Revision-Date: 2018-05-20 22:30+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -349,7 +349,7 @@ msgstr "Créer offre"
 
 #: ../storage/framework/messages/0307ffe1560ac4697b012201dd98e543e1b6149c.php.php:1
 msgid "Create amenity"
-msgstr "Créer commodité"
+msgstr "Créer équipement"
 
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:7
 #: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:10
@@ -1296,7 +1296,7 @@ msgstr "sites"
 
 #: ../storage/framework/messages/61bbaad6f99f2ebcf39fe1a71ff5c7c473aabe75.php.php:1
 msgid "Update amenity"
-msgstr "Modifier commodité"
+msgstr "Modifier équipement"
 
 #: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:20
 #: DataTables/CategoriesDataTable.php:20
@@ -1846,7 +1846,7 @@ msgstr "Enregistrement créé avec succès !"
 
 #: ../storage/framework/messages/c5e4a94011e993ebf64637af9e8471fb178f4b9a.php.php:1
 msgid "Amenities"
-msgstr "Commodités"
+msgstr "Equipements"
 
 #: ../storage/framework/messages/c6335d1b25368de7d5c354a5d2fafc3c95a02931.php.php:1
 msgid "Contacts"
@@ -2034,12 +2034,12 @@ msgstr "Le message a été envoyé avec succès !"
 #: ../storage/framework/messages/ec4dfafc6053cf2bce727ec2f70ab577e4adcfdb.php.php:19
 #: Models/Amenity.php:19
 msgid "amenity"
-msgstr "commodité"
+msgstr "équipement"
 
 #: ../storage/framework/messages/ec4dfafc6053cf2bce727ec2f70ab577e4adcfdb.php.php:24
 #: Models/Amenity.php:24
 msgid "amenities"
-msgstr "commodités"
+msgstr "équipements"
 
 #: ../storage/framework/messages/f273966196f4201639f32b3c8abfba011b278f54.php.php:42
 #: Http/Requests/ContentFormRequest.php:42
