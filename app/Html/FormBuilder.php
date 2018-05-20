@@ -336,6 +336,21 @@ class FormBuilder extends CollectiveFormBuilder
     }
 
     /**
+     * Create a range input field
+     *
+     * @param $name
+     * @param null $value
+     * @param $options
+     * @return \Illuminate\Support\HtmlString
+     */
+    public function range($name, $value = null, $options)
+    {
+        $options = $this->appendClassToOptions('form-control', $options);
+
+        return parent::input('range', $name, $value, $options);
+    }
+
+    /**
      * Create a button element.
      *
      * @param  string $value
