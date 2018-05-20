@@ -46,6 +46,11 @@ class Product extends Model
         return $this->hasMany(Price::class);
     }
 
+    public function amenities()
+    {
+        return $this->belongsToMany(Amenity::class);
+    }
+
     public function getAbsoluteUrlAttribute()
     {
         $locale = \LaravelLocalization::getCurrentLocale();
