@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.40 on 2018-05-16 15:33:49.
+ * Generated for Laravel 5.5.40 on 2018-05-20 15:51:40.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -12486,6 +12486,20 @@ namespace Collective\Html {
         public static function plainTextarea($name, $value = null, $options = array())
         {
             return \App\Html\FormBuilder::plainTextarea($name, $value, $options);
+        }
+        
+        /**
+         * Create a range input field
+         *
+         * @param $name
+         * @param null $value
+         * @param $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */ 
+        public static function range($name, $value, $options)
+        {
+            return \App\Html\FormBuilder::range($name, $value, $options);
         }
         
         /**
