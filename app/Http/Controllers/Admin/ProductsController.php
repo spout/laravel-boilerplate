@@ -27,7 +27,7 @@ class ProductsController extends AdminController
         $moduleModelInstance = $moduleModel::firstOrNew(['product_id' => $object->pk, 'placeholder_id' => $placeholderId]);
 
         if (!request()->isMethod('get')) {
-            app($moduleFormRequest);
+            app($module->form_request_class);
 
             $moduleModelInstance->fill(request()->all());
             $moduleModelInstance->save();
