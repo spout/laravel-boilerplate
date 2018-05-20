@@ -4,10 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SnippetFormRequest extends FormRequest
+class RichTextFormRequest extends FormRequest
 {
     protected $fields = [
-        'title' => 'required',
         'content' => 'required',
     ];
 
@@ -18,9 +17,7 @@ class SnippetFormRequest extends FormRequest
 
     public function rules()
     {
-        $rules = [
-            'slug' => 'required',
-        ];
+        $rules = [];
         $locales = config('app.locales');
 
         foreach ($this->fields as $field => $rule) {
@@ -40,10 +37,6 @@ class SnippetFormRequest extends FormRequest
         foreach ($this->fields as $field => $rule) {
             foreach ($locales as $lang => $locale) {
                 switch ($field) {
-                    case 'title':
-                        $message = _i("The title (%s) is required.", $lang);
-                        break;
-
                     case 'content':
                         $message = _i("The content (%s) is required.", $lang);
                         break;
