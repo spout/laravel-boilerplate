@@ -50,6 +50,11 @@ class Category extends Model
         return $this->belongsTo(Site::class);
     }
 
+    public function amenities()
+    {
+        return $this->hasMany(Amenity::class);
+    }
+
     public function __toString()
     {
         return $this->title_plural;

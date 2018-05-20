@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\ProductsDataTable;
 use App\Http\Requests\ProductFormRequest;
+use App\Models\Amenity;
 use App\Models\Module;
 use App\Models\Placeholder;
 use App\Models\Product;
@@ -20,11 +21,12 @@ class ProductsController extends AdminController
         $model = static::$model;
         $object = $model::findOrFail($pk);
         $placeholder = Placeholder::find($placeholderId);
+        $productId = $object->pk;
 
         $module = Module::find($placeholder->module_slug);
         $moduleModel = $module->model_class;
 
-        $attributes = ['product_id' => $object->pk, 'placeholder_id' => $placeholderId];
+        $attributes = ['product_id' => $productId, 'placeholder_id' => $placeholderId];
 
         $moduleModelInstance = $moduleModel::firstOrNew($attributes);
         $moduleModelInstances = $moduleModel::where($attributes)->get();
@@ -48,7 +50,8 @@ class ProductsController extends AdminController
                     break;
             }
 
-            flash(_i("Module was updated successfully!"), 'success');
+            flash(_i("Updated successfully!"), 'success');
+            return redirect()->back();
         }
 
         return view("{$this->viewPath()}.edit-module", compact('object', 'placeholder', 'moduleModelInstance', 'moduleModelInstances'));
