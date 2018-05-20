@@ -48,7 +48,8 @@ class Product extends Model
 
     public function amenities()
     {
-        return $this->belongsToMany(Amenity::class);
+        return $this->belongsToMany(Amenity::class)
+            ->using(ProductAmenity::class);
     }
 
     public function getAbsoluteUrlAttribute()

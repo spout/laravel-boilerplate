@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\Traits\TranslatableTrait;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class AmenityProduct extends Pivot
+class ProductAmenity extends Pivot
 {
     use TranslatableTrait;
 

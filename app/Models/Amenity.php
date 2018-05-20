@@ -31,13 +31,8 @@ class Amenity extends Model
 
     public function products()
     {
-        //return $this->belongsToMany(Product::class)
-        //    ->using(AmenityProduct::class)
-        //    ->withPivot($withPivot)
-        //    //->orderBy('amenity.name')
-        //    ;
-
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)
+            ->using(ProductAmenity::class);
     }
 
     public function category()
