@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\ProductsDataTable;
 use App\Http\Requests\ProductFormRequest;
-use App\Models\Model;
+use App\Models\Module;
 use App\Models\Placeholder;
 use App\Models\Product;
 
@@ -21,12 +21,8 @@ class ProductsController extends AdminController
         $object = $model::findOrFail($pk);
         $placeholder = Placeholder::find($placeholderId);
 
-        $moduleConfig = config("modules.{$placeholder->module_slug}");
-
-        /** @var Model $moduleModel */
-        $moduleModel = $moduleConfig['model'];
-        /** @var \Illuminate\Foundation\Http\FormRequest $moduleFormRequest */
-        $moduleFormRequest = $moduleConfig['formRequest'];
+        $module = Module::find($placeholder->module_slug);
+        $moduleModel = $module->model_class;
 
         $moduleModelInstance = $moduleModel::firstOrNew(['product_id' => $object->pk, 'placeholder_id' => $placeholderId]);
 
