@@ -34,7 +34,12 @@ class ComposerServiceProvider extends ServiceProvider
             CategoryComposer::class => ['admin.products.includes.form', 'admin.categories.includes.form'],
             ContentComposer::class => ['admin.contents.includes.form'],
             SnippetComposer::class => ['admin.snippets.includes.form'],
-            CountryListComposer::class => ['admin.products.includes.form', 'admin.events.includes.form', 'admin.address-books.includes.form'],
+            CountryListComposer::class => [
+                'admin.products.includes.form',
+                'admin.events.includes.form',
+                'admin.address-books.includes.form',
+                'includes.modules.forms.maps'
+            ],
             AddressBookableListComposer::class => ['admin.address-books.includes.form'],
             ModuleListComposer::class => ['admin.templates.includes.form'],
             TemplateFileListComposer::class => ['admin.templates.includes.form'],
