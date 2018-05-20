@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\ProductsDataTable;
 use App\Http\Requests\ProductFormRequest;
-use App\Models\Amenity;
 use App\Models\Module;
 use App\Models\Placeholder;
 use App\Models\Product;
@@ -36,10 +35,16 @@ class ProductsController extends AdminController
 
             switch ($placeholder->module_slug) {
                 case 'amenities':
+                case 'services':
                     $moduleModel::where($attributes)->delete();
 
-                    foreach (request()->input('amenities', []) as $amenityId) {
-                        $attributes['amenity_id'] = $amenityId;
+                    $mapping = [
+                        'amenities' => 'amenity_id',
+                        'services' => 'service_id',
+                    ];
+
+                    foreach (request()->input($placeholder->module_slug, []) as $id) {
+                        $attributes[$mapping[$placeholder->module_slug]] = $id;
                         $moduleModel::create($attributes);
                     }
                     break;
