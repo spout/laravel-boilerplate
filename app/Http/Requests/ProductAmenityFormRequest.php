@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AmenityProductFormRequest extends FormRequest
+class ProductAmenityFormRequest extends FormRequest
 {
     public function authorize()
     {
