@@ -43,7 +43,7 @@ class Product extends Model
 
     public function prices()
     {
-        return $this->morphMany(Price::class, 'priceable');
+        return $this->hasMany(Price::class);
     }
 
     public function getAbsoluteUrlAttribute()
