@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-05-20 17:37+0200\n"
-"PO-Revision-Date: 2018-05-20 17:39+0200\n"
+"POT-Creation-Date: 2018-05-20 22:05+0200\n"
+"PO-Revision-Date: 2018-05-20 22:06+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -347,6 +347,10 @@ msgstr "contenus"
 msgid "Create offer"
 msgstr "Créer offre"
 
+#: ../storage/framework/messages/0307ffe1560ac4697b012201dd98e543e1b6149c.php.php:1
+msgid "Create amenity"
+msgstr "Créer commodité"
+
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:7
 #: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:10
 #: DataTables/CurrenciesDataTable.php:10
@@ -359,7 +363,9 @@ msgstr "Code"
 #: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:12
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:12
 #: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:11
-#: DataTables/CurrenciesDataTable.php:11 DataTables/SitesDataTable.php:12
+#: ../storage/framework/messages/e9cbd965837d85f8e24554bdee851455f7dbaf02.php.php:10
+#: DataTables/AmenitiesDataTable.php:10 DataTables/CurrenciesDataTable.php:11
+#: DataTables/SitesDataTable.php:12
 msgid "Name"
 msgstr "Nom"
 
@@ -386,6 +392,7 @@ msgstr "Symbole"
 #: ../storage/framework/messages/8ecd2d6587efc8cca8eb90b0ee82fc8cc6c8cd4d.php.php:19
 #: ../storage/framework/messages/9caccb274a856db1f8eda067b8ebb3a805791a9d.php.php:28
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:57
+#: ../storage/framework/messages/ba0a25eb3e355fd112b0fe14e08699c4f488c67b.php.php:16
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:49
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:28
 #: ../storage/framework/messages/dba1c8d9d4cf7c180cc36448ff048cfcaf49be60.php.php:21
@@ -630,8 +637,8 @@ msgstr "Le gabarit est requis si le fichier de gabarit n'est pas rempli."
 msgid "The template file is required if template isn't filled."
 msgstr "Le fichier de gabarit est requis si le gabarit n'est pas rempli."
 
-#: ../storage/framework/messages/14e8aedaf2efe0e3c438124fdbb531c59ca46e5c.php.php:39
-#: Http/Controllers/Admin/ProductsController.php:39
+#: ../storage/framework/messages/14e8aedaf2efe0e3c438124fdbb531c59ca46e5c.php.php:35
+#: Http/Controllers/Admin/ProductsController.php:35
 msgid "Module was updated successfully!"
 msgstr "Module modifié avec succès !"
 
@@ -1287,6 +1294,10 @@ msgstr "site"
 msgid "sites"
 msgstr "sites"
 
+#: ../storage/framework/messages/61bbaad6f99f2ebcf39fe1a71ff5c7c473aabe75.php.php:1
+msgid "Update amenity"
+msgstr "Modifier commodité"
+
 #: ../storage/framework/messages/621969015a9f3149de3329b06a8a843f56836b91.php.php:20
 #: DataTables/CategoriesDataTable.php:20
 msgid "Title plural"
@@ -1789,6 +1800,17 @@ msgstr "Résumé"
 msgid "Content"
 msgstr "Contenu"
 
+#: ../storage/framework/messages/ba0a25eb3e355fd112b0fe14e08699c4f488c67b.php.php:8
+#, php-format
+msgid "Name (%s)"
+msgstr "Nom (%s)"
+
+#: ../storage/framework/messages/bad45ebad36b20356d1e8166050acd5c561d40b4.php.php:19
+#: Http/Requests/AmenityFormRequest.php:19
+#, php-format
+msgid "The name (%s) is required."
+msgstr "Le nom (%s) est requis."
+
 #: ../storage/framework/messages/bb51e5a0e40af83997f849bd61a18741c79b6c16.php.php:1
 msgid "Update snippet"
 msgstr "Modifier fragment"
@@ -1821,6 +1843,10 @@ msgstr "Enregistrements modifiés avec succès !"
 #: Http/Controllers/Traits/Crud/CreateTrait.php:31
 msgid "Record was created successfully!"
 msgstr "Enregistrement créé avec succès !"
+
+#: ../storage/framework/messages/c5e4a94011e993ebf64637af9e8471fb178f4b9a.php.php:1
+msgid "Amenities"
+msgstr "Commodités"
 
 #: ../storage/framework/messages/c6335d1b25368de7d5c354a5d2fafc3c95a02931.php.php:1
 msgid "Contacts"
@@ -2004,6 +2030,16 @@ msgstr ""
 #: Http/Controllers/FormsController.php:73
 msgid "The message was sent successfully!"
 msgstr "Le message a été envoyé avec succès !"
+
+#: ../storage/framework/messages/ec4dfafc6053cf2bce727ec2f70ab577e4adcfdb.php.php:19
+#: Models/Amenity.php:19
+msgid "amenity"
+msgstr "commodité"
+
+#: ../storage/framework/messages/ec4dfafc6053cf2bce727ec2f70ab577e4adcfdb.php.php:24
+#: Models/Amenity.php:24
+msgid "amenities"
+msgstr "commodités"
 
 #: ../storage/framework/messages/f273966196f4201639f32b3c8abfba011b278f54.php.php:42
 #: Http/Requests/ContentFormRequest.php:42

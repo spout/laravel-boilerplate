@@ -16,7 +16,7 @@ class AmenityFormRequest extends FormRequest
         return [
             'name' => [
                 'rule' => 'required',
-                'message' => _i("The title (%s) is required."),
+                'message' => _i("The name (%s) is required."),
             ],
         ];
     }

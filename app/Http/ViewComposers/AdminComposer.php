@@ -23,6 +23,7 @@ class AdminComposer
             _i("Galleries") => 'admin.galleries',
             _i("Accordions") => 'admin.accordions',
             _i("Videos") => 'admin.videos',
+            _i("Amenities") => 'admin.amenities',
             _i("Menus") => 'admin.menus',
             _i("Users") => 'admin.users',
             _i("Forms") => 'admin.forms',

@@ -105,6 +105,7 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         });
         Route::resource('bookings', 'BookingsController', ['names' => route_resource_names('admin.bookings.{name}')]);
         Route::resource('videos', 'VideosController', ['names' => route_resource_names('admin.videos.{name}')]);
+        Route::resource('amenities', 'AmenitiesController', ['names' => route_resource_names('admin.amenities.{name}')]);
     });
 
     Route::group(['namespace' => 'Advertiser', 'prefix' => 'advertiser'], function () {
