@@ -44,7 +44,7 @@ class Template extends Model
         if (!empty($this->template)) {
             return $this->template;
         } elseif (!empty($this->template_file)) {
-            return file_get_contents(resource_path("views/templates/{$object->template_file}.blade.php"));
+            return file_get_contents(resource_path("views/templates/{$this->template_file}.blade.php"));
         }
 
         return null;
@@ -52,7 +52,7 @@ class Template extends Model
 
     public function getPlaceholdersAttribute()
     {
-        if (preg_match_all('/{{ ([a-zA-Z0-9-_]+) }}/', $this->template_content, $matches)) {
+        if (preg_match_all('/{% ([a-zA-Z0-9-_]+) %}/', $this->template_content, $matches)) {
             return $matches[1];
         }
 
