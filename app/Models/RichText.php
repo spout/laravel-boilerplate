@@ -2,10 +2,15 @@
 
 namespace App\Models;
 
+use App\Models\Traits\TranslatableTrait;
+
 class RichText extends Model
 {
+    use TranslatableTrait;
+
     public $timestamps = false;
     protected $guarded = [];
+    public static $translatableColumns = ['content'];
 
     public static function verboseName()
     {
