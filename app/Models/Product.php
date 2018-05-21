@@ -52,6 +52,12 @@ class Product extends Model
             ->using(ProductAmenity::class);
     }
 
+    public function services()
+    {
+        return $this->belongsToMany(Service::class)
+            ->using(ProductService::class);
+    }
+
     public function getAbsoluteUrlAttribute()
     {
         $locale = \LaravelLocalization::getCurrentLocale();

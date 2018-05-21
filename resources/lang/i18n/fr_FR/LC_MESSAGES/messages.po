@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-05-20 22:05+0200\n"
-"PO-Revision-Date: 2018-05-20 22:30+0200\n"
+"POT-Creation-Date: 2018-05-21 01:58+0200\n"
+"PO-Revision-Date: 2018-05-21 01:59+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -363,9 +363,10 @@ msgstr "Code"
 #: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:12
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:12
 #: ../storage/framework/messages/9a8a8f6281ee89b74a5118271019b850fd08274a.php.php:11
-#: ../storage/framework/messages/e9cbd965837d85f8e24554bdee851455f7dbaf02.php.php:10
-#: DataTables/AmenitiesDataTable.php:10 DataTables/CurrenciesDataTable.php:11
-#: DataTables/SitesDataTable.php:12
+#: ../storage/framework/messages/af24de041adeb24df8ace0fab6434c892f5f2c4a.php.php:14
+#: ../storage/framework/messages/e9cbd965837d85f8e24554bdee851455f7dbaf02.php.php:14
+#: DataTables/AmenitiesDataTable.php:14 DataTables/CurrenciesDataTable.php:11
+#: DataTables/ServicesDataTable.php:14 DataTables/SitesDataTable.php:12
 msgid "Name"
 msgstr "Nom"
 
@@ -380,6 +381,7 @@ msgstr "Symbole"
 #: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:28
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:135
 #: ../storage/framework/messages/27967d8d314a2ab4d750d5b751fc1f3efc61e8ee.php.php:9
+#: ../storage/framework/messages/365e4cc62f64b9637aba5c3abde48cc0efa21be9.php.php:23
 #: ../storage/framework/messages/3a2fa86337e1f167f310de00bfe849d5b066de43.php.php:78
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:55
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:83
@@ -392,7 +394,7 @@ msgstr "Symbole"
 #: ../storage/framework/messages/8ecd2d6587efc8cca8eb90b0ee82fc8cc6c8cd4d.php.php:19
 #: ../storage/framework/messages/9caccb274a856db1f8eda067b8ebb3a805791a9d.php.php:28
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:57
-#: ../storage/framework/messages/ba0a25eb3e355fd112b0fe14e08699c4f488c67b.php.php:16
+#: ../storage/framework/messages/ba0a25eb3e355fd112b0fe14e08699c4f488c67b.php.php:23
 #: ../storage/framework/messages/bd4855d750f731456bfc295fa267351443445f46.php.php:49
 #: ../storage/framework/messages/d07242fd24046dd18b3b35d11dc0a4e03934c9ec.php.php:28
 #: ../storage/framework/messages/dba1c8d9d4cf7c180cc36448ff048cfcaf49be60.php.php:21
@@ -637,10 +639,10 @@ msgstr "Le gabarit est requis si le fichier de gabarit n'est pas rempli."
 msgid "The template file is required if template isn't filled."
 msgstr "Le fichier de gabarit est requis si le gabarit n'est pas rempli."
 
-#: ../storage/framework/messages/14e8aedaf2efe0e3c438124fdbb531c59ca46e5c.php.php:35
-#: Http/Controllers/Admin/ProductsController.php:35
-msgid "Module was updated successfully!"
-msgstr "Module modifié avec succès !"
+#: ../storage/framework/messages/14e8aedaf2efe0e3c438124fdbb531c59ca46e5c.php.php:58
+#: Http/Controllers/Admin/ProductsController.php:58
+msgid "Updated successfully!"
+msgstr "Modifié avec succès !"
 
 #: ../storage/framework/messages/168cfcbbbce0bfe93a020cffaeca968fda1b5df3.php.php:1
 msgid "Update currency"
@@ -873,6 +875,14 @@ msgstr "événements"
 msgid "Subject"
 msgstr "Sujet"
 
+#: ../storage/framework/messages/301e4958d3db4e60dad0b25914c222190189979c.php.php:19
+#: ../storage/framework/messages/bad45ebad36b20356d1e8166050acd5c561d40b4.php.php:19
+#: Http/Requests/AmenityFormRequest.php:19
+#: Http/Requests/ServiceFormRequest.php:19
+#, php-format
+msgid "The name (%s) is required."
+msgstr "Le nom (%s) est requis."
+
 #: ../storage/framework/messages/3021c1a6b739b43f7a3a03d096c177bf8b4d44ae.php.php:1
 msgid "Update product"
 msgstr "Modifier produit"
@@ -893,6 +903,25 @@ msgstr "Envoyer le lien de réinitialisation du mot de passe"
 #: Http/Controllers/Traits/Crud/UpdateTrait.php:37
 msgid "Record was updated successfully!"
 msgstr "Enregistrement modifié avec succès !"
+
+#: ../storage/framework/messages/365e4cc62f64b9637aba5c3abde48cc0efa21be9.php.php:7
+#: ../storage/framework/messages/4acbf5f65169909e7fa0b5df5f4d079b72b55f47.php.php:7
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:12
+#: ../storage/framework/messages/7723684dc6bcff37449bae1b492f81d9acdb2362.php.php:15
+#: ../storage/framework/messages/af24de041adeb24df8ace0fab6434c892f5f2c4a.php.php:15
+#: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:24
+#: ../storage/framework/messages/ba0a25eb3e355fd112b0fe14e08699c4f488c67b.php.php:7
+#: ../storage/framework/messages/e9cbd965837d85f8e24554bdee851455f7dbaf02.php.php:15
+#: DataTables/AmenitiesDataTable.php:15 DataTables/ProductsDataTable.php:15
+#: DataTables/ServicesDataTable.php:15
+msgid "Category"
+msgstr "Catégorie"
+
+#: ../storage/framework/messages/365e4cc62f64b9637aba5c3abde48cc0efa21be9.php.php:15
+#: ../storage/framework/messages/ba0a25eb3e355fd112b0fe14e08699c4f488c67b.php.php:15
+#, php-format
+msgid "Name (%s)"
+msgstr "Nom (%s)"
 
 #: ../storage/framework/messages/367c72ad022eca791ba6e33a77d1dc6ba45f79ba.php.php:26
 #: ../storage/framework/messages/3a9f5f773e1d3c85feccfdd4962fed2f5740799c.php.php:24
@@ -1041,6 +1070,10 @@ msgstr "Redirections"
 msgid "Message was sent successfully."
 msgstr "Message envoyé avec succès."
 
+#: ../storage/framework/messages/3f72bbc05918a1e5bef76290325f8b1fde2c0c1c.php.php:1
+msgid "Update service"
+msgstr "Modifier service"
+
 #: ../storage/framework/messages/404a937eb7f138eb19caf435fb2ced34528e0ad3.php.php:1
 msgid "Update site"
 msgstr "Modifier site"
@@ -1126,14 +1159,6 @@ msgstr "pays"
 #: ../storage/framework/messages/4acbf5f65169909e7fa0b5df5f4d079b72b55f47.php.php:1
 msgid "Reserve"
 msgstr "Réservez"
-
-#: ../storage/framework/messages/4acbf5f65169909e7fa0b5df5f4d079b72b55f47.php.php:7
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:12
-#: ../storage/framework/messages/7723684dc6bcff37449bae1b492f81d9acdb2362.php.php:15
-#: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:24
-#: DataTables/ProductsDataTable.php:15
-msgid "Category"
-msgstr "Catégorie"
 
 #: ../storage/framework/messages/4acbf5f65169909e7fa0b5df5f4d079b72b55f47.php.php:14
 msgid "Business"
@@ -1665,6 +1690,10 @@ msgstr "devise"
 msgid "currencies"
 msgstr "devises"
 
+#: ../storage/framework/messages/95d1f7c8d61be98d7b05951e3e6aba17070de804.php.php:1
+msgid "Create service"
+msgstr "Créer service"
+
 #: ../storage/framework/messages/99b901a1e47d9cac3b872b7e7db9a4ba45b0adfb.php.php:16
 #: Models/Redirection.php:16
 msgid "redirection"
@@ -1799,17 +1828,6 @@ msgstr "Résumé"
 #: ../storage/framework/messages/ec8d282044d59ecdf429fb525133cf456f51cc25.php.php:74
 msgid "Content"
 msgstr "Contenu"
-
-#: ../storage/framework/messages/ba0a25eb3e355fd112b0fe14e08699c4f488c67b.php.php:8
-#, php-format
-msgid "Name (%s)"
-msgstr "Nom (%s)"
-
-#: ../storage/framework/messages/bad45ebad36b20356d1e8166050acd5c561d40b4.php.php:19
-#: Http/Requests/AmenityFormRequest.php:19
-#, php-format
-msgid "The name (%s) is required."
-msgstr "Le nom (%s) est requis."
 
 #: ../storage/framework/messages/bb51e5a0e40af83997f849bd61a18741c79b6c16.php.php:1
 msgid "Update snippet"
@@ -2041,6 +2059,16 @@ msgstr "équipement"
 msgid "amenities"
 msgstr "équipements"
 
+#: ../storage/framework/messages/f239b65b50a806c6cc2a0b4b22ac16c11b15cbd7.php.php:19
+#: Models/Service.php:19
+msgid "service"
+msgstr "service"
+
+#: ../storage/framework/messages/f239b65b50a806c6cc2a0b4b22ac16c11b15cbd7.php.php:24
+#: Models/Service.php:24
+msgid "services"
+msgstr "services"
+
 #: ../storage/framework/messages/f273966196f4201639f32b3c8abfba011b278f54.php.php:42
 #: Http/Requests/ContentFormRequest.php:42
 #, php-format
@@ -2059,6 +2087,10 @@ msgstr ""
 #: Http/Requests/VideoFormRequest.php:28
 msgid "The URL is invalid."
 msgstr "L'URL est invalide."
+
+#: ../storage/framework/messages/f364cb3af56a404603970b15d14fb8f775a1fcda.php.php:1
+msgid "Services"
+msgstr "Services"
 
 #: ../storage/framework/messages/f51aff405c72479c91639cfe54e081978c5d5111.php.php:1
 msgid "Create user"

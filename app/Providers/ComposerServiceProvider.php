@@ -35,6 +35,7 @@ class ComposerServiceProvider extends ServiceProvider
                 'admin.products.includes.form',
                 'admin.categories.includes.form',
                 'admin.amenities.includes.form',
+                'admin.services.includes.form',
             ],
             ContentComposer::class => ['admin.contents.includes.form'],
             SnippetComposer::class => ['admin.snippets.includes.form'],
