@@ -1,5 +1,7 @@
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.0/ace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js"></script>
+<script src="https://cloud9ide.github.io/emmet-core/emmet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ext-emmet.js"></script>
 <script>
     $(function () {
         // https://gist.github.com/duncansmart/5267653
@@ -22,6 +24,7 @@
             editor.setShowPrintMargin(false);
             //editor.setAutoScrollEditorIntoView(true);
             //editor.setOption("maxLines", 30);
+            editor.setOption("enableEmmet", true);
 
             // copy back to textarea on form submit...
             textarea.closest('form').submit(function () {
