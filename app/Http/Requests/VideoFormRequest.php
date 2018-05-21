@@ -18,6 +18,7 @@ class VideoFormRequest extends FormRequest
                 'required',
                 'url',
             ],
+            'aspect_ratio' => 'required',
         ];
     }
 
@@ -26,6 +27,7 @@ class VideoFormRequest extends FormRequest
         return [
             'url.required' => _i("The URL is required."),
             'url.url' => _i("The URL is invalid."),
+            'aspect_ratio.required' => _i("The aspect ratio is required."),
         ];
     }
 }

@@ -19,8 +19,27 @@
     </div>
 
     <?php
-    foreach ($product->template->modules as $module) {
-        dump($module->pivot->toArray());
+    $replacements = [];
+    foreach ($product->template->placeholders as $placeholder) {
+        $replacement = '';
+
+        $module = $product->template->modules->first(function ($value, $key) use ($placeholder) {
+            return $value->pivot->placeholder === $placeholder;
+        });
+
+        if (!empty($module)) {
+            /** @var \App\Models\Module $module */
+            $moduleModelInstances = $module->getProductAssociatedModelInstances($product->id);
+            $moduleModelInstance = $moduleModelInstances->first();
+
+            $replacement = view("includes.modules.show.{$module->slug}", compact('module', 'moduleModelInstances', 'moduleModelInstance'));
+        }
+
+        $replacements["{% {$placeholder} %}"] = $replacement;
     }
+
+    $content = str_replace(array_keys($replacements), array_values($replacements), $product->template->template_content);
+
+    echo $content;
     ?>
 @endsection
