@@ -10,6 +10,6 @@ class ProductAmenity extends Pivot
     use TranslatableTrait;
 
     public $timestamps = false;
-    public static $translatableColumns = ['name'];
     public $guarded = ['amenities'];
+    public static $translatableColumns = ['name'];
 }
