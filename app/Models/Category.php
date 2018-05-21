@@ -55,6 +55,11 @@ class Category extends Model
         return $this->hasMany(Amenity::class);
     }
 
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+
     public function __toString()
     {
         return $this->title_plural;
