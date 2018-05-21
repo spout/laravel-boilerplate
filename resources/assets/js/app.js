@@ -40,14 +40,21 @@ $(function () {
     $('[data-slick]').slick();
 
     $('.google-map').each(function () {
-        var latlng = new google.maps.LatLng(-34.397, 150.644);
+        var lat = $(this).data('lat') || -34.397;
+        var lng = $(this).data('lng') || 150.644;
+        var latlng = new google.maps.LatLng(lat, lng);
         var zoom = $(this).data('zoom') || 8;
+        var mapType = $(this).data('map-type') || 'ROADMAP';
         var mapOptions = {
             zoom: zoom,
-            center: latlng
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId[mapType]
         };
         var map = new google.maps.Map($(this).get(0), mapOptions);
-        geocodeAddress(map, $(this).data('address'));
+
+        if ($(this).data('address')) {
+            geocodeAddress(map, $(this).data('address'));
+        }
     })
 })
 
