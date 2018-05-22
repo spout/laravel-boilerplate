@@ -42,8 +42,8 @@
         {!! Form::hidden("placeholders[{$k}][placeholder]", $placeholder->placeholder) !!}
         {!! Form::hidden("placeholders[{$k}][order]", $k) !!}
 
-        <fieldset class="py-0">
-            <legend>{{ $placeholder->placeholder }}</legend>
+        <fieldset class="py-0 mb-0">
+            <legend>{{ "{% {$placeholder->placeholder} %}" }}</legend>
             <div class="row">
                 <div class="col">
                     {!! Form::openGroup("placeholders[{$k}][module_slug]", _i("Module")) !!}
