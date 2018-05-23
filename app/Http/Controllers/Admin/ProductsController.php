@@ -36,11 +36,13 @@ class ProductsController extends AdminController
             switch ($placeholder->module_slug) {
                 case 'amenities':
                 case 'services':
+                case 'forms':
                     $moduleModel::where($attributes)->delete();
 
                     $mapping = [
                         'amenities' => 'amenity_id',
                         'services' => 'service_id',
+                        'forms' => 'form_id',
                     ];
 
                     foreach (request()->input($placeholder->module_slug, []) as $id) {

@@ -8,6 +8,7 @@ use App\Http\ViewComposers\CategoryComposer;
 use App\Http\ViewComposers\ContentComposer;
 use App\Http\ViewComposers\CountryListComposer;
 use App\Http\ViewComposers\CurrentSiteComposer;
+use App\Http\ViewComposers\FormListComposer;
 use App\Http\ViewComposers\GlobalComposer;
 use App\Http\ViewComposers\MenuComposer;
 use App\Http\ViewComposers\ModuleListComposer;
@@ -49,6 +50,7 @@ class ComposerServiceProvider extends ServiceProvider
             ModuleListComposer::class => ['admin.templates.includes.form'],
             TemplateFileListComposer::class => ['admin.templates.includes.form'],
             TemplateListComposer::class => ['admin.products.includes.form'],
+            FormListComposer::class => ['includes.modules.forms.forms'],
         ];
 
         foreach ($composers as $callback => $views) {
