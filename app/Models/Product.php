@@ -48,14 +48,17 @@ class Product extends Model
 
     public function amenities()
     {
-        return $this->belongsToMany(Amenity::class)
-            ->using(ProductAmenity::class);
+        return $this->morphedByMany(Amenity::class, 'modulable');
     }
 
     public function services()
     {
-        return $this->belongsToMany(Service::class)
-            ->using(ProductService::class);
+        return $this->morphedByMany(Service::class, 'modulable');
+    }
+
+    public function forms()
+    {
+        return $this->morphedByMany(Form::class, 'modulable');
     }
 
     public function getAbsoluteUrlAttribute()

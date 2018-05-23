@@ -31,8 +31,7 @@ class Amenity extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class)
-            ->using(ProductAmenity::class);
+        return $this->morphToMany(Product::class, 'modulable');
     }
 
     public function category()

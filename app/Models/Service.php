@@ -31,8 +31,7 @@ class Service extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class)
-            ->using(ProductService::class);
+        return $this->morphToMany(Product::class, 'modulable');
     }
 
     public function category()
