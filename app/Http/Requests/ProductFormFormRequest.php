@@ -14,14 +14,14 @@ class ProductFormFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'forms.0' => 'required',
+            'modulables.0' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'forms.0.required' => _i("The form is required."),
+            'modulables.0.required' => _i("The form is required."),
         ];
     }
 }

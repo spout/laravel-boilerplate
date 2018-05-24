@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\ProductsDataTable;
 use App\Http\Requests\ProductFormRequest;
+use App\Models\Amenity;
+use App\Models\Form;
 use App\Models\Module;
 use App\Models\Placeholder;
 use App\Models\Product;
+use App\Models\Service;
 
 class ProductsController extends AdminController
 {
@@ -33,28 +36,23 @@ class ProductsController extends AdminController
         if (!request()->isMethod('get')) {
             app($module->form_request_class);
 
-            switch ($placeholder->module_slug) {
-                case 'amenities':
-                case 'services':
-                case 'forms':
-                    $moduleModel::where($attributes)->delete();
+            $modulableMapping = [
+                'amenities' => Amenity::class,
+                'services' => Service::class,
+                'forms' => Form::class,
+            ];
 
-                    $mapping = [
-                        'amenities' => 'amenity_id',
-                        'services' => 'service_id',
-                        'forms' => 'form_id',
-                    ];
+            if (array_key_exists($placeholder->module_slug, $modulableMapping)) {
+                $moduleModel::where($attributes)->delete();
 
-                    foreach (request()->input($placeholder->module_slug, []) as $id) {
-                        $attributes[$mapping[$placeholder->module_slug]] = $id;
-                        $moduleModel::create($attributes);
-                    }
-                    break;
-
-                default:
-                    $moduleModelInstance->fill(request()->all());
-                    $moduleModelInstance->save();
-                    break;
+                foreach (request()->input('modulables', []) as $id) {
+                    $attributes['modulable_id'] = $id;
+                    $attributes['modulable_type'] = $modulableMapping[$placeholder->module_slug];
+                    $moduleModel::create($attributes);
+                }
+            } else {
+                $moduleModelInstance->fill(request()->all());
+                $moduleModelInstance->save();
             }
 
             flash(_i("Updated successfully!"), 'success');

@@ -1,6 +1,6 @@
 <?php
 $locale = \LaravelLocalization::getCurrentLocale();
-$checked = array_column($moduleModelInstances->toArray(), 'service_id');
+$checked = array_column($moduleModelInstances->toArray(), 'modulable_id');
 ?>
 
 <div class="form-group">
@@ -9,7 +9,7 @@ $checked = array_column($moduleModelInstances->toArray(), 'service_id');
         $id = "service-{$service->id}";
         ?>
         <div class="custom-control custom-checkbox custom-control-inline">
-            <input type="checkbox" name="services[]" class="custom-control-input" id="{{ $id }}" value="{{ $service->id }}" {{ in_array($service->id, $checked) ? 'checked' : '' }}>
+            <input type="checkbox" name="modulables[]" class="custom-control-input" id="{{ $id }}" value="{{ $service->id }}" {{ in_array($service->id, $checked) ? 'checked' : '' }}>
             <label class="custom-control-label" for="{{ $id }}">{{ $service->{"name_{$locale}"} }}</label>
         </div>
     @endforeach
