@@ -1,2 +1,1 @@
-<?php
-dump($moduleModelInstance->toArray());
+[form id="{{ $moduleModelInstance->modulable_id }}"]
