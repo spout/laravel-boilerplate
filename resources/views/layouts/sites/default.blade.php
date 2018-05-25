@@ -50,10 +50,8 @@
 </nav>--}}
 <div class="container-fluid">
     @renderBreadcrumbs()
-    <div class="container">
-        @include('flash::message')
-        @include('includes.validation-errors')
-    </div>
+    @include('flash::message')
+    @include('includes.validation-errors')
     <div id="content">
         @yield('content')
     </div>
