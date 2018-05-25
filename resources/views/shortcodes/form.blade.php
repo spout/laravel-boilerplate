@@ -1,5 +1,6 @@
 <?php
-echo Form::open(['files' => true, 'novalidate' => true, 'route' => 'forms.store']);
+$domId = "form-{$form->id}";
+echo Form::open(['files' => true, 'novalidate' => true, 'url' => route('forms.store') . "#{$domId}", 'id' => $domId]);
 echo Form::hidden('form_id', $form->id);
 
 $humanFieldName = md5('human');
