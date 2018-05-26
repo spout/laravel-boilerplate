@@ -1,0 +1,1 @@
+[accordion id="{{ $moduleModelInstance->id }}"]
