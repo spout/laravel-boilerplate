@@ -40,7 +40,7 @@
     @foreach($placeholders as $k => $placeholder)
         {!! Form::hidden("placeholders[{$k}][id]", $placeholder->id) !!}
         {!! Form::hidden("placeholders[{$k}][placeholder]", $placeholder->placeholder) !!}
-        {!! Form::hidden("placeholders[{$k}][order]", $k) !!}
+        {!! Form::hidden("placeholders[{$k}][sort]", $k) !!}
 
         <fieldset class="py-0 mb-0">
             <legend>{{ "{% {$placeholder->placeholder} %}" }}</legend>
