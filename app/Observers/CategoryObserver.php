@@ -9,28 +9,24 @@ class CategoryObserver
 {
     public function saved(Category $category)
     {
-        // Delete all associated items
-        //Criteria::where('category_id', $category->id)->delete();
-
-        // Create all criterias
         foreach (request()->input('criterias', []) as $k => $criteria) {
             $names = [];
-            $attributes = [
+            $values = [
                 'category_id' => $category->id,
-                'sort' => $criteria['sort'],
+                'sort' => $criteria['sort']
             ];
 
-            foreach (Criteria::$translatableColumns as $column) {
-                foreach (config('app.locales') as $lang => $locale) {
+            foreach (config('app.locales') as $lang => $locale) {
+                foreach (Criteria::$translatableColumns as $column) {
                     if ($column === 'name' && !empty($criteria["{$column}_{$lang}"])) {
                         $names[] = $criteria["{$column}_{$lang}"];
                     }
-                    $attributes["{$column}_{$lang}"] = $criteria["{$column}_{$lang}"] ?? null;
+                    $values["{$column}_{$lang}"] = $criteria["{$column}_{$lang}"];
                 }
             }
 
             if (count(config('app.locales')) === count($names)) {
-                Criteria::create($attributes);
+                Criteria::updateOrCreate(['id' => $criteria['id']], $values);
             }
         }
     }

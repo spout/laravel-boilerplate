@@ -63,6 +63,8 @@ for ($i = 0; $i < 5; $i++) {
     <legend>{{ _i("Criterias") }}</legend>
     @foreach($criterias as $k => $criteria)
         <fieldset class="py-0 mb-0">
+            {!! Form::hidden("criterias[$k][id]", $criteria->id) !!}
+            {!! Form::hidden("criterias[$k][sort]", $k) !!}
             <legend>{{ _i("Criteria %d", $k + 1) }}</legend>
             <div class="row">
                 @foreach(config('app.locales') as $lang => $locale)
@@ -73,7 +75,6 @@ for ($i = 0; $i < 5; $i++) {
                     </div>
                 @endforeach
             </div>
-            {!! Form::hidden("criterias[$k][sort]", $k) !!}
         </fieldset>
     @endforeach
 </fieldset>
