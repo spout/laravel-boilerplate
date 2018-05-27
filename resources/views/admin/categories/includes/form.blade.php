@@ -50,6 +50,34 @@
     @endforeach
 </div>
 
+<?php
+$criterias = $object->criterias;
+$count = $criterias->count();
+
+for ($i = 0; $i < 5; $i++) {
+    $criterias->push(new \App\Models\Criteria(['sort' => $i + $count]));
+}
+?>
+
+<fieldset class="py-0">
+    <legend>{{ _i("Criterias") }}</legend>
+    @foreach($criterias as $k => $criteria)
+        <fieldset class="py-0 mb-0">
+            <legend>{{ _i("Criteria %d", $k + 1) }}</legend>
+            <div class="row">
+                @foreach(config('app.locales') as $lang => $locale)
+                    <div class="col">
+                        {!! Form::openGroup("criterias[$k][name_{$lang}]", _i('Name (%s)', $lang)) !!}
+                        {!! Form::text("criterias[$k][name_{$lang}]") !!}
+                        {!! Form::closeGroup() !!}
+                    </div>
+                @endforeach
+            </div>
+            {!! Form::hidden("criterias[$k][sort]", $k) !!}
+        </fieldset>
+    @endforeach
+</fieldset>
+
 {!! Form::submit(_i('Save'), ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}

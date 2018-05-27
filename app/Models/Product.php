@@ -61,6 +61,11 @@ class Product extends Model
         return $this->morphedByMany(Form::class, 'modulable');
     }
 
+    public function criterias()
+    {
+        return $this->belongsToMany(Criteria::class, 'product_criterias');
+    }
+
     public function getAbsoluteUrlAttribute()
     {
         $locale = \LaravelLocalization::getCurrentLocale();
