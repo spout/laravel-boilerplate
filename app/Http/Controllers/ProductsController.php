@@ -10,16 +10,21 @@ class ProductsController extends Controller
 {
     public function index($categorySlugPlural = null)
     {
-        $categories = Category::all();
-        $data = compact('categories');
-
         $products = Product::query();
+        $data = [];
 
         if (!is_null($categorySlugPlural)) {
             $category = Category::locale('slug_plural', $categorySlugPlural)->firstOrFail();
             $products->where('category_id', $category->id);
 
             $data['category'] = $category;
+        } else {
+            $categories = Category::all();
+            $data['categories'] = $categories;
+        }
+
+        if (request()->has('categories')) {
+            $products->whereIn('category_id', request()->input('categories'));
         }
 
         if (request()->has('criterias')) {
@@ -28,6 +33,10 @@ class ProductsController extends Controller
                 /** @var Builder $q */
                 $q->whereIn('criterias.id', $criterias);
             });
+        }
+
+        if (request()->isXmlHttpRequest()) {
+            sleep(2);
         }
 
         $data['products'] = $products->paginate(50);

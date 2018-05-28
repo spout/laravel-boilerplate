@@ -114,7 +114,7 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         Route::get('products/{slug?}', 'ProductsController@index')->name('advertiser.products.index');
     });
 
-    Route::match(['get', 'post'], '/products', 'ProductsController@index')->name('products.index');
+    Route::match(['get', 'post'], '/list', 'ProductsController@index')->name('products.index');
 
     if (php_sapi_name() !== 'cli') {
         $categories = Cache::remember('categories', 60, function () {
