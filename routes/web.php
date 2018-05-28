@@ -114,6 +114,8 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         Route::get('products/{slug?}', 'ProductsController@index')->name('advertiser.products.index');
     });
 
+    Route::match(['get', 'post'], '/products', 'ProductsController@index')->name('products.index');
+
     if (php_sapi_name() !== 'cli') {
         $categories = Cache::remember('categories', 60, function () {
             return \App\Models\Category::all();
@@ -129,7 +131,7 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         $categorySlugPluralWhere = '^(' . implode('|', $slugsPlural) . ')$';
         $categorySlugSingularWhere = '^(' . implode('|', $slugsSingular) . ')$';
 
-        Route::get('/{category_slug_plural}', 'ProductsController@index')->where('category_slug_plural', $categorySlugPluralWhere)->name('products.index');
+        Route::match(['get', 'post'],'/{category_slug_plural}', 'ProductsController@index')->where('category_slug_plural', $categorySlugPluralWhere)->name('products.category');
         Route::get('/{category_slug_singular}/{slug}', 'ProductsController@show')->where('category_slug_singular', $categorySlugSingularWhere)->name('products.show');
     }
 
