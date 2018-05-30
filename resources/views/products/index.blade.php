@@ -11,7 +11,7 @@
     @if (request()->isXmlHttpRequest())
         @include('products.includes.list')
     @else
-        <div class="sticky-top bg-white">
+        <div class="sticky-top bg-white py-2" id="filters">
             <ul class="nav nav-pills">
                 @if (!empty($categories))
                     <li class="nav-item dropdown">
@@ -79,6 +79,11 @@
                         </div>
                     </li>
                 @endif
+
+                <li class="nav-item pt-2" id="filters-buttons">
+                    <button type="submit" class="btn btn-primary btn-sm">{{ _i("Go") }}</button>
+                    <button type="reset" class="btn btn-warning btn-sm">{{ _i("Reset") }}</button>
+                </li>
             </ul>
         </div>
 
@@ -94,34 +99,29 @@
     var productsIndexUrl = '{{ route('products.index') }}';
 
     $(function () {
-        $('input[name="criterias[]"]').on('change', function () {
+        $('#filters-buttons button').on('click', function (e) {
+            e.preventDefault();
+
+            if ($(this).attr('type') === 'reset') {
+                $('#filters input').prop('checked', false);
+            }
+
             loadList();
         });
-
-        // $(window).bind("popstate", function(e) {
-        //     //var initialPop = !popped && location.href == initialURL;
-        //     //popped = true;
-        //     //if (initialPop) return;
-        //     loadList(window.location.href);
-        // });
     });
+
+    function loadList() {
+        let criterias = $('input[name="criterias[]"]:checked').map(function(i, e) {
+            return e.value
+        }).toArray();
+
+        $('#products-list').load(productsIndexUrl, {criterias: criterias});
+    }
 
     $(document).ajaxStart(function () {
         $('#loading').removeClass('d-none');
     }).ajaxStop(function () {
         $('#loading').addClass('d-none');
     });
-
-    function loadList() {
-        let data = {};
-
-        data.criterias = $('input[name="criterias[]"]:checked').map(function(i, e) {
-            return e.value
-        }).toArray();
-
-        $('#products-list').load(productsIndexUrl, data, function () {
-            // window.history.pushState({}, null, productsIndexUrl + '?' + $.param(data));
-        });
-    }
 </script>
 @endpush
