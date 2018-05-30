@@ -62,20 +62,17 @@ for ($i = 0; $i < 5; $i++) {
 <fieldset class="py-0">
     <legend>{{ _i("Tags") }}</legend>
     @foreach($tags as $k => $tag)
-        <fieldset class="py-0 mb-0">
-            {!! Form::hidden("tags[$k][id]", $tag->id) !!}
-            {!! Form::hidden("tags[$k][sort]", $k) !!}
-            <legend>{{ _i("Tag %d", $k + 1) }}</legend>
-            <div class="row">
-                @foreach(config('app.locales') as $lang => $locale)
-                    <div class="col">
-                        {!! Form::openGroup("tags[$k][name_{$lang}]", _i('Name (%s)', $lang)) !!}
-                        {!! Form::text("tags[$k][name_{$lang}]") !!}
-                        {!! Form::closeGroup() !!}
-                    </div>
-                @endforeach
-            </div>
-        </fieldset>
+        {!! Form::hidden("tags[$k][id]", $tag->id) !!}
+        {!! Form::hidden("tags[$k][sort]", $k) !!}
+        <div class="row">
+            @foreach(config('app.locales') as $lang => $locale)
+                <div class="col">
+                    {!! Form::openGroup("tags[$k][name_{$lang}]", _i('Tag %d name (%s)', [$k + 1, $lang])) !!}
+                    {!! Form::text("tags[$k][name_{$lang}]") !!}
+                    {!! Form::closeGroup() !!}
+                </div>
+            @endforeach
+        </div>
     @endforeach
 </fieldset>
 

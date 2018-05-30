@@ -31,8 +31,13 @@ class Tag extends Model
         return $this->name;
     }
 
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->morphedByMany(Category::class, 'taggable');
+    }
+
+    public function products()
+    {
+        return $this->morphedByMany(Product::class, 'taggable');
     }
 }
