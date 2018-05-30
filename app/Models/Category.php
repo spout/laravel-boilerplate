@@ -9,7 +9,7 @@ class Category extends Model
 {
     use TranslatableTrait;
 
-    protected $guarded = ['criterias'];
+    protected $guarded = ['tags'];
     public $timestamps = false;
     public static $translatableColumns = [
         'title_singular',
@@ -60,9 +60,9 @@ class Category extends Model
         return $this->hasMany(Service::class);
     }
 
-    public function criterias()
+    public function tags()
     {
-        return $this->hasMany(Criteria::class);
+        return $this->hasMany(Tag::class);
     }
 
     public function __toString()

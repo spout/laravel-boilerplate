@@ -29,50 +29,14 @@
                 @if (!empty($category))
                     <li class="nav-item dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-                            {{ _i("Criterias") }}
+                            {{ _i("Tags") }}
                         </button>
                         <div class="dropdown-menu">
                             <div class="px-2">
-                                @foreach($category->criterias as $criteria)
+                                @foreach($category->tags as $tag)
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="criteria-{{ $criteria->id }}" name="criterias[]" value="{{ $criteria->id }}">
-                                        <label class="custom-control-label" for="criteria-{{ $criteria->id }}">{{ $criteria->name }}</label>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if (!empty($category))
-                    <li class="nav-item dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-                            {{ _i("Filter 1") }}
-                        </button>
-                        <div class="dropdown-menu">
-                            <div class="px-2">
-                                @foreach($category->criterias as $criteria)
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="criteria-{{ $criteria->id }}" name="criterias[]" value="{{ $criteria->id }}">
-                                        <label class="custom-control-label" for="criteria-{{ $criteria->id }}">{{ $criteria->name }}</label>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if (!empty($category))
-                    <li class="nav-item dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-                            {{ _i("Filter 2") }}
-                        </button>
-                        <div class="dropdown-menu">
-                            <div class="px-2">
-                                @foreach($category->criterias as $criteria)
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="criteria-{{ $criteria->id }}" name="criterias[]" value="{{ $criteria->id }}">
-                                        <label class="custom-control-label" for="criteria-{{ $criteria->id }}">{{ $criteria->name }}</label>
+                                        <input type="checkbox" class="custom-control-input" id="tag-{{ $tag->id }}" name="tags[]" value="{{ $tag->id }}">
+                                        <label class="custom-control-label" for="tag-{{ $tag->id }}">{{ $tag->name }}</label>
                                     </div>
                                 @endforeach
                             </div>
@@ -111,11 +75,11 @@
     });
 
     function loadList() {
-        let criterias = $('input[name="criterias[]"]:checked').map(function(i, e) {
+        let tags = $('input[name="tags[]"]:checked').map(function(i, e) {
             return e.value
         }).toArray();
 
-        $('#products-list').load(productsIndexUrl, {criterias: criterias});
+        $('#products-list').load(productsIndexUrl, {tags: tags});
     }
 
     $(document).ajaxStart(function () {

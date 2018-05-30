@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\Traits\AdjacencyListTrait;
 use App\Models\Traits\TranslatableTrait;
 
-class Criteria extends Model
+class Tag extends Model
 {
     use TranslatableTrait;
     use AdjacencyListTrait;
@@ -18,12 +18,12 @@ class Criteria extends Model
 
     public static function verboseName()
     {
-        return _i("criteria");
+        return _i("tag");
     }
 
     public static function verboseNamePlural()
     {
-        return _i("criterias");
+        return _i("tags");
     }
 
     public function __toString()

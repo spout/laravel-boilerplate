@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class ProductCriteria extends Pivot
+class ProductTag extends Pivot
 {
 
 }

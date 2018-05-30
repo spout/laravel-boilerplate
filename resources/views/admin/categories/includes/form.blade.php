@@ -51,26 +51,26 @@
 </div>
 
 <?php
-$criterias = $object->criterias;
-$count = $criterias->count();
+$tags = $object->tags;
+$count = $tags->count();
 
 for ($i = 0; $i < 5; $i++) {
-    $criterias->push(new \App\Models\Criteria(['sort' => $i + $count]));
+    $tags->push(new \App\Models\Tag(['sort' => $i + $count]));
 }
 ?>
 
 <fieldset class="py-0">
-    <legend>{{ _i("Criterias") }}</legend>
-    @foreach($criterias as $k => $criteria)
+    <legend>{{ _i("Tags") }}</legend>
+    @foreach($tags as $k => $tag)
         <fieldset class="py-0 mb-0">
-            {!! Form::hidden("criterias[$k][id]", $criteria->id) !!}
-            {!! Form::hidden("criterias[$k][sort]", $k) !!}
-            <legend>{{ _i("Criteria %d", $k + 1) }}</legend>
+            {!! Form::hidden("tags[$k][id]", $tag->id) !!}
+            {!! Form::hidden("tags[$k][sort]", $k) !!}
+            <legend>{{ _i("Tag %d", $k + 1) }}</legend>
             <div class="row">
                 @foreach(config('app.locales') as $lang => $locale)
                     <div class="col">
-                        {!! Form::openGroup("criterias[$k][name_{$lang}]", _i('Name (%s)', $lang)) !!}
-                        {!! Form::text("criterias[$k][name_{$lang}]") !!}
+                        {!! Form::openGroup("tags[$k][name_{$lang}]", _i('Name (%s)', $lang)) !!}
+                        {!! Form::text("tags[$k][name_{$lang}]") !!}
                         {!! Form::closeGroup() !!}
                     </div>
                 @endforeach

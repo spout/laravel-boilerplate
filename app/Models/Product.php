@@ -61,9 +61,9 @@ class Product extends Model
         return $this->morphedByMany(Form::class, 'modulable');
     }
 
-    public function criterias()
+    public function tags()
     {
-        return $this->belongsToMany(Criteria::class, 'product_criterias');
+        return $this->belongsToMany(Tag::class, 'product_tags');
     }
 
     public function getAbsoluteUrlAttribute()

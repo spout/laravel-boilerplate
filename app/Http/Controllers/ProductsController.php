@@ -27,11 +27,11 @@ class ProductsController extends Controller
             $products->whereIn('category_id', request()->input('categories'));
         }
 
-        if (request()->has('criterias')) {
-            $criterias = request()->input('criterias');
-            $products->whereHas('criterias', function ($q) use ($criterias) {
+        if (request()->has('tags')) {
+            $tags = request()->input('tags');
+            $products->whereHas('tags', function ($q) use ($tags) {
                 /** @var Builder $q */
-                $q->whereIn('criterias.id', $criterias);
+                $q->whereIn('tags.id', $tags);
             });
         }
 
