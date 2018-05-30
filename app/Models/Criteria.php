@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Traits\AdjacencyListTrait;
 use App\Models\Traits\TranslatableTrait;
 
 class Criteria extends Model
 {
     use TranslatableTrait;
+    use AdjacencyListTrait;
 
     protected $guarded = [];
     public $timestamps = false;
