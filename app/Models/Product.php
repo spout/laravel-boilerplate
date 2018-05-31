@@ -13,6 +13,7 @@ class Product extends Model
         'created_at',
         'updated_at',
         'location',
+        'tags',
     ];
     public static $translatableColumns = [
         'title',

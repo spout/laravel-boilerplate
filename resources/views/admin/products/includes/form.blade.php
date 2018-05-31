@@ -61,6 +61,25 @@
 </div>
 
 <fieldset>
+    <legend>{{ _i("Tags") }}</legend>
+
+    <?php
+    $checked = array_column($object->tags->toArray(), 'id');
+    ?>
+    <div class="form-group">
+        @foreach($object->category->tags as $tag)
+            <?php
+            $id = "tag-{$tag->id}";
+            ?>
+            <div class="custom-control custom-checkbox custom-control-inline">
+                <input type="checkbox" name="tags[]" class="custom-control-input" id="{{ $id }}" value="{{ $tag->id }}" {{ in_array($tag->id, $checked) ? 'checked' : '' }}>
+                <label class="custom-control-label" for="{{ $id }}">{{ $tag->name }}</label>
+            </div>
+        @endforeach
+    </div>
+</fieldset>
+
+<fieldset>
     <legend>{{ _i("Location") }}</legend>
 
     @include('includes.google-place-autocomplete', ['domId' => 'location'])

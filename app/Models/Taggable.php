@@ -4,7 +4,6 @@ namespace App\Models;
 
 class Taggable extends Model
 {
-    public $incrementing = false;
     public $timestamps = false;
     protected $guarded = [];
 

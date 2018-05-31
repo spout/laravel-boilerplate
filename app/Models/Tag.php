@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Traits\AdjacencyListTrait;
+//use App\Models\Traits\AdjacencyListTrait;
 use App\Models\Traits\TranslatableTrait;
 
 class Tag extends Model
 {
     use TranslatableTrait;
-    use AdjacencyListTrait;
+    //use AdjacencyListTrait;
 
     protected $guarded = [];
     public $timestamps = false;

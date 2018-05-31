@@ -17,6 +17,9 @@
     <div>
         {!! $product->content !!}
     </div>
+    <?php
+    dump($product->tags->toArray());
+    ?>
 
     <?php
     $replacements = [];
