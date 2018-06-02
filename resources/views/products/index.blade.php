@@ -5,7 +5,10 @@
 ?>
 @section('title', !empty($category) ? $category->title_plural : _i("Products"))
 
-@breadcrumb(!empty($category) ? ['url' => $category->absolute_url, 'title' => $category->title_plural] : ['url' => route('products.index'), 'title' => _i("Products")])
+@breadcrumb(['url' => route('products.index'), 'title' => _i("Products")])
+@if (!empty($category))
+    @breadcrumb(['url' => $category->absolute_url, 'title' => $category->title_plural])
+@endif
 
 @section('content')
     @if (request()->isXmlHttpRequest())
@@ -71,6 +74,10 @@
             }
 
             loadList();
+        });
+
+        $('#filters .dropdown-menu').on('click', function (e) {
+            e.stopPropagation();
         });
     });
 

@@ -12,3 +12,9 @@
 .edit-highlight {
   outline: 2px dotted $gray-600;
 }
+
+.navbar {
+  .dropdown-menu {
+    z-index: 10000;
+  }
+}

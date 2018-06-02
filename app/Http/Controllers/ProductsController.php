@@ -35,10 +35,6 @@ class ProductsController extends Controller
             });
         }
 
-        if (request()->isXmlHttpRequest()) {
-            sleep(2);
-        }
-
         $data['products'] = $products->paginate(50);
 
         return view('products.index', $data);
