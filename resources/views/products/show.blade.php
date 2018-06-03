@@ -18,7 +18,8 @@
         {!! $product->content !!}
     </div>
     <?php
-    dump($product->tags->toArray());
+    //dump($product->tags->toArray());
+    dump($product->relatedProducts->toArray());
     ?>
 
     <?php

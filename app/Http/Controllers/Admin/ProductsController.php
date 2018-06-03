@@ -40,6 +40,7 @@ class ProductsController extends AdminController
                 'amenities' => Amenity::class,
                 'services' => Service::class,
                 'forms' => Form::class,
+                'related-products' => Product::class,
             ];
 
             if (array_key_exists($placeholder->module_slug, $modulableMapping)) {

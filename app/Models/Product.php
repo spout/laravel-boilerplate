@@ -14,6 +14,7 @@ class Product extends Model
         'updated_at',
         'location',
         'tags',
+        'related_products',
     ];
     public static $translatableColumns = [
         'title',
@@ -60,6 +61,11 @@ class Product extends Model
     public function forms()
     {
         return $this->morphedByMany(Form::class, 'modulable');
+    }
+
+    public function relatedProducts()
+    {
+        return $this->morphedByMany(self::class, 'modulable');
     }
 
     public function tags()
