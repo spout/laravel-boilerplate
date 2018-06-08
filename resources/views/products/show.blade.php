@@ -19,7 +19,7 @@
     </div>
     <?php
     //dump($product->tags->toArray());
-    dump($product->relatedProducts->toArray());
+    //dump($product->relatedProducts->toArray());
     ?>
 
     <?php
