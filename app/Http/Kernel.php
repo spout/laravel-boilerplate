@@ -72,5 +72,6 @@ class Kernel extends HttpKernel
         'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
         'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
         'currentSite' => \App\Http\Middleware\CurrentSite::class,
+        'elfinder' => \App\Http\Middleware\Elfinder::class
     ];
 }
