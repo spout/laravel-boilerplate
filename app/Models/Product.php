@@ -73,6 +73,11 @@ class Product extends Model
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
+    public function region()
+    {
+        return $this->belongsTo(Region::class);
+    }
+
     public function getAbsoluteUrlAttribute()
     {
         $locale = \LaravelLocalization::getCurrentLocale();

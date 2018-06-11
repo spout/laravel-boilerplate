@@ -25,6 +25,7 @@ class AdminComposer
             _i("Videos") => 'admin.videos',
             _i("Amenities") => 'admin.amenities',
             _i("Services") => 'admin.services',
+            _i("Regions") => 'admin.regions',
             _i("Menus") => 'admin.menus',
             _i("Users") => 'admin.users',
             _i("Forms") => 'admin.forms',
