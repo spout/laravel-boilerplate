@@ -101,8 +101,8 @@
     {!! Form::select('country', $countryList) !!}
     {!! Form::closeGroup() !!}
 
-    {!! Form::openGroup('region_id', _i('Region')) !!}
-    {!! Form::select('region_id', $regionList) !!}
+    {!! Form::openGroup('neighborhood_id', _i('Neighborhood')) !!}
+    {!! Form::select('neighborhood_id', $neighborhoodList) !!}
     {!! Form::closeGroup() !!}
 
     <div class="row">

@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-class RegionsDataTable extends DataTable
+class NeighborhoodsDataTable extends DataTable
 {
     protected function getColumns()
     {

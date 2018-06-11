@@ -1,5 +1,5 @@
 {!! Form::model($object, [
-    'route' => empty($object->pk) ? ['admin.regions.store'] : ['admin.regions.update', $object->pk],
+    'route' => empty($object->pk) ? ['admin.neighborhoods.store'] : ['admin.neighborhoods.update', $object->pk],
     'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 

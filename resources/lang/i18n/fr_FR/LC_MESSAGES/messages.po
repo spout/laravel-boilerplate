@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultilanguageLaravelApplication\n"
-"POT-Creation-Date: 2018-06-11 20:58+0200\n"
-"PO-Revision-Date: 2018-06-11 21:02+0200\n"
+"POT-Creation-Date: 2018-06-11 21:30+0200\n"
+"PO-Revision-Date: 2018-06-11 21:30+0200\n"
 "Last-Translator: James Translator <james@translations.colm>\n"
 "Language-Team: James Translator <james@translations.colm>\n"
 "Language: fr_FR\n"
@@ -250,7 +250,7 @@ msgstr "Carte Google"
 #: ../resources/views/includes/shortcodes.blade.php:27
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:128
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:56
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:157
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:164
 #: ../storage/framework/messages/ec8d282044d59ecdf429fb525133cf456f51cc25.php.php:27
 msgid "Address"
 msgstr "Adresse"
@@ -360,7 +360,7 @@ msgstr "Code"
 
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:14
 #: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:21
-#: ../storage/framework/messages/1f04f03adb18f82d5657bf7b467c593e286d1378.php.php:10
+#: ../storage/framework/messages/2c58530fd464cc06f71b107dcbf8f3a7e6a2908d.php.php:10
 #: ../storage/framework/messages/4591d5ed419498488d93d12478568f052e133fe0.php.php:12
 #: ../storage/framework/messages/72f22b2f620009513ab73b65834ace15141490fb.php.php:12
 #: ../storage/framework/messages/79d7b21db639c22f9c1fad22458b08096ca6f7e7.php.php:12
@@ -368,7 +368,7 @@ msgstr "Code"
 #: ../storage/framework/messages/af24de041adeb24df8ace0fab6434c892f5f2c4a.php.php:14
 #: ../storage/framework/messages/e9cbd965837d85f8e24554bdee851455f7dbaf02.php.php:14
 #: DataTables/AmenitiesDataTable.php:14 DataTables/CurrenciesDataTable.php:11
-#: DataTables/RegionsDataTable.php:10 DataTables/ServicesDataTable.php:14
+#: DataTables/NeighborhoodsDataTable.php:10 DataTables/ServicesDataTable.php:14
 #: DataTables/SitesDataTable.php:12
 msgid "Name"
 msgstr "Nom"
@@ -381,7 +381,6 @@ msgstr "Symbole"
 
 #: ../storage/framework/messages/036dbca85aa0902d2d7016464943e794530a90de.php.php:28
 #: ../storage/framework/messages/09f4be96676ecc97f240f3cd007822dc43147656.php.php:28
-#: ../storage/framework/messages/10969ea4a4dfa5a267944c9608e959958ce59137.php.php:16
 #: ../storage/framework/messages/173c54c8468c47f557c6973a3fd1e71c7790f1da.php.php:28
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:135
 #: ../storage/framework/messages/27967d8d314a2ab4d750d5b751fc1f3efc61e8ee.php.php:9
@@ -390,10 +389,11 @@ msgstr "Symbole"
 #: ../storage/framework/messages/3ac8a028a78326382756695185a59795582799e6.php.php:55
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:83
 #: ../storage/framework/messages/49c12012f2dc78b6cd66a86e0340fd699caf7872.php.php:9
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:165
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:172
 #: ../storage/framework/messages/666bb58ff86b365a974109c02c497e015fe06cdd.php.php:23
 #: ../storage/framework/messages/6e94feaea2393cdd0ad236dae735aedf0085f88c.php.php:54
 #: ../storage/framework/messages/6fec169b089635197e3606b8181e905e468da634.php.php:85
+#: ../storage/framework/messages/7717759ee73d434ba38d867ec0d96584ca917ed3.php.php:16
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:98
 #: ../storage/framework/messages/8ecd2d6587efc8cca8eb90b0ee82fc8cc6c8cd4d.php.php:19
 #: ../storage/framework/messages/9caccb274a856db1f8eda067b8ebb3a805791a9d.php.php:28
@@ -622,13 +622,6 @@ msgstr "élément d'accordéon"
 msgid "accordion items"
 msgstr "éléments d'accordéon"
 
-#: ../storage/framework/messages/10969ea4a4dfa5a267944c9608e959958ce59137.php.php:8
-#: ../storage/framework/messages/365e4cc62f64b9637aba5c3abde48cc0efa21be9.php.php:15
-#: ../storage/framework/messages/ba0a25eb3e355fd112b0fe14e08699c4f488c67b.php.php:15
-#, php-format
-msgid "Name (%s)"
-msgstr "Nom (%s)"
-
 #: ../storage/framework/messages/10b45ef08a25d150f5e64ab8354a7ad2040a6863.php.php:1
 msgid "Prices"
 msgstr "Tarifs"
@@ -664,14 +657,14 @@ msgid "Update address book"
 msgstr "Modifier carnet d'adresses"
 
 #: ../storage/framework/messages/1ade8cebfb6771139e8a5c416a0806b8d6750f4e.php.php:36
-#: ../storage/framework/messages/1f3770f710616ecc89a8dda93e0e59b486789174.php.php:19
 #: ../storage/framework/messages/23cf636ac835705e13d7ed424e1cc7a72b7e44d7.php.php:19
 #: ../storage/framework/messages/79c1abdbef1c72e22ccea6fea212feeb612a2534.php.php:44
+#: ../storage/framework/messages/9b82305da5ae9255abffb73e22f01ee7ef2eb163.php.php:19
 #: ../storage/framework/messages/f273966196f4201639f32b3c8abfba011b278f54.php.php:41
 #: Http/Requests/ContentFormRequest.php:41
 #: Http/Requests/GalleryFormRequest.php:36
+#: Http/Requests/NeighborhoodFormRequest.php:19
 #: Http/Requests/ProductFormRequest.php:19
-#: Http/Requests/RegionFormRequest.php:19
 #: Http/Requests/SnippetFormRequest.php:44
 #, php-format
 msgid "The title (%s) is required."
@@ -825,13 +818,13 @@ msgid "Country"
 msgstr "Pays"
 
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:111
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:140
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:147
 msgid "Postcode"
 msgstr "Code postal"
 
 #: ../storage/framework/messages/274c6955be1f3a3d952de13ea559730c979bae31.php.php:119
 #: ../storage/framework/messages/482e51d3e50fd1e6579b518b12841265f17b6b45.php.php:75
-#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:148
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:155
 msgid "City"
 msgstr "Ville"
 
@@ -948,6 +941,13 @@ msgstr "Enregistrement modifié avec succès !"
 #: DataTables/ServicesDataTable.php:15
 msgid "Category"
 msgstr "Catégorie"
+
+#: ../storage/framework/messages/365e4cc62f64b9637aba5c3abde48cc0efa21be9.php.php:15
+#: ../storage/framework/messages/7717759ee73d434ba38d867ec0d96584ca917ed3.php.php:8
+#: ../storage/framework/messages/ba0a25eb3e355fd112b0fe14e08699c4f488c67b.php.php:15
+#, php-format
+msgid "Name (%s)"
+msgstr "Nom (%s)"
 
 #: ../storage/framework/messages/367c72ad022eca791ba6e33a77d1dc6ba45f79ba.php.php:26
 #: ../storage/framework/messages/3a9f5f773e1d3c85feccfdd4962fed2f5740799c.php.php:24
@@ -1274,10 +1274,6 @@ msgstr "Contenus"
 msgid "Make active"
 msgstr "Rendre actif"
 
-#: ../storage/framework/messages/544851471685e46390507a37686ec8acb76277d8.php.php:1
-msgid "Update region"
-msgstr "Modifier région"
-
 #: ../storage/framework/messages/547632f4310ca307e6da22a114717d83d2ac5511.php.php:1
 msgid "Update post"
 msgstr "Modifier article"
@@ -1344,6 +1340,10 @@ msgstr "SEO"
 #: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:108
 msgid "Location"
 msgstr "Lieu"
+
+#: ../storage/framework/messages/5c34c476a428c07d79bd1318c6dcbc0ab16fd319.php.php:138
+msgid "Neighborhood"
+msgstr "Quartier"
 
 #: ../storage/framework/messages/5f110a3f33c312367417430c4271d5945c8634b3.php.php:8
 #: ../storage/framework/messages/78b82f2db6ae63a8c137465a2bb70c4eac1390f5.php.php:38
@@ -1419,6 +1419,16 @@ msgstr "galeries"
 #, php-format
 msgid "Gallery %d"
 msgstr "Galerie %d"
+
+#: ../storage/framework/messages/64b6baff0ea8f5af8f2e7e169cd1aa2a85c6a64e.php.php:17
+#: Models/Neighborhood.php:17
+msgid "neighborhood"
+msgstr "quartier"
+
+#: ../storage/framework/messages/64b6baff0ea8f5af8f2e7e169cd1aa2a85c6a64e.php.php:22
+#: Models/Neighborhood.php:22
+msgid "neighborhoods"
+msgstr "quartiers"
 
 #: ../storage/framework/messages/65b73ed0738869d78275bd2da6d56d1ba0085a46.php.php:1
 msgid "Create site"
@@ -1708,6 +1718,10 @@ msgstr "tarif"
 msgid "prices"
 msgstr "tarifs"
 
+#: ../storage/framework/messages/8a69e182cd99f8f0d10ca51f40d41675421b0ae7.php.php:1
+msgid "Update neighborhood"
+msgstr "Modifier quartier"
+
 #: ../storage/framework/messages/8cc66f13c0c69d6963d022c368e27eae92567b14.php.php:8
 msgid "No results matching your search."
 msgstr "Aucun résultat ne correspond à votre recherche."
@@ -1740,10 +1754,6 @@ msgstr "Le symbole est requis."
 #: ../storage/framework/messages/91522c2e394195219dd8e5afffb4314d08682a99.php.php:1
 msgid "Create event"
 msgstr "Créer événement"
-
-#: ../storage/framework/messages/919a002a59b9b64e42cba70f849c179271580d3d.php.php:1
-msgid "Regions"
-msgstr "Régions"
 
 #: ../storage/framework/messages/9408e0200f73a3b121ab3d31404f8473c713fe14.php.php:1
 msgid "Create content"
@@ -1882,16 +1892,6 @@ msgstr "L'icône de marqueur doit être unique."
 msgid "Posts"
 msgstr "Posts"
 
-#: ../storage/framework/messages/ad803daf89025e2823c296324fb21ceaeea89570.php.php:17
-#: Models/Region.php:17
-msgid "region"
-msgstr "région"
-
-#: ../storage/framework/messages/ad803daf89025e2823c296324fb21ceaeea89570.php.php:22
-#: Models/Region.php:22
-msgid "regions"
-msgstr "régions"
-
 #: ../storage/framework/messages/aedc68951aab2e90283787e9542682cf7d176ec5.php.php:1
 msgid "Bookings"
 msgstr "Réservations"
@@ -1908,6 +1908,10 @@ msgstr "Fermer"
 msgid "Create product"
 msgstr "Créer produit"
 
+#: ../storage/framework/messages/b65418e0fdae25634938b09a1ee5bbc85445cbc4.php.php:1
+msgid "Create neighborhood"
+msgstr "Créer quartier"
+
 #: ../storage/framework/messages/b6d1813ee60a4f29c8e6e03aeb5641cdfe20e919.php.php:31
 msgid "Excerpt"
 msgstr "Résumé"
@@ -1923,7 +1927,7 @@ msgstr "Go"
 
 #: ../storage/framework/messages/bad7e40264ec9da374ba47a10339e51611ce3de5.php.php:52
 msgid "Reset"
-msgstr "réinitialiser"
+msgstr "Réinitialiser"
 
 #: ../storage/framework/messages/bb51e5a0e40af83997f849bd61a18741c79b6c16.php.php:1
 msgid "Update snippet"
@@ -1957,6 +1961,10 @@ msgstr "taggables"
 #: Http/Requests/PriceFormRequest.php:24
 msgid "The product is required."
 msgstr "Le produit est requis."
+
+#: ../storage/framework/messages/c1c16f531bc1329ed4f2d0664a65610ed403d18b.php.php:1
+msgid "Neighborhoods"
+msgstr "Quartiers"
 
 #: ../storage/framework/messages/c358e409aaa83edd3ed2a835d82f6f7f81c79493.php.php:18
 #: Http/Controllers/Traits/Crud/BulkTrait.php:18
@@ -2051,10 +2059,6 @@ msgstr "offre"
 #: Models/Offer.php:17
 msgid "offers"
 msgstr "offres"
-
-#: ../storage/framework/messages/d9512eac60e4a7488c4a6112d478a8a9a4254e07.php.php:1
-msgid "Create region"
-msgstr "Créer région"
 
 #: ../storage/framework/messages/da39fa03cbae5a182e8fbb9f2b61bdd9a04529d4.php.php:27
 #: Http/Requests/EventFormRequest.php:27
@@ -2221,6 +2225,23 @@ msgstr "fragment"
 #: Models/Snippet.php:28
 msgid "snippets"
 msgstr "fragments"
+
+#, fuzzy
+#~| msgid "Regions"
+#~ msgid "Region"
+#~ msgstr "Régions"
+
+#~ msgid "Update region"
+#~ msgstr "Modifier région"
+
+#~ msgid "region"
+#~ msgstr "région"
+
+#~ msgid "regions"
+#~ msgstr "régions"
+
+#~ msgid "Create region"
+#~ msgstr "Créer région"
 
 #~ msgid "Add %s"
 #~ msgstr "Ajouter %s"

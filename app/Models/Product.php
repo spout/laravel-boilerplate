@@ -73,9 +73,9 @@ class Product extends Model
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
-    public function region()
+    public function neighborhood()
     {
-        return $this->belongsTo(Region::class);
+        return $this->belongsTo(Neighborhood::class);
     }
 
     public function getAbsoluteUrlAttribute()

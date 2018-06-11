@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Models\Traits\TranslatableTrait;
 
-class Region extends Model
+class Neighborhood extends Model
 {
     use TranslatableTrait;
 
@@ -14,12 +14,12 @@ class Region extends Model
 
     public static function verboseName()
     {
-        return _i("region");
+        return _i("neighborhood");
     }
 
     public static function verboseNamePlural()
     {
-        return _i("regions");
+        return _i("neighborhoods");
     }
 
     public function product()

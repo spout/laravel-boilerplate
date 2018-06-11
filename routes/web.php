@@ -107,7 +107,7 @@ Route::group(['prefix' => \LaravelLocalization::setLocale(), 'middleware' => ['l
         Route::resource('videos', 'VideosController', ['names' => route_resource_names('admin.videos.{name}')]);
         Route::resource('amenities', 'AmenitiesController', ['names' => route_resource_names('admin.amenities.{name}')]);
         Route::resource('services', 'ServicesController', ['names' => route_resource_names('admin.services.{name}')]);
-        Route::resource('regions', 'RegionsController', ['names' => route_resource_names('admin.regions.{name}')]);
+        Route::resource('neighborhoods', 'NeighborhoodsController', ['names' => route_resource_names('admin.neighborhoods.{name}')]);
     });
 
     Route::group(['namespace' => 'Advertiser', 'prefix' => 'advertiser'], function () {

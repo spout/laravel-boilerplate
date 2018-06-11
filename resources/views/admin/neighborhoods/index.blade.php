@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', _i("Regions"))
+@section('title', _i("Neighborhoods"))
 
 @section('content')
     @include('includes.admin.create-button')
