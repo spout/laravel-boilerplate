@@ -53,7 +53,8 @@ return array(
     |
     */
 
-    'access' => 'Barryvdh\Elfinder\Elfinder::checkAccess',
+    //'access' => 'Barryvdh\Elfinder\Elfinder::checkAccess',
+    'access' => 'App\Libraries\Elfinder::checkAccess',
 
     /*
     |--------------------------------------------------------------------------

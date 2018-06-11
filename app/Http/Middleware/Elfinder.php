@@ -18,7 +18,7 @@ class Elfinder
     {
         $user = Auth::user();
 
-        if (empty($user->is_admin)) {
+        if (Auth::check() && empty($user->is_admin)) {
             $path = "files/users/{$user->id}/";
             $dir = public_path($path);
 
