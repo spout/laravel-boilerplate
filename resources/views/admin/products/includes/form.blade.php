@@ -101,6 +101,10 @@
     {!! Form::select('country', $countryList) !!}
     {!! Form::closeGroup() !!}
 
+    {!! Form::openGroup('region_id', _i('Region')) !!}
+    {!! Form::select('region_id', $regionList) !!}
+    {!! Form::closeGroup() !!}
+
     <div class="row">
         <div class="col-4">
             {!! Form::openGroup('postcode', _i('Postcode')) !!}
