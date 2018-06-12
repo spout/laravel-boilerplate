@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Neighborhood;
 use App\Models\Product;
 use Illuminate\Database\Query\Builder;
 
@@ -18,6 +19,7 @@ class ProductsController extends Controller
             $products->where('category_id', $category->id);
 
             $data['category'] = $category;
+            $data['neighborhoods'] = Neighborhood::all();
         } else {
             $categories = Category::all();
             $data['categories'] = $categories;
@@ -35,7 +37,17 @@ class ProductsController extends Controller
             });
         }
 
-        $data['products'] = $products->paginate(50);
+        if (request()->has('neighborhoods')) {
+            $neighborhoods = request()->input('neighborhoods');
+            $products->whereHas('neighborhood', function ($q) use ($neighborhoods) {
+                /** @var Builder $q */
+                $q->whereIn('neighborhoods.id', $neighborhoods);
+            });
+        }
+
+        $page = request()->input('page');
+
+        $data['products'] = $products->paginate(20, ['*'], 'page', $page);
 
         return view('products.index', $data);
     }
