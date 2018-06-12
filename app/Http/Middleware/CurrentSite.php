@@ -15,9 +15,10 @@ class CurrentSite
      */
     public function handle($request, Closure $next)
     {
-        if (!empty($request->route()->action['domain'])) {
-            Config::set('currentSite', Site::where('domain', $request->route()->action['domain'])->first());
-        }
+        $domain = $_SERVER['HTTP_HOST'];
+        $currentSite = Site::where('domain', $domain)->first();
+
+        Config::set('currentSite', $currentSite);
 
         return $next($request);
     }

@@ -37,6 +37,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Spatie\ResponseCache\Middlewares\CacheResponse::class,
+            \App\Http\Middleware\CurrentSite::class,
         ],
 
         'admin' => [
@@ -71,7 +72,6 @@ class Kernel extends HttpKernel
         'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
         'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
         'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
-        'currentSite' => \App\Http\Middleware\CurrentSite::class,
         'elfinder' => \App\Http\Middleware\Elfinder::class
     ];
 }
