@@ -34,6 +34,10 @@
             {!! Form::select('menu_item_association', $associationList) !!}
             {!! Form::closeGroup() !!}
 
+            {!! Form::openGroup('menu_item_view', _i("View template")) !!}
+            {!! Form::text('menu_item_view') !!}
+            {!! Form::closeGroup() !!}
+
             @foreach(Config::get('app.locales') as $lang => $locale)
                 <fieldset>
                     <legend>{{ $locale }}</legend>
@@ -44,10 +48,6 @@
 
                     {!! Form::openGroup("menu_item_url_{$lang}", _i("URL (%s)", $lang)) !!}
                     {!! Form::text("menu_item_url_{$lang}") !!}
-                    {!! Form::closeGroup() !!}
-
-                    {!! Form::openGroup("menu_item_content_{$lang}", _i("Content (%s)", $lang)) !!}
-                    {!! Form::textarea("menu_item_content_{$lang}") !!}
                     {!! Form::closeGroup() !!}
                 </fieldset>
             @endforeach
@@ -77,8 +77,8 @@
       $(function () {
         var menuSlug = '{{ $object->slug }}';
         var $menuItemsTree = $('#menu-items-tree');
-        var fields = ['association', 'route', 'attributes'];
-        var i18nFields = ['title', 'url', 'content'];
+        var fields = ['association', 'route', 'attributes', 'view'];
+        var i18nFields = ['title', 'url'];
         var nodeData = {};
 
         for (let locale in window.laravel.config.app.locales) {
@@ -223,6 +223,7 @@
               } else {
                 nodeData[field] = val;
               }
+
               $.post('{{ route('admin.menus.tree-save') }}', nodeData)
                 .done(function () {
                   $menuItemsTree.jstree(true).refresh()

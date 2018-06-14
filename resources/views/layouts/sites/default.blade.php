@@ -25,29 +25,9 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor01">
-        @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
+        @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'menus.mega', 'attributes' => ['class' => 'nav navbar-nav']]])
     </div>
 </nav>
-{{--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor02">
-        @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
-    </div>
-</nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ route('homepage') }}">{{ config('app.name') }}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor03">
-        @tree(['tree' => $menuPrincipal, 'params' => ['view' => 'tree.navbar.display', 'attributes' => ['class' => 'nav navbar-nav']]])
-    </div>
-</nav>--}}
 <div class="container-fluid">
     @renderBreadcrumbs()
     @include('flash::message')

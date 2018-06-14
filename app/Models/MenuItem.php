@@ -17,7 +17,6 @@ class MenuItem extends Model
     public static $translatableColumns = [
         'title',
         'url',
-        'content',
     ];
 
     public static function verboseName()
