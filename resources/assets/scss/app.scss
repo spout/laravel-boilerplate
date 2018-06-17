@@ -28,6 +28,7 @@
 }
 
 .navbar .dropdown-menu {
+  z-index: 10000;
   border: 0;
 }
 
@@ -61,7 +62,8 @@
   }
 
   /* shows the dropdown menu on hover */
-  .navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
+  .navbar .dropdown:hover .dropdown-menu,
+  .navbar .dropdown .dropdown-menu:hover {
     display: block !important;
   }
 

@@ -12,6 +12,7 @@ use App\Http\ViewComposers\FormListComposer;
 use App\Http\ViewComposers\GlobalComposer;
 use App\Http\ViewComposers\MenuComposer;
 use App\Http\ViewComposers\ModuleListComposer;
+use App\Http\ViewComposers\NavbarComposer;
 use App\Http\ViewComposers\ProductListComposer;
 use App\Http\ViewComposers\NeighborhoodListComposer;
 use App\Http\ViewComposers\SnippetComposer;
@@ -55,6 +56,7 @@ class ComposerServiceProvider extends ServiceProvider
             FormListComposer::class => ['includes.modules.forms.forms'],
             ProductListComposer::class => ['includes.modules.forms.related-products'],
             NeighborhoodListComposer::class => ['admin.products.includes.form'],
+            NavbarComposer::class => ['menus.includes.*'],
         ];
 
         foreach ($composers as $callback => $views) {
