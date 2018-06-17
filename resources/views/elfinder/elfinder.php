@@ -26,6 +26,10 @@
         // Documentation for client options:
         // https://github.com/Studio-42/elFinder/wiki/Client-configuration-options
         $().ready(function() {
+            var volumeId = 'l1_'; // volume id
+            var path = '<?php echo request()->query('path', ''); ?>';
+            var hash = volumeId + btoa(path).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '.').replace(/\.+$/, '');
+
             $('#elfinder').elfinder({
                 // set your elFinder options here
                 <?php if($locale){ ?>
@@ -36,7 +40,9 @@
                     _token: '<?= csrf_token() ?>'
                 },
                 url : '<?= route("elfinder.connector") ?>',  // connector URL
-                soundPath: '<?= asset($dir.'/sounds') ?>'
+                soundPath: '<?= asset($dir.'/sounds') ?>',
+                rememberLastDir: false,
+                startPathHash: hash
             });
         });
     </script>

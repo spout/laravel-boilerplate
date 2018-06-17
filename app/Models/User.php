@@ -52,6 +52,11 @@ class User extends Authenticatable
         return $this->name;
     }
 
+    public function getFullnameAttribute()
+    {
+        return "{$this->firstname} {$this->lastname}";
+    }
+
     public function setPasswordAttribute($value)
     {
         if (Hash::needsRehash($value)) {

@@ -18,6 +18,7 @@ use App\Http\ViewComposers\NeighborhoodListComposer;
 use App\Http\ViewComposers\SnippetComposer;
 use App\Http\ViewComposers\TemplateFileListComposer;
 use App\Http\ViewComposers\TemplateListComposer;
+use App\Http\ViewComposers\UserListComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -57,6 +58,7 @@ class ComposerServiceProvider extends ServiceProvider
             ProductListComposer::class => ['includes.modules.forms.related-products'],
             NeighborhoodListComposer::class => ['admin.products.includes.form'],
             NavbarComposer::class => ['menus.includes.*'],
+            UserListComposer::class => ['admin.file-manager.index'],
         ];
 
         foreach ($composers as $callback => $views) {
