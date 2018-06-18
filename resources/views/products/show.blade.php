@@ -20,7 +20,7 @@
     <?php
     //dump($product->tags->toArray());
     //dump($product->relatedProducts->toArray());
-    dump($product->region);
+    //dump($product->region);
     ?>
 
     <?php

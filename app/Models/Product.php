@@ -78,6 +78,11 @@ class Product extends Model
         return $this->belongsTo(Neighborhood::class);
     }
 
+    public function favorites()
+    {
+        return $this->morphMany(Favorite::class, 'favoritable');
+    }
+
     public function getAbsoluteUrlAttribute()
     {
         $locale = \LaravelLocalization::getCurrentLocale();
