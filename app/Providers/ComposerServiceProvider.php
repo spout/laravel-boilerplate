@@ -58,7 +58,7 @@ class ComposerServiceProvider extends ServiceProvider
             ProductListComposer::class => ['includes.modules.forms.related-products'],
             NeighborhoodListComposer::class => ['admin.products.includes.form'],
             NavbarComposer::class => ['menus.includes.*'],
-            UserListComposer::class => ['admin.file-manager.index'],
+            UserListComposer::class => ['admin.products.includes.form'],
         ];
 
         foreach ($composers as $callback => $views) {

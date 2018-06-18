@@ -8,6 +8,10 @@
     'method' => empty($object->pk) ? 'POST' : 'PUT'
 ]) !!}
 
+{!! Form::openGroup('user_id', _i('User')) !!}
+{!! Form::select('user_id', $userList) !!}
+{!! Form::closeGroup() !!}
+
 {!! Form::openGroup('category_id', _i('Category')) !!}
 {!! Form::select('category_id', $categoryList) !!}
 {!! Form::closeGroup() !!}
