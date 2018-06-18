@@ -19,14 +19,17 @@ class Elfinder
         $user = Auth::user();
 
         if (Auth::check() && empty($user->is_admin)) {
-            $path = "files/users/{$user->id}/";
-            $dir = public_path($path);
-
-            if (!is_dir($dir)) {
-                mkdir($dir);
+            $products = $user->products;
+            $roots = [];
+            foreach ($products as $product) {
+                $roots[] = [
+                    'driver' => 'LocalFileSystem',
+                    'path' => public_path("files/products/{$product->slug_en}"),
+                    'accessControl' => 'App\Libraries\Elfinder::checkAccess',
+                ];
             }
 
-            \Config::set('elfinder.dir', [$path]);
+            \Config::set('elfinder.roots', $roots);
         }
 
         return $next($request);

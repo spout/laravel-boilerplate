@@ -65,4 +65,9 @@ class User extends Authenticatable
 
         $this->attributes['password'] = $value;
     }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
