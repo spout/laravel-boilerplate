@@ -11,4 +11,14 @@ class VideosDataTable extends DataTable
             ['data' => 'url', 'name' => 'url', 'title' => _i("URL")],
         ];
     }
+
+    public function dataTable($query)
+    {
+        $dataTable = parent::dataTable($query);
+        $dataTable->editColumn('url', function ($object) {
+            return '<a href="' . $object->url . '" target="_blank">' . $object->url . '</a>';
+        });
+        $dataTable->rawColumns(['action', 'url']);
+        return $dataTable;
+    }
 }
