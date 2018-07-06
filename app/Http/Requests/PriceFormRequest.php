@@ -15,6 +15,7 @@ class PriceFormRequest extends FormRequest
     {
         return [
             'product_id' => 'required',
+            'currency_code' => 'required',
         ];
     }
 
@@ -22,6 +23,7 @@ class PriceFormRequest extends FormRequest
     {
         return [
             'product_id.required' => _i("The product is required."),
+            'currency_code.required' => _i("The currency is required."),
         ];
     }
 }

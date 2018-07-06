@@ -49,7 +49,7 @@ $types = [
     //'selectRange' => _i("Range"),
     //'password' => _i("Password"),
     'html' => _i("HTML"),
-    'newsletter' => _i("NewsletterEmail"),
+    'newsletter' => _i("Newsletter"),
 ];
 ?>
 
